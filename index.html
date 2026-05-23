@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vertmex – Aménagement Paysager Montérégie & Montréal</title>
-<meta name="description" content="Vertmex — Entrepreneur paysagiste vérifié basé à Saint-Rémi, Montérégie. 18 services d'aménagement paysager, 15 régions desservies. Soumission gratuite en 24h.">
+<meta name="description" content="Vertmex — Entrepreneur paysagiste vérifié basé à Saint-Rémi, Montérégie. 18 services d’aménagement paysager, 15 régions desservies. Soumission gratuite en 24h.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -17,8 +17,6 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--cream); overflow-x: hidden; }
-
-  /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -32,82 +30,38 @@
   .nav-links a:hover { color: var(--green-bright); }
   .nav-cta { background: var(--green-bright) !important; color: var(--green-deep) !important; padding: 0.42rem 1rem !important; border-radius: 100px; font-weight: 500 !important; }
   .nav-cta:hover { background: var(--green-light) !important; }
-  .lang-toggle {
-    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-    color: #fff; padding: 0.28rem 0.7rem; border-radius: 100px;
-    font-size: 0.73rem; font-weight: 500; cursor: pointer; letter-spacing: 0.05em;
-    transition: all 0.2s; font-family: 'DM Sans', sans-serif;
-  }
+  .lang-toggle { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 0.28rem 0.7rem; border-radius: 100px; font-size: 0.73rem; font-weight: 500; cursor: pointer; letter-spacing: 0.05em; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
   .lang-toggle:hover { background: rgba(255,255,255,0.2); }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh; background: var(--green-deep);
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 8rem 2.5rem 5rem; position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 52%;
-    background: linear-gradient(135deg, #2d5a2d 0%, #1a3a1a 50%, #0f2410 100%);
-    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-  .hero-img-area {
-    position: absolute; right: 0; top: 0; bottom: 0; width: 52%;
-    display: flex; align-items: center; justify-content: center; z-index: 1;
-  }
-  .img-ph {
-    width: 82%; height: 68%; border: 1px dashed rgba(90,170,90,0.3); border-radius: 6px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 0.6rem; color: rgba(255,255,255,0.25); font-size: 0.75rem; text-align: center; padding: 1rem;
-  }
+  .hero { min-height: 100vh; background: var(--green-deep); display: flex; flex-direction: column; justify-content: center; padding: 8rem 2.5rem 5rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 52%; background: linear-gradient(135deg, #2d5a2d 0%, #1a3a1a 50%, #0f2410 100%); clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%); }
+  .hero-img-area { position: absolute; right: 0; top: 0; bottom: 0; width: 52%; display: flex; align-items: center; justify-content: center; z-index: 1; }
+  .img-ph { width: 82%; height: 68%; border: 1px dashed rgba(90,170,90,0.3); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; color: rgba(255,255,255,0.25); font-size: 0.75rem; text-align: center; padding: 1rem; }
   .img-ph .ico { font-size: 2rem; opacity: 0.35; }
   .hero-content { position: relative; z-index: 2; max-width: 555px; }
-  .hero-eyebrow {
-    font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--green-bright); margin-bottom: 1.2rem;
-    display: flex; align-items: center; gap: 0.65rem;
-  }
+  .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green-bright); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.65rem; }
   .hero-eyebrow::before { content: ''; display: block; width: 1.75rem; height: 1px; background: var(--green-bright); }
-  .hero h1 {
-    font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4.2vw, 3.6rem);
-    font-weight: 900; line-height: 1.09; color: #fff; margin-bottom: 1.2rem; letter-spacing: -0.5px;
-  }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4.2vw, 3.6rem); font-weight: 900; line-height: 1.09; color: #fff; margin-bottom: 1.2rem; letter-spacing: -0.5px; }
   .hero h1 em { color: var(--green-bright); font-style: normal; }
   .hero-sub { font-size: 0.97rem; line-height: 1.75; color: rgba(255,255,255,0.6); margin-bottom: 1.85rem; max-width: 435px; }
   .hero-actions { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
-  .btn-primary {
-    background: var(--green-bright); color: var(--green-deep);
-    padding: 0.78rem 1.65rem; border-radius: 100px; font-weight: 500; font-size: 0.88rem;
-    cursor: pointer; border: none; text-decoration: none; transition: all 0.2s; display: inline-block;
-  }
+  .btn-primary { background: var(--green-bright); color: var(--green-deep); padding: 0.78rem 1.65rem; border-radius: 100px; font-weight: 500; font-size: 0.88rem; cursor: pointer; border: none; text-decoration: none; transition: all 0.2s; display: inline-block; }
   .btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
-  .btn-ghost {
-    background: transparent; color: rgba(255,255,255,0.75);
-    padding: 0.78rem 1.65rem; border-radius: 100px; font-size: 0.88rem;
-    cursor: pointer; border: 1px solid rgba(255,255,255,0.22);
-    text-decoration: none; transition: all 0.2s; display: inline-block;
-  }
+  .btn-ghost { background: transparent; color: rgba(255,255,255,0.75); padding: 0.78rem 1.65rem; border-radius: 100px; font-size: 0.88rem; cursor: pointer; border: 1px solid rgba(255,255,255,0.22); text-decoration: none; transition: all 0.2s; display: inline-block; }
   .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
   .hero-guarantee { display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; color: rgba(255,255,255,0.42); }
   .hero-guarantee .chk { color: var(--green-bright); }
   .hero-stats { display: flex; gap: 2.2rem; position: absolute; bottom: 2.5rem; left: 2.5rem; z-index: 2; }
   .stat strong { display: block; font-size: 1.75rem; font-weight: 300; font-family: 'Playfair Display', serif; color: #fff; line-height: 1; }
   .stat span { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
-
-  /* ── TRUST BAR ── */
   .trust-bar { background: #fff; padding: 1.1rem 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
   .trust-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.9rem; }
   .trust-item { display: flex; align-items: center; gap: 0.55rem; font-size: 0.8rem; color: var(--text-mid); }
   .trust-item strong { color: var(--green-deep); font-weight: 500; }
   .trust-div { width: 1px; height: 1.3rem; background: rgba(0,0,0,0.1); }
-
-  /* ── ZONES ── */
   .zones { background: var(--green-pale); padding: 0.85rem 2.5rem; border-bottom: 1px solid rgba(61,122,61,0.15); }
   .zones-inner { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
   .zones-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); font-weight: 500; white-space: nowrap; }
   .zone-pill { background: rgba(61,122,61,0.12); border: 1px solid rgba(61,122,61,0.2); color: var(--green-dark); padding: 0.22rem 0.7rem; border-radius: 100px; font-size: 0.72rem; white-space: nowrap; }
-
-  /* ── REVIEWS STRIP ── */
   .reviews-strip { background: var(--green-deep); padding: 1.4rem 2.5rem; }
   .reviews-inner { display: flex; align-items: center; gap: 1.75rem; overflow: hidden; }
   .review-score { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
@@ -120,15 +74,11 @@
   .rev-card .r-stars { color: #fbbf24; font-size: 0.72rem; margin-bottom: 0.35rem; }
   .rev-card .r-text { font-size: 0.78rem; color: rgba(255,255,255,0.68); line-height: 1.52; margin-bottom: 0.42rem; }
   .rev-card .r-author { font-size: 0.68rem; color: rgba(255,255,255,0.38); }
-
-  /* ── SHARED SECTION ── */
   section.sec { padding: 4.5rem 2.5rem; }
   .sl { font-size: 0.67rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.45rem; }
   .sl::before { content:''; display:block; width:1.3rem; height:1px; background:var(--green-mid); }
   h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 2.8vw, 2.3rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.3px; color: var(--green-deep); margin-bottom: 0.8rem; }
   .sec-sub { font-size: 0.92rem; color: var(--text-light); line-height: 1.7; max-width: 490px; }
-
-  /* ── SERVICES ── */
   .svc-hdr { max-width: 540px; margin-bottom: 2.75rem; }
   .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1.1rem; }
   .svc-card { background: var(--cream); border: 1px solid rgba(0,0,0,0.07); border-radius: 11px; padding: 1.6rem; transition: all 0.22s; }
@@ -136,82 +86,21 @@
   .s-ico { width: 42px; height: 42px; background: var(--green-pale); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.9rem; }
   .svc-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--green-deep); }
   .svc-card p { font-size: 0.8rem; color: var(--text-light); line-height: 1.58; }
-
-  /* ── PROCESS ── */
   .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.75rem; }
   .p-step { text-align: center; padding: 1.25rem 0.75rem; }
   .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); border: 2px solid var(--green-mid); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.9rem; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--green-deep); }
   .p-step h3 { font-size: 0.9rem; font-weight: 500; color: var(--green-deep); margin-bottom: 0.35rem; }
   .p-step p { font-size: 0.78rem; color: var(--text-light); line-height: 1.52; }
-
-  /* ── AI TOOL ── */
-  .ai-section { background: var(--green-deep); padding: 4.5rem 2.5rem; }
-  .ai-wrap { max-width: 800px; margin: 0 auto; }
-  .ai-hdr { text-align: center; margin-bottom: 2.25rem; }
-  .ai-hdr h2 { color: #fff; }
-  .ai-hdr .sl { justify-content: center; color: var(--green-bright); }
-  .ai-hdr .sl::before { display: none; }
-  .ai-hdr .sec-sub { color: rgba(255,255,255,0.52); margin: 0 auto; text-align: center; }
-  .ai-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(90,170,90,0.2); border-radius: 13px; padding: 1.85rem; }
-  .ai-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.8rem; }
-  .ig { display: flex; flex-direction: column; gap: 0.32rem; }
-  .ig label { font-size: 0.66rem; color: rgba(255,255,255,0.42); letter-spacing: 0.06em; text-transform: uppercase; }
-  .ig select, .ig input {
-    background: rgba(255,255,255,0.07); border: 1px solid rgba(90,170,90,0.2);
-    color: #fff; padding: 0.62rem 0.88rem; border-radius: 7px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.87rem; outline: none;
-    transition: border-color 0.2s; -webkit-appearance: none;
-  }
-  .ig select:focus, .ig input:focus { border-color: var(--green-bright); }
-  .ig select option { background: #1a3a1a; color: #fff; }
-  .ai-desc { margin-bottom: 1.2rem; }
-  .ai-desc label { display: block; font-size: 0.66rem; color: rgba(255,255,255,0.42); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.32rem; }
-  .ai-desc textarea {
-    width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(90,170,90,0.2);
-    color: #fff; padding: 0.78rem 0.88rem; border-radius: 7px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.87rem; outline: none;
-    resize: vertical; min-height: 85px; line-height: 1.58; transition: border-color 0.2s;
-  }
-  .ai-desc textarea:focus { border-color: var(--green-bright); }
-  .ai-desc textarea::placeholder { color: rgba(255,255,255,0.2); }
-  .ai-btn {
-    width: 100%; padding: 0.88rem; border: none; cursor: pointer;
-    background: var(--green-bright); color: var(--green-deep); border-radius: 7px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.92rem; font-weight: 500; transition: all 0.2s;
-  }
-  .ai-btn:hover:not(:disabled) { background: #6dc96d; }
-  .ai-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-  .ai-loading { text-align: center; padding: 1.35rem; display: none; color: rgba(255,255,255,0.42); font-size: 0.87rem; }
-  .ai-loading.vis { display: block; }
-  .ai-result { margin-top: 1.6rem; background: rgba(90,170,90,0.08); border: 1px solid rgba(90,170,90,0.2); border-radius: 9px; padding: 1.6rem; display: none; }
-  .ai-result.vis { display: block; }
-  .ai-rl { font-size: 0.67rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--green-bright); margin-bottom: 0.8rem; }
-  .ai-vision { color: rgba(255,255,255,0.82); font-size: 0.9rem; line-height: 1.78; margin-bottom: 1.15rem; }
-  .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-  .ai-box { background: rgba(255,255,255,0.05); border-radius: 7px; padding: 0.88rem 0.95rem; }
-  .ai-box h4 { font-size: 0.68rem; color: var(--green-bright); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.45rem; }
-  .ai-box ul { list-style: none; padding: 0; }
-  .ai-box ul li { font-size: 0.8rem; color: rgba(255,255,255,0.66); padding: 0.17rem 0 0.17rem 0.95rem; position: relative; line-height: 1.48; }
-  .ai-box ul li::before { content: '→'; position: absolute; left: 0; color: var(--green-bright); font-size: 0.66rem; top: 0.27rem; }
-  .ai-tip { grid-column: span 2; background: rgba(255,255,255,0.04); border-radius: 7px; padding: 0.88rem 0.95rem; }
-  .ai-tip h4 { font-size: 0.68rem; color: var(--green-bright); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.38rem; }
-  .ai-tip p { font-size: 0.8rem; color: rgba(255,255,255,0.63); line-height: 1.62; }
-
-  /* ── ABOUT ── */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.75rem; align-items: center; }
   .about-img-ph { aspect-ratio: 4/5; border-radius: 10px; border: 1px dashed rgba(0,0,0,0.12); background: #e5e0d8; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.55rem; color: var(--text-light); font-size: 0.76rem; }
   .about-img-ph .ico { font-size: 2rem; opacity: 0.28; }
   .about-content p { color: var(--text-mid); line-height: 1.78; margin-bottom: 0.9rem; font-size: 0.9rem; }
   .badges { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1.1rem; }
   .badge { display: inline-flex; align-items: center; gap: 0.38rem; background: var(--green-pale); border: 1px solid rgba(61,122,61,0.2); color: var(--green-dark); padding: 0.35rem 0.8rem; border-radius: 100px; font-size: 0.76rem; }
-
-  /* ── GALLERY ── */
   .gal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 2.25rem; }
   .g-item { border-radius: 8px; border: 1px dashed rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.42rem; color: var(--text-light); font-size: 0.7rem; background: #ede9e1; min-height: 160px; }
   .g-item .ico { font-size: 1.5rem; opacity: 0.26; }
   .g-item.feat { grid-column: span 2; grid-row: span 2; min-height: 330px; }
-
-  /* ── CONTACT ── */
   .contact-sec { background: var(--green-deep); padding: 4.5rem 2.5rem; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.75rem; align-items: start; }
   .contact-sec h2 { color: #fff; }
@@ -230,12 +119,7 @@
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
   .ff { display: flex; flex-direction: column; gap: 0.32rem; }
   .ff label { font-size: 0.67rem; color: rgba(255,255,255,0.38); letter-spacing: 0.07em; text-transform: uppercase; }
-  .ff input, .ff textarea, .ff select {
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(90,170,90,0.18);
-    color: #fff; padding: 0.68rem 0.88rem; border-radius: 7px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.87rem; outline: none;
-    transition: border-color 0.2s; -webkit-appearance: none;
-  }
+  .ff input, .ff textarea, .ff select { background: rgba(255,255,255,0.06); border: 1px solid rgba(90,170,90,0.18); color: #fff; padding: 0.68rem 0.88rem; border-radius: 7px; font-family: 'DM Sans', sans-serif; font-size: 0.87rem; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
   .ff input:focus, .ff textarea:focus, .ff select:focus { border-color: var(--green-bright); }
   .ff input::placeholder, .ff textarea::placeholder { color: rgba(255,255,255,0.2); }
   .ff textarea { resize: vertical; min-height: 95px; line-height: 1.58; }
@@ -243,8 +127,6 @@
   .form-submit { background: var(--green-bright); color: var(--green-deep); padding: 0.82rem; border: none; border-radius: 7px; font-family: 'DM Sans', sans-serif; font-size: 0.92rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
   .form-submit:hover { background: #6dc96d; }
   .form-note { font-size: 0.7rem; color: rgba(255,255,255,0.3); text-align: center; }
-
-  /* ── FOOTER ── */
   footer { background: #0e1e0e; padding: 1.6rem 2.5rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(90,170,90,0.08); flex-wrap: wrap; gap: 0.9rem; }
   .flogo { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 900; color: #fff; }
   .flogo span { color: var(--green-bright); }
@@ -252,20 +134,17 @@
   .flinks a { font-size: 0.76rem; color: rgba(255,255,255,0.32); text-decoration: none; }
   .flinks a:hover { color: rgba(255,255,255,0.58); }
   footer p { font-size: 0.76rem; color: rgba(255,255,255,0.22); }
-
-  /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 0.85rem 1.25rem; }
     .nav-links { gap: 1rem; }
     .hero { padding: 7rem 1.25rem 9rem; }
     .hero::before, .hero-img-area { display: none; }
     .hero-stats { left: 1.25rem; gap: 1.5rem; }
-    section.sec, .ai-section, .contact-sec { padding: 3rem 1.25rem; }
+    section.sec, .contact-sec { padding: 3rem 1.25rem; }
     .trust-bar, .zones, .reviews-strip { padding: 1rem 1.25rem; }
     .trust-div { display: none; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .process-steps { grid-template-columns: 1fr 1fr; }
-    .ai-inputs { grid-template-columns: 1fr; }
     .gal-grid { grid-template-columns: 1fr 1fr; }
     .g-item.feat { grid-column: span 2; grid-row: span 1; }
     footer { flex-direction: column; text-align: center; padding: 1.25rem; }
@@ -275,359 +154,1177 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════ NAV -->
+<!-- NAV -->
 <nav>
   <div class="nav-logo">Vert<span>mex</span></div>
   <ul class="nav-links">
-    <li><a href="#services"  data-fr="Services"          data-en="Services">Services</a></li>
-    <li><a href="#ai-design" data-fr="Conception IA"     data-en="AI Design">Conception IA</a></li>
-    <li><a href="#about"     data-fr="À Propos"          data-en="About">À Propos</a></li>
-    <li><a href="#portfolio" data-fr="Portfolio"         data-en="Portfolio">Portfolio</a></li>
-    <li><a href="#contact"   class="nav-cta"
-           data-fr="Soumission Gratuite"                 data-en="Free Quote">Soumission Gratuite</a></li>
+    <li><a href="#services"  data-fr="Services"       data-en="Services">Services</a></li>
+    <li><a href="#ai-design" data-fr="Conception IA"  data-en="AI Design">Conception IA</a></li>
+    <li><a href="#about"     data-fr="À Propos"  data-en="About">À Propos</a></li>
+    <li><a href="#portfolio" data-fr="Portfolio"      data-en="Portfolio">Portfolio</a></li>
+    <li><a href="#contact" class="nav-cta" data-fr="Soumission Gratuite" data-en="Free Quote">Soumission Gratuite</a></li>
     <li><button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button></li>
   </ul>
 </nav>
 
-<!-- ═══════════════════════════════════════════ HERO -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <div class="hero-eyebrow"
-         data-fr="Saint-Rémi, Québec — Montérégie &amp; Grand Montréal"
-         data-en="Saint-Rémi, Québec — Montérégie &amp; Greater Montréal">
-      Saint-Rémi, Québec — Montérégie &amp; Grand Montréal
-    </div>
-    <h1 data-fr="Là où la Nature<br>rencontre le <em>Design</em>"
-        data-en="Where Nature<br>Meets <em>Design</em>">
-      Là où la Nature<br>rencontre le <em>Design</em>
-    </h1>
-    <p class="hero-sub"
-       data-fr="Vertmex transforme vos espaces extérieurs en œuvres vivantes. Aménagement paysager professionnel, conception et entretien pour résidences et commerces en Montérégie et Grand Montréal."
-       data-en="Vertmex transforms your outdoor spaces into living works of art. Professional landscaping, design and maintenance for homes and businesses across Montérégie and Greater Montréal.">
-      Vertmex transforme vos espaces extérieurs en œuvres vivantes. Aménagement paysager professionnel, conception et entretien pour résidences et commerces en Montérégie et Grand Montréal.
-    </p>
+    <div class="hero-eyebrow" data-fr="Saint-Rémi, Québec — Montérégie &amp; Grand Montréal" data-en="Saint-Rémi, Québec — Montérégie &amp; Greater Montréal">Saint-Rémi, Québec — Montérégie &amp; Grand Montréal</div>
+    <h1 data-fr="Là où la Nature<br>rencontre le <em>Design</em>" data-en="Where Nature<br>Meets <em>Design</em>">Là où la Nature<br>rencontre le <em>Design</em></h1>
+    <p class="hero-sub" data-fr="Vertmex transforme vos espaces extérieurs en œuvres vivantes. Aménagement paysager professionnel, conception et entretien pour résidences et commerces en Montérégie et Grand Montréal." data-en="Vertmex transforms your outdoor spaces into living works of art. Professional landscaping, design and maintenance for homes and businesses across Montérégie and Greater Montréal.">Vertmex transforme vos espaces extérieurs en œuvres vivantes. Aménagement paysager professionnel, conception et entretien pour résidences et commerces en Montérégie et Grand Montréal.</p>
     <div class="hero-actions">
-      <a href="#ai-design" class="btn-primary"
-         data-fr="Visualiser mon espace" data-en="Visualize My Space">Visualiser mon espace</a>
-      <a href="#contact" class="btn-ghost"
-         data-fr="Soumission gratuite" data-en="Free Quote">Soumission gratuite</a>
+      <a href="#ai-design" class="btn-primary" data-fr="Visualiser mon espace" data-en="Visualize My Space">Visualiser mon espace</a>
+      <a href="#contact" class="btn-ghost" data-fr="Soumission gratuite" data-en="Free Quote">Soumission gratuite</a>
     </div>
-    <div class="hero-guarantee">
-      <span class="chk">✓</span>
-      <span data-fr="Réponse garantie en 24h — Entrepreneur vérifié — Sans surprise sur les prix"
-            data-en="Response guaranteed in 24h — Verified contractor — No surprise pricing">
-        Réponse garantie en 24h — Entrepreneur vérifié — Sans surprise sur les prix
-      </span>
-    </div>
+    <div class="hero-guarantee"><span class="chk">✓</span><span data-fr="Réponse garantie en 24h — Entrepreneur vérifié — Sans surprise sur les prix" data-en="Response guaranteed in 24h — Verified contractor — No surprise pricing">Réponse garantie en 24h — Entrepreneur vérifié — Sans surprise sur les prix</span></div>
   </div>
-  <div class="hero-img-area">
-    <div class="img-ph">
-      <div class="ico">🌿</div>
-      <span data-fr="Ajoutez votre photo principale ici" data-en="Add your hero photo here">
-        Ajoutez votre photo principale ici
-      </span>
-    </div>
-  </div>
+  <div class="hero-img-area"><div class="img-ph"><div class="ico">🌿</div><span data-fr="Ajoutez votre photo principale ici" data-en="Add your hero photo here">Ajoutez votre photo principale ici</span></div></div>
   <div class="hero-stats">
-    <div class="stat">
-      <strong>14+</strong>
-      <span data-fr="Experts qualifiés" data-en="Expert team members">Experts qualifiés</span>
-    </div>
-    <div class="stat">
-      <strong>18</strong>
-      <span data-fr="Services offerts" data-en="Services offered">Services offerts</span>
-    </div>
-    <div class="stat">
-      <strong>15+</strong>
-      <span data-fr="Régions desservies" data-en="Regions served">Régions desservies</span>
-    </div>
+    <div class="stat"><strong>14+</strong><span data-fr="Experts qualifiés" data-en="Expert team members">Experts qualifiés</span></div>
+    <div class="stat"><strong>18</strong><span data-fr="Services offerts" data-en="Services offered">Services offerts</span></div>
+    <div class="stat"><strong>15+</strong><span data-fr="Régions desservies" data-en="Regions served">Régions desservies</span></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════ TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item">✅ <strong data-fr="Entrepreneur vérifié" data-en="Verified contractor">Entrepreneur vérifié</strong></div>
-    <div class="trust-div"></div>
-    <div class="trust-item">🛡️ <span data-fr="Entièrement assuré &amp; licencié" data-en="Fully insured &amp; licensed">Entièrement assuré &amp; licencié</span></div>
-    <div class="trust-div"></div>
-    <div class="trust-item">🇨🇦 <span data-fr="Entreprise québécoise — Saint-Rémi, QC" data-en="Québec business — Saint-Rémi, QC">Entreprise québécoise — Saint-Rémi, QC</span></div>
-    <div class="trust-div"></div>
-    <div class="trust-item">🌿 <span data-fr="18 services d'aménagement paysager" data-en="18 landscaping services">18 services d'aménagement paysager</span></div>
-    <div class="trust-div"></div>
-    <div class="trust-item">💬 <span data-fr="Service en français et en anglais" data-en="Service in French and English">Service en français et en anglais</span></div>
-  </div>
-</div>
+<!-- TRUST BAR -->
+<div class="trust-bar"><div class="trust-inner">
+  <div class="trust-item">✅ <strong data-fr="Entrepreneur vérifié" data-en="Verified contractor">Entrepreneur vérifié</strong></div>
+  <div class="trust-div"></div>
+  <div class="trust-item">🛡️ <span data-fr="Entièrement assuré &amp; licencié" data-en="Fully insured &amp; licensed">Entièrement assuré &amp; licencié</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item">🇨🇦 <span data-fr="Entreprise québécoise — Saint-Rémi, QC" data-en="Québec business — Saint-Rémi, QC">Entreprise québécoise — Saint-Rémi, QC</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item">🌿 <span data-fr="18 services d’aménagement paysager" data-en="18 landscaping services">18 services d’aménagement paysager</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item">💬 <span data-fr="Service en français et en anglais" data-en="Service in French and English">Service en français et en anglais</span></div>
+</div></div>
 
-<!-- ═══════════════════════════════════════════ ZONES -->
-<div class="zones">
-  <div class="zones-inner">
-    <span class="zones-label"
-          data-fr="Régions desservies :" data-en="Regions served:">Régions desservies :</span>
-    <span class="zone-pill">Longueuil</span>
-    <span class="zone-pill">Roussillon</span>
-    <span class="zone-pill">Vaudreuil-Soulanges</span>
-    <span class="zone-pill">La Vallée-du-Richelieu</span>
-    <span class="zone-pill">Haut-Richelieu</span>
-    <span class="zone-pill">Beauharnois-Salaberry</span>
-    <span class="zone-pill">Marguerite-D'Youville</span>
-    <span class="zone-pill">Les Maskoutains</span>
-    <span class="zone-pill">Brome-Missisquoi</span>
-    <span class="zone-pill">Rouville</span>
-    <span class="zone-pill">Acton</span>
-    <span class="zone-pill">Pierre-De Saurel</span>
-    <span class="zone-pill">Haut-Saint-Laurent</span>
-    <span class="zone-pill">Jardins-de-Napierville</span>
-    <span class="zone-pill">Les Îles-de-la-Madeleine</span>
-  </div>
-</div>
+<!-- ZONES -->
+<div class="zones"><div class="zones-inner">
+  <span class="zones-label" data-fr="Régions desservies :" data-en="Regions served:">Régions desservies :</span>
+  <span class="zone-pill">Longueuil</span><span class="zone-pill">Roussillon</span><span class="zone-pill">Vaudreuil-Soulanges</span><span class="zone-pill">La Vallée-du-Richelieu</span><span class="zone-pill">Haut-Richelieu</span><span class="zone-pill">Beauharnois-Salaberry</span><span class="zone-pill">Marguerite-D’Youville</span><span class="zone-pill">Les Maskoutains</span><span class="zone-pill">Brome-Missisquoi</span><span class="zone-pill">Rouville</span><span class="zone-pill">Acton</span><span class="zone-pill">Pierre-De Saurel</span><span class="zone-pill">Haut-Saint-Laurent</span><span class="zone-pill">Jardins-de-Napierville</span><span class="zone-pill">Les Îles-de-la-Madeleine</span>
+</div></div>
 
-<!-- ═══════════════════════════════════════════ REVIEWS -->
-<div class="reviews-strip">
-  <div class="reviews-inner">
-    <div class="review-score">
-      <div class="score-num">4.9</div>
-      <div class="stars">★★★★★</div>
-      <div class="rev-count" data-fr="Avis clients" data-en="Client reviews">Avis clients</div>
-    </div>
-    <div class="rev-div"></div>
-    <div class="reviews-scroll">
-      <div class="rev-card">
-        <div class="r-stars">★★★★★</div>
-        <div class="r-text"
-             data-fr="«&nbsp;Travail exceptionnel sur notre cour arrière. Professionnels, ponctuels et le résultat dépasse nos attentes!&nbsp;»"
-             data-en="&quot;Exceptional work on our backyard. Professional, punctual and the result exceeded our expectations!&quot;">
-          «&nbsp;Travail exceptionnel sur notre cour arrière. Professionnels, ponctuels et le résultat dépasse nos attentes!&nbsp;»
-        </div>
-        <div class="r-author">— Marie-Ève T., Longueuil</div>
-      </div>
-      <div class="rev-card">
-        <div class="r-stars">★★★★★</div>
-        <div class="r-text"
-             data-fr="«&nbsp;Équipe sérieuse, prix honnêtes. Ils ont transformé notre entrée en pavé-uni. Je recommande fortement Vertmex.&nbsp;»"
-             data-en="&quot;Serious team, honest prices. They transformed our driveway with pave-uni. I strongly recommend Vertmex.&quot;">
-          «&nbsp;Équipe sérieuse, prix honnêtes. Ils ont transformé notre entrée en pavé-uni. Je recommande fortement Vertmex.&nbsp;»
-        </div>
-        <div class="r-author">— Jean-François B., Roussillon</div>
-      </div>
-      <div class="rev-card">
-        <div class="r-stars">★★★★★</div>
-        <div class="r-text"
-             data-fr="«&nbsp;Service impeccable du début à la fin. Très utile pour visualiser le projet avant les travaux.&nbsp;»"
-             data-en="&quot;Impeccable service from start to finish. Very useful to visualize the project before the work.&quot;">
-          «&nbsp;Service impeccable du début à la fin. Très utile pour visualiser le projet avant les travaux.&nbsp;»
-        </div>
-        <div class="r-author">— Sophie M., Vaudreuil-Soulanges</div>
-      </div>
-    </div>
+<!-- REVIEWS -->
+<div class="reviews-strip"><div class="reviews-inner">
+  <div class="review-score"><div class="score-num">4.9</div><div class="stars">★★★★★</div><div class="rev-count" data-fr="Avis clients" data-en="Client reviews">Avis clients</div></div>
+  <div class="rev-div"></div>
+  <div class="reviews-scroll">
+    <div class="rev-card"><div class="r-stars">★★★★★</div><div class="r-text" data-fr="« Travail exceptionnel sur notre cour arrière. Professionnels, ponctuels et le résultat dépasse nos attentes! »" data-en="&quot;Exceptional work on our backyard. Professional, punctual and the result exceeded our expectations!&quot;">« Travail exceptionnel sur notre cour arrière. Professionnels, ponctuels et le résultat dépasse nos attentes! »</div><div class="r-author">— Marie-Êve T., Longueuil</div></div>
+    <div class="rev-card"><div class="r-stars">★★★★★</div><div class="r-text" data-fr="« Êquipe sérieuse, prix honnêtes. Ils ont transformé notre entrée en pavé-uni. Je recommande fortement Vertmex. »" data-en="&quot;Serious team, honest prices. They transformed our driveway with pave-uni. I strongly recommend Vertmex.&quot;">« Êquipe sérieuse, prix honnêtes. Ils ont transformé notre entrée en pavé-uni. Je recommande fortement Vertmex. »</div><div class="r-author">— Jean-François B., Roussillon</div></div>
+    <div class="rev-card"><div class="r-stars">★★★★★</div><div class="r-text" data-fr="« Service impeccable du début à la fin. Très utile pour visualiser le projet avant les travaux. »" data-en="&quot;Impeccable service from start to finish. Very useful to visualize the project before the work.&quot;">« Service impeccable du début à la fin. Très utile pour visualiser le projet avant les travaux. »</div><div class="r-author">— Sophie M., Vaudreuil-Soulanges</div></div>
   </div>
-</div>
+</div></div>
 
-<!-- ═══════════════════════════════════════════ SERVICES -->
+<!-- SERVICES -->
 <section class="sec" id="services" style="background:#fff;">
   <div class="svc-hdr">
     <div class="sl" data-fr="Ce que nous faisons" data-en="What we do">Ce que nous faisons</div>
-    <h2 data-fr="18 services d'aménagement paysager" data-en="18 Landscaping Services">18 services d'aménagement paysager</h2>
-    <p class="sec-sub"
-       data-fr="De la conception complète à l'entretien régulier — nous offrons une gamme complète de services pour transformer votre espace extérieur en Montérégie et Grand Montréal."
-       data-en="From full design to regular maintenance — we offer a complete range of services to transform your outdoor space across Montérégie and Greater Montréal.">
-      De la conception complète à l'entretien régulier — nous offrons une gamme complète de services pour transformer votre espace extérieur en Montérégie et Grand Montréal.
-    </p>
+    <h2 data-fr="18 services d’aménagement paysager" data-en="18 Landscaping Services">18 services d’aménagement paysager</h2>
+    <p class="sec-sub" data-fr="De la conception complète à l’entretien régulier — nous offrons une gamme complète de services pour transformer votre espace extérieur en Montérégie et Grand Montréal." data-en="From full design to regular maintenance — we offer a complete range of services to transform your outdoor space across Montérégie and Greater Montréal.">De la conception complète à l’entretien régulier — nous offrons une gamme complète de services pour transformer votre espace extérieur en Montérégie et Grand Montréal.</p>
   </div>
   <div class="svc-grid">
-    <div class="svc-card"><div class="s-ico">🌱</div>
-      <h3 data-fr="Aménagement complet" data-en="Full Landscaping">Aménagement complet</h3>
-      <p data-fr="Conception et réalisation complète de votre espace extérieur, du plan initial aux finitions." data-en="Complete design and execution of your outdoor space, from initial plan to finishing touches.">Conception et réalisation complète de votre espace extérieur, du plan initial aux finitions.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">🪨</div>
-      <h3 data-fr="Pavé-uni &amp; pavage" data-en="Pave-Uni &amp; Paving">Pavé-uni &amp; pavage</h3>
-      <p data-fr="Entrées, allées, terrasses et stationnements en pavé-uni et asphalte. Qualité premium." data-en="Driveways, walkways, patios and parking in pave-uni and asphalt. Premium quality.">Entrées, allées, terrasses et stationnements en pavé-uni et asphalte. Qualité premium.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">🌳</div>
-      <h3 data-fr="Arbres, haies &amp; émondage" data-en="Trees, Hedges &amp; Pruning">Arbres, haies &amp; émondage</h3>
-      <p data-fr="Taille, façonnage, émondage et abattage par des professionnels certifiés." data-en="Pruning, shaping, trimming and removal by certified professionals.">Taille, façonnage, émondage et abattage par des professionnels certifiés.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">🧱</div>
-      <h3 data-fr="Murets &amp; béton" data-en="Retaining Walls &amp; Concrete">Murets &amp; béton</h3>
-      <p data-fr="Murets de soutènement, fondations béton, escaliers et structures durables." data-en="Retaining walls, concrete foundations, stairs and durable structures.">Murets de soutènement, fondations béton, escaliers et structures durables.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">🌺</div>
-      <h3 data-fr="Horticulture &amp; jardinage" data-en="Horticulture &amp; Gardening">Horticulture &amp; jardinage</h3>
-      <p data-fr="Plantation, massifs de fleurs, vivaces et aménagements horticoles adaptés au climat québécois." data-en="Planting, flower beds, perennials and horticultural arrangements suited to Québec's climate.">Plantation, massifs de fleurs, vivaces et aménagements horticoles adaptés au climat québécois.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">💧</div>
-      <h3 data-fr="Irrigation" data-en="Irrigation">Irrigation</h3>
-      <p data-fr="Systèmes d'arrosage intelligents, automatisés et économes en eau pour votre propriété." data-en="Smart, automated and water-efficient irrigation systems for your property.">Systèmes d'arrosage intelligents, automatisés et économes en eau pour votre propriété.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">🎋</div>
-      <h3 data-fr="Pergolas" data-en="Pergolas">Pergolas</h3>
-      <p data-fr="Conception et installation de pergolas et structures d'ombrage pour agrandir votre espace de vie." data-en="Design and installation of pergolas and shade structures to extend your living space.">Conception et installation de pergolas et structures d'ombrage pour agrandir votre espace de vie.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">🏊</div>
-      <h3 data-fr="Aménagement piscine" data-en="Pool Landscaping">Aménagement piscine</h3>
-      <p data-fr="Aménagement paysager autour des piscines — plages, terrasses, végétation et éclairage." data-en="Landscaping around pools — decks, patios, vegetation and lighting.">Aménagement paysager autour des piscines — plages, terrasses, végétation et éclairage.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">🌿</div>
-      <h3 data-fr="Tourbe &amp; gazon" data-en="Sod &amp; Lawn">Tourbe &amp; gazon</h3>
-      <p data-fr="Installation de tourbe et ensemencement pour un gazon vert et dense, instantanément." data-en="Sod installation and seeding for an instantly lush, green lawn.">Installation de tourbe et ensemencement pour un gazon vert et dense, instantanément.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">🚧</div>
-      <h3 data-fr="Clôtures" data-en="Fencing">Clôtures</h3>
-      <p data-fr="Installation et réparation de clôtures résidentielles et commerciales — bois, vinyle, aluminium." data-en="Installation and repair of residential and commercial fencing — wood, vinyl, aluminum.">Installation et réparation de clôtures résidentielles et commerciales — bois, vinyle, aluminium.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">⛏️</div>
-      <h3 data-fr="Excavation" data-en="Excavation">Excavation</h3>
-      <p data-fr="Travaux d'excavation, nivellement et préparation de terrain pour tout type de projet." data-en="Excavation, leveling and site preparation for any type of project.">Travaux d'excavation, nivellement et préparation de terrain pour tout type de projet.</p>
-    </div>
-    <div class="svc-card"><div class="s-ico">🛣️</div>
-      <h3 data-fr="Scellant d'entrée" data-en="Driveway Sealing">Scellant d'entrée</h3>
-      <p data-fr="Application de scellant, entretien saisonnier et nettoyage pour prolonger la vie de vos surfaces." data-en="Sealant application, seasonal maintenance and cleaning to extend the life of your surfaces.">Application de scellant, entretien saisonnier et nettoyage pour prolonger la vie de vos surfaces.</p>
-    </div>
+    <div class="svc-card"><div class="s-ico">🌱</div><h3 data-fr="Aménagement complet" data-en="Full Landscaping">Aménagement complet</h3><p data-fr="Conception et réalisation complète de votre espace extérieur, du plan initial aux finitions." data-en="Complete design and execution of your outdoor space, from initial plan to finishing touches.">Conception et réalisation complète de votre espace extérieur, du plan initial aux finitions.</p></div>
+    <div class="svc-card"><div class="s-ico">🪨</div><h3 data-fr="Pavé-uni &amp; pavage" data-en="Pave-Uni &amp; Paving">Pavé-uni &amp; pavage</h3><p data-fr="Entrées, allées, terrasses et stationnements en pavé-uni et asphalte. Qualité premium." data-en="Driveways, walkways, patios and parking in pave-uni and asphalt. Premium quality.">Entrées, allées, terrasses et stationnements en pavé-uni et asphalte. Qualité premium.</p></div>
+    <div class="svc-card"><div class="s-ico">🌳</div><h3 data-fr="Arbres, haies &amp; émondage" data-en="Trees, Hedges &amp; Pruning">Arbres, haies &amp; émondage</h3><p data-fr="Taille, façonnage, émondage et abattage par des professionnels certifiés." data-en="Pruning, shaping, trimming and removal by certified professionals.">Taille, façonnage, émondage et abattage par des professionnels certifiés.</p></div>
+    <div class="svc-card"><div class="s-ico">🧱</div><h3 data-fr="Murets &amp; béton" data-en="Retaining Walls &amp; Concrete">Murets &amp; béton</h3><p data-fr="Murets de soutènement, fondations béton, escaliers et structures durables." data-en="Retaining walls, concrete foundations, stairs and durable structures.">Murets de soutènement, fondations béton, escaliers et structures durables.</p></div>
+    <div class="svc-card"><div class="s-ico">🌺</div><h3 data-fr="Horticulture &amp; jardinage" data-en="Horticulture &amp; Gardening">Horticulture &amp; jardinage</h3><p data-fr="Plantation, massifs de fleurs, vivaces et aménagements horticoles adaptés au climat québécois." data-en="Planting, flower beds, perennials and horticultural arrangements suited to Québec's climate.">Plantation, massifs de fleurs, vivaces et aménagements horticoles adaptés au climat québécois.</p></div>
+    <div class="svc-card"><div class="s-ico">💧</div><h3 data-fr="Irrigation" data-en="Irrigation">Irrigation</h3><p data-fr="Systèmes d’arrosage intelligents, automatisés et économes en eau pour votre propriété." data-en="Smart, automated and water-efficient irrigation systems for your property.">Systèmes d’arrosage intelligents, automatisés et économes en eau pour votre propriété.</p></div>
+    <div class="svc-card"><div class="s-ico">🎋</div><h3 data-fr="Pergolas" data-en="Pergolas">Pergolas</h3><p data-fr="Conception et installation de pergolas et structures d’ombrage pour agrandir votre espace de vie." data-en="Design and installation of pergolas and shade structures to extend your living space.">Conception et installation de pergolas et structures d’ombrage pour agrandir votre espace de vie.</p></div>
+    <div class="svc-card"><div class="s-ico">🏊</div><h3 data-fr="Aménagement piscine" data-en="Pool Landscaping">Aménagement piscine</h3><p data-fr="Aménagement paysager autour des piscines — plages, terrasses, végétation et éclairage." data-en="Landscaping around pools — decks, patios, vegetation and lighting.">Aménagement paysager autour des piscines — plages, terrasses, végétation et éclairage.</p></div>
+    <div class="svc-card"><div class="s-ico">🌿</div><h3 data-fr="Tourbe &amp; gazon" data-en="Sod &amp; Lawn">Tourbe &amp; gazon</h3><p data-fr="Installation de tourbe et ensemencement pour un gazon vert et dense, instantanément." data-en="Sod installation and seeding for an instantly lush, green lawn.">Installation de tourbe et ensemencement pour un gazon vert et dense, instantanément.</p></div>
+    <div class="svc-card"><div class="s-ico">🚧</div><h3 data-fr="Clôtures" data-en="Fencing">Clôtures</h3><p data-fr="Installation et réparation de clôtures résidentielles et commerciales — bois, vinyle, aluminium." data-en="Installation and repair of residential and commercial fencing — wood, vinyl, aluminum.">Installation et réparation de clôtures résidentielles et commerciales — bois, vinyle, aluminium.</p></div>
+    <div class="svc-card"><div class="s-ico">⛏️</div><h3 data-fr="Excavation" data-en="Excavation">Excavation</h3><p data-fr="Travaux d’excavation, nivellement et préparation de terrain pour tout type de projet." data-en="Excavation, leveling and site preparation for any type of project.">Travaux d’excavation, nivellement et préparation de terrain pour tout type de projet.</p></div>
+    <div class="svc-card"><div class="s-ico">🛣️</div><h3 data-fr="Scellant d’entrée" data-en="Driveway Sealing">Scellant d’entrée</h3><p data-fr="Application de scellant, entretien saisonnier et nettoyage pour prolonger la vie de vos surfaces." data-en="Sealant application, seasonal maintenance and cleaning to extend the life of your surfaces.">Application de scellant, entretien saisonnier et nettoyage pour prolonger la vie de vos surfaces.</p></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════ PROCESS -->
+<!-- PROCESS -->
 <section class="sec" id="process" style="background:var(--cream);">
   <div style="text-align:center;">
-    <div class="sl" style="justify-content:center;"
-         data-fr="Comment ça fonctionne" data-en="How it works">Comment ça fonctionne</div>
+    <div class="sl" style="justify-content:center;" data-fr="Comment ça fonctionne" data-en="How it works">Comment ça fonctionne</div>
     <h2 data-fr="Simple du début à la fin" data-en="Simple from start to finish">Simple du début à la fin</h2>
   </div>
   <div class="process-steps">
-    <div class="p-step"><div class="step-num">1</div>
-      <h3 data-fr="Consultation gratuite" data-en="Free consultation">Consultation gratuite</h3>
-      <p data-fr="Contactez-nous et recevez une réponse en 24h. Nous visitons votre propriété sans frais." data-en="Contact us and receive a response within 24h. We visit your property at no charge.">Contactez-nous et recevez une réponse en 24h. Nous visitons votre propriété sans frais.</p>
-    </div>
-    <div class="p-step"><div class="step-num">2</div>
-      <h3 data-fr="Conception &amp; IA" data-en="Design &amp; AI">Conception &amp; IA</h3>
-      <p data-fr="Nous créons votre design personnalisé, visualisé grâce à notre outil IA avant de commencer." data-en="We create your custom design, visualized with our AI tool before we start.">Nous créons votre design personnalisé, visualisé grâce à notre outil IA avant de commencer.</p>
-    </div>
-    <div class="p-step"><div class="step-num">3</div>
-      <h3 data-fr="Réalisation experte" data-en="Expert execution">Réalisation experte</h3>
-      <p data-fr="Nos 14 professionnels réalisent votre projet avec soin, dans les délais convenus." data-en="Our 14 professionals complete your project with care, on agreed timelines.">Nos 14 professionnels réalisent votre projet avec soin, dans les délais convenus.</p>
-    </div>
-    <div class="p-step"><div class="step-num">4</div>
-      <h3 data-fr="Suivi &amp; entretien" data-en="Follow-up &amp; maintenance">Suivi &amp; entretien</h3>
-      <p data-fr="Nous restons disponibles pour l'entretien continu de votre espace toute l'année." data-en="We remain available for year-round ongoing maintenance of your space.">Nous restons disponibles pour l'entretien continu de votre espace toute l'année.</p>
-    </div>
+    <div class="p-step"><div class="step-num">1</div><h3 data-fr="Consultation gratuite" data-en="Free consultation">Consultation gratuite</h3><p data-fr="Contactez-nous et recevez une réponse en 24h. Nous visitons votre propriété sans frais." data-en="Contact us and receive a response within 24h. We visit your property at no charge.">Contactez-nous et recevez une réponse en 24h. Nous visitons votre propriété sans frais.</p></div>
+    <div class="p-step"><div class="step-num">2</div><h3 data-fr="Conception &amp; IA" data-en="Design &amp; AI">Conception &amp; IA</h3><p data-fr="Nous créons votre design personnalisé, visualisé grâce à notre outil IA avant de commencer." data-en="We create your custom design, visualized with our AI tool before we start.">Nous créons votre design personnalisé, visualisé grâce à notre outil IA avant de commencer.</p></div>
+    <div class="p-step"><div class="step-num">3</div><h3 data-fr="Réalisation experte" data-en="Expert execution">Réalisation experte</h3><p data-fr="Nos 14 professionnels réalisent votre projet avec soin, dans les délais convenus." data-en="Our 14 professionals complete your project with care, on agreed timelines.">Nos 14 professionnels réalisent votre projet avec soin, dans les délais convenus.</p></div>
+    <div class="p-step"><div class="step-num">4</div><h3 data-fr="Suivi &amp; entretien" data-en="Follow-up &amp; maintenance">Suivi &amp; entretien</h3><p data-fr="Nous restons disponibles pour l’entretien continu de votre espace toute l’année." data-en="We remain available for year-round ongoing maintenance of your space.">Nous restons disponibles pour l’entretien continu de votre espace toute l’année.</p></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════ AI DESIGN TOOL -->
-<section class="ai-section" id="ai-design">
-  <div class="ai-wrap">
-    <div class="ai-hdr">
-      <div class="sl" data-fr="Propulsé par l'IA" data-en="Powered by AI">Propulsé par l'IA</div>
-      <h2 data-fr="Visualisez votre jardin de rêve" data-en="Visualize Your Dream Garden">Visualisez votre jardin de rêve</h2>
-      <p class="sec-sub"
-         data-fr="Décrivez votre espace et laissez notre assistant IA générer un concept de design paysager personnalisé — avant même de commencer les travaux."
-         data-en="Describe your space and let our AI assistant generate a personalized landscape design concept — before we even break ground.">
-        Décrivez votre espace et laissez notre assistant IA générer un concept de design paysager personnalisé — avant même de commencer les travaux.
-      </p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-inputs">
-        <div class="ig">
-          <label data-fr="Type de propriété" data-en="Property type">Type de propriété</label>
-          <select id="propType">
-            <option value="" data-fr="Choisir..." data-en="Select...">Choisir...</option>
-            <option data-fr="Résidentiel – Cour avant"       data-en="Residential – Front yard">Résidentiel – Cour avant</option>
-            <option data-fr="Résidentiel – Cour arrière"     data-en="Residential – Backyard">Résidentiel – Cour arrière</option>
-            <option data-fr="Résidentiel – Propriété complète" data-en="Residential – Full property">Résidentiel – Propriété complète</option>
-            <option data-fr="Propriété commerciale"          data-en="Commercial property">Propriété commerciale</option>
-            <option data-fr="Aménagement piscine"            data-en="Pool landscaping">Aménagement piscine</option>
-          </select>
-        </div>
-        <div class="ig">
-          <label data-fr="Style de design" data-en="Design style">Style de design</label>
-          <select id="designStyle">
-            <option value="" data-fr="Choisir..." data-en="Select...">Choisir...</option>
-            <option data-fr="Moderne minimaliste"         data-en="Modern minimalist">Moderne minimaliste</option>
-            <option data-fr="Traditionnel / classique"    data-en="Traditional / classic">Traditionnel / classique</option>
-            <option data-fr="Champêtre / naturel"         data-en="Cottage / naturalistic">Champêtre / naturel</option>
-            <option data-fr="Zen / japonais"              data-en="Zen / Japanese-inspired">Zen / japonais</option>
-            <option data-fr="Méditerranéen"               data-en="Mediterranean">Méditerranéen</option>
-            <option data-fr="Plantes indigènes / écologique" data-en="Native plants / ecological">Plantes indigènes / écologique</option>
-          </select>
-        </div>
-        <div class="ig">
-          <label data-fr="Superficie approximative" data-en="Approximate size">Superficie approximative</label>
-          <select id="spaceSize">
-            <option value="" data-fr="Choisir..." data-en="Select...">Choisir...</option>
-            <option data-fr="Petit (moins de 18 m²)"    data-en="Small (under 200 sq ft)">Petit (moins de 18 m²)</option>
-            <option data-fr="Moyen (18–75 m²)"          data-en="Medium (200–800 sq ft)">Moyen (18–75 m²)</option>
-            <option data-fr="Grand (75–185 m²)"         data-en="Large (800–2000 sq ft)">Grand (75–185 m²)</option>
-            <option data-fr="Domaine (185 m² et plus)"  data-en="Estate (2000+ sq ft)">Domaine (185 m² et plus)</option>
-          </select>
-        </div>
-        <div class="ig">
-          <label data-fr="Budget approximatif" data-en="Budget range">Budget approximatif</label>
-          <select id="budget">
-            <option value="" data-fr="Choisir..." data-en="Select...">Choisir...</option>
-            <option data-fr="Moins de 5 000 $"       data-en="Under $5,000">Moins de 5 000 $</option>
-            <option data-fr="5 000 $ – 15 000 $"     data-en="$5,000 – $15,000">5 000 $ – 15 000 $</option>
-            <option data-fr="15 000 $ – 40 000 $"    data-en="$15,000 – $40,000">15 000 $ – 40 000 $</option>
-            <option data-fr="40 000 $ et plus"       data-en="$40,000+">40 000 $ et plus</option>
-          </select>
-        </div>
-      </div>
-      <div class="ai-desc">
-        <label data-fr="Décrivez votre espace et vos souhaits" data-en="Describe your space and wishes">
-          Décrivez votre espace et vos souhaits
-        </label>
-        <textarea id="userDesc"
-          data-fr-placeholder="Ex. : J'ai une cour ensoleillée à Longueuil avec une terrasse. Je veux quelque chose de facile d'entretien avec des vivaces, un peu d'intimité et peut-être une pergola..."
-          data-en-placeholder="e.g. I have a sunny backyard in Longueuil with an existing patio. I want something low-maintenance with perennial flowers, some privacy screening, and maybe a pergola..."
-          placeholder="Ex. : J'ai une cour ensoleillée à Longueuil avec une terrasse. Je veux quelque chose de facile d'entretien avec des vivaces, un peu d'intimité et peut-être une pergola...">
-        </textarea>
-      </div>
-      <button class="ai-btn" id="aiBtn" onclick="generateDesign()">
-        <span id="aiBtnText"
-              data-fr="✦ Générer mon concept paysager"
-              data-en="✦ Generate My Landscape Concept">✦ Générer mon concept paysager</span>
-      </button>
-      <div class="ai-loading" id="aiLoading">
-        <span id="aiLoadText"
-              data-fr="Création de votre concept paysager personnalisé..."
-              data-en="Crafting your personalized landscape concept...">
-          Création de votre concept paysager personnalisé...
-        </span>
-      </div>
-      <div class="ai-result" id="aiResult">
-        <div class="ai-rl" data-fr="✦ Votre concept paysager" data-en="✦ Your Landscape Concept">
-          ✦ Votre concept paysager
-        </div>
-        <div class="ai-vision" id="aiVision"></div>
-        <div class="ai-grid" id="aiGrid"></div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ═════════════════════════════════════════════ AI DESIGN TOOL -->
 
-<!-- ═══════════════════════════════════════════ ABOUT -->
+<style>) and JavaScript
+  (inside <script>) needed — no extra files required.
+  ============================================================
+-->
+
+<!-- ░░ STYLES — paste inside <head> OR keep here, both work ░░ -->
+<style>
+/* All classes use vtx- prefix to avoid conflicts with existing styles */
+
+.vtx-ai-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f0faf0 0%, #e8f5e9 100%);
+}
+
+.vtx-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Section header */
+.vtx-badge {
+  display: inline-block;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.vtx-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #1b5e20;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.vtx-subtitle {
+  font-size: 1.05rem;
+  color: #4a7c4e;
+  margin: 0 0 36px;
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+/* Mode toggle tabs */
+.vtx-tabs {
+  display: flex;
+  background: #fff;
+  border-radius: 14px;
+  padding: 5px;
+  gap: 4px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 460px;
+}
+
+.vtx-tab {
+  flex: 1;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  color: #666;
+}
+
+.vtx-tab.active {
+  background: #2e7d32;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(46,125,50,0.35);
+}
+
+.vtx-tab:not(.active):hover {
+  background: #f1f8f1;
+  color: #2e7d32;
+}
+
+/* Main card */
+.vtx-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+/* Mode panels */
+.vtx-panel { display: none; }
+.vtx-panel.active { display: block; }
+
+/* Photo upload area */
+.vtx-upload-zone {
+  border: 2px dashed #a5d6a7;
+  border-radius: 14px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fafffe;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vtx-upload-zone:hover,
+.vtx-upload-zone.drag-over {
+  border-color: #2e7d32;
+  background: #f1f8f1;
+}
+
+.vtx-upload-zone.has-photo {
+  border-style: solid;
+  border-color: #2e7d32;
+  padding: 0;
+}
+
+.vtx-upload-placeholder { pointer-events: none; }
+
+.vtx-upload-icon {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.vtx-upload-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2e7d32;
+  margin: 0 0 6px;
+}
+
+.vtx-upload-hint {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+.vtx-photo-preview {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: none;
+}
+
+.vtx-change-photo {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+.vtx-upload-zone.has-photo .vtx-change-photo { display: block; }
+
+/* Form elements */
+.vtx-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 560px) {
+  .vtx-form-row { grid-template-columns: 1fr; }
+  .vtx-tabs { max-width: 100%; }
+}
+
+.vtx-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 560px) {
+  .vtx-form-grid { grid-template-columns: 1fr; }
+}
+
+.vtx-form-group { display: flex; flex-direction: column; gap: 6px; }
+
+.vtx-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.vtx-select,
+.vtx-input,
+.vtx-textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #c8e6c9;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.vtx-select:focus,
+.vtx-input:focus,
+.vtx-textarea:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
+}
+
+.vtx-textarea { resize: vertical; min-height: 90px; }
+
+.vtx-full-width { grid-column: 1 / -1; }
+
+/* Generate button */
+.vtx-generate-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: 0.3px;
+}
+
+.vtx-generate-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(46,125,50,0.35);
+}
+
+.vtx-generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.vtx-btn-star {
+  font-size: 1.1rem;
+  animation: vtx-spin 3s linear infinite;
+}
+
+@keyframes vtx-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading state */
+.vtx-loading {
+  text-align: center;
+  padding: 50px 20px;
+  display: none;
+}
+
+.vtx-spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid #c8e6c9;
+  border-top-color: #2e7d32;
+  border-radius: 50%;
+  animation: vtx-rotate 0.9s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes vtx-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.vtx-loading-msg {
+  font-size: 1rem;
+  color: #2e7d32;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.vtx-loading-hint {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+/* Result area */
+.vtx-result {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  display: none;
+}
+
+.vtx-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.vtx-result-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1b5e20;
+  margin: 0;
+}
+
+.vtx-download-btn {
+  background: #f1f8f1;
+  color: #2e7d32;
+  border: 1.5px solid #a5d6a7;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.vtx-download-btn:hover {
+  background: #2e7d32;
+  color: #fff;
+  border-color: #2e7d32;
+}
+
+/* Before / After slider */
+.vtx-ba-wrapper {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.vtx-ba-container {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  user-select: none;
+  cursor: ew-resize;
+  line-height: 0;
+}
+
+.vtx-ba-before,
+.vtx-ba-after {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+.vtx-ba-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  clip-path: inset(0 50% 0 0);
+}
+
+.vtx-ba-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: #fff;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.vtx-ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #2e7d32;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  pointer-events: none;
+  letter-spacing: -1px;
+}
+
+.vtx-ba-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Single result image (text mode) */
+.vtx-result-img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* CTA below result */
+.vtx-result-cta {
+  background: linear-gradient(135deg, #f1f8f1, #e8f5e9);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.vtx-result-cta p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.vtx-cta-btn {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.vtx-cta-btn:hover {
+  background: #1b5e20;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(46,125,50,0.3);
+}
+
+/* Error state */
+.vtx-error {
+  background: #fff5f5;
+  border: 1.5px solid #ffcdd2;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  display: none;
+}
+
+.vtx-error p {
+  color: #c62828;
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+}
+
+.vtx-retry-btn {
+  background: #fff;
+  color: #c62828;
+  border: 1.5px solid #ef9a9a;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vtx-retry-btn:hover {
+  background: #c62828;
+  color: #fff;
+  border-color: #c62828;
+}
+
+/* Try again button (below result) */
+.vtx-try-again-btn {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 11px;
+  background: transparent;
+  color: #666;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vtx-try-again-btn:hover {
+  border-color: #2e7d32;
+  color: #2e7d32;
+}
+</style>
+
+<section id="ai-design"> block in your
+    main HTML file and replace it entirely with this section.
+
+  This includes all the CSS (inside <style>) and JavaScript
+  (inside <script>) needed — no extra files required.
+  ============================================================
+-->
+
+<!-- ░░ STYLES — paste inside <head> OR keep here, both work ░░ -->
+<style>
+/* All classes use vtx- prefix to avoid conflicts with existing styles */
+
+.vtx-ai-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f0faf0 0%, #e8f5e9 100%);
+}
+
+.vtx-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Section header */
+.vtx-badge {
+  display: inline-block;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.vtx-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #1b5e20;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.vtx-subtitle {
+  font-size: 1.05rem;
+  color: #4a7c4e;
+  margin: 0 0 36px;
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+/* Mode toggle tabs */
+.vtx-tabs {
+  display: flex;
+  background: #fff;
+  border-radius: 14px;
+  padding: 5px;
+  gap: 4px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 460px;
+}
+
+.vtx-tab {
+  flex: 1;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  color: #666;
+}
+
+.vtx-tab.active {
+  background: #2e7d32;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(46,125,50,0.35);
+}
+
+.vtx-tab:not(.active):hover {
+  background: #f1f8f1;
+  color: #2e7d32;
+}
+
+/* Main card */
+.vtx-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+/* Mode panels */
+.vtx-panel { display: none; }
+.vtx-panel.active { display: block; }
+
+/* Photo upload area */
+.vtx-upload-zone {
+  border: 2px dashed #a5d6a7;
+  border-radius: 14px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fafffe;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vtx-upload-zone:hover,
+.vtx-upload-zone.drag-over {
+  border-color: #2e7d32;
+  background: #f1f8f1;
+}
+
+.vtx-upload-zone.has-photo {
+  border-style: solid;
+  border-color: #2e7d32;
+  padding: 0;
+}
+
+.vtx-upload-placeholder { pointer-events: none; }
+
+.vtx-upload-icon {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.vtx-upload-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2e7d32;
+  margin: 0 0 6px;
+}
+
+.vtx-upload-hint {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+.vtx-photo-preview {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: none;
+}
+
+.vtx-change-photo {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+.vtx-upload-zone.has-photo .vtx-change-photo { display: block; }
+
+/* Form elements */
+.vtx-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 560px) {
+  .vtx-form-row { grid-template-columns: 1fr; }
+  .vtx-tabs { max-width: 100%; }
+}
+
+.vtx-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 560px) {
+  .vtx-form-grid { grid-template-columns: 1fr; }
+}
+
+.vtx-form-group { display: flex; flex-direction: column; gap: 6px; }
+
+.vtx-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.vtx-select,
+.vtx-input,
+.vtx-textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #c8e6c9;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.vtx-select:focus,
+.vtx-input:focus,
+.vtx-textarea:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
+}
+
+.vtx-textarea { resize: vertical; min-height: 90px; }
+
+.vtx-full-width { grid-column: 1 / -1; }
+
+/* Generate button */
+.vtx-generate-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: 0.3px;
+}
+
+.vtx-generate-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(46,125,50,0.35);
+}
+
+.vtx-generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.vtx-btn-star {
+  font-size: 1.1rem;
+  animation: vtx-spin 3s linear infinite;
+}
+
+@keyframes vtx-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading state */
+.vtx-loading {
+  text-align: center;
+  padding: 50px 20px;
+  display: none;
+}
+
+.vtx-spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid #c8e6c9;
+  border-top-color: #2e7d32;
+  border-radius: 50%;
+  animation: vtx-rotate 0.9s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes vtx-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.vtx-loading-msg {
+  font-size: 1rem;
+  color: #2e7d32;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.vtx-loading-hint {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+/* Result area */
+.vtx-result {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  display: none;
+}
+
+.vtx-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.vtx-result-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1b5e20;
+  margin: 0;
+}
+
+.vtx-download-btn {
+  background: #f1f8f1;
+  color: #2e7d32;
+  border: 1.5px solid #a5d6a7;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.vtx-download-btn:hover {
+  background: #2e7d32;
+  color: #fff;
+  border-color: #2e7d32;
+}
+
+/* Before / After slider */
+.vtx-ba-wrapper {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.vtx-ba-container {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  user-select: none;
+  cursor: ew-resize;
+  line-height: 0;
+}
+
+.vtx-ba-before,
+.vtx-ba-after {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+.vtx-ba-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  clip-path: inset(0 50% 0 0);
+}
+
+.vtx-ba-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: #fff;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.vtx-ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #2e7d32;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  pointer-events: none;
+  letter-spacing: -1px;
+}
+
+.vtx-ba-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Single result image (text mode) */
+.vtx-result-img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* CTA below result */
+.vtx-result-cta {
+  background: linear-gradient(135deg, #f1f8f1, #e8f5e9);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.vtx-result-cta p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.vtx-cta-btn {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.vtx-cta-btn:hover {
+  background: #1b5e20;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(46,125,50,0.3);
+}
+
+/* Error state */
+.vtx-error {
+  background: #fff5f5;
+  border: 1.5px solid #ffcdd2;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  display: none;
+}
+
+.vtx-error p {
+  color: #c62828;
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+}
+
+.vtx-retry-btn {
+  background: #fff;
+  color: #c62828;
+  border: 1.5px solid #ef9a9a;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vtx-retry-btn:hover {
+  background: #c62828;
+  color: #fff;
+  border-color: #c62828;
+}
+
+/* Try again button (below result) */
+.vtx-try-again-btn {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 11px;
+  background: transparent;
+  color: #666;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vtx-try-again-btn:hover {
+  border-color: #2e7d32;
+  color: #2e7d32;
+}
+</style>
+<!-- ░░ END STYLES ░░ -->
+
+
+<!-- ░░ SECTION — replace the existing <section id="ai-design">...</section>
+
+<!-- ABOUT -->
 <section class="sec" id="about" style="background:#fff;">
   <div class="about-grid">
-    <div class="about-img-ph">
-      <div class="ico">👥</div>
-      <span data-fr="Photo de l'équipe ici" data-en="Team photo here">Photo de l'équipe ici</span>
-    </div>
+    <div class="about-img-ph"><div class="ico">👥</div><span data-fr="Photo de l’équipe ici" data-en="Team photo here">Photo de l’équipe ici</span></div>
     <div class="about-content">
       <div class="sl" data-fr="À propos de Vertmex" data-en="About Vertmex">À propos de Vertmex</div>
-      <h2 data-fr="Experts paysagistes de la Montérégie" data-en="Montérégie's Landscaping Experts">
-        Experts paysagistes de la Montérégie
-      </h2>
-      <p data-fr="Basée à Saint-Rémi, en Montérégie, Vertmex est une entreprise québécoise dédiée à transformer vos espaces extérieurs en véritables œuvres vivantes. Entrepreneur vérifié, nous desservons 15 régions de la Montérégie et du Grand Montréal."
-         data-en="Based in Saint-Rémi, Montérégie, Vertmex is a Québec business dedicated to transforming your outdoor spaces into true living works of art. A verified contractor, we serve 15 regions across Montérégie and Greater Montréal.">
-        Basée à Saint-Rémi, en Montérégie, Vertmex est une entreprise québécoise dédiée à transformer vos espaces extérieurs en véritables œuvres vivantes. Entrepreneur vérifié, nous desservons 15 régions de la Montérégie et du Grand Montréal.
-      </p>
-      <p data-fr="Notre équipe de 14 professionnels qualifiés offre 18 services d'aménagement paysager — des pergolas et piscines aux murets, pavé-uni, irrigation et clôtures. Nous connaissons le climat, les sols et les plantes de votre région."
-         data-en="Our team of 14 qualified professionals offers 18 landscaping services — from pergolas and pools to retaining walls, pave-uni, irrigation and fencing. We know your region's climate, soils and plants.">
-        Notre équipe de 14 professionnels qualifiés offre 18 services d'aménagement paysager — des pergolas et piscines aux murets, pavé-uni, irrigation et clôtures. Nous connaissons le climat, les sols et les plantes de votre région.
-      </p>
-      <p data-fr="Nous sommes vos voisins — nous traitons chaque propriété comme si c'était la nôtre."
-         data-en="We are your neighbours — we treat every property like our own.">
-        Nous sommes vos voisins — nous traitons chaque propriété comme si c'était la nôtre.
-      </p>
+      <h2 data-fr="Experts paysagistes de la Montérégie" data-en="Montérégie's Landscaping Experts">Experts paysagistes de la Montérégie</h2>
+      <p data-fr="Basée à Saint-Rémi, en Montérégie, Vertmex est une entreprise québécoise dédiée à transformer vos espaces extérieurs en véritables œuvres vivantes. Entrepreneur vérifié, nous desservons 15 régions de la Montérégie et du Grand Montréal." data-en="Based in Saint-Rémi, Montérégie, Vertmex is a Québec business dedicated to transforming your outdoor spaces into true living works of art. A verified contractor, we serve 15 regions across Montérégie and Greater Montréal.">Basée à Saint-Rémi, en Montérégie, Vertmex est une entreprise québécoise dédiée à transformer vos espaces extérieurs en véritables œuvres vivantes. Entrepreneur vérifié, nous desservons 15 régions de la Montérégie et du Grand Montréal.</p>
+      <p data-fr="Notre équipe de 14 professionnels qualifiés offre 18 services d’aménagement paysager — des pergolas et piscines aux murets, pavé-uni, irrigation et clôtures. Nous connaissons le climat, les sols et les plantes de votre région." data-en="Our team of 14 qualified professionals offers 18 landscaping services — from pergolas and pools to retaining walls, pave-uni, irrigation and fencing. We know your region's climate, soils and plants.">Notre équipe de 14 professionnels qualifiés offre 18 services d’aménagement paysager — des pergolas et piscines aux murets, pavé-uni, irrigation et clôtures. Nous connaissons le climat, les sols et les plantes de votre région.</p>
+      <p data-fr="Nous sommes vos voisins — nous traitons chaque propriété comme si c’était la nôtre." data-en="We are your neighbours — we treat every property like our own.">Nous sommes vos voisins — nous traitons chaque propriété comme si c’était la nôtre.</p>
       <div class="badges">
         <span class="badge">✅ <span data-fr="Entrepreneur vérifié" data-en="Verified contractor">Entrepreneur vérifié</span></span>
         <span class="badge">📍 <span>Saint-Rémi, QC J0L 2N0</span></span>
@@ -639,16 +1336,12 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════ PORTFOLIO -->
+<!-- PORTFOLIO -->
 <section class="sec" id="portfolio">
   <div>
     <div class="sl" data-fr="Nos réalisations" data-en="Our work">Nos réalisations</div>
     <h2 data-fr="Projets récents" data-en="Recent Projects">Projets récents</h2>
-    <p class="sec-sub"
-       data-fr="Ajoutez vos photos de projets ici — pavé-uni, pergolas, aménagements complets, piscines et plus."
-       data-en="Add your project photos here — pave-uni, pergolas, full landscaping, pools and more.">
-      Ajoutez vos photos de projets ici — pavé-uni, pergolas, aménagements complets, piscines et plus.
-    </p>
+    <p class="sec-sub" data-fr="Ajoutez vos photos de projets ici — pavé-uni, pergolas, aménagements complets, piscines et plus." data-en="Add your project photos here — pave-uni, pergolas, full landscaping, pools and more.">Ajoutez vos photos de projets ici — pavé-uni, pergolas, aménagements complets, piscines et plus.</p>
   </div>
   <div class="gal-grid">
     <div class="g-item feat"><div class="ico">🌄</div><span data-fr="Photo vedette du projet" data-en="Featured project photo">Photo vedette du projet</span></div>
@@ -659,162 +1352,81 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════ CONTACT -->
+<!-- CONTACT -->
 <section class="contact-sec" id="contact">
   <div class="contact-grid">
     <div>
       <div class="sl" data-fr="Contactez-nous" data-en="Get in touch">Contactez-nous</div>
-      <h2 data-fr="Prêt à transformer votre espace ?" data-en="Ready to transform your space?">
-        Prêt à transformer votre espace ?
-      </h2>
-      <p class="sec-sub"
-         data-fr="Soumission gratuite en 24h. Nous desservons toute la Montérégie et le Grand Montréal."
-         data-en="Free quote within 24h. We serve all of Montérégie and Greater Montréal.">
-        Soumission gratuite en 24h. Nous desservons toute la Montérégie et le Grand Montréal.
-      </p>
+      <h2 data-fr="Prêt à transformer votre espace ?" data-en="Ready to transform your space?">Prêt à transformer votre espace ?</h2>
+      <p class="sec-sub" data-fr="Soumission gratuite en 24h. Nous desservons toute la Montérégie et le Grand Montréal." data-en="Free quote within 24h. We serve all of Montérégie and Greater Montréal.">Soumission gratuite en 24h. Nous desservons toute la Montérégie et le Grand Montréal.</p>
       <div class="cinfo">
-        <div class="c-item">
-          <div class="c-ico">📍</div>
-          <div class="c-txt">
-            <strong data-fr="Adresse" data-en="Address">Adresse</strong>
-            <span>164a Rue Saint-Patrice, Saint-Rémi, QC J0L 2N0</span>
-          </div>
-        </div>
-        <div class="c-item">
-          <div class="c-ico">📞</div>
-          <div class="c-txt">
-            <strong data-fr="Téléphone" data-en="Phone">Téléphone</strong>
-            <span>(438) 728-7513</span>
-          </div>
-        </div>
-        <div class="c-item">
-          <div class="c-ico">✉️</div>
-          <div class="c-txt">
-            <strong>Email</strong>
-            <span>info@vertmex.ca</span>
-          </div>
-        </div>
-        <div class="c-item">
-          <div class="c-ico">🕐</div>
-          <div class="c-txt">
-            <strong data-fr="Heures" data-en="Hours">Heures</strong>
-            <span data-fr="Lun–Sam : 7h – 18h" data-en="Mon–Sat: 7am – 6pm">Lun–Sam : 7h – 18h</span>
-          </div>
-        </div>
-        <div class="c-item">
-          <div class="c-ico">🗺️</div>
-          <div class="c-txt">
-            <strong data-fr="Zones" data-en="Coverage">Zones</strong>
-            <span data-fr="Montérégie (15 régions) &amp; Grand Montréal" data-en="Montérégie (15 regions) &amp; Greater Montréal">
-              Montérégie (15 régions) &amp; Grand Montréal
-            </span>
-          </div>
-        </div>
+        <div class="c-item"><div class="c-ico">📍</div><div class="c-txt"><strong data-fr="Adresse" data-en="Address">Adresse</strong><span>164a Rue Saint-Patrice, Saint-Rémi, QC J0L 2N0</span></div></div>
+        <div class="c-item"><div class="c-ico">📞</div><div class="c-txt"><strong data-fr="Téléphone" data-en="Phone">Téléphone</strong><span>(438) 728-7513</span></div></div>
+        <div class="c-item"><div class="c-ico">✉️</div><div class="c-txt"><strong>Email</strong><span>info@vertmex.ca</span></div></div>
+        <div class="c-item"><div class="c-ico">🕐</div><div class="c-txt"><strong data-fr="Heures" data-en="Hours">Heures</strong><span data-fr="Lun–Sam : 7h – 18h" data-en="Mon–Sat: 7am – 6pm">Lun–Sam : 7h – 18h</span></div></div>
+        <div class="c-item"><div class="c-ico">🗺️</div><div class="c-txt"><strong data-fr="Zones" data-en="Coverage">Zones</strong><span data-fr="Montérégie (15 régions) &amp; Grand Montréal" data-en="Montérégie (15 regions) &amp; Greater Montréal">Montérégie (15 régions) &amp; Grand Montréal</span></div></div>
       </div>
-      <div class="guar-box">
-        <div class="g-ico">🛡️</div>
-        <p data-fr="<strong>Soumission gratuite en 24h.</strong> Entrepreneur vérifié — pas de surprise sur les prix. Chaque devis est détaillé, clair et sans engagement."
-           data-en="<strong>Free quote within 24h.</strong> Verified contractor — no surprise pricing. Every estimate is detailed, clear and commitment-free.">
-          <strong>Soumission gratuite en 24h.</strong> Entrepreneur vérifié — pas de surprise sur les prix. Chaque devis est détaillé, clair et sans engagement.
-        </p>
-      </div>
+      <div class="guar-box"><div class="g-ico">🛡️</div><p data-fr="<strong>Soumission gratuite en 24h.</strong> Entrepreneur vérifié — pas de surprise sur les prix. Chaque devis est détaillé, clair et sans engagement." data-en="<strong>Free quote within 24h.</strong> Verified contractor — no surprise pricing. Every estimate is detailed, clear and commitment-free."><strong>Soumission gratuite en 24h.</strong> Entrepreneur vérifié — pas de surprise sur les prix. Chaque devis est détaillé, clair et sans engagement.</p></div>
     </div>
     <div>
       <div class="cform">
         <div class="form-row">
-          <div class="ff">
-            <label data-fr="Prénom" data-en="First name">Prénom</label>
-            <input type="text" data-fr-placeholder="Jean" data-en-placeholder="John" placeholder="Jean">
-          </div>
-          <div class="ff">
-            <label data-fr="Nom" data-en="Last name">Nom</label>
-            <input type="text" data-fr-placeholder="Tremblay" data-en-placeholder="Smith" placeholder="Tremblay">
-          </div>
+          <div class="ff"><label data-fr="Prénom" data-en="First name">Prénom</label><input type="text" data-fr-placeholder="Jean" data-en-placeholder="John" placeholder="Jean"></div>
+          <div class="ff"><label data-fr="Nom" data-en="Last name">Nom</label><input type="text" data-fr-placeholder="Tremblay" data-en-placeholder="Smith" placeholder="Tremblay"></div>
         </div>
-        <div class="ff">
-          <label>Email</label>
-          <input type="email" placeholder="jean@exemple.com">
-        </div>
-        <div class="ff">
-          <label data-fr="Téléphone" data-en="Phone">Téléphone</label>
-          <input type="tel" placeholder="514-XXX-XXXX">
-        </div>
+        <div class="ff"><label>Email</label><input type="email" placeholder="jean@exemple.com"></div>
+        <div class="ff"><label data-fr="Téléphone" data-en="Phone">Téléphone</label><input type="tel" placeholder="514-XXX-XXXX"></div>
         <div class="ff">
           <label data-fr="Service souhaité" data-en="Service needed">Service souhaité</label>
           <select>
-            <option data-fr="Choisir un service..."      data-en="Select a service...">Choisir un service...</option>
-            <option data-fr="Aménagement complet"        data-en="Full Landscaping">Aménagement complet</option>
-            <option data-fr="Pavé-uni &amp; pavage"      data-en="Pave-Uni &amp; Paving">Pavé-uni &amp; pavage</option>
+            <option data-fr="Choisir un service..." data-en="Select a service...">Choisir un service...</option>
+            <option data-fr="Aménagement complet" data-en="Full Landscaping">Aménagement complet</option>
+            <option data-fr="Pavé-uni &amp; pavage" data-en="Pave-Uni &amp; Paving">Pavé-uni &amp; pavage</option>
             <option data-fr="Arbres, haies &amp; émondage" data-en="Trees, Hedges &amp; Pruning">Arbres, haies &amp; émondage</option>
-            <option data-fr="Murets &amp; béton"         data-en="Retaining Walls &amp; Concrete">Murets &amp; béton</option>
+            <option data-fr="Murets &amp; béton" data-en="Retaining Walls &amp; Concrete">Murets &amp; béton</option>
             <option data-fr="Horticulture &amp; jardinage" data-en="Horticulture &amp; Gardening">Horticulture &amp; jardinage</option>
-            <option data-fr="Irrigation"                 data-en="Irrigation">Irrigation</option>
-            <option data-fr="Pergola"                    data-en="Pergola">Pergola</option>
-            <option data-fr="Aménagement piscine"        data-en="Pool Landscaping">Aménagement piscine</option>
-            <option data-fr="Tourbe &amp; gazon"         data-en="Sod &amp; Lawn">Tourbe &amp; gazon</option>
-            <option data-fr="Clôtures"                   data-en="Fencing">Clôtures</option>
-            <option data-fr="Excavation"                 data-en="Excavation">Excavation</option>
-            <option data-fr="Scellant d'entrée"          data-en="Driveway Sealing">Scellant d'entrée</option>
-            <option data-fr="Autre / Projet complet"     data-en="Other / Full project">Autre / Projet complet</option>
+            <option data-fr="Irrigation" data-en="Irrigation">Irrigation</option>
+            <option data-fr="Pergola" data-en="Pergola">Pergola</option>
+            <option data-fr="Aménagement piscine" data-en="Pool Landscaping">Aménagement piscine</option>
+            <option data-fr="Tourbe &amp; gazon" data-en="Sod &amp; Lawn">Tourbe &amp; gazon</option>
+            <option data-fr="Clôtures" data-en="Fencing">Clôtures</option>
+            <option data-fr="Excavation" data-en="Excavation">Excavation</option>
+            <option data-fr="Scellant d’entrée" data-en="Driveway Sealing">Scellant d’entrée</option>
+            <option data-fr="Autre / Projet complet" data-en="Other / Full project">Autre / Projet complet</option>
           </select>
         </div>
-        <div class="ff">
-          <label data-fr="Parlez-nous de votre projet" data-en="Tell us about your project">
-            Parlez-nous de votre projet
-          </label>
-          <textarea
-            data-fr-placeholder="Décrivez votre espace, votre région, votre calendrier et vos objectifs..."
-            data-en-placeholder="Describe your space, region, timeline and goals..."
-            placeholder="Décrivez votre espace, votre région, votre calendrier et vos objectifs...">
-          </textarea>
-        </div>
-        <button class="form-submit"
-                data-fr="Envoyer ma demande →"
-                data-en="Send my request →">Envoyer ma demande →</button>
-        <p class="form-note"
-           data-fr="Réponse en 24h • Sans frais • Sans engagement • Entrepreneur vérifié"
-           data-en="Response in 24h • No charge • No commitment • Verified contractor">
-          Réponse en 24h • Sans frais • Sans engagement • Entrepreneur vérifié
-        </p>
+        <div class="ff"><label data-fr="Parlez-nous de votre projet" data-en="Tell us about your project">Parlez-nous de votre projet</label><textarea data-fr-placeholder="Décrivez votre espace, votre région, votre calendrier et vos objectifs..." data-en-placeholder="Describe your space, region, timeline and goals..." placeholder="Décrivez votre espace, votre région, votre calendrier et vos objectifs..."></textarea></div>
+        <button class="form-submit" data-fr="Envoyer ma demande →" data-en="Send my request →">Envoyer ma demande →</button>
+        <p class="form-note" data-fr="Réponse en 24h • Sans frais • Sans engagement • Entrepreneur vérifié" data-en="Response in 24h • No charge • No commitment • Verified contractor">Réponse en 24h • Sans frais • Sans engagement • Entrepreneur vérifié</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════ FOOTER -->
+<!-- FOOTER -->
 <footer>
   <div>
     <div class="flogo">Vert<span>mex</span></div>
-    <p style="font-size:0.7rem; color:rgba(255,255,255,0.28); margin-top:0.25rem;"
-       data-fr="Saint-Rémi, QC — Montérégie &amp; Grand Montréal"
-       data-en="Saint-Rémi, QC — Montérégie &amp; Greater Montréal">
-      Saint-Rémi, QC — Montérégie &amp; Grand Montréal
-    </p>
+    <p style="font-size:0.7rem; color:rgba(255,255,255,0.28); margin-top:0.25rem;" data-fr="Saint-Rémi, QC — Montérégie &amp; Grand Montréal" data-en="Saint-Rémi, QC — Montérégie &amp; Greater Montréal">Saint-Rémi, QC — Montérégie &amp; Grand Montréal</p>
   </div>
   <div class="flinks">
-    <a href="#services"  data-fr="Services"     data-en="Services">Services</a>
+    <a href="#services" data-fr="Services" data-en="Services">Services</a>
     <a href="#ai-design" data-fr="Conception IA" data-en="AI Design">Conception IA</a>
-    <a href="#about"     data-fr="À Propos"      data-en="About">À Propos</a>
-    <a href="#contact"   data-fr="Contact"       data-en="Contact">Contact</a>
+    <a href="#about" data-fr="À Propos" data-en="About">À Propos</a>
+    <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
   </div>
-  <p data-fr="© 2025 Vertmex. Tous droits réservés. Saint-Rémi, QC."
-     data-en="© 2025 Vertmex. All rights reserved. Saint-Rémi, QC.">
-    © 2025 Vertmex. Tous droits réservés. Saint-Rémi, QC.
-  </p>
+  <p data-fr="© 2025 Vertmex. Tous droits réservés. Saint-Rémi, QC." data-en="© 2025 Vertmex. All rights reserved. Saint-Rémi, QC.">© 2025 Vertmex. Tous droits réservés. Saint-Rémi, QC.</p>
 </footer>
 
-<!-- ═══════════════════════════════════════════ SCRIPTS -->
+<!-- LANG SCRIPT -->
 <script>
-  /* ── Language toggle ── */
   let lang = 'fr';
-
   function toggleLang() {
     lang = lang === 'fr' ? 'en' : 'fr';
     document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
     document.documentElement.lang = lang;
     applyLang();
   }
-
   function applyLang() {
     document.querySelectorAll('[data-fr]').forEach(el => {
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') return;
@@ -830,121 +1442,364 @@
       if (val) opt.textContent = val;
     });
   }
+</script>
 
-  /* ── AI Design tool ──
-     NOTE: The Anthropic API key is handled automatically when this page
-     is served through Claude.ai. If you host this file independently,
-     you will need to route the API call through your own backend to
-     keep your API key secure. Never expose your API key in frontend code.
-  */
-  async function generateDesign() {
-    const propType = document.getElementById('propType').value;
-    const style    = document.getElementById('designStyle').value;
-    const size     = document.getElementById('spaceSize').value;
-    const budget   = document.getElementById('budget').value;
-    const desc     = document.getElementById('userDesc').value.trim();
+<!-- ▒▒ VERTMEX AI — vtx functions ▒▒ -->
+<script>
+(function () {
+  'use strict';
 
-    if (!desc && !propType) { document.getElementById('userDesc').focus(); return; }
+  // ── State ──────────────────────────────────────────────
+  let vtxMode = 'photo';          // 'photo' | 'text'
+  let vtxPhotoData = null;        // base64 data URI of uploaded photo
+  let vtxOriginalPhoto = null;    // same — kept for before/after slider
+  let vtxBAActive = false;        // is the slider being dragged?
+  let vtxPollTimer = null;        // polling interval ID (photo mode only)
 
-    const btn     = document.getElementById('aiBtn');
-    const loading = document.getElementById('aiLoading');
-    const result  = document.getElementById('aiResult');
+  // ── Pollinations config (text mode — free, no API key) ──
+  // Pollinations.ai generates images via a simple URL — the browser
+  // loads it like any other image. No account or key required.
 
-    btn.disabled = true;
-    loading.classList.add('vis');
-    result.classList.remove('vis');
+  const STYLE_PROMPTS = {
+    'Moderne minimaliste':            'modern minimalist landscaping, clean lines, geometric shapes, ornamental grasses, concrete accents',
+    'Traditionnel / classique':       'traditional classic formal garden, symmetrical beds, rose bushes, neat hedges, brick pathways',
+    'Champêtre / naturel':            'rustic cottage garden, wildflowers, natural stone, wooden elements, organic flowing shapes',
+    'Zen / japonais':                 'zen japanese garden, bamboo, raked gravel, stone lanterns, moss, peaceful and serene',
+    'Méditerranéen':                  'mediterranean garden, lavender, olive trees, terracotta pots, drought-resistant plants, warm tones',
+    'Plantes indigènes / écologique': 'native plants ecological garden, Quebec native species, naturalized, sustainable, low maintenance',
+  };
+  const POLLINATIONS_BASE = 'https://image.pollinations.ai/prompt/';
+  const POLLINATIONS_PARAMS = 'width=1024&height=768&model=flux&nologo=true&enhance=true';
 
-    const isEn      = lang === 'en';
-    const langInstr = isEn
-      ? 'Respond entirely in English.'
-      : 'Réponds entièrement en français québécois.';
+  // Loading messages — rotate every 6 seconds to keep the user patient
+  const LOADING_MSGS = [
+    'Analyse de votre espace...',
+    'Génération du concept paysager...',
+    'Application du style choisi...',
+    'Ajout des détails végétaux...',
+    'Finalisation de votre design...',
+  ];
+  let vtxLoadingIndex = 0;
+  let vtxLoadingInterval = null;
 
-    const prompt = `You are a professional landscape designer at Vertmex, a landscaping company based in Saint-Rémi, Montérégie, Québec. ${langInstr}
+  // ── Mode switch ────────────────────────────────────────
+  window.vtxSetMode = function (mode) {
+    vtxMode = mode;
+    document.getElementById('vtx-panel-photo').classList.toggle('active', mode === 'photo');
+    document.getElementById('vtx-panel-text').classList.toggle('active', mode === 'text');
+    document.getElementById('vtx-tab-photo').classList.toggle('active', mode === 'photo');
+    document.getElementById('vtx-tab-text').classList.toggle('active', mode === 'text');
+    vtxHideResult();
+    vtxHideError();
+  };
 
-Client details:
-- Property type: ${propType || 'Not specified'}
-- Design style: ${style || 'Not specified'}
-- Space size: ${size || 'Not specified'}
-- Budget: ${budget || 'Not specified'}
-- Description: ${desc || 'No details provided'}
+  // ── File upload ────────────────────────────────────────
+  window.vtxTriggerUpload = function () {
+    document.getElementById('vtx-file-input').click();
+  };
 
-Write a personalized landscape design concept. Structure your response EXACTLY as follows:
+  window.vtxHandleFile = function (event) {
+    const file = event.target.files[0];
+    if (file) vtxProcessFile(file);
+  };
 
-VISION:
-[2-3 sentences of evocative design vision]
+  window.vtxDragOver = function (event) {
+    event.preventDefault();
+    document.getElementById('vtx-upload-zone').classList.add('drag-over');
+  };
 
-PLANTES:
-- [plant 1 suited for Montérégie Zone 5b climate]
-- [plant 2]
-- [plant 3]
-- [plant 4]
-- [plant 5]
+  window.vtxDragLeave = function () {
+    document.getElementById('vtx-upload-zone').classList.remove('drag-over');
+  };
 
-ELEMENTS:
-- [design feature 1]
-- [design feature 2]
-- [design feature 3]
-- [design feature 4]
+  window.vtxDrop = function (event) {
+    event.preventDefault();
+    document.getElementById('vtx-upload-zone').classList.remove('drag-over');
+    const file = event.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) vtxProcessFile(file);
+  };
 
-CONSEIL:
-[One specific Montérégie/Québec climate tip]
-
-Keep total under 270 words. Be specific, inspiring and mention Montérégie where relevant.`;
-
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          messages: [{ role: 'user', content: prompt }]
-        })
-      });
-      const data = await res.json();
-      const text = data.content.map(b => b.text || '').join('');
-
-      const vM = text.match(/VISION:\s*([\s\S]*?)(?=PLANTES:|$)/i);
-      const pM = text.match(/PLANTES:\s*([\s\S]*?)(?=ELEMENTS:|$)/i);
-      const eM = text.match(/ELEMENTS:\s*([\s\S]*?)(?=CONSEIL:|$)/i);
-      const tM = text.match(/CONSEIL:\s*([\s\S]*?)$/i);
-
-      document.getElementById('aiVision').textContent = vM ? vM[1].trim() : text;
-
-      const pL = isEn ? 'Recommended Plants'  : 'Plantes recommandées';
-      const eL = isEn ? 'Key Design Features' : 'Éléments de design';
-      const tL = isEn ? '🍁 Montérégie Climate Tip' : '🍁 Conseil climatique Montérégie';
-
-      let grid = '';
-      if (pM) {
-        const items = pM[1].trim().split('\n').filter(l => l.trim())
-          .map(l => `<li>${l.replace(/^-\s*/, '')}</li>`).join('');
-        grid += `<div class="ai-box"><h4>${pL}</h4><ul>${items}</ul></div>`;
-      }
-      if (eM) {
-        const items = eM[1].trim().split('\n').filter(l => l.trim())
-          .map(l => `<li>${l.replace(/^-\s*/, '')}</li>`).join('');
-        grid += `<div class="ai-box"><h4>${eL}</h4><ul>${items}</ul></div>`;
-      }
-      if (tM) {
-        grid += `<div class="ai-tip"><h4>${tL}</h4><p>${tM[1].trim()}</p></div>`;
-      }
-
-      document.getElementById('aiGrid').innerHTML = grid;
-      result.classList.add('vis');
-
-    } catch (e) {
-      const errMsg = isEn
-        ? "The design tool is temporarily unavailable. Please contact us directly for a consultation!"
-        : "L'outil est temporairement indisponible. Contactez-nous directement pour une consultation !";
-      document.getElementById('aiVision').textContent = errMsg;
-      document.getElementById('aiGrid').innerHTML = '';
-      result.classList.add('vis');
+  function vtxProcessFile(file) {
+    if (file.size > 10 * 1024 * 1024) {
+      alert('La photo est trop grande. Veuillez choisir une image de moins de 10 Mo.');
+      return;
     }
 
-    loading.classList.remove('vis');
-    btn.disabled = false;
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const img = new Image();
+      img.onload = function () {
+        // Resize to max 1024px (keeps file size manageable for the API)
+        const MAX = 1024;
+        let w = img.width, h = img.height;
+        if (w > h) { if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; } }
+        else        { if (h > MAX) { w = Math.round(w * MAX / h); h = MAX; } }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+
+        vtxPhotoData = canvas.toDataURL('image/jpeg', 0.85);
+        vtxOriginalPhoto = vtxPhotoData;
+        vtxShowPhotoPreview(vtxPhotoData);
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
   }
+
+  function vtxShowPhotoPreview(src) {
+    const zone = document.getElementById('vtx-upload-zone');
+    const preview = document.getElementById('vtx-photo-preview');
+    const placeholder = document.getElementById('vtx-upload-placeholder');
+    preview.src = src;
+    preview.style.display = 'block';
+    placeholder.style.display = 'none';
+    zone.classList.add('has-photo');
+  }
+
+  // ── Generate ───────────────────────────────────────────
+  window.vtxGenerate = function () {
+    vtxHideError();
+    vtxHideResult();
+    if (vtxMode === 'text') {
+      vtxGenerateText();   // Free — Pollinations.ai, no API key needed
+    } else {
+      vtxGeneratePhoto();  // Paid — Replicate, ~$0.05/image
+    }
+  };
+
+  // ── TEXT MODE: Pollinations.ai (completely free) ────────
+  // Pollinations generates images from a URL — the browser loads it
+  // like a regular image. No server function, no API key, no cost.
+  function vtxGenerateText() {
+    const style = document.getElementById('vtx-text-style').value;
+    const desc  = document.getElementById('vtx-text-desc').value.trim();
+
+    if (!style && !desc) {
+      alert('Veuillez choisir un style ou décrire votre espace.');
+      return;
+    }
+
+    vtxShowLoading();
+    vtxSetButtonDisabled(true);
+
+    const styleDesc  = STYLE_PROMPTS[style] || 'professional landscaping';
+    const typePart   = document.getElementById('vtx-text-type').value;
+    const sizePart   = document.getElementById('vtx-text-size').value;
+    const budgetPart = document.getElementById('vtx-text-budget').value;
+    const userParts  = [typePart, sizePart, budgetPart, desc].filter(Boolean).join(', ');
+
+    const prompt = [
+      'Professional residential ' + styleDesc,
+      userParts || '',
+      'beautiful manicured garden Quebec Canada',
+      'photorealistic architectural visualization',
+      'lush plants colourful flowers stone pathway',
+      'golden hour lighting 8K high quality',
+    ].filter(Boolean).join(', ');
+
+    // Random seed gives a fresh result each time
+    const seed = Math.floor(Math.random() * 99999);
+    const imageUrl = POLLINATIONS_BASE + encodeURIComponent(prompt) + '?' + POLLINATIONS_PARAMS + '&seed=' + seed;
+
+    // Set as <img> src — Pollinations generates it on the fly (~15–30s)
+    const tempImg = new Image();
+    tempImg.onload  = function () { vtxShowResult(imageUrl); };
+    tempImg.onerror = function () { vtxShowError('La génération a échoué. Veuillez réessayer.'); };
+    tempImg.src = imageUrl;
+  }
+
+  // ── PHOTO MODE: Replicate (needs API key, ~$0.05/image) ─
+  async function vtxGeneratePhoto() {
+    if (!vtxPhotoData) {
+      alert('Veuillez d\'abord télécharger une photo de votre espace.');
+      return;
+    }
+    if (!document.getElementById('vtx-photo-style').value) {
+      alert('Veuillez choisir un style de design.');
+      return;
+    }
+
+    vtxShowLoading();
+    vtxSetButtonDisabled(true);
+
+    const body = {
+      image:  vtxPhotoData,
+      style:  document.getElementById('vtx-photo-style').value,
+      prompt: document.getElementById('vtx-photo-details').value.trim(),
+    };
+
+    try {
+      const res  = await fetch('/api/generate-design', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || 'Erreur lors de la génération.');
+
+      if (data.status === 'succeeded') {
+        vtxShowResult(data.imageUrl);
+      } else if (data.id) {
+        vtxPollForResult(data.id);
+      } else {
+        throw new Error('Réponse inattendue du serveur.');
+      }
+
+    } catch (err) {
+      vtxShowError(err.message);
+    }
+  }
+
+  async function vtxPollForResult(predictionId) {
+    let attempts = 0;
+    const MAX = 45; // 45 × 2s = 90 seconds max wait
+
+    vtxPollTimer = setInterval(async () => {
+      attempts++;
+      if (attempts > MAX) {
+        clearInterval(vtxPollTimer);
+        vtxShowError('Le délai d\'attente a été dépassé. Veuillez réessayer.');
+        return;
+      }
+
+      try {
+        const res  = await fetch('/api/check-design?id=' + predictionId);
+        const data = await res.json();
+
+        if (data.status === 'succeeded') {
+          clearInterval(vtxPollTimer);
+          vtxShowResult(data.imageUrl);
+        } else if (data.status === 'failed') {
+          clearInterval(vtxPollTimer);
+          vtxShowError('La génération a échoué. Veuillez réessayer.');
+        }
+        // Otherwise keep polling
+      } catch (err) {
+        // Network hiccup — keep trying
+      }
+    }, 2000);
+  }
+
+  // ── Show / hide states ──────────────────────────────────
+  function vtxShowLoading() {
+    document.getElementById('vtx-card').style.display = 'none';
+    document.getElementById('vtx-loading').style.display = 'block';
+
+    vtxLoadingIndex = 0;
+    document.getElementById('vtx-loading-msg').textContent = LOADING_MSGS[0];
+    vtxLoadingInterval = setInterval(function () {
+      vtxLoadingIndex = (vtxLoadingIndex + 1) % LOADING_MSGS.length;
+      document.getElementById('vtx-loading-msg').textContent = LOADING_MSGS[vtxLoadingIndex];
+    }, 6000);
+  }
+
+  function vtxHideLoading() {
+    document.getElementById('vtx-loading').style.display = 'none';
+    document.getElementById('vtx-card').style.display = 'block';
+    clearInterval(vtxLoadingInterval);
+  }
+
+  function vtxShowResult(imageUrl) {
+    vtxHideLoading();
+    vtxSetButtonDisabled(false);
+
+    const resultEl = document.getElementById('vtx-result');
+    resultEl.style.display = 'block';
+
+    // Set download link
+    document.getElementById('vtx-download-btn').href = imageUrl;
+
+    if (vtxMode === 'photo') {
+      // Before / After slider
+      document.getElementById('vtx-ba-wrapper').style.display = 'block';
+      document.getElementById('vtx-result-img').style.display = 'none';
+      document.getElementById('vtx-ba-before').src = vtxOriginalPhoto;
+      document.getElementById('vtx-ba-after').src  = imageUrl;
+      vtxSetSlider(50); // start at 50%
+    } else {
+      // Single image
+      document.getElementById('vtx-ba-wrapper').style.display = 'none';
+      const img = document.getElementById('vtx-result-img');
+      img.src = imageUrl;
+      img.style.display = 'block';
+    }
+
+    // Smooth scroll to result
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function vtxHideResult() {
+    document.getElementById('vtx-result').style.display = 'none';
+  }
+
+  function vtxShowError(msg) {
+    vtxHideLoading();
+    vtxSetButtonDisabled(false);
+    if (vtxPollTimer) clearInterval(vtxPollTimer);
+    document.getElementById('vtx-error-msg').textContent = msg;
+    document.getElementById('vtx-error').style.display = 'block';
+  }
+
+  function vtxHideError() {
+    document.getElementById('vtx-error').style.display = 'none';
+  }
+
+  function vtxSetButtonDisabled(disabled) {
+    const btn = document.getElementById('vtx-generate-btn');
+    btn.disabled = disabled;
+    document.getElementById('vtx-btn-label').textContent = disabled
+      ? 'Génération en cours...'
+      : 'Générer mon concept paysager';
+  }
+
+  window.vtxReset = function () {
+    if (vtxPollTimer) clearInterval(vtxPollTimer);
+    vtxHideResult();
+    vtxHideError();
+    vtxHideLoading();
+    vtxSetButtonDisabled(false);
+    document.getElementById('vtx-card').style.display = 'block';
+  };
+
+  // ── Before / After slider ──────────────────────────────
+  function vtxSetSlider(pct) {
+    document.getElementById('vtx-ba-after').style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+    document.getElementById('vtx-ba-line').style.left = pct + '%';
+  }
+
+  window.vtxBAStart = function (e) {
+    vtxBAActive = true;
+    vtxBAMove(e);
+    document.addEventListener('mousemove', vtxBAMove);
+    document.addEventListener('mouseup',   vtxBAStop);
+    document.addEventListener('touchmove', vtxBAMove, { passive: false });
+    document.addEventListener('touchend',  vtxBAStop);
+    e.preventDefault();
+  };
+
+  function vtxBAMove(e) {
+    if (!vtxBAActive) return;
+    const container = document.getElementById('vtx-ba-container');
+    const rect = container.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const pct = Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100));
+    vtxSetSlider(pct);
+    if (e.cancelable) e.preventDefault();
+  }
+
+  function vtxBAStop() {
+    vtxBAActive = false;
+    document.removeEventListener('mousemove', vtxBAMove);
+    document.removeEventListener('mouseup',   vtxBAStop);
+    document.removeEventListener('touchmove', vtxBAMove);
+    document.removeEventListener('touchend',  vtxBAStop);
+  }
+
+})();
 </script>
+
 </body>
 </html>
