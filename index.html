@@ -130,6 +130,36 @@
   .svc-list { list-style: none; display: grid; gap: 0.45rem; }
   .svc-list li { font-size: 0.82rem; color: var(--text-mid); line-height: 1.45; display: flex; gap: 0.45rem; }
   .svc-list li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
+  .calc-sec { background: var(--cream); }
+  .calc-wrap { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 1.3rem; align-items: start; margin-top: 2rem; }
+  .calc-panel, .calc-results { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.25rem; }
+  .calc-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.1rem; }
+  .calc-step { border: 1px solid rgba(61,122,61,0.18); border-radius: 8px; padding: 0.75rem; background: var(--green-pale); color: var(--green-deep); font-size: 0.76rem; line-height: 1.35; }
+  .calc-step strong { display: block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.25rem; color: var(--green-mid); }
+  .calc-form { display: grid; gap: 0.85rem; }
+  .calc-field { display: flex; flex-direction: column; gap: 0.35rem; }
+  .calc-field label, .calc-group-label { font-size: 0.68rem; color: var(--green-dark); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+  .calc-field input, .calc-field select { width: 100%; border: 1px solid rgba(45,90,45,0.18); border-radius: 7px; padding: 0.72rem 0.85rem; color: var(--text-dark); background: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; }
+  .calc-field input:focus, .calc-field select:focus { border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(61,122,61,0.08); }
+  .calc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .shape-tabs, .depth-tabs { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .shape-tabs input, .depth-tabs input { position: absolute; opacity: 0; pointer-events: none; }
+  .shape-tabs span, .depth-tabs span { display: inline-flex; align-items: center; min-height: 38px; border: 1px solid rgba(45,90,45,0.18); border-radius: 100px; padding: 0.45rem 0.75rem; color: var(--text-mid); background: #fff; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+  .shape-tabs input:checked + span, .depth-tabs input:checked + span { background: var(--green-dark); color: #fff; border-color: var(--green-dark); }
+  .buffer-row { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.75rem; background: var(--green-pale); border: 1px solid rgba(61,122,61,0.16); border-radius: 8px; color: var(--text-mid); font-size: 0.82rem; line-height: 1.45; cursor: pointer; }
+  .buffer-row input { margin-top: 0.15rem; accent-color: var(--green-mid); flex-shrink: 0; }
+  .calc-results h3 { color: var(--green-deep); font-size: 1.05rem; margin-bottom: 0.35rem; }
+  .calc-results-sub { color: var(--text-light); font-size: 0.78rem; line-height: 1.55; margin-bottom: 1rem; }
+  .calc-result-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .calc-result-card { background: var(--cream); border: 1px solid rgba(45,90,45,0.1); border-radius: 8px; padding: 0.9rem; min-height: 86px; }
+  .calc-result-card span { display: block; color: var(--text-light); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.35rem; }
+  .calc-result-card strong { display: block; color: var(--green-deep); font-size: 1.15rem; line-height: 1.2; }
+  .calc-result-card small { display: block; color: var(--text-light); font-size: 0.72rem; margin-top: 0.25rem; line-height: 1.4; }
+  .calc-error { display: none; margin-top: 0.9rem; color: #8a2d2d; background: #fff1f1; border: 1px solid #f1caca; border-radius: 7px; padding: 0.7rem 0.85rem; font-size: 0.8rem; line-height: 1.45; }
+  .calc-error.show { display: block; }
+  .calc-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1rem; }
+  .calc-actions a { text-decoration: none; }
+  .calc-disclaimer { margin-top: 1rem; color: var(--text-light); font-size: 0.76rem; line-height: 1.55; }
   .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.75rem; }
   .p-step { text-align: center; padding: 1.25rem 0.75rem; }
   .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); border: 2px solid var(--green-mid); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.9rem; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--green-deep); }
@@ -233,7 +263,9 @@
     section.sec, .contact-sec { padding: 3rem 1.25rem; }
     .trust-bar, .zones, .reviews-strip { padding: 1rem 1.25rem; }
     .trust-div { display: none; }
-    .about-grid, .contact-grid, .photo-guide-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .about-grid, .contact-grid, .photo-guide-inner, .calc-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .calc-steps, .calc-result-grid { grid-template-columns: 1fr; }
+    .calc-grid-2 { grid-template-columns: 1fr; }
     .photo-steps { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .project-grid { grid-template-columns: 1fr; }
@@ -328,6 +360,86 @@
     <div class="svc-card svc-category"><div class="s-ico">🧱</div><h3 data-fr="Pavé, murets &amp; excavation" data-en="Pavers, walls &amp; excavation">Pavé, murets &amp; excavation</h3><ul class="svc-list"><li data-fr="Pavé-uni, allées et terrasses" data-en="Pavers, walkways and patios">Pavé-uni, allées et terrasses</li><li data-fr="Murets de soutènement" data-en="Retaining walls">Murets de soutènement</li><li data-fr="Excavation et nivellement" data-en="Excavation and grading">Excavation et nivellement</li><li data-fr="Scellant et entretien d’entrée" data-en="Driveway sealing and care">Scellant et entretien d’entrée</li></ul></div>
     <div class="svc-card svc-category"><div class="s-ico">🌳</div><h3 data-fr="Entretien &amp; végétation" data-en="Maintenance &amp; vegetation">Entretien &amp; végétation</h3><ul class="svc-list"><li data-fr="Taille de haies" data-en="Hedge trimming">Taille de haies</li><li data-fr="Émondage et entretien d’arbres" data-en="Tree trimming and care">Émondage et entretien d’arbres</li><li data-fr="Horticulture et jardinage" data-en="Horticulture and gardening">Horticulture et jardinage</li><li data-fr="Entretien saisonnier" data-en="Seasonal maintenance">Entretien saisonnier</li></ul></div>
     <div class="svc-card svc-category"><div class="s-ico">🚧</div><h3 data-fr="Structures &amp; espaces extérieurs" data-en="Structures &amp; outdoor spaces">Structures &amp; espaces extérieurs</h3><ul class="svc-list"><li data-fr="Clôtures" data-en="Fencing">Clôtures</li><li data-fr="Pergolas et zones d’ombre" data-en="Pergolas and shade areas">Pergolas et zones d’ombre</li><li data-fr="Irrigation" data-en="Irrigation">Irrigation</li><li data-fr="Petits travaux commerciaux" data-en="Small commercial jobs">Petits travaux commerciaux</li></ul></div>
+  </div>
+</section>
+
+<!-- MATERIAL CALCULATOR -->
+<section class="sec calc-sec" id="calculator">
+  <div class="svc-hdr">
+    <div class="sl" data-fr="Calculateur de matériaux" data-en="Material calculator">Calculateur de matériaux</div>
+    <h2 data-fr="Estimez les quantités avant de demander une soumission" data-en="Estimate quantities before requesting a quote">Estimez les quantités avant de demander une soumission</h2>
+    <p class="sec-sub" data-fr="Entrez quelques mesures pour obtenir une estimation rapide, puis envoyez le calcul à VertMex sur WhatsApp avec votre ville." data-en="Enter a few measurements for a quick estimate, then send the calculation to VertMex on WhatsApp with your city.">Entrez quelques mesures pour obtenir une estimation rapide, puis envoyez le calcul à VertMex sur WhatsApp avec votre ville.</p>
+  </div>
+  <div class="calc-wrap">
+    <div class="calc-panel">
+      <div class="calc-steps">
+        <div class="calc-step"><strong data-fr="Étape 1" data-en="Step 1">Étape 1</strong><span data-fr="Choisir le type de projet" data-en="Choose project type">Choisir le type de projet</span></div>
+        <div class="calc-step"><strong data-fr="Étape 2" data-en="Step 2">Étape 2</strong><span data-fr="Entrer les mesures" data-en="Enter measurements">Entrer les mesures</span></div>
+        <div class="calc-step"><strong data-fr="Étape 3" data-en="Step 3">Étape 3</strong><span data-fr="Envoyer à VertMex" data-en="Send to VertMex">Envoyer à VertMex</span></div>
+      </div>
+      <div class="calc-form" id="materialCalc">
+        <div class="calc-field">
+          <label for="calcMaterial" data-fr="Type de projet" data-en="Project type">Type de projet</label>
+          <select id="calcMaterial">
+            <option value="sod" data-fr="Tourbe" data-en="Sod">Tourbe</option>
+            <option value="mulch" data-fr="Paillis" data-en="Mulch">Paillis</option>
+            <option value="soil" data-fr="Terre / compost" data-en="Soil / compost">Terre / compost</option>
+            <option value="decorativeStone" data-fr="Pierre décorative" data-en="Decorative stone">Pierre décorative</option>
+            <option value="stoneDust" data-fr="Poussière de pierre" data-en="Stone dust">Poussière de pierre</option>
+            <option value="threeQuarter" data-fr="0-3/4 compacté" data-en="Compacted 0-3/4">0-3/4 compacté</option>
+            <option value="paverBase" data-fr="Base pour pavé-uni" data-en="Paver base">Base pour pavé-uni</option>
+          </select>
+        </div>
+
+        <div>
+          <div class="calc-group-label" data-fr="Forme de la zone" data-en="Area shape">Forme de la zone</div>
+          <div class="shape-tabs" id="shapeTabs">
+            <label><input type="radio" name="calcShape" value="rectangle" checked><span data-fr="Rectangle" data-en="Rectangle">Rectangle</span></label>
+            <label><input type="radio" name="calcShape" value="circle"><span data-fr="Cercle" data-en="Circle">Cercle</span></label>
+            <label><input type="radio" name="calcShape" value="triangle"><span data-fr="Triangle" data-en="Triangle">Triangle</span></label>
+            <label><input type="radio" name="calcShape" value="known"><span data-fr="Superficie connue" data-en="Known area">Superficie connue</span></label>
+          </div>
+        </div>
+
+        <div class="calc-grid-2" id="rectFields">
+          <div class="calc-field"><label for="calcLength" data-fr="Longueur (pi)" data-en="Length (ft)">Longueur (pi)</label><input id="calcLength" type="number" min="0" step="0.1" inputmode="decimal" value="30"></div>
+          <div class="calc-field"><label for="calcWidth" data-fr="Largeur (pi)" data-en="Width (ft)">Largeur (pi)</label><input id="calcWidth" type="number" min="0" step="0.1" inputmode="decimal" value="20"></div>
+        </div>
+        <div class="calc-field" id="circleFields" style="display:none;"><label for="calcDiameter" data-fr="Diamètre (pi)" data-en="Diameter (ft)">Diamètre (pi)</label><input id="calcDiameter" type="number" min="0" step="0.1" inputmode="decimal"></div>
+        <div class="calc-grid-2" id="triangleFields" style="display:none;">
+          <div class="calc-field"><label for="calcBase" data-fr="Base (pi)" data-en="Base (ft)">Base (pi)</label><input id="calcBase" type="number" min="0" step="0.1" inputmode="decimal"></div>
+          <div class="calc-field"><label for="calcHeight" data-fr="Hauteur (pi)" data-en="Height (ft)">Hauteur (pi)</label><input id="calcHeight" type="number" min="0" step="0.1" inputmode="decimal"></div>
+        </div>
+        <div class="calc-field" id="knownFields" style="display:none;"><label for="calcKnownArea" data-fr="Superficie (pi²)" data-en="Area (sq ft)">Superficie (pi²)</label><input id="calcKnownArea" type="number" min="0" step="0.1" inputmode="decimal"></div>
+
+        <div id="depthBlock">
+          <div class="calc-group-label" data-fr="Épaisseur recommandée" data-en="Recommended thickness">Épaisseur recommandée</div>
+          <div class="depth-tabs" id="depthTabs"></div>
+        </div>
+
+        <label class="buffer-row">
+          <input id="calcBuffer" type="checkbox" checked>
+          <span data-fr="Ajouter 10% pour pertes, coupes ou compaction" data-en="Add 10% for waste, cuts or compaction">Ajouter 10% pour pertes, coupes ou compaction</span>
+        </label>
+
+        <div class="calc-field">
+          <label for="calcCity" data-fr="Ville (optionnel)" data-en="City (optional)">Ville (optionnel)</label>
+          <input id="calcCity" type="text" data-fr-placeholder="Saint-Rémi, Longueuil..." data-en-placeholder="Saint-Rémi, Longueuil..." placeholder="Saint-Rémi, Longueuil...">
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-results">
+      <h3 data-fr="Estimation rapide" data-en="Quick estimate">Estimation rapide</h3>
+      <p class="calc-results-sub" data-fr="Les résultats se mettent à jour automatiquement pendant que vous ajustez les mesures." data-en="Results update automatically as you adjust the measurements.">Les résultats se mettent à jour automatiquement pendant que vous ajustez les mesures.</p>
+      <div class="calc-result-grid" id="calcResults"></div>
+      <div class="calc-error" id="calcError" data-fr="Ajoutez des mesures valides pour voir l’estimation." data-en="Add valid measurements to see the estimate.">Ajoutez des mesures valides pour voir l’estimation.</div>
+      <div class="calc-actions">
+        <a href="https://wa.me/14387287513" class="btn-primary btn-whatsapp" id="calcWhatsapp" target="_blank" rel="noopener" data-fr="Envoyer ce calcul sur WhatsApp" data-en="Send this estimate on WhatsApp">Envoyer ce calcul sur WhatsApp</a>
+        <a href="#contact" class="btn-ghost" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
+      </div>
+      <p class="calc-disclaimer" data-fr="Estimation seulement. Les quantités finales peuvent varier selon compaction, pertes, drainage, accès au terrain et préparation du sol." data-en="Estimate only. Final quantities can vary based on compaction, waste, drainage, site access and soil preparation.">Estimation seulement. Les quantités finales peuvent varier selon compaction, pertes, drainage, accès au terrain et préparation du sol.</p>
+    </div>
   </div>
 </section>
 
@@ -804,6 +916,7 @@
     document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
     document.documentElement.lang = lang;
     applyLang();
+    updateMaterialCalculator();
   }
   function applyLang() {
     document.querySelectorAll('[data-fr]').forEach(el => {
@@ -820,6 +933,192 @@
       if (val) opt.textContent = val;
     });
   }
+
+  const materialAssumptions = {
+    sod: { fr: 'Tourbe', en: 'Sod', areaOnly: true, depths: [], sod: true },
+    mulch: { fr: 'Paillis', en: 'Mulch', density: 0.4, depths: [2, 3, 4], bagType: 'mulch' },
+    soil: { fr: 'Terre / compost', en: 'Soil / compost', density: 1.1, depths: [2, 4, 6], bagType: 'soil' },
+    decorativeStone: { fr: 'Pierre décorative', en: 'Decorative stone', density: 1.4, depths: [2, 3] },
+    stoneDust: { fr: 'Poussière de pierre', en: 'Stone dust', density: 1.4, depths: [1, 2] },
+    threeQuarter: { fr: '0-3/4 compacté', en: 'Compacted 0-3/4', density: 1.5, depths: [4, 6, 8] },
+    paverBase: { fr: 'Base pour pavé-uni', en: 'Paver base', density: 1.5, depths: [4, 6, 8, 12] },
+  };
+  const calcConstants = {
+    sodRollSqFt: 10,
+    sodPalletSqFt: 500,
+    soilBagCuFt: 1.05944,
+    mulchBagCuFt: 2,
+  };
+  const calcEls = {};
+  function initMaterialCalculator() {
+    const calc = document.getElementById('materialCalc');
+    if (!calc) return;
+    Object.assign(calcEls, {
+      material: document.getElementById('calcMaterial'),
+      depthBlock: document.getElementById('depthBlock'),
+      depthTabs: document.getElementById('depthTabs'),
+      buffer: document.getElementById('calcBuffer'),
+      city: document.getElementById('calcCity'),
+      results: document.getElementById('calcResults'),
+      error: document.getElementById('calcError'),
+      whatsapp: document.getElementById('calcWhatsapp'),
+      rectFields: document.getElementById('rectFields'),
+      circleFields: document.getElementById('circleFields'),
+      triangleFields: document.getElementById('triangleFields'),
+      knownFields: document.getElementById('knownFields'),
+      length: document.getElementById('calcLength'),
+      width: document.getElementById('calcWidth'),
+      diameter: document.getElementById('calcDiameter'),
+      base: document.getElementById('calcBase'),
+      height: document.getElementById('calcHeight'),
+      knownArea: document.getElementById('calcKnownArea'),
+    });
+    calc.addEventListener('input', updateMaterialCalculator);
+    calc.addEventListener('change', updateMaterialCalculator);
+    buildDepthTabs();
+    updateMaterialCalculator();
+  }
+  function calcText(fr, en) {
+    return lang === 'fr' ? fr : en;
+  }
+  function calcNumber(value) {
+    const num = parseFloat(value);
+    return Number.isFinite(num) && num > 0 ? num : 0;
+  }
+  function calcRound(value, decimals = 1) {
+    if (value >= 100) return Math.round(value).toLocaleString(lang === 'fr' ? 'fr-CA' : 'en-CA');
+    return value.toLocaleString(lang === 'fr' ? 'fr-CA' : 'en-CA', { maximumFractionDigits: decimals });
+  }
+  function areaUnit() {
+    return lang === 'fr' ? 'pi²' : 'sq ft';
+  }
+  function volumeUnit() {
+    return lang === 'fr' ? 'pi³' : 'cu ft';
+  }
+  function lengthUnit() {
+    return lang === 'fr' ? 'pi' : 'ft';
+  }
+  function yardUnit() {
+    return lang === 'fr' ? 'vg³' : 'yd³';
+  }
+  function selectedShape() {
+    const checked = document.querySelector('input[name="calcShape"]:checked');
+    return checked ? checked.value : 'rectangle';
+  }
+  function selectedDepth() {
+    const checked = document.querySelector('input[name="calcDepth"]:checked');
+    return checked ? calcNumber(checked.value) : 0;
+  }
+  function materialName(key) {
+    const material = materialAssumptions[key] || materialAssumptions.sod;
+    return material[lang] || material.fr;
+  }
+  function shapeName(shape) {
+    const names = {
+      rectangle: { fr: 'Rectangle', en: 'Rectangle' },
+      circle: { fr: 'Cercle', en: 'Circle' },
+      triangle: { fr: 'Triangle', en: 'Triangle' },
+      known: { fr: 'Superficie connue', en: 'Known area' },
+    };
+    return names[shape][lang];
+  }
+  function buildDepthTabs() {
+    if (!calcEls.material || !calcEls.depthTabs) return;
+    const material = materialAssumptions[calcEls.material.value] || materialAssumptions.sod;
+    calcEls.depthTabs.innerHTML = '';
+    calcEls.depthTabs.dataset.material = calcEls.material.value;
+    calcEls.depthBlock.style.display = material.areaOnly ? 'none' : 'block';
+    if (material.areaOnly) return;
+    material.depths.forEach((depth, index) => {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="calcDepth" value="${depth}" ${index === 0 ? 'checked' : ''}><span>${depth}"</span>`;
+      calcEls.depthTabs.appendChild(label);
+    });
+  }
+  function updateShapeFields() {
+    const shape = selectedShape();
+    calcEls.rectFields.style.display = shape === 'rectangle' ? 'grid' : 'none';
+    calcEls.circleFields.style.display = shape === 'circle' ? 'flex' : 'none';
+    calcEls.triangleFields.style.display = shape === 'triangle' ? 'grid' : 'none';
+    calcEls.knownFields.style.display = shape === 'known' ? 'flex' : 'none';
+  }
+  function getArea() {
+    const shape = selectedShape();
+    if (shape === 'rectangle') return calcNumber(calcEls.length.value) * calcNumber(calcEls.width.value);
+    if (shape === 'circle') {
+      const radius = calcNumber(calcEls.diameter.value) / 2;
+      return Math.PI * radius * radius;
+    }
+    if (shape === 'triangle') return (calcNumber(calcEls.base.value) * calcNumber(calcEls.height.value)) / 2;
+    return calcNumber(calcEls.knownArea.value);
+  }
+  function measurementText() {
+    const shape = selectedShape();
+    if (shape === 'rectangle') return `${calcNumber(calcEls.length.value)} ${lengthUnit()} x ${calcNumber(calcEls.width.value)} ${lengthUnit()}`;
+    if (shape === 'circle') return `${calcText('diamètre', 'diameter')} ${calcNumber(calcEls.diameter.value)} ${lengthUnit()}`;
+    if (shape === 'triangle') return `${calcText('base', 'base')} ${calcNumber(calcEls.base.value)} ${lengthUnit()} x ${calcText('hauteur', 'height')} ${calcNumber(calcEls.height.value)} ${lengthUnit()}`;
+    return `${calcRound(calcNumber(calcEls.knownArea.value))} ${areaUnit()}`;
+  }
+  function resultCard(label, value, note = '') {
+    return `<div class="calc-result-card"><span>${label}</span><strong>${value}</strong>${note ? `<small>${note}</small>` : ''}</div>`;
+  }
+  function updateMaterialCalculator() {
+    if (!calcEls.material) return;
+    const material = materialAssumptions[calcEls.material.value] || materialAssumptions.sod;
+    const depthMaterial = calcEls.depthTabs ? calcEls.depthTabs.dataset.material : '';
+    if (depthMaterial !== calcEls.material.value) buildDepthTabs();
+    updateShapeFields();
+
+    const area = getArea();
+    const factor = calcEls.buffer.checked ? 1.1 : 1;
+    const orderArea = area * factor;
+    const depth = material.areaOnly ? 0 : selectedDepth();
+    const volumeCuFt = material.areaOnly ? 0 : orderArea * (depth / 12);
+    const cubicYards = volumeCuFt / 27;
+    const tons = material.density ? cubicYards * material.density : 0;
+
+    const hasValidArea = area > 0;
+    calcEls.error.classList.toggle('show', !hasValidArea);
+    calcEls.whatsapp.classList.toggle('disabled', !hasValidArea);
+
+    const cards = [
+      resultCard(calcText('Superficie', 'Area'), `${calcRound(area)} ${areaUnit()}`, calcEls.buffer.checked ? calcText('Quantités calculées avec 10% de marge.', 'Quantities calculated with 10% buffer.') : ''),
+    ];
+
+    let quantitySummary = '';
+    if (material.sod) {
+      const rolls = Math.ceil(orderArea / calcConstants.sodRollSqFt);
+      const pallets = orderArea >= calcConstants.sodPalletSqFt ? Math.ceil(orderArea / calcConstants.sodPalletSqFt) : 0;
+      cards.push(resultCard(calcText('Rouleaux de tourbe', 'Sod rolls'), `${rolls}`, calcText('Basé sur 10 pi² par rouleau.', 'Based on 10 sq ft per roll.')));
+      if (pallets) cards.push(resultCard(calcText('Palettes approx.', 'Approx. pallets'), `${pallets}`, calcText('Basé sur 500 pi² par palette.', 'Based on 500 sq ft per pallet.')));
+      quantitySummary = calcText(`${rolls} rouleaux de tourbe`, `${rolls} sod rolls`);
+    } else {
+      cards.push(resultCard(calcText('Volume', 'Volume'), `${calcRound(volumeCuFt)} ${volumeUnit()}`, `${depth}" ${calcText('d’épaisseur', 'thickness')}`));
+      cards.push(resultCard(calcText('Verges cubes', 'Cubic yards'), `${calcRound(cubicYards)} ${yardUnit()}`, calcText('Commande en vrac approximative.', 'Approximate bulk order.')));
+      cards.push(resultCard(calcText('Tonnes approx.', 'Approx. tons'), `${calcRound(tons)} t`, calcText('Selon une densité moyenne.', 'Based on average density.')));
+      if (material.bagType === 'soil') {
+        const bags = Math.ceil(volumeCuFt / calcConstants.soilBagCuFt);
+        cards.push(resultCard(calcText('Sacs 30L', '30L bags'), `${bags}`, calcText('Équivalent approximatif.', 'Approximate equivalent.')));
+        quantitySummary = calcText(`${calcRound(cubicYards)} verge³ ou ${bags} sacs 30L`, `${calcRound(cubicYards)} yd³ or ${bags} 30L bags`);
+      } else if (material.bagType === 'mulch') {
+        const bags = Math.ceil(volumeCuFt / calcConstants.mulchBagCuFt);
+        cards.push(resultCard(calcText('Sacs 2 pi³', '2 cu ft bags'), `${bags}`, calcText('Équivalent approximatif.', 'Approximate equivalent.')));
+        quantitySummary = calcText(`${calcRound(cubicYards)} verge³ ou ${bags} sacs de paillis`, `${calcRound(cubicYards)} yd³ or ${bags} mulch bags`);
+      } else {
+        quantitySummary = calcText(`${calcRound(cubicYards)} verge³ / ${calcRound(tons)} tonnes`, `${calcRound(cubicYards)} yd³ / ${calcRound(tons)} tons`);
+      }
+    }
+
+    calcEls.results.innerHTML = cards.join('');
+    const city = calcEls.city.value.trim() || '___';
+    const materialLabel = materialName(calcEls.material.value);
+    const bufferLine = calcEls.buffer.checked ? calcText('Marge: 10%', 'Buffer: 10%') : calcText('Marge: aucune', 'Buffer: none');
+    const message = lang === 'fr'
+      ? `Bonjour VertMex, j’aimerais une soumission.\nProjet: ${materialLabel}\nVille: ${city}\nForme: ${shapeName(selectedShape())}\nMesures: ${measurementText()}\nSuperficie estimée: ${calcRound(area)} ${areaUnit()}\n${material.areaOnly ? '' : `Épaisseur: ${depth}"\n`}${bufferLine}\nQuantité estimée: ${quantitySummary}\nMerci!`
+      : `Hello VertMex, I would like a quote.\nProject: ${materialLabel}\nCity: ${city}\nShape: ${shapeName(selectedShape())}\nMeasurements: ${measurementText()}\nEstimated area: ${calcRound(area)} ${areaUnit()}\n${material.areaOnly ? '' : `Thickness: ${depth}"\n`}${bufferLine}\nEstimated quantity: ${quantitySummary}\nThank you!`;
+    calcEls.whatsapp.href = `https://wa.me/14387287513?text=${encodeURIComponent(message)}`;
+  }
+  initMaterialCalculator();
 
   const quoteForm = document.getElementById('quoteForm');
   const formStatus = document.getElementById('formStatus');
