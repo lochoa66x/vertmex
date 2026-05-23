@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vertmex – Aménagement Paysager Montérégie & Montréal</title>
-<meta name="description" content="Vertmex — Entrepreneur paysagiste vérifié basé à Saint-Rémi, Montérégie. 18 services d’aménagement paysager, 15 régions desservies. Soumission gratuite en 24h.">
+<meta name="description" content="Vertmex — Aménagement paysager résidentiel et commercial à Saint-Rémi, Montérégie. Pavé-uni, excavation, tourbe, murets, clôtures et entretien. Soumission claire.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -25,11 +25,12 @@
   }
   .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: #fff; }
   .nav-logo span { color: var(--green-bright); }
-  .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; flex-wrap: wrap; }
+  .nav-links { display: flex; gap: 1.25rem; list-style: none; align-items: center; flex-wrap: wrap; }
   .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
   .nav-links a:hover { color: var(--green-bright); }
   .nav-cta { background: var(--green-bright) !important; color: var(--green-deep) !important; padding: 0.42rem 1rem !important; border-radius: 100px; font-weight: 500 !important; }
   .nav-cta:hover { background: var(--green-light) !important; }
+  .nav-phone { color: #fff !important; font-weight: 500; white-space: nowrap; }
   .lang-toggle { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 0.28rem 0.7rem; border-radius: 100px; font-size: 0.73rem; font-weight: 500; cursor: pointer; letter-spacing: 0.05em; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
   .lang-toggle:hover { background: rgba(255,255,255,0.2); }
   .hero { min-height: 100vh; background: var(--green-deep); display: flex; flex-direction: column; justify-content: center; padding: 8rem 2.5rem 5rem; position: relative; overflow: hidden; }
@@ -62,7 +63,7 @@
   .zones-inner { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
   .zones-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); font-weight: 500; white-space: nowrap; }
   .zone-pill { background: rgba(61,122,61,0.12); border: 1px solid rgba(61,122,61,0.2); color: var(--green-dark); padding: 0.22rem 0.7rem; border-radius: 100px; font-size: 0.72rem; white-space: nowrap; }
-  .reviews-strip { background: var(--green-deep); padding: 1.4rem 2.5rem; }
+  .reviews-strip { background: #173017; padding: 1.4rem 2.5rem; }
   .reviews-inner { display: flex; align-items: center; gap: 1.75rem; overflow: hidden; }
   .review-score { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
   .score-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: #fff; line-height: 1; }
@@ -86,11 +87,19 @@
   .s-ico { width: 42px; height: 42px; background: var(--green-pale); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.9rem; }
   .svc-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--green-deep); }
   .svc-card p { font-size: 0.8rem; color: var(--text-light); line-height: 1.58; }
+  .svc-category h3 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--green-deep); }
+  .svc-list { list-style: none; display: grid; gap: 0.45rem; }
+  .svc-list li { font-size: 0.82rem; color: var(--text-mid); line-height: 1.45; display: flex; gap: 0.45rem; }
+  .svc-list li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
   .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.75rem; }
   .p-step { text-align: center; padding: 1.25rem 0.75rem; }
   .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); border: 2px solid var(--green-mid); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.9rem; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--green-deep); }
   .p-step h3 { font-size: 0.9rem; font-weight: 500; color: var(--green-deep); margin-bottom: 0.35rem; }
   .p-step p { font-size: 0.78rem; color: var(--text-light); line-height: 1.52; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .why-item { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.15rem; }
+  .why-item strong { display: block; color: var(--green-deep); font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .why-item p { color: var(--text-light); font-size: 0.8rem; line-height: 1.55; }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.75rem; align-items: center; }
   .about-img-ph { aspect-ratio: 4/5; border-radius: 10px; border: 1px dashed rgba(0,0,0,0.12); background: #e5e0d8; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.55rem; color: var(--text-light); font-size: 0.76rem; }
   .about-img-ph .ico { font-size: 2rem; opacity: 0.28; }
@@ -110,7 +119,8 @@
   .c-item { display: flex; align-items: flex-start; gap: 0.8rem; }
   .c-ico { width: 32px; height: 32px; flex-shrink: 0; background: rgba(90,170,90,0.1); border: 1px solid rgba(90,170,90,0.2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
   .c-txt strong { display: block; font-size: 0.7rem; color: var(--green-bright); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.12rem; }
-  .c-txt span { font-size: 0.85rem; color: rgba(255,255,255,0.62); }
+  .c-txt span, .c-txt a { font-size: 0.85rem; color: rgba(255,255,255,0.72); text-decoration: none; }
+  .c-txt a:hover { color: #fff; }
   .guar-box { margin-top: 1.85rem; background: rgba(90,170,90,0.1); border: 1px solid rgba(90,170,90,0.2); border-radius: 9px; padding: 0.95rem 1.15rem; display: flex; align-items: center; gap: 0.7rem; }
   .guar-box .g-ico { font-size: 1.35rem; flex-shrink: 0; }
   .guar-box p { font-size: 0.8rem; color: rgba(255,255,255,0.68); line-height: 1.52; }
@@ -162,7 +172,8 @@
     <li><a href="#ai-design" data-fr="Conception IA"  data-en="AI Design">Conception IA</a></li>
     <li><a href="#about"     data-fr="À Propos"  data-en="About">À Propos</a></li>
     <li><a href="#portfolio" data-fr="Portfolio"      data-en="Portfolio">Portfolio</a></li>
-    <li><a href="#contact" class="nav-cta" data-fr="Soumission Gratuite" data-en="Free Quote">Soumission Gratuite</a></li>
+    <li><a href="tel:+14387287513" class="nav-phone" data-fr="(438) 728-7513" data-en="(438) 728-7513">(438) 728-7513</a></li>
+    <li><a href="#contact" class="nav-cta" data-fr="Soumission" data-en="Quote">Soumission</a></li>
     <li><button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button></li>
   </ul>
 </nav>
@@ -170,73 +181,65 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <div class="hero-eyebrow" data-fr="Saint-Rémi, Québec — Montérégie &amp; Grand Montréal" data-en="Saint-Rémi, Québec — Montérégie &amp; Greater Montréal">Saint-Rémi, Québec — Montérégie &amp; Grand Montréal</div>
-    <h1 data-fr="Là où la Nature<br>rencontre le <em>Design</em>" data-en="Where Nature<br>Meets <em>Design</em>">Là où la Nature<br>rencontre le <em>Design</em></h1>
-    <p class="hero-sub" data-fr="Vertmex transforme vos espaces extérieurs en œuvres vivantes. Aménagement paysager professionnel, conception et entretien pour résidences et commerces en Montérégie et Grand Montréal." data-en="Vertmex transforms your outdoor spaces into living works of art. Professional landscaping, design and maintenance for homes and businesses across Montérégie and Greater Montréal.">Vertmex transforme vos espaces extérieurs en œuvres vivantes. Aménagement paysager professionnel, conception et entretien pour résidences et commerces en Montérégie et Grand Montréal.</p>
+    <div class="hero-eyebrow" data-fr="Saint-Rémi — Montérégie, Rive-Sud &amp; Grand Montréal" data-en="Saint-Rémi — Montérégie, South Shore &amp; Greater Montréal">Saint-Rémi — Montérégie, Rive-Sud &amp; Grand Montréal</div>
+    <h1 data-fr="Aménagement paysager fiable en <em>Montérégie</em>" data-en="Reliable Landscaping in <em>Montérégie</em>">Aménagement paysager fiable en <em>Montérégie</em></h1>
+    <p class="hero-sub" data-fr="Vertmex aide les propriétaires et commerces avec des travaux extérieurs clairs et bien exécutés : pavé-uni, excavation, tourbe, murets, clôtures, entretien et aménagement complet." data-en="Vertmex helps homeowners and businesses with clear, well-executed outdoor work: pavers, excavation, sod, retaining walls, fencing, maintenance and full landscaping.">Vertmex aide les propriétaires et commerces avec des travaux extérieurs clairs et bien exécutés : pavé-uni, excavation, tourbe, murets, clôtures, entretien et aménagement complet.</p>
     <div class="hero-actions">
-      <a href="#ai-design" class="btn-primary" data-fr="Visualiser mon espace" data-en="Visualize My Space">Visualiser mon espace</a>
-      <a href="#contact" class="btn-ghost" data-fr="Soumission gratuite" data-en="Free Quote">Soumission gratuite</a>
+      <a href="tel:+14387287513" class="btn-primary" data-fr="Appeler (438) 728-7513" data-en="Call (438) 728-7513">Appeler (438) 728-7513</a>
+      <a href="#contact" class="btn-ghost" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
     </div>
-    <div class="hero-guarantee"><span class="chk">✓</span><span data-fr="Réponse garantie en 24h — Entrepreneur vérifié — Sans surprise sur les prix" data-en="Response guaranteed in 24h — Verified contractor — No surprise pricing">Réponse garantie en 24h — Entrepreneur vérifié — Sans surprise sur les prix</span></div>
+    <div class="hero-guarantee"><span class="chk">✓</span><span data-fr="Soumission claire — Chantier propre — Équipe locale et flexible" data-en="Clear quote — Clean job site — Local, flexible crew">Soumission claire — Chantier propre — Équipe locale et flexible</span></div>
   </div>
-  <div class="hero-img-area"><div class="img-ph"><div class="ico">🌿</div><span data-fr="Ajoutez votre photo principale ici" data-en="Add your hero photo here">Ajoutez votre photo principale ici</span></div></div>
+  <div class="hero-img-area"><div class="img-ph"><div class="ico">🌿</div><span data-fr="Photo réelle d’un chantier Vertmex à ajouter" data-en="Real Vertmex job-site photo to add">Photo réelle d’un chantier Vertmex à ajouter</span></div></div>
   <div class="hero-stats">
-    <div class="stat"><strong>14+</strong><span data-fr="Experts qualifiés" data-en="Expert team members">Experts qualifiés</span></div>
-    <div class="stat"><strong>18</strong><span data-fr="Services offerts" data-en="Services offered">Services offerts</span></div>
-    <div class="stat"><strong>15+</strong><span data-fr="Régions desservies" data-en="Regions served">Régions desservies</span></div>
+    <div class="stat"><strong>5-13</strong><span data-fr="Personnes selon la saison" data-en="People depending on season">Personnes selon la saison</span></div>
+    <div class="stat"><strong>4</strong><span data-fr="Familles de services" data-en="Service groups">Familles de services</span></div>
+    <div class="stat"><strong>Local</strong><span data-fr="Basés à Saint-Rémi" data-en="Based in Saint-Rémi">Basés à Saint-Rémi</span></div>
   </div>
 </section>
 
 <!-- TRUST BAR -->
 <div class="trust-bar"><div class="trust-inner">
-  <div class="trust-item">✅ <strong data-fr="Entrepreneur vérifié" data-en="Verified contractor">Entrepreneur vérifié</strong></div>
+  <div class="trust-item">👷 <strong data-fr="Équipe locale de 5 à 13 personnes" data-en="Local crew of 5 to 13 people">Équipe locale de 5 à 13 personnes</strong></div>
   <div class="trust-div"></div>
-  <div class="trust-item">🛡️ <span data-fr="Entièrement assuré &amp; licencié" data-en="Fully insured &amp; licensed">Entièrement assuré &amp; licencié</span></div>
+  <div class="trust-item">📍 <span data-fr="Basés à Saint-Rémi" data-en="Based in Saint-Rémi">Basés à Saint-Rémi</span></div>
   <div class="trust-div"></div>
-  <div class="trust-item">🇨🇦 <span data-fr="Entreprise québécoise — Saint-Rémi, QC" data-en="Québec business — Saint-Rémi, QC">Entreprise québécoise — Saint-Rémi, QC</span></div>
+  <div class="trust-item">🧾 <span data-fr="Soumission claire avant les travaux" data-en="Clear quote before work begins">Soumission claire avant les travaux</span></div>
   <div class="trust-div"></div>
-  <div class="trust-item">🌿 <span data-fr="18 services d’aménagement paysager" data-en="18 landscaping services">18 services d’aménagement paysager</span></div>
+  <div class="trust-item">🏠 <span data-fr="Résidentiel et commercial" data-en="Residential and commercial">Résidentiel et commercial</span></div>
   <div class="trust-div"></div>
   <div class="trust-item">💬 <span data-fr="Service en français et en anglais" data-en="Service in French and English">Service en français et en anglais</span></div>
 </div></div>
 
 <!-- ZONES -->
 <div class="zones"><div class="zones-inner">
-  <span class="zones-label" data-fr="Régions desservies :" data-en="Regions served:">Régions desservies :</span>
-  <span class="zone-pill">Longueuil</span><span class="zone-pill">Roussillon</span><span class="zone-pill">Vaudreuil-Soulanges</span><span class="zone-pill">La Vallée-du-Richelieu</span><span class="zone-pill">Haut-Richelieu</span><span class="zone-pill">Beauharnois-Salaberry</span><span class="zone-pill">Marguerite-D’Youville</span><span class="zone-pill">Les Maskoutains</span><span class="zone-pill">Brome-Missisquoi</span><span class="zone-pill">Rouville</span><span class="zone-pill">Acton</span><span class="zone-pill">Pierre-De Saurel</span><span class="zone-pill">Haut-Saint-Laurent</span><span class="zone-pill">Jardins-de-Napierville</span><span class="zone-pill">Les Îles-de-la-Madeleine</span>
+  <span class="zones-label" data-fr="Secteurs courants :" data-en="Common service areas:">Secteurs courants :</span>
+  <span class="zone-pill">Saint-Rémi</span><span class="zone-pill">Rive-Sud</span><span class="zone-pill">Montérégie</span><span class="zone-pill">Longueuil</span><span class="zone-pill">Roussillon</span><span class="zone-pill">Vaudreuil-Soulanges</span><span class="zone-pill">Grand Montréal</span>
 </div></div>
 
 <!-- REVIEWS -->
 <div class="reviews-strip"><div class="reviews-inner">
-  <div class="review-score"><div class="score-num">4.9</div><div class="stars">★★★★★</div><div class="rev-count" data-fr="Avis clients" data-en="Client reviews">Avis clients</div></div>
+  <div class="review-score"><div class="score-num">À venir</div><div class="stars">★★★★★</div><div class="rev-count" data-fr="Preuves réelles" data-en="Real proof">Preuves réelles</div></div>
   <div class="rev-div"></div>
   <div class="reviews-scroll">
-    <div class="rev-card"><div class="r-stars">★★★★★</div><div class="r-text" data-fr="« Travail exceptionnel sur notre cour arrière. Professionnels, ponctuels et le résultat dépasse nos attentes! »" data-en="&quot;Exceptional work on our backyard. Professional, punctual and the result exceeded our expectations!&quot;">« Travail exceptionnel sur notre cour arrière. Professionnels, ponctuels et le résultat dépasse nos attentes! »</div><div class="r-author">— Marie-Êve T., Longueuil</div></div>
-    <div class="rev-card"><div class="r-stars">★★★★★</div><div class="r-text" data-fr="« Êquipe sérieuse, prix honnêtes. Ils ont transformé notre entrée en pavé-uni. Je recommande fortement Vertmex. »" data-en="&quot;Serious team, honest prices. They transformed our driveway with pave-uni. I strongly recommend Vertmex.&quot;">« Êquipe sérieuse, prix honnêtes. Ils ont transformé notre entrée en pavé-uni. Je recommande fortement Vertmex. »</div><div class="r-author">— Jean-François B., Roussillon</div></div>
-    <div class="rev-card"><div class="r-stars">★★★★★</div><div class="r-text" data-fr="« Service impeccable du début à la fin. Très utile pour visualiser le projet avant les travaux. »" data-en="&quot;Impeccable service from start to finish. Very useful to visualize the project before the work.&quot;">« Service impeccable du début à la fin. Très utile pour visualiser le projet avant les travaux. »</div><div class="r-author">— Sophie M., Vaudreuil-Soulanges</div></div>
+    <div class="rev-card"><div class="r-stars">Photos</div><div class="r-text" data-fr="Ajouter ici des photos avant / après de vrais chantiers Vertmex." data-en="Add real before / after photos from Vertmex jobs here.">Ajouter ici des photos avant / après de vrais chantiers Vertmex.</div><div class="r-author" data-fr="À confirmer" data-en="To confirm">À confirmer</div></div>
+    <div class="rev-card"><div class="r-stars">Avis</div><div class="r-text" data-fr="Ajouter 2 ou 3 avis clients réels quand ils sont disponibles." data-en="Add 2 or 3 real customer reviews when available.">Ajouter 2 ou 3 avis clients réels quand ils sont disponibles.</div><div class="r-author" data-fr="Information à confirmer" data-en="Information to confirm">Information à confirmer</div></div>
+    <div class="rev-card"><div class="r-stars">Assurance / RBQ</div><div class="r-text" data-fr="Ajouter les détails d’assurance, de licence ou de garantie seulement après validation." data-en="Add insurance, license or warranty details only after validation.">Ajouter les détails d’assurance, de licence ou de garantie seulement après validation.</div><div class="r-author" data-fr="Information à confirmer" data-en="Information to confirm">Information à confirmer</div></div>
   </div>
 </div></div>
 
 <!-- SERVICES -->
 <section class="sec" id="services" style="background:#fff;">
   <div class="svc-hdr">
-    <div class="sl" data-fr="Ce que nous faisons" data-en="What we do">Ce que nous faisons</div>
-    <h2 data-fr="18 services d’aménagement paysager" data-en="18 Landscaping Services">18 services d’aménagement paysager</h2>
-    <p class="sec-sub" data-fr="De la conception complète à l’entretien régulier — nous offrons une gamme complète de services pour transformer votre espace extérieur en Montérégie et Grand Montréal." data-en="From full design to regular maintenance — we offer a complete range of services to transform your outdoor space across Montérégie and Greater Montréal.">De la conception complète à l’entretien régulier — nous offrons une gamme complète de services pour transformer votre espace extérieur en Montérégie et Grand Montréal.</p>
+    <div class="sl" data-fr="Services" data-en="Services">Services</div>
+    <h2 data-fr="Des travaux extérieurs clairs, du terrain aux finitions" data-en="Clear outdoor work, from groundwork to finishing">Des travaux extérieurs clairs, du terrain aux finitions</h2>
+    <p class="sec-sub" data-fr="Une seule équipe locale pour les projets résidentiels et commerciaux : préparation du terrain, installation, entretien et réparation." data-en="One local crew for residential and commercial projects: site preparation, installation, maintenance and repair.">Une seule équipe locale pour les projets résidentiels et commerciaux : préparation du terrain, installation, entretien et réparation.</p>
   </div>
   <div class="svc-grid">
-    <div class="svc-card"><div class="s-ico">🌱</div><h3 data-fr="Aménagement complet" data-en="Full Landscaping">Aménagement complet</h3><p data-fr="Conception et réalisation complète de votre espace extérieur, du plan initial aux finitions." data-en="Complete design and execution of your outdoor space, from initial plan to finishing touches.">Conception et réalisation complète de votre espace extérieur, du plan initial aux finitions.</p></div>
-    <div class="svc-card"><div class="s-ico">🪨</div><h3 data-fr="Pavé-uni &amp; pavage" data-en="Pave-Uni &amp; Paving">Pavé-uni &amp; pavage</h3><p data-fr="Entrées, allées, terrasses et stationnements en pavé-uni et asphalte. Qualité premium." data-en="Driveways, walkways, patios and parking in pave-uni and asphalt. Premium quality.">Entrées, allées, terrasses et stationnements en pavé-uni et asphalte. Qualité premium.</p></div>
-    <div class="svc-card"><div class="s-ico">🌳</div><h3 data-fr="Arbres, haies &amp; émondage" data-en="Trees, Hedges &amp; Pruning">Arbres, haies &amp; émondage</h3><p data-fr="Taille, façonnage, émondage et abattage par des professionnels certifiés." data-en="Pruning, shaping, trimming and removal by certified professionals.">Taille, façonnage, émondage et abattage par des professionnels certifiés.</p></div>
-    <div class="svc-card"><div class="s-ico">🧱</div><h3 data-fr="Murets &amp; béton" data-en="Retaining Walls &amp; Concrete">Murets &amp; béton</h3><p data-fr="Murets de soutènement, fondations béton, escaliers et structures durables." data-en="Retaining walls, concrete foundations, stairs and durable structures.">Murets de soutènement, fondations béton, escaliers et structures durables.</p></div>
-    <div class="svc-card"><div class="s-ico">🌺</div><h3 data-fr="Horticulture &amp; jardinage" data-en="Horticulture &amp; Gardening">Horticulture &amp; jardinage</h3><p data-fr="Plantation, massifs de fleurs, vivaces et aménagements horticoles adaptés au climat québécois." data-en="Planting, flower beds, perennials and horticultural arrangements suited to Québec's climate.">Plantation, massifs de fleurs, vivaces et aménagements horticoles adaptés au climat québécois.</p></div>
-    <div class="svc-card"><div class="s-ico">💧</div><h3 data-fr="Irrigation" data-en="Irrigation">Irrigation</h3><p data-fr="Systèmes d’arrosage intelligents, automatisés et économes en eau pour votre propriété." data-en="Smart, automated and water-efficient irrigation systems for your property.">Systèmes d’arrosage intelligents, automatisés et économes en eau pour votre propriété.</p></div>
-    <div class="svc-card"><div class="s-ico">🎋</div><h3 data-fr="Pergolas" data-en="Pergolas">Pergolas</h3><p data-fr="Conception et installation de pergolas et structures d’ombrage pour agrandir votre espace de vie." data-en="Design and installation of pergolas and shade structures to extend your living space.">Conception et installation de pergolas et structures d’ombrage pour agrandir votre espace de vie.</p></div>
-    <div class="svc-card"><div class="s-ico">🏊</div><h3 data-fr="Aménagement piscine" data-en="Pool Landscaping">Aménagement piscine</h3><p data-fr="Aménagement paysager autour des piscines — plages, terrasses, végétation et éclairage." data-en="Landscaping around pools — decks, patios, vegetation and lighting.">Aménagement paysager autour des piscines — plages, terrasses, végétation et éclairage.</p></div>
-    <div class="svc-card"><div class="s-ico">🌿</div><h3 data-fr="Tourbe &amp; gazon" data-en="Sod &amp; Lawn">Tourbe &amp; gazon</h3><p data-fr="Installation de tourbe et ensemencement pour un gazon vert et dense, instantanément." data-en="Sod installation and seeding for an instantly lush, green lawn.">Installation de tourbe et ensemencement pour un gazon vert et dense, instantanément.</p></div>
-    <div class="svc-card"><div class="s-ico">🚧</div><h3 data-fr="Clôtures" data-en="Fencing">Clôtures</h3><p data-fr="Installation et réparation de clôtures résidentielles et commerciales — bois, vinyle, aluminium." data-en="Installation and repair of residential and commercial fencing — wood, vinyl, aluminum.">Installation et réparation de clôtures résidentielles et commerciales — bois, vinyle, aluminium.</p></div>
-    <div class="svc-card"><div class="s-ico">⛏️</div><h3 data-fr="Excavation" data-en="Excavation">Excavation</h3><p data-fr="Travaux d’excavation, nivellement et préparation de terrain pour tout type de projet." data-en="Excavation, leveling and site preparation for any type of project.">Travaux d’excavation, nivellement et préparation de terrain pour tout type de projet.</p></div>
-    <div class="svc-card"><div class="s-ico">🛣️</div><h3 data-fr="Scellant d’entrée" data-en="Driveway Sealing">Scellant d’entrée</h3><p data-fr="Application de scellant, entretien saisonnier et nettoyage pour prolonger la vie de vos surfaces." data-en="Sealant application, seasonal maintenance and cleaning to extend the life of your surfaces.">Application de scellant, entretien saisonnier et nettoyage pour prolonger la vie de vos surfaces.</p></div>
+    <div class="svc-card svc-category"><div class="s-ico">🌱</div><h3 data-fr="Aménagement &amp; installation" data-en="Landscaping &amp; installation">Aménagement &amp; installation</h3><ul class="svc-list"><li data-fr="Aménagement complet" data-en="Full landscaping">Aménagement complet</li><li data-fr="Tourbe et ensemencement" data-en="Sod and seeding">Tourbe et ensemencement</li><li data-fr="Plantation et plates-bandes" data-en="Planting and garden beds">Plantation et plates-bandes</li><li data-fr="Aménagement autour de piscine" data-en="Pool-area landscaping">Aménagement autour de piscine</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico">🧱</div><h3 data-fr="Pavé, murets &amp; excavation" data-en="Pavers, walls &amp; excavation">Pavé, murets &amp; excavation</h3><ul class="svc-list"><li data-fr="Pavé-uni, allées et terrasses" data-en="Pavers, walkways and patios">Pavé-uni, allées et terrasses</li><li data-fr="Murets de soutènement" data-en="Retaining walls">Murets de soutènement</li><li data-fr="Excavation et nivellement" data-en="Excavation and grading">Excavation et nivellement</li><li data-fr="Scellant et entretien d’entrée" data-en="Driveway sealing and care">Scellant et entretien d’entrée</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico">🌳</div><h3 data-fr="Entretien &amp; végétation" data-en="Maintenance &amp; vegetation">Entretien &amp; végétation</h3><ul class="svc-list"><li data-fr="Taille de haies" data-en="Hedge trimming">Taille de haies</li><li data-fr="Émondage et entretien d’arbres" data-en="Tree trimming and care">Émondage et entretien d’arbres</li><li data-fr="Horticulture et jardinage" data-en="Horticulture and gardening">Horticulture et jardinage</li><li data-fr="Entretien saisonnier" data-en="Seasonal maintenance">Entretien saisonnier</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico">🚧</div><h3 data-fr="Structures &amp; espaces extérieurs" data-en="Structures &amp; outdoor spaces">Structures &amp; espaces extérieurs</h3><ul class="svc-list"><li data-fr="Clôtures" data-en="Fencing">Clôtures</li><li data-fr="Pergolas et zones d’ombre" data-en="Pergolas and shade areas">Pergolas et zones d’ombre</li><li data-fr="Irrigation" data-en="Irrigation">Irrigation</li><li data-fr="Petits travaux commerciaux" data-en="Small commercial jobs">Petits travaux commerciaux</li></ul></div>
   </div>
 </section>
 
@@ -248,15 +251,30 @@
   </div>
   <div class="process-steps">
     <div class="p-step"><div class="step-num">1</div><h3 data-fr="Consultation gratuite" data-en="Free consultation">Consultation gratuite</h3><p data-fr="Contactez-nous et recevez une réponse en 24h. Nous visitons votre propriété sans frais." data-en="Contact us and receive a response within 24h. We visit your property at no charge.">Contactez-nous et recevez une réponse en 24h. Nous visitons votre propriété sans frais.</p></div>
-    <div class="p-step"><div class="step-num">2</div><h3 data-fr="Conception &amp; IA" data-en="Design &amp; AI">Conception &amp; IA</h3><p data-fr="Nous créons votre design personnalisé, visualisé grâce à notre outil IA avant de commencer." data-en="We create your custom design, visualized with our AI tool before we start.">Nous créons votre design personnalisé, visualisé grâce à notre outil IA avant de commencer.</p></div>
-    <div class="p-step"><div class="step-num">3</div><h3 data-fr="Réalisation experte" data-en="Expert execution">Réalisation experte</h3><p data-fr="Nos 14 professionnels réalisent votre projet avec soin, dans les délais convenus." data-en="Our 14 professionals complete your project with care, on agreed timelines.">Nos 14 professionnels réalisent votre projet avec soin, dans les délais convenus.</p></div>
+    <div class="p-step"><div class="step-num">2</div><h3 data-fr="Devis clair" data-en="Clear estimate">Devis clair</h3><p data-fr="On précise les travaux, les priorités et les étapes avant de commencer." data-en="We clarify the work, priorities and steps before starting.">On précise les travaux, les priorités et les étapes avant de commencer.</p></div>
+    <div class="p-step"><div class="step-num">3</div><h3 data-fr="Travaux propres" data-en="Clean execution">Travaux propres</h3><p data-fr="L’équipe arrive préparée, protège le terrain et garde le chantier ordonné." data-en="The crew arrives prepared, protects the property and keeps the site organized.">L’équipe arrive préparée, protège le terrain et garde le chantier ordonné.</p></div>
     <div class="p-step"><div class="step-num">4</div><h3 data-fr="Suivi &amp; entretien" data-en="Follow-up &amp; maintenance">Suivi &amp; entretien</h3><p data-fr="Nous restons disponibles pour l’entretien continu de votre espace toute l’année." data-en="We remain available for year-round ongoing maintenance of your space.">Nous restons disponibles pour l’entretien continu de votre espace toute l’année.</p></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why" style="background:#fff;">
+  <div class="svc-hdr">
+    <div class="sl" data-fr="Pourquoi choisir Vertmex" data-en="Why choose Vertmex">Pourquoi choisir Vertmex</div>
+    <h2 data-fr="Une équipe locale pour des travaux concrets" data-en="A local crew for practical outdoor work">Une équipe locale pour des travaux concrets</h2>
+    <p class="sec-sub" data-fr="Le site doit refléter la réalité de l’entreprise : une équipe flexible, près du terrain, qui explique bien les travaux et livre un résultat propre." data-en="The site should reflect the real business: a flexible local crew that explains the work clearly and leaves a clean result.">Le site doit refléter la réalité de l’entreprise : une équipe flexible, près du terrain, qui explique bien les travaux et livre un résultat propre.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-item"><strong data-fr="Devis clair avant les travaux" data-en="Clear quote before work begins">Devis clair avant les travaux</strong><p data-fr="Le client sait ce qui est inclus, ce qui est prioritaire et ce qui reste à confirmer." data-en="The customer knows what is included, what matters most and what still needs confirmation.">Le client sait ce qui est inclus, ce qui est prioritaire et ce qui reste à confirmer.</p></div>
+    <div class="why-item"><strong data-fr="Chantier propre" data-en="Clean job site">Chantier propre</strong><p data-fr="Un bon paysagiste laisse autant une bonne impression pendant les travaux qu’après." data-en="A good landscaper leaves a strong impression during the work, not only after it.">Un bon paysagiste laisse autant une bonne impression pendant les travaux qu’après.</p></div>
+    <div class="why-item"><strong data-fr="Équipe locale et flexible" data-en="Local and flexible crew">Équipe locale et flexible</strong><p data-fr="Une équipe de 5 à 13 personnes selon la saison, adaptée aux petits et moyens projets." data-en="A crew of 5 to 13 people depending on the season, suited to small and medium projects.">Une équipe de 5 à 13 personnes selon la saison, adaptée aux petits et moyens projets.</p></div>
+    <div class="why-item"><strong data-fr="Résidentiel et commercial" data-en="Residential and commercial">Résidentiel et commercial</strong><p data-fr="Cours, entrées, façades, zones de piscine, entretien et travaux de préparation." data-en="Yards, driveways, storefronts, pool areas, maintenance and preparation work.">Cours, entrées, façades, zones de piscine, entretien et travaux de préparation.</p></div>
   </div>
 </section>
 
 <!-- AI DESIGN TOOL -->
 <style>
-  .vtx-ai-section { padding: 4.5rem 2.5rem; background: linear-gradient(135deg, #f0faf0 0%, #e8f5e9 100%); }
+  .vtx-ai-section { padding: 4.5rem 2.5rem; background: #eef7ee; }
   .vtx-container { max-width: 920px; margin: 0 auto; }
   .vtx-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; border-radius: 999px; padding: 0.42rem 0.9rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1rem; }
   .vtx-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.45rem); font-weight: 700; color: var(--green-deep); margin: 0 0 0.75rem; line-height: 1.15; }
@@ -285,8 +303,8 @@
   .vtx-select:focus, .vtx-input:focus, .vtx-textarea:focus { outline: none; border-color: #2e7d32; box-shadow: 0 0 0 3px rgba(46,125,50,0.1); }
   .vtx-textarea { resize: vertical; min-height: 96px; line-height: 1.58; }
   .vtx-full-width { grid-column: 1 / -1; }
-  .vtx-generate-btn { width: 100%; margin-top: 1.35rem; padding: 0.95rem 1.3rem; background: linear-gradient(135deg, #2e7d32, #43a047); color: #fff; border: none; border-radius: 9px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-family: 'DM Sans', sans-serif; }
-  .vtx-generate-btn:hover:not(:disabled) { background: linear-gradient(135deg, #1b5e20, #2e7d32); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(46,125,50,0.28); }
+  .vtx-generate-btn { width: 100%; margin-top: 1.35rem; padding: 0.95rem 1.3rem; background: #2e7d32; color: #fff; border: none; border-radius: 9px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-family: 'DM Sans', sans-serif; }
+  .vtx-generate-btn:hover:not(:disabled) { background: #1b5e20; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(46,125,50,0.24); }
   .vtx-generate-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
   .vtx-btn-star { font-size: 1.05rem; animation: vtx-spin 3s linear infinite; }
   @keyframes vtx-spin { to { transform: rotate(360deg); } }
@@ -309,7 +327,7 @@
   .vtx-ba-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; color: #2e7d32; font-weight: 700; box-shadow: 0 2px 10px rgba(0,0,0,0.25); pointer-events: none; }
   .vtx-ba-labels { display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.8rem; color: #777; font-weight: 600; }
   .vtx-result-img { width: 100%; border-radius: 10px; display: block; margin-bottom: 1.2rem; }
-  .vtx-result-cta { background: linear-gradient(135deg, #f1f8f1, #e8f5e9); border-radius: 10px; padding: 1.1rem 1.3rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
+  .vtx-result-cta { background: #f1f8f1; border-radius: 10px; padding: 1.1rem 1.3rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
   .vtx-result-cta p { margin: 0; font-size: 0.92rem; color: #2e7d32; font-weight: 600; }
   .vtx-error { border-color: #ffcdd2; background: #fff5f5; text-align: center; display: none; }
   .vtx-error p { color: #c62828; margin: 0 0 1rem; font-size: 0.95rem; }
@@ -322,9 +340,9 @@
 
 <section class="vtx-ai-section" id="ai-design">
   <div class="vtx-container">
-    <div class="vtx-badge" data-fr="Conception IA" data-en="AI Design">Conception IA</div>
-    <h2 class="vtx-title" data-fr="Visualisez votre nouvel aménagement avant les travaux" data-en="Visualize your new landscape before the work begins">Visualisez votre nouvel aménagement avant les travaux</h2>
-    <p class="vtx-subtitle" data-fr="Téléversez une photo de votre cour ou décrivez votre projet. Notre outil génère une inspiration visuelle que l’équipe Vertmex peut ensuite transformer en soumission claire." data-en="Upload a photo of your yard or describe your project. Our tool creates a visual concept that the Vertmex team can turn into a clear quote.">Téléversez une photo de votre cour ou décrivez votre projet. Notre outil génère une inspiration visuelle que l’équipe Vertmex peut ensuite transformer en soumission claire.</p>
+    <div class="vtx-badge" data-fr="Inspiration visuelle" data-en="Visual inspiration">Inspiration visuelle</div>
+    <h2 class="vtx-title" data-fr="Une idée visuelle pour mieux expliquer votre projet" data-en="A visual idea to explain your project clearly">Une idée visuelle pour mieux expliquer votre projet</h2>
+    <p class="vtx-subtitle" data-fr="Téléversez une photo ou décrivez votre cour. L’outil sert à générer une inspiration, pas un plan final : il aide simplement à clarifier la soumission." data-en="Upload a photo or describe your yard. This tool creates inspiration, not a final plan: it simply helps clarify the quote.">Téléversez une photo ou décrivez votre cour. L’outil sert à générer une inspiration, pas un plan final : il aide simplement à clarifier la soumission.</p>
 
     <div class="vtx-tabs" role="tablist" aria-label="AI design mode">
       <button class="vtx-tab active" id="vtx-tab-photo" type="button" role="tab" onclick="vtxSetMode('photo')" data-fr="Avec photo" data-en="With photo">Avec photo</button>
@@ -402,8 +420,8 @@
             <select class="vtx-select" id="vtx-text-budget">
               <option value="" data-fr="Choisir" data-en="Choose">Choisir</option>
               <option value="simple affordable landscaping">Simple et abordable</option>
-              <option value="balanced premium residential landscaping">Équilibré et durable</option>
-              <option value="high-end luxury landscaping">Haut de gamme</option>
+              <option value="durable residential landscaping with practical materials">Équilibré et durable</option>
+              <option value="more complete landscaping with quality durable materials">Plus complet</option>
             </select>
           </div>
           <div class="vtx-form-group vtx-full-width">
@@ -413,12 +431,12 @@
         </div>
       </div>
 
-      <button class="vtx-generate-btn" id="vtx-generate-btn" type="button" onclick="vtxGenerate()"><span class="vtx-btn-star">✦</span><span id="vtx-btn-label" data-fr="Générer mon concept paysager" data-en="Generate my landscape concept">Générer mon concept paysager</span></button>
+      <button class="vtx-generate-btn" id="vtx-generate-btn" type="button" onclick="vtxGenerate()"><span class="vtx-btn-star">✦</span><span id="vtx-btn-label" data-fr="Générer une inspiration visuelle" data-en="Generate visual inspiration">Générer une inspiration visuelle</span></button>
     </div>
 
     <div class="vtx-loading" id="vtx-loading" aria-live="polite">
       <div class="vtx-spinner"></div>
-      <p class="vtx-loading-msg" id="vtx-loading-msg">Préparation de votre concept...</p>
+      <p class="vtx-loading-msg" id="vtx-loading-msg">Préparation de votre inspiration...</p>
       <p class="vtx-loading-hint" data-fr="La génération peut prendre quelques secondes." data-en="Generation can take a few seconds.">La génération peut prendre quelques secondes.</p>
     </div>
 
@@ -429,7 +447,7 @@
 
     <div class="vtx-result" id="vtx-result">
       <div class="vtx-result-header">
-        <h3 class="vtx-result-title" data-fr="Votre concept paysager" data-en="Your landscape concept">Votre concept paysager</h3>
+        <h3 class="vtx-result-title" data-fr="Votre inspiration paysagère" data-en="Your landscape inspiration">Votre inspiration paysagère</h3>
         <a class="vtx-download-btn" id="vtx-download-btn" href="#" target="_blank" rel="noopener" download data-fr="Ouvrir l’image" data-en="Open image">Ouvrir l’image</a>
       </div>
       <div class="vtx-ba-wrapper" id="vtx-ba-wrapper">
@@ -441,12 +459,12 @@
         </div>
         <div class="vtx-ba-labels"><span data-fr="Avant" data-en="Before">Avant</span><span data-fr="Après" data-en="After">Après</span></div>
       </div>
-      <img class="vtx-result-img" id="vtx-result-img" alt="Concept paysager généré par IA">
+      <img class="vtx-result-img" id="vtx-result-img" alt="Inspiration paysagère générée par IA">
       <div class="vtx-result-cta">
         <p data-fr="Vous aimez cette direction? Envoyez-nous votre demande pour une soumission détaillée." data-en="Like this direction? Send us your request for a detailed quote.">Vous aimez cette direction? Envoyez-nous votre demande pour une soumission détaillée.</p>
         <a class="vtx-cta-btn" href="#contact" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
       </div>
-      <button class="vtx-try-again-btn" type="button" onclick="vtxReset()" data-fr="Essayer un autre concept" data-en="Try another concept">Essayer un autre concept</button>
+      <button class="vtx-try-again-btn" type="button" onclick="vtxReset()" data-fr="Essayer une autre idée" data-en="Try another idea">Essayer une autre idée</button>
     </div>
   </div>
 </section>
@@ -458,15 +476,15 @@
     <div class="about-content">
       <div class="sl" data-fr="À propos de Vertmex" data-en="About Vertmex">À propos de Vertmex</div>
       <h2 data-fr="Experts paysagistes de la Montérégie" data-en="Montérégie's Landscaping Experts">Experts paysagistes de la Montérégie</h2>
-      <p data-fr="Basée à Saint-Rémi, en Montérégie, Vertmex est une entreprise québécoise dédiée à transformer vos espaces extérieurs en véritables œuvres vivantes. Entrepreneur vérifié, nous desservons 15 régions de la Montérégie et du Grand Montréal." data-en="Based in Saint-Rémi, Montérégie, Vertmex is a Québec business dedicated to transforming your outdoor spaces into true living works of art. A verified contractor, we serve 15 regions across Montérégie and Greater Montréal.">Basée à Saint-Rémi, en Montérégie, Vertmex est une entreprise québécoise dédiée à transformer vos espaces extérieurs en véritables œuvres vivantes. Entrepreneur vérifié, nous desservons 15 régions de la Montérégie et du Grand Montréal.</p>
-      <p data-fr="Notre équipe de 14 professionnels qualifiés offre 18 services d’aménagement paysager — des pergolas et piscines aux murets, pavé-uni, irrigation et clôtures. Nous connaissons le climat, les sols et les plantes de votre région." data-en="Our team of 14 qualified professionals offers 18 landscaping services — from pergolas and pools to retaining walls, pave-uni, irrigation and fencing. We know your region's climate, soils and plants.">Notre équipe de 14 professionnels qualifiés offre 18 services d’aménagement paysager — des pergolas et piscines aux murets, pavé-uni, irrigation et clôtures. Nous connaissons le climat, les sols et les plantes de votre région.</p>
-      <p data-fr="Nous sommes vos voisins — nous traitons chaque propriété comme si c’était la nôtre." data-en="We are your neighbours — we treat every property like our own.">Nous sommes vos voisins — nous traitons chaque propriété comme si c’était la nôtre.</p>
+      <p data-fr="Basée à Saint-Rémi, Vertmex travaille avec les propriétaires et commerces de la Montérégie, de la Rive-Sud et du Grand Montréal. L’objectif est simple : expliquer clairement les travaux, respecter le terrain et livrer un résultat durable." data-en="Based in Saint-Rémi, Vertmex works with homeowners and businesses across Montérégie, the South Shore and Greater Montréal. The goal is simple: explain the work clearly, respect the property and deliver a durable result.">Basée à Saint-Rémi, Vertmex travaille avec les propriétaires et commerces de la Montérégie, de la Rive-Sud et du Grand Montréal. L’objectif est simple : expliquer clairement les travaux, respecter le terrain et livrer un résultat durable.</p>
+      <p data-fr="L’équipe varie selon la saison et les projets, avec environ 5 à 13 personnes sur le terrain. Vertmex couvre les travaux pratiques : excavation, pavé-uni, tourbe, murets, clôtures, entretien, pergolas et aménagements complets." data-en="The crew changes with the season and project load, with about 5 to 13 people in the field. Vertmex handles practical work: excavation, pavers, sod, retaining walls, fencing, maintenance, pergolas and full landscaping.">L’équipe varie selon la saison et les projets, avec environ 5 à 13 personnes sur le terrain. Vertmex couvre les travaux pratiques : excavation, pavé-uni, tourbe, murets, clôtures, entretien, pergolas et aménagements complets.</p>
+      <p data-fr="Les détails comme assurance, licence, garanties et photos de projets seront ajoutés après confirmation avec l’entreprise." data-en="Details such as insurance, license, warranties and project photos will be added after confirmation with the business.">Les détails comme assurance, licence, garanties et photos de projets seront ajoutés après confirmation avec l’entreprise.</p>
       <div class="badges">
-        <span class="badge">✅ <span data-fr="Entrepreneur vérifié" data-en="Verified contractor">Entrepreneur vérifié</span></span>
+        <span class="badge">✅ <span data-fr="Information à confirmer" data-en="Information to confirm">Information à confirmer</span></span>
         <span class="badge">📍 <span>Saint-Rémi, QC J0L 2N0</span></span>
-        <span class="badge">🌿 <span data-fr="14 professionnels" data-en="14 professionals">14 professionnels</span></span>
-        <span class="badge">🔧 <span data-fr="18 services" data-en="18 services">18 services</span></span>
-        <span class="badge">🗺️ <span data-fr="15 régions" data-en="15 regions">15 régions</span></span>
+        <span class="badge">🌿 <span data-fr="5 à 13 personnes" data-en="5 to 13 people">5 à 13 personnes</span></span>
+        <span class="badge">🔧 <span data-fr="Services groupés" data-en="Grouped services">Services groupés</span></span>
+        <span class="badge">🗺️ <span data-fr="Montérégie &amp; Rive-Sud" data-en="Montérégie &amp; South Shore">Montérégie &amp; Rive-Sud</span></span>
       </div>
     </div>
   </div>
@@ -476,15 +494,15 @@
 <section class="sec" id="portfolio">
   <div>
     <div class="sl" data-fr="Nos réalisations" data-en="Our work">Nos réalisations</div>
-    <h2 data-fr="Projets récents" data-en="Recent Projects">Projets récents</h2>
-    <p class="sec-sub" data-fr="Ajoutez vos photos de projets ici — pavé-uni, pergolas, aménagements complets, piscines et plus." data-en="Add your project photos here — pave-uni, pergolas, full landscaping, pools and more.">Ajoutez vos photos de projets ici — pavé-uni, pergolas, aménagements complets, piscines et plus.</p>
+    <h2 data-fr="Photos de vrais projets à ajouter" data-en="Real project photos to add">Photos de vrais projets à ajouter</h2>
+    <p class="sec-sub" data-fr="Cette section est prête pour les photos réelles : avant / après, pavé-uni, tourbe, murets et cours arrière. Les visuels actuels sont des espaces réservés." data-en="This section is ready for real photos: before / after, pavers, sod, retaining walls and backyards. Current visuals are placeholders.">Cette section est prête pour les photos réelles : avant / après, pavé-uni, tourbe, murets et cours arrière. Les visuels actuels sont des espaces réservés.</p>
   </div>
   <div class="gal-grid">
-    <div class="g-item feat"><div class="ico">🌄</div><span data-fr="Photo vedette du projet" data-en="Featured project photo">Photo vedette du projet</span></div>
+    <div class="g-item feat"><div class="ico">🌄</div><span data-fr="Avant / après" data-en="Before / after">Avant / après</span></div>
     <div class="g-item"><div class="ico">🪨</div><span data-fr="Pavé-uni" data-en="Pave-uni">Pavé-uni</span></div>
-    <div class="g-item"><div class="ico">🎋</div><span data-fr="Pergola" data-en="Pergola">Pergola</span></div>
-    <div class="g-item"><div class="ico">🌺</div><span data-fr="Horticulture" data-en="Horticulture">Horticulture</span></div>
-    <div class="g-item"><div class="ico">🏊</div><span data-fr="Piscine" data-en="Pool">Piscine</span></div>
+    <div class="g-item"><div class="ico">🌿</div><span data-fr="Tourbe" data-en="Sod">Tourbe</span></div>
+    <div class="g-item"><div class="ico">🧱</div><span data-fr="Muret" data-en="Retaining wall">Muret</span></div>
+    <div class="g-item"><div class="ico">🏡</div><span data-fr="Cour arrière" data-en="Backyard">Cour arrière</span></div>
   </div>
 </section>
 
@@ -493,28 +511,32 @@
   <div class="contact-grid">
     <div>
       <div class="sl" data-fr="Contactez-nous" data-en="Get in touch">Contactez-nous</div>
-      <h2 data-fr="Prêt à transformer votre espace ?" data-en="Ready to transform your space?">Prêt à transformer votre espace ?</h2>
-      <p class="sec-sub" data-fr="Soumission gratuite en 24h. Nous desservons toute la Montérégie et le Grand Montréal." data-en="Free quote within 24h. We serve all of Montérégie and Greater Montréal.">Soumission gratuite en 24h. Nous desservons toute la Montérégie et le Grand Montréal.</p>
+      <h2 data-fr="Parlez-nous de votre projet extérieur" data-en="Tell us about your outdoor project">Parlez-nous de votre projet extérieur</h2>
+      <p class="sec-sub" data-fr="Appelez directement ou envoyez les détails de base : ville, type de projet, calendrier et courte description. L’équipe pourra répondre avec une soumission claire." data-en="Call directly or send the basic details: city, project type, timeline and a short description. The crew can respond with a clear quote.">Appelez directement ou envoyez les détails de base : ville, type de projet, calendrier et courte description. L’équipe pourra répondre avec une soumission claire.</p>
       <div class="cinfo">
         <div class="c-item"><div class="c-ico">📍</div><div class="c-txt"><strong data-fr="Adresse" data-en="Address">Adresse</strong><span>164a Rue Saint-Patrice, Saint-Rémi, QC J0L 2N0</span></div></div>
-        <div class="c-item"><div class="c-ico">📞</div><div class="c-txt"><strong data-fr="Téléphone" data-en="Phone">Téléphone</strong><span>(438) 728-7513</span></div></div>
-        <div class="c-item"><div class="c-ico">✉️</div><div class="c-txt"><strong>Email</strong><span>info@vertmex.ca</span></div></div>
+        <div class="c-item"><div class="c-ico">📞</div><div class="c-txt"><strong data-fr="Téléphone" data-en="Phone">Téléphone</strong><a href="tel:+14387287513">(438) 728-7513</a></div></div>
+        <div class="c-item"><div class="c-ico">✉️</div><div class="c-txt"><strong>Email</strong><a href="mailto:info@vertmex.ca">info@vertmex.ca</a></div></div>
         <div class="c-item"><div class="c-ico">🕐</div><div class="c-txt"><strong data-fr="Heures" data-en="Hours">Heures</strong><span data-fr="Lun–Sam : 7h – 18h" data-en="Mon–Sat: 7am – 6pm">Lun–Sam : 7h – 18h</span></div></div>
-        <div class="c-item"><div class="c-ico">🗺️</div><div class="c-txt"><strong data-fr="Zones" data-en="Coverage">Zones</strong><span data-fr="Montérégie (15 régions) &amp; Grand Montréal" data-en="Montérégie (15 regions) &amp; Greater Montréal">Montérégie (15 régions) &amp; Grand Montréal</span></div></div>
+        <div class="c-item"><div class="c-ico">🗺️</div><div class="c-txt"><strong data-fr="Zones" data-en="Coverage">Zones</strong><span data-fr="Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal" data-en="Saint-Rémi, Montérégie, South Shore &amp; Greater Montréal">Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal</span></div></div>
       </div>
-      <div class="guar-box"><div class="g-ico">🛡️</div><p data-fr="<strong>Soumission gratuite en 24h.</strong> Entrepreneur vérifié — pas de surprise sur les prix. Chaque devis est détaillé, clair et sans engagement." data-en="<strong>Free quote within 24h.</strong> Verified contractor — no surprise pricing. Every estimate is detailed, clear and commitment-free."><strong>Soumission gratuite en 24h.</strong> Entrepreneur vérifié — pas de surprise sur les prix. Chaque devis est détaillé, clair et sans engagement.</p></div>
+      <div class="guar-box"><div class="g-ico">🧾</div><p data-fr="<strong>Soumission claire.</strong> Les détails comme assurance, RBQ ou garanties doivent être confirmés avant d’être affichés publiquement." data-en="<strong>Clear quote.</strong> Details such as insurance, RBQ or warranties should be confirmed before being displayed publicly."><strong>Soumission claire.</strong> Les détails comme assurance, RBQ ou garanties doivent être confirmés avant d’être affichés publiquement.</p></div>
     </div>
     <div>
-      <div class="cform">
+      <form class="cform" action="mailto:info@vertmex.ca" method="post" enctype="text/plain">
         <div class="form-row">
-          <div class="ff"><label data-fr="Prénom" data-en="First name">Prénom</label><input type="text" data-fr-placeholder="Jean" data-en-placeholder="John" placeholder="Jean"></div>
-          <div class="ff"><label data-fr="Nom" data-en="Last name">Nom</label><input type="text" data-fr-placeholder="Tremblay" data-en-placeholder="Smith" placeholder="Tremblay"></div>
+          <div class="ff"><label data-fr="Prénom" data-en="First name">Prénom</label><input name="prenom" type="text" data-fr-placeholder="Jean" data-en-placeholder="John" placeholder="Jean"></div>
+          <div class="ff"><label data-fr="Nom" data-en="Last name">Nom</label><input name="nom" type="text" data-fr-placeholder="Tremblay" data-en-placeholder="Smith" placeholder="Tremblay"></div>
         </div>
-        <div class="ff"><label>Email</label><input type="email" placeholder="jean@exemple.com"></div>
-        <div class="ff"><label data-fr="Téléphone" data-en="Phone">Téléphone</label><input type="tel" placeholder="514-XXX-XXXX"></div>
+        <div class="ff"><label>Email</label><input name="email" type="email" placeholder="jean@exemple.com"></div>
+        <div class="ff"><label data-fr="Téléphone" data-en="Phone">Téléphone</label><input name="telephone" type="tel" placeholder="514-XXX-XXXX"></div>
+        <div class="form-row">
+          <div class="ff"><label data-fr="Ville" data-en="City">Ville</label><input name="ville" type="text" data-fr-placeholder="Saint-Rémi, Longueuil..." data-en-placeholder="Saint-Rémi, Longueuil..." placeholder="Saint-Rémi, Longueuil..."></div>
+          <div class="ff"><label data-fr="Calendrier" data-en="Timeline">Calendrier</label><select name="calendrier"><option data-fr="Choisir..." data-en="Select...">Choisir...</option><option data-fr="Dès que possible" data-en="As soon as possible">Dès que possible</option><option data-fr="Ce mois-ci" data-en="This month">Ce mois-ci</option><option data-fr="Cette saison" data-en="This season">Cette saison</option><option data-fr="Je planifie d’avance" data-en="Planning ahead">Je planifie d’avance</option></select></div>
+        </div>
         <div class="ff">
           <label data-fr="Service souhaité" data-en="Service needed">Service souhaité</label>
-          <select>
+          <select name="service">
             <option data-fr="Choisir un service..." data-en="Select a service...">Choisir un service...</option>
             <option data-fr="Aménagement complet" data-en="Full Landscaping">Aménagement complet</option>
             <option data-fr="Pavé-uni &amp; pavage" data-en="Pave-Uni &amp; Paving">Pavé-uni &amp; pavage</option>
@@ -531,10 +553,10 @@
             <option data-fr="Autre / Projet complet" data-en="Other / Full project">Autre / Projet complet</option>
           </select>
         </div>
-        <div class="ff"><label data-fr="Parlez-nous de votre projet" data-en="Tell us about your project">Parlez-nous de votre projet</label><textarea data-fr-placeholder="Décrivez votre espace, votre région, votre calendrier et vos objectifs..." data-en-placeholder="Describe your space, region, timeline and goals..." placeholder="Décrivez votre espace, votre région, votre calendrier et vos objectifs..."></textarea></div>
-        <button class="form-submit" data-fr="Envoyer ma demande →" data-en="Send my request →">Envoyer ma demande →</button>
-        <p class="form-note" data-fr="Réponse en 24h • Sans frais • Sans engagement • Entrepreneur vérifié" data-en="Response in 24h • No charge • No commitment • Verified contractor">Réponse en 24h • Sans frais • Sans engagement • Entrepreneur vérifié</p>
-      </div>
+        <div class="ff"><label data-fr="Courte description" data-en="Short description">Courte description</label><textarea name="description" data-fr-placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..." data-en-placeholder="Describe the property, desired work and important constraints..." placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..."></textarea></div>
+        <button class="form-submit" type="submit" data-fr="Envoyer ma demande →" data-en="Send my request →">Envoyer ma demande →</button>
+        <p class="form-note" data-fr="Appel direct recommandé pour les demandes urgentes • Soumission claire • Détails à confirmer" data-en="Direct call recommended for urgent requests • Clear quote • Details to confirm">Appel direct recommandé pour les demandes urgentes • Soumission claire • Détails à confirmer</p>
+      </form>
     </div>
   </div>
 </section>
@@ -610,10 +632,10 @@
   // Loading messages — rotate every 6 seconds to keep the user patient
   const LOADING_MSGS = [
     'Analyse de votre espace...',
-    'Génération du concept paysager...',
+    'Génération d’une inspiration visuelle...',
     'Application du style choisi...',
     'Ajout des détails végétaux...',
-    'Finalisation de votre design...',
+    'Préparation de l’image...',
   ];
   let vtxLoadingIndex = 0;
   let vtxLoadingInterval = null;
@@ -729,10 +751,10 @@
     const prompt = [
       'Professional residential ' + styleDesc,
       userParts || '',
-      'beautiful manicured garden Quebec Canada',
+      'practical residential landscaping Quebec Canada',
       'photorealistic architectural visualization',
       'lush plants colourful flowers stone pathway',
-      'golden hour lighting 8K high quality',
+      'natural daylight durable materials',
     ].filter(Boolean).join(', ');
 
     // Random seed gives a fresh result each time
@@ -888,7 +910,7 @@
     btn.disabled = disabled;
     document.getElementById('vtx-btn-label').textContent = disabled
       ? 'Génération en cours...'
-      : 'Générer mon concept paysager';
+      : 'Générer une inspiration visuelle';
   }
 
   window.vtxReset = function () {
