@@ -148,7 +148,11 @@
   .ff select option { background: #1a3a1a; }
   .form-submit { background: var(--green-bright); color: var(--green-deep); padding: 0.82rem; border: none; border-radius: 7px; font-family: 'DM Sans', sans-serif; font-size: 0.92rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
   .form-submit:hover { background: #6dc96d; }
+  .form-submit:disabled { opacity: 0.65; cursor: wait; }
   .form-note { font-size: 0.7rem; color: rgba(255,255,255,0.3); text-align: center; }
+  .form-status { display: none; border-radius: 7px; padding: 0.75rem 0.85rem; font-size: 0.8rem; line-height: 1.45; }
+  .form-status.ok { display: block; color: #dff7df; background: rgba(90,170,90,0.14); border: 1px solid rgba(90,170,90,0.28); }
+  .form-status.err { display: block; color: #ffdede; background: rgba(198,40,40,0.16); border: 1px solid rgba(255,205,210,0.3); }
   footer { background: #0e1e0e; padding: 1.6rem 2.5rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(90,170,90,0.08); flex-wrap: wrap; gap: 0.9rem; }
   .flogo { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 900; color: #fff; }
   .flogo span { color: var(--green-bright); }
@@ -570,21 +574,24 @@
       <div class="guar-box"><div class="g-ico">🧾</div><p data-fr="<strong>Soumission claire.</strong> Les détails comme assurance, RBQ ou garanties doivent être confirmés avant d’être affichés publiquement." data-en="<strong>Clear quote.</strong> Details such as insurance, RBQ or warranties should be confirmed before being displayed publicly."><strong>Soumission claire.</strong> Les détails comme assurance, RBQ ou garanties doivent être confirmés avant d’être affichés publiquement.</p></div>
     </div>
     <div>
-      <form class="cform" action="mailto:info@vertmex.ca" method="post" enctype="text/plain">
+      <form class="cform" id="quoteForm" action="https://formspree.io/f/xvzyqgnp" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle demande de soumission VertMex">
+        <input type="hidden" name="source" value="Site web VertMex">
+        <input type="hidden" name="page" value="https://www.vertmex.ca/">
         <div class="form-row">
-          <div class="ff"><label data-fr="Prénom" data-en="First name">Prénom</label><input name="prenom" type="text" data-fr-placeholder="Jean" data-en-placeholder="John" placeholder="Jean"></div>
-          <div class="ff"><label data-fr="Nom" data-en="Last name">Nom</label><input name="nom" type="text" data-fr-placeholder="Tremblay" data-en-placeholder="Smith" placeholder="Tremblay"></div>
+          <div class="ff"><label data-fr="Prénom" data-en="First name">Prénom</label><input name="prenom" type="text" autocomplete="given-name" required data-fr-placeholder="Jean" data-en-placeholder="John" placeholder="Jean"></div>
+          <div class="ff"><label data-fr="Nom" data-en="Last name">Nom</label><input name="nom" type="text" autocomplete="family-name" required data-fr-placeholder="Tremblay" data-en-placeholder="Smith" placeholder="Tremblay"></div>
         </div>
-        <div class="ff"><label>Email</label><input name="email" type="email" placeholder="jean@exemple.com"></div>
-        <div class="ff"><label data-fr="Téléphone" data-en="Phone">Téléphone</label><input name="telephone" type="tel" placeholder="514-XXX-XXXX"></div>
+        <div class="ff"><label>Email</label><input name="email" type="email" autocomplete="email" required placeholder="jean@exemple.com"></div>
+        <div class="ff"><label data-fr="Téléphone" data-en="Phone">Téléphone</label><input name="telephone" type="tel" autocomplete="tel" required placeholder="514-XXX-XXXX"></div>
         <div class="form-row">
-          <div class="ff"><label data-fr="Ville" data-en="City">Ville</label><input name="ville" type="text" data-fr-placeholder="Saint-Rémi, Longueuil..." data-en-placeholder="Saint-Rémi, Longueuil..." placeholder="Saint-Rémi, Longueuil..."></div>
-          <div class="ff"><label data-fr="Calendrier" data-en="Timeline">Calendrier</label><select name="calendrier"><option data-fr="Choisir..." data-en="Select...">Choisir...</option><option data-fr="Dès que possible" data-en="As soon as possible">Dès que possible</option><option data-fr="Ce mois-ci" data-en="This month">Ce mois-ci</option><option data-fr="Cette saison" data-en="This season">Cette saison</option><option data-fr="Je planifie d’avance" data-en="Planning ahead">Je planifie d’avance</option></select></div>
+          <div class="ff"><label data-fr="Ville" data-en="City">Ville</label><input name="ville" type="text" autocomplete="address-level2" required data-fr-placeholder="Saint-Rémi, Longueuil..." data-en-placeholder="Saint-Rémi, Longueuil..." placeholder="Saint-Rémi, Longueuil..."></div>
+          <div class="ff"><label data-fr="Calendrier" data-en="Timeline">Calendrier</label><select name="calendrier" required><option value="" data-fr="Choisir..." data-en="Select...">Choisir...</option><option data-fr="Dès que possible" data-en="As soon as possible">Dès que possible</option><option data-fr="Ce mois-ci" data-en="This month">Ce mois-ci</option><option data-fr="Cette saison" data-en="This season">Cette saison</option><option data-fr="Je planifie d’avance" data-en="Planning ahead">Je planifie d’avance</option></select></div>
         </div>
         <div class="ff">
           <label data-fr="Service souhaité" data-en="Service needed">Service souhaité</label>
-          <select name="service">
-            <option data-fr="Choisir un service..." data-en="Select a service...">Choisir un service...</option>
+          <select name="service" required>
+            <option value="" data-fr="Choisir un service..." data-en="Select a service...">Choisir un service...</option>
             <option data-fr="Aménagement complet" data-en="Full Landscaping">Aménagement complet</option>
             <option data-fr="Pavé-uni &amp; pavage" data-en="Pave-Uni &amp; Paving">Pavé-uni &amp; pavage</option>
             <option data-fr="Arbres, haies &amp; émondage" data-en="Trees, Hedges &amp; Pruning">Arbres, haies &amp; émondage</option>
@@ -600,7 +607,8 @@
             <option data-fr="Autre / Projet complet" data-en="Other / Full project">Autre / Projet complet</option>
           </select>
         </div>
-        <div class="ff"><label data-fr="Courte description" data-en="Short description">Courte description</label><textarea name="description" data-fr-placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..." data-en-placeholder="Describe the property, desired work and important constraints..." placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..."></textarea></div>
+        <div class="ff"><label data-fr="Courte description" data-en="Short description">Courte description</label><textarea name="description" required data-fr-placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..." data-en-placeholder="Describe the property, desired work and important constraints..." placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..."></textarea></div>
+        <div class="form-status" id="formStatus" aria-live="polite"></div>
         <button class="form-submit" type="submit" data-fr="Envoyer ma demande →" data-en="Send my request →">Envoyer ma demande →</button>
         <p class="form-note" data-fr="WhatsApp recommandé pour envoyer des photos • Appel direct pour les demandes urgentes" data-en="WhatsApp recommended for sending photos • Direct call for urgent requests">WhatsApp recommandé pour envoyer des photos • Appel direct pour les demandes urgentes</p>
       </form>
@@ -650,6 +658,44 @@
     document.querySelectorAll('select option[data-fr]').forEach(opt => {
       const val = opt.getAttribute('data-' + lang);
       if (val) opt.textContent = val;
+    });
+  }
+
+  const quoteForm = document.getElementById('quoteForm');
+  const formStatus = document.getElementById('formStatus');
+  if (quoteForm && formStatus) {
+    quoteForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submitBtn = quoteForm.querySelector('.form-submit');
+      const defaultLabel = submitBtn.textContent;
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+      submitBtn.disabled = true;
+      submitBtn.textContent = lang === 'fr' ? 'Envoi en cours...' : 'Sending...';
+
+      try {
+        const response = await fetch(quoteForm.action, {
+          method: 'POST',
+          body: new FormData(quoteForm),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (!response.ok) throw new Error('Formspree error');
+
+        quoteForm.reset();
+        formStatus.className = 'form-status ok';
+        formStatus.textContent = lang === 'fr'
+          ? 'Merci, votre demande a été envoyée. Pour accélérer la soumission, envoyez aussi vos photos sur WhatsApp.'
+          : 'Thanks, your request was sent. To speed up the quote, please also send your photos on WhatsApp.';
+      } catch (error) {
+        formStatus.className = 'form-status err';
+        formStatus.textContent = lang === 'fr'
+          ? 'La demande n’a pas pu être envoyée. Essayez WhatsApp ou appelez directement.'
+          : 'The request could not be sent. Try WhatsApp or call directly.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = defaultLabel;
+      }
     });
   }
 </script>
