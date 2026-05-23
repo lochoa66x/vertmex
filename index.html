@@ -120,6 +120,29 @@
   .g-item { border-radius: 8px; border: 1px dashed rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.42rem; color: var(--text-light); font-size: 0.7rem; background: #ede9e1; min-height: 160px; }
   .g-item .ico { font-size: 1.5rem; opacity: 0.26; }
   .g-item.feat { grid-column: span 2; grid-row: span 2; min-height: 330px; }
+  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2.2rem; }
+  .project-card { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; overflow: hidden; }
+  .project-photo { min-height: 210px; background: #e7e3da; border-bottom: 1px dashed rgba(45,90,45,0.18); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.45rem; color: var(--text-light); text-align: center; padding: 1rem; }
+  .project-photo strong { color: var(--green-deep); font-size: 0.88rem; }
+  .project-photo span { font-size: 0.72rem; }
+  .project-body { padding: 1.15rem; }
+  .project-meta { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.75rem; }
+  .project-tag { background: var(--green-pale); color: var(--green-dark); border: 1px solid rgba(61,122,61,0.18); border-radius: 100px; padding: 0.22rem 0.58rem; font-size: 0.68rem; }
+  .project-card h3 { color: var(--green-deep); font-size: 1rem; margin-bottom: 0.35rem; }
+  .project-card p { color: var(--text-light); font-size: 0.8rem; line-height: 1.58; }
+  .review-grid, .proof-grid, .service-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .review-card, .proof-item, .service-detail { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.2rem; }
+  .review-card .stars-line { color: #d69e2e; font-size: 0.85rem; letter-spacing: 0.08em; margin-bottom: 0.65rem; }
+  .review-card blockquote { color: var(--text-mid); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.8rem; }
+  .review-card .review-author, .proof-item span { color: var(--text-light); font-size: 0.76rem; }
+  .review-note { margin-top: 1rem; color: var(--text-light); font-size: 0.82rem; line-height: 1.6; }
+  .proof-item strong, .service-detail h3 { display: block; color: var(--green-deep); font-size: 1rem; margin-bottom: 0.35rem; }
+  .proof-item p, .service-detail p { color: var(--text-light); font-size: 0.8rem; line-height: 1.58; }
+  .service-detail ul { list-style: none; display: grid; gap: 0.45rem; margin: 0.9rem 0 1rem; }
+  .service-detail li { color: var(--text-mid); font-size: 0.8rem; line-height: 1.45; display: flex; gap: 0.45rem; }
+  .service-detail li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
+  .service-detail a { color: var(--green-dark); font-size: 0.8rem; font-weight: 700; text-decoration: none; }
+  .service-detail a:hover { color: var(--green-deep); text-decoration: underline; }
   .contact-sec { background: var(--green-deep); padding: 4.5rem 2.5rem; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.75rem; align-items: start; }
   .contact-sec h2 { color: #fff; }
@@ -160,6 +183,8 @@
   .flinks a { font-size: 0.76rem; color: rgba(255,255,255,0.32); text-decoration: none; }
   .flinks a:hover { color: rgba(255,255,255,0.58); }
   footer p { font-size: 0.76rem; color: rgba(255,255,255,0.22); }
+  .seo-footer { background: #122812; padding: 1.35rem 2.5rem; border-top: 1px solid rgba(90,170,90,0.08); }
+  .seo-footer p { max-width: 980px; color: rgba(255,255,255,0.48); font-size: 0.78rem; line-height: 1.7; }
   .mobile-contact-bar { display: none; }
   @media (max-width: 768px) {
     body { padding-bottom: 74px; }
@@ -175,9 +200,11 @@
     .about-grid, .contact-grid, .photo-guide-inner { grid-template-columns: 1fr; gap: 2rem; }
     .photo-steps { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
+    .project-grid { grid-template-columns: 1fr; }
     .gal-grid { grid-template-columns: 1fr 1fr; }
     .g-item.feat { grid-column: span 2; grid-row: span 1; }
     footer { flex-direction: column; text-align: center; padding: 1.25rem; }
+    .seo-footer { padding: 1.25rem; text-align: center; }
     .flinks { justify-content: center; flex-wrap: wrap; }
     .mobile-contact-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; padding: 0.7rem 0.9rem; background: rgba(14,30,14,0.96); border-top: 1px solid rgba(90,170,90,0.25); backdrop-filter: blur(10px); }
     .mobile-contact-bar a { display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 700; }
@@ -518,16 +545,108 @@
 <!-- PORTFOLIO -->
 <section class="sec" id="portfolio">
   <div>
-    <div class="sl" data-fr="Nos réalisations" data-en="Our work">Nos réalisations</div>
-    <h2 data-fr="Photos de vrais projets à ajouter" data-en="Real project photos to add">Photos de vrais projets à ajouter</h2>
-    <p class="sec-sub" data-fr="Cette section est prête pour les photos réelles : avant / après, pavé-uni, tourbe, murets et cours arrière. Les visuels actuels sont des espaces réservés." data-en="This section is ready for real photos: before / after, pavers, sod, retaining walls and backyards. Current visuals are placeholders.">Cette section est prête pour les photos réelles : avant / après, pavé-uni, tourbe, murets et cours arrière. Les visuels actuels sont des espaces réservés.</p>
+    <div class="sl" data-fr="Projets récents" data-en="Recent projects">Projets récents</div>
+    <h2 data-fr="Une galerie prête pour les vraies photos de chantier" data-en="A gallery ready for real job-site photos">Une galerie prête pour les vraies photos de chantier</h2>
+    <p class="sec-sub" data-fr="Les cartes ci-dessous sont structurées pour recevoir les photos réelles de VertMex : avant / après, pavé-uni, tourbe, murets et cours arrière. Aucun faux projet n’est inventé." data-en="The cards below are structured for real VertMex photos: before / after, pavers, sod, retaining walls and backyards. No fake project is invented.">Les cartes ci-dessous sont structurées pour recevoir les photos réelles de VertMex : avant / après, pavé-uni, tourbe, murets et cours arrière. Aucun faux projet n’est inventé.</p>
   </div>
-  <div class="gal-grid">
-    <div class="g-item feat"><div class="ico">🌄</div><span data-fr="Avant / après" data-en="Before / after">Avant / après</span></div>
-    <div class="g-item"><div class="ico">🪨</div><span data-fr="Pavé-uni" data-en="Pave-uni">Pavé-uni</span></div>
-    <div class="g-item"><div class="ico">🌿</div><span data-fr="Tourbe" data-en="Sod">Tourbe</span></div>
-    <div class="g-item"><div class="ico">🧱</div><span data-fr="Muret" data-en="Retaining wall">Muret</span></div>
-    <div class="g-item"><div class="ico">🏡</div><span data-fr="Cour arrière" data-en="Backyard">Cour arrière</span></div>
+  <div class="project-grid">
+    <article class="project-card">
+      <div class="project-photo"><strong data-fr="Avant / après" data-en="Before / after">Avant / après</strong><span data-fr="Photo réelle à ajouter" data-en="Real photo to add">Photo réelle à ajouter</span></div>
+      <div class="project-body">
+        <div class="project-meta"><span class="project-tag">Pavé-uni</span><span class="project-tag">Roussillon</span><span class="project-tag" data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
+        <h3 data-fr="Entrée ou terrasse en pavé-uni" data-en="Paver driveway or patio">Entrée ou terrasse en pavé-uni</h3>
+        <p data-fr="Espace réservé pour un projet réel avec préparation de base, nivellement et finition propre." data-en="Reserved space for a real project with base preparation, grading and clean finishing.">Espace réservé pour un projet réel avec préparation de base, nivellement et finition propre.</p>
+      </div>
+    </article>
+    <article class="project-card">
+      <div class="project-photo"><strong data-fr="Tourbe" data-en="Sod">Tourbe</strong><span data-fr="Photo réelle à ajouter" data-en="Real photo to add">Photo réelle à ajouter</span></div>
+      <div class="project-body">
+        <div class="project-meta"><span class="project-tag">Tourbe</span><span class="project-tag">Saint-Rémi</span><span class="project-tag" data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
+        <h3 data-fr="Préparation de terrain et pose de tourbe" data-en="Ground preparation and sod installation">Préparation de terrain et pose de tourbe</h3>
+        <p data-fr="Parfait pour montrer le résultat final après nettoyage, nivellement et installation du gazon." data-en="Good place to show the final result after cleanup, grading and lawn installation.">Parfait pour montrer le résultat final après nettoyage, nivellement et installation du gazon.</p>
+      </div>
+    </article>
+    <article class="project-card">
+      <div class="project-photo"><strong data-fr="Muret" data-en="Retaining wall">Muret</strong><span data-fr="Photo réelle à ajouter" data-en="Real photo to add">Photo réelle à ajouter</span></div>
+      <div class="project-body">
+        <div class="project-meta"><span class="project-tag">Muret</span><span class="project-tag">Montérégie</span><span class="project-tag" data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
+        <h3 data-fr="Muret de soutènement ou bordure" data-en="Retaining wall or border">Muret de soutènement ou bordure</h3>
+        <p data-fr="Espace pour documenter un muret, une bordure de plate-bande ou une correction de pente." data-en="Space to document a wall, garden-bed border or slope correction.">Espace pour documenter un muret, une bordure de plate-bande ou une correction de pente.</p>
+      </div>
+    </article>
+    <article class="project-card">
+      <div class="project-photo"><strong data-fr="Cour arrière" data-en="Backyard">Cour arrière</strong><span data-fr="Photo réelle à ajouter" data-en="Real photo to add">Photo réelle à ajouter</span></div>
+      <div class="project-body">
+        <div class="project-meta"><span class="project-tag" data-fr="Aménagement" data-en="Landscaping">Aménagement</span><span class="project-tag">Rive-Sud</span><span class="project-tag" data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
+        <h3 data-fr="Cour arrière complète" data-en="Complete backyard">Cour arrière complète</h3>
+        <p data-fr="Section prévue pour une transformation extérieure avec photos prises avant, pendant et après." data-en="Section planned for an outdoor transformation with before, during and after photos.">Section prévue pour une transformation extérieure avec photos prises avant, pendant et après.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CLIENT REVIEWS -->
+<section class="sec" id="reviews" style="background:#fff;">
+  <div class="svc-hdr">
+    <div class="sl" data-fr="Avis clients" data-en="Client reviews">Avis clients</div>
+    <h2 data-fr="Prêt pour les avis Google réels" data-en="Ready for real Google reviews">Prêt pour les avis Google réels</h2>
+    <p class="sec-sub" data-fr="Cette section prépare le site pour afficher de vrais avis quand le profil Google et les témoignages seront confirmés." data-en="This section prepares the site to show real reviews once the Google profile and testimonials are confirmed.">Cette section prépare le site pour afficher de vrais avis quand le profil Google et les témoignages seront confirmés.</p>
+  </div>
+  <div class="review-grid">
+    <article class="review-card"><div class="stars-line">★★★★★</div><blockquote data-fr="Avis Google à ajouter après confirmation." data-en="Google review to add after confirmation.">Avis Google à ajouter après confirmation.</blockquote><div class="review-author" data-fr="Nom du client à confirmer · Ville à confirmer" data-en="Client name to confirm · City to confirm">Nom du client à confirmer · Ville à confirmer</div></article>
+    <article class="review-card"><div class="stars-line">★★★★★</div><blockquote data-fr="Témoignage réel à insérer ici, idéalement avec le type de projet." data-en="Real testimonial to insert here, ideally with the project type.">Témoignage réel à insérer ici, idéalement avec le type de projet.</blockquote><div class="review-author" data-fr="Projet à confirmer · Lien Google à ajouter" data-en="Project to confirm · Google link to add">Projet à confirmer · Lien Google à ajouter</div></article>
+    <article class="review-card"><div class="stars-line">★★★★★</div><blockquote data-fr="Court avis client orienté sur la propreté, la communication ou le respect du devis." data-en="Short customer review focused on cleanliness, communication or quote clarity.">Court avis client orienté sur la propreté, la communication ou le respect du devis.</blockquote><div class="review-author" data-fr="Information à confirmer" data-en="Information to confirm">Information à confirmer</div></article>
+  </div>
+  <p class="review-note" data-fr="À remplacer seulement par des avis réels. Ne pas afficher de note moyenne, de nombre d’avis ou de certification sans preuve confirmée." data-en="Replace only with real reviews. Do not show an average rating, review count or certification without confirmed proof.">À remplacer seulement par des avis réels. Ne pas afficher de note moyenne, de nombre d’avis ou de certification sans preuve confirmée.</p>
+</section>
+
+<!-- PROOF PLACEHOLDERS -->
+<section class="sec" id="proof" style="background:var(--cream);">
+  <div class="svc-hdr">
+    <div class="sl" data-fr="Informations à confirmer" data-en="Information to confirm">Informations à confirmer</div>
+    <h2 data-fr="Preuves importantes à valider avec le propriétaire" data-en="Important proof points to confirm with the owner">Preuves importantes à valider avec le propriétaire</h2>
+    <p class="sec-sub" data-fr="Ces éléments renforcent la confiance, mais ils doivent rester neutres tant que les détails officiels ne sont pas validés." data-en="These elements build trust, but they should stay neutral until official details are validated.">Ces éléments renforcent la confiance, mais ils doivent rester neutres tant que les détails officiels ne sont pas validés.</p>
+  </div>
+  <div class="proof-grid">
+    <div class="proof-item"><strong>RBQ</strong><p data-fr="Numéro et statut à confirmer avant publication." data-en="Number and status to confirm before publishing.">Numéro et statut à confirmer avant publication.</p><span data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
+    <div class="proof-item"><strong data-fr="Assurance responsabilité" data-en="Liability insurance">Assurance responsabilité</strong><p data-fr="Ajouter les détails seulement après validation avec l’entreprise." data-en="Add details only after validation with the business.">Ajouter les détails seulement après validation avec l’entreprise.</p><span data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
+    <div class="proof-item"><strong data-fr="Garantie sur les travaux" data-en="Work warranty">Garantie sur les travaux</strong><p data-fr="Décrire les garanties réelles selon le type de service." data-en="Describe real warranties based on the service type.">Décrire les garanties réelles selon le type de service.</p><span data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
+    <div class="proof-item"><strong data-fr="Photos de projets" data-en="Project photos">Photos de projets</strong><p data-fr="Remplacer les espaces réservés par des photos VertMex prises sur chantier." data-en="Replace placeholders with VertMex photos taken on real job sites.">Remplacer les espaces réservés par des photos VertMex prises sur chantier.</p><span data-fr="À ajouter" data-en="To add">À ajouter</span></div>
+  </div>
+</section>
+
+<!-- SERVICE DETAILS -->
+<section class="sec" id="service-details" style="background:#fff;">
+  <div class="svc-hdr">
+    <div class="sl" data-fr="Détails des services" data-en="Service details">Détails des services</div>
+    <h2 data-fr="Les demandes les plus courantes" data-en="The most common requests">Les demandes les plus courantes</h2>
+    <p class="sec-sub" data-fr="Des descriptions simples pour aider les clients à reconnaître leur besoin avant de demander une soumission." data-en="Simple descriptions to help customers recognize what they need before requesting a quote.">Des descriptions simples pour aider les clients à reconnaître leur besoin avant de demander une soumission.</p>
+  </div>
+  <div class="service-detail-grid">
+    <article class="service-detail">
+      <h3 data-fr="Pavé-uni" data-en="Pavers">Pavé-uni</h3>
+      <p data-fr="Pour entrées, trottoirs, terrasses et zones autour de la maison." data-en="For driveways, walkways, patios and areas around the home.">Pour entrées, trottoirs, terrasses et zones autour de la maison.</p>
+      <ul><li data-fr="Préparation et nivellement de base" data-en="Base preparation and grading">Préparation et nivellement de base</li><li data-fr="Pose ou correction de pavé existant" data-en="New installation or correction of existing pavers">Pose ou correction de pavé existant</li><li data-fr="Finition propre autour des bordures" data-en="Clean finishing around edges">Finition propre autour des bordures</li></ul>
+      <a href="#contact" data-fr="Demander une soumission pavé-uni" data-en="Request a paver quote">Demander une soumission pavé-uni</a>
+    </article>
+    <article class="service-detail">
+      <h3 data-fr="Excavation" data-en="Excavation">Excavation</h3>
+      <p data-fr="Pour préparer un terrain, corriger une pente ou commencer un aménagement." data-en="To prepare land, correct a slope or start a landscaping project.">Pour préparer un terrain, corriger une pente ou commencer un aménagement.</p>
+      <ul><li data-fr="Préparation avant pavé, tourbe ou muret" data-en="Preparation before pavers, sod or walls">Préparation avant pavé, tourbe ou muret</li><li data-fr="Nivellement et gestion des accès" data-en="Grading and access planning">Nivellement et gestion des accès</li><li data-fr="Photos du terrain recommandées" data-en="Property photos recommended">Photos du terrain recommandées</li></ul>
+      <a href="#photos-whatsapp" data-fr="Envoyer des photos du terrain" data-en="Send property photos">Envoyer des photos du terrain</a>
+    </article>
+    <article class="service-detail">
+      <h3 data-fr="Tourbe" data-en="Sod">Tourbe</h3>
+      <p data-fr="Pour repartir avec une pelouse propre après travaux, usure ou nivellement." data-en="For a clean lawn after construction, wear or grading work.">Pour repartir avec une pelouse propre après travaux, usure ou nivellement.</p>
+      <ul><li data-fr="Préparation du sol" data-en="Soil preparation">Préparation du sol</li><li data-fr="Pose de tourbe et finition des contours" data-en="Sod installation and edge finishing">Pose de tourbe et finition des contours</li><li data-fr="Conseils d’arrosage après installation" data-en="Watering guidance after installation">Conseils d’arrosage après installation</li></ul>
+      <a href="#contact" data-fr="Planifier une pose de tourbe" data-en="Plan sod installation">Planifier une pose de tourbe</a>
+    </article>
+    <article class="service-detail">
+      <h3 data-fr="Murets" data-en="Retaining walls">Murets</h3>
+      <p data-fr="Pour retenir une pente, structurer une cour ou encadrer des plates-bandes." data-en="To hold a slope, structure a yard or frame garden beds.">Pour retenir une pente, structurer une cour ou encadrer des plates-bandes.</p>
+      <ul><li data-fr="Murets de soutènement ou décoratifs" data-en="Retaining or decorative walls">Murets de soutènement ou décoratifs</li><li data-fr="Bordures et transitions de niveaux" data-en="Borders and level transitions">Bordures et transitions de niveaux</li><li data-fr="Validation sur place recommandée" data-en="On-site validation recommended">Validation sur place recommandée</li></ul>
+      <a href="#contact" data-fr="Parler d’un projet de muret" data-en="Discuss a wall project">Parler d’un projet de muret</a>
+    </article>
   </div>
 </section>
 
@@ -619,6 +738,11 @@
 <div class="mobile-contact-bar" aria-label="Contact rapide">
   <a class="mobile-call" href="tel:+14387287513" data-fr="Appeler" data-en="Call">Appeler</a>
   <a class="mobile-whatsapp" href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." target="_blank" rel="noopener" data-fr="WhatsApp" data-en="WhatsApp">WhatsApp</a>
+</div>
+
+<!-- LOCAL SEO -->
+<div class="seo-footer">
+  <p data-fr="Basée à Saint-Rémi, VertMex accompagne les clients résidentiels et commerciaux de la Montérégie, de la Rive-Sud, du Grand Montréal, de Longueuil, du Roussillon et de Vaudreuil-Soulanges pour les travaux de pavé-uni, excavation, tourbe, murets, clôtures, entretien paysager et aménagement extérieur." data-en="Based in Saint-Rémi, VertMex serves residential and commercial clients across Montérégie, the South Shore, Greater Montréal, Longueuil, Roussillon and Vaudreuil-Soulanges for pavers, excavation, sod, retaining walls, fencing, landscape maintenance and outdoor landscaping.">Basée à Saint-Rémi, VertMex accompagne les clients résidentiels et commerciaux de la Montérégie, de la Rive-Sud, du Grand Montréal, de Longueuil, du Roussillon et de Vaudreuil-Soulanges pour les travaux de pavé-uni, excavation, tourbe, murets, clôtures, entretien paysager et aménagement extérieur.</p>
 </div>
 
 <!-- FOOTER -->
