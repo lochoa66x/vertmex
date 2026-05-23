@@ -48,6 +48,8 @@
   .hero-actions { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
   .btn-primary { background: var(--green-bright); color: var(--green-deep); padding: 0.78rem 1.65rem; border-radius: 100px; font-weight: 500; font-size: 0.88rem; cursor: pointer; border: none; text-decoration: none; transition: all 0.2s; display: inline-block; }
   .btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
+  .btn-whatsapp { background: #25d366; color: #0b2b14; }
+  .btn-whatsapp:hover { background: #42e07b; }
   .btn-ghost { background: transparent; color: rgba(255,255,255,0.75); padding: 0.78rem 1.65rem; border-radius: 100px; font-size: 0.88rem; cursor: pointer; border: 1px solid rgba(255,255,255,0.22); text-decoration: none; transition: all 0.2s; display: inline-block; }
   .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
   .hero-guarantee { display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; color: rgba(255,255,255,0.42); }
@@ -101,6 +103,13 @@
   .why-item { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.15rem; }
   .why-item strong { display: block; color: var(--green-deep); font-size: 0.92rem; margin-bottom: 0.35rem; }
   .why-item p { color: var(--text-light); font-size: 0.8rem; line-height: 1.55; }
+  .photo-guide { background: #fff; }
+  .photo-guide-inner { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 3rem; align-items: start; }
+  .photo-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .photo-step { background: var(--cream); border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.15rem; }
+  .photo-step strong { display: flex; align-items: center; gap: 0.45rem; color: var(--green-deep); font-size: 0.92rem; margin-bottom: 0.4rem; }
+  .photo-step p { color: var(--text-light); font-size: 0.8rem; line-height: 1.55; }
+  .photo-cta { margin-top: 1.3rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.75rem; align-items: center; }
   .about-img-ph { aspect-ratio: 4/5; border-radius: 10px; border: 1px dashed rgba(0,0,0,0.12); background: #e5e0d8; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.55rem; color: var(--text-light); font-size: 0.76rem; }
   .about-img-ph .ico { font-size: 2rem; opacity: 0.28; }
@@ -122,6 +131,8 @@
   .c-txt strong { display: block; font-size: 0.7rem; color: var(--green-bright); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.12rem; }
   .c-txt span, .c-txt a { font-size: 0.85rem; color: rgba(255,255,255,0.72); text-decoration: none; }
   .c-txt a:hover { color: #fff; }
+  .contact-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .contact-actions a { text-decoration: none; }
   .guar-box { margin-top: 1.85rem; background: rgba(90,170,90,0.1); border: 1px solid rgba(90,170,90,0.2); border-radius: 9px; padding: 0.95rem 1.15rem; display: flex; align-items: center; gap: 0.7rem; }
   .guar-box .g-ico { font-size: 1.35rem; flex-shrink: 0; }
   .guar-box p { font-size: 0.8rem; color: rgba(255,255,255,0.68); line-height: 1.52; }
@@ -145,21 +156,29 @@
   .flinks a { font-size: 0.76rem; color: rgba(255,255,255,0.32); text-decoration: none; }
   .flinks a:hover { color: rgba(255,255,255,0.58); }
   footer p { font-size: 0.76rem; color: rgba(255,255,255,0.22); }
+  .mobile-contact-bar { display: none; }
   @media (max-width: 768px) {
+    body { padding-bottom: 74px; }
     nav { padding: 0.85rem 1.25rem; }
     .nav-links { gap: 1rem; }
+    .nav-links li:nth-child(2), .nav-links li:nth-child(3), .nav-links li:nth-child(4), .nav-phone { display: none; }
     .hero { padding: 7rem 1.25rem 9rem; }
     .hero::before, .hero-img-area { display: none; }
     .hero-stats { left: 1.25rem; gap: 1.5rem; }
     section.sec, .contact-sec { padding: 3rem 1.25rem; }
     .trust-bar, .zones, .reviews-strip { padding: 1rem 1.25rem; }
     .trust-div { display: none; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-grid, .contact-grid, .photo-guide-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .photo-steps { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .gal-grid { grid-template-columns: 1fr 1fr; }
     .g-item.feat { grid-column: span 2; grid-row: span 1; }
     footer { flex-direction: column; text-align: center; padding: 1.25rem; }
     .flinks { justify-content: center; flex-wrap: wrap; }
+    .mobile-contact-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; padding: 0.7rem 0.9rem; background: rgba(14,30,14,0.96); border-top: 1px solid rgba(90,170,90,0.25); backdrop-filter: blur(10px); }
+    .mobile-contact-bar a { display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 700; }
+    .mobile-call { background: #fff; color: var(--green-deep); }
+    .mobile-whatsapp { background: #25d366; color: #0b2b14; }
   }
 </style>
 </head>
@@ -174,7 +193,7 @@
     <li><a href="#about"     data-fr="À Propos"  data-en="About">À Propos</a></li>
     <li><a href="#portfolio" data-fr="Portfolio"      data-en="Portfolio">Portfolio</a></li>
     <li><a href="tel:+14387287513" class="nav-phone" data-fr="(438) 728-7513" data-en="(438) 728-7513">(438) 728-7513</a></li>
-    <li><a href="#contact" class="nav-cta" data-fr="Soumission" data-en="Quote">Soumission</a></li>
+    <li><a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." class="nav-cta" target="_blank" rel="noopener" data-fr="WhatsApp" data-en="WhatsApp">WhatsApp</a></li>
     <li><button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button></li>
   </ul>
 </nav>
@@ -186,7 +205,8 @@
     <h1 data-fr="Aménagement paysager fiable en <em>Montérégie</em>" data-en="Reliable Landscaping in <em>Montérégie</em>">Aménagement paysager fiable en <em>Montérégie</em></h1>
     <p class="hero-sub" data-fr="VertMex aide les propriétaires et commerces avec des travaux extérieurs clairs et bien exécutés : pavé-uni, excavation, tourbe, murets, clôtures, entretien et aménagement complet." data-en="VertMex helps homeowners and businesses with clear, well-executed outdoor work: pavers, excavation, sod, retaining walls, fencing, maintenance and full landscaping.">VertMex aide les propriétaires et commerces avec des travaux extérieurs clairs et bien exécutés : pavé-uni, excavation, tourbe, murets, clôtures, entretien et aménagement complet.</p>
     <div class="hero-actions">
-      <a href="tel:+14387287513" class="btn-primary" data-fr="Appeler (438) 728-7513" data-en="Call (438) 728-7513">Appeler (438) 728-7513</a>
+      <a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." class="btn-primary btn-whatsapp" target="_blank" rel="noopener" data-fr="Envoyer des photos sur WhatsApp" data-en="Send photos on WhatsApp">Envoyer des photos sur WhatsApp</a>
+      <a href="tel:+14387287513" class="btn-ghost" data-fr="Appeler (438) 728-7513" data-en="Call (438) 728-7513">Appeler (438) 728-7513</a>
       <a href="#contact" class="btn-ghost" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
     </div>
     <div class="hero-guarantee"><span class="chk">✓</span><span data-fr="Soumission claire — Chantier propre — Équipe locale et flexible" data-en="Clear quote — Clean job site — Local, flexible crew">Soumission claire — Chantier propre — Équipe locale et flexible</span></div>
@@ -507,19 +527,45 @@
   </div>
 </section>
 
+<!-- SEND PHOTOS -->
+<section class="sec photo-guide" id="photos-whatsapp">
+  <div class="photo-guide-inner">
+    <div>
+      <div class="sl" data-fr="Soumission par WhatsApp" data-en="Quote by WhatsApp">Soumission par WhatsApp</div>
+      <h2 data-fr="Envoyez quelques photos pour accélérer la réponse" data-en="Send a few photos to speed up the response">Envoyez quelques photos pour accélérer la réponse</h2>
+      <p class="sec-sub" data-fr="Le plus simple : envoyez les photos du terrain directement sur WhatsApp avec votre ville, le service voulu et le moment souhaité pour les travaux." data-en="The easiest path: send property photos directly on WhatsApp with your city, desired service and preferred timing.">Le plus simple : envoyez les photos du terrain directement sur WhatsApp avec votre ville, le service voulu et le moment souhaité pour les travaux.</p>
+      <div class="photo-cta">
+        <a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." class="btn-primary btn-whatsapp" target="_blank" rel="noopener" data-fr="Ouvrir WhatsApp" data-en="Open WhatsApp">Ouvrir WhatsApp</a>
+        <a href="tel:+14387287513" class="btn-ghost" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Appeler plutôt" data-en="Call instead">Appeler plutôt</a>
+      </div>
+    </div>
+    <div class="photo-steps">
+      <div class="photo-step"><strong data-fr="1. Vue d’ensemble" data-en="1. Full view">1. Vue d’ensemble</strong><p data-fr="Une photo large de la cour, de l’entrée ou de la zone à aménager." data-en="A wide photo of the yard, driveway or area to be improved.">Une photo large de la cour, de l’entrée ou de la zone à aménager.</p></div>
+      <div class="photo-step"><strong data-fr="2. Zone problématique" data-en="2. Problem area">2. Zone problématique</strong><p data-fr="Montrez le drainage, la pente, l’ancien pavé, la haie ou l’endroit à corriger." data-en="Show drainage, slope, old pavers, hedges or the area that needs fixing.">Montrez le drainage, la pente, l’ancien pavé, la haie ou l’endroit à corriger.</p></div>
+      <div class="photo-step"><strong data-fr="3. Accès au chantier" data-en="3. Site access">3. Accès au chantier</strong><p data-fr="Ajoutez une photo de l’accès : entrée, clôture, ruelle, stationnement ou espace pour équipement." data-en="Add a photo of access: driveway, gate, lane, parking or equipment space.">Ajoutez une photo de l’accès : entrée, clôture, ruelle, stationnement ou espace pour équipement.</p></div>
+      <div class="photo-step"><strong data-fr="4. Infos rapides" data-en="4. Quick details">4. Infos rapides</strong><p data-fr="Écrivez la ville, le service souhaité, le calendrier et votre budget approximatif si vous en avez un." data-en="Write the city, desired service, timeline and approximate budget if you have one.">Écrivez la ville, le service souhaité, le calendrier et votre budget approximatif si vous en avez un.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-sec" id="contact">
   <div class="contact-grid">
     <div>
       <div class="sl" data-fr="Contactez-nous" data-en="Get in touch">Contactez-nous</div>
       <h2 data-fr="Parlez-nous de votre projet extérieur" data-en="Tell us about your outdoor project">Parlez-nous de votre projet extérieur</h2>
-      <p class="sec-sub" data-fr="Appelez directement ou envoyez les détails de base : ville, type de projet, calendrier et courte description. L’équipe pourra répondre avec une soumission claire." data-en="Call directly or send the basic details: city, project type, timeline and a short description. The crew can respond with a clear quote.">Appelez directement ou envoyez les détails de base : ville, type de projet, calendrier et courte description. L’équipe pourra répondre avec une soumission claire.</p>
+      <p class="sec-sub" data-fr="WhatsApp est le plus rapide pour envoyer des photos. Vous pouvez aussi appeler directement ou envoyer les détails de base par formulaire." data-en="WhatsApp is the fastest way to send photos. You can also call directly or send the basic details through the form.">WhatsApp est le plus rapide pour envoyer des photos. Vous pouvez aussi appeler directement ou envoyer les détails de base par formulaire.</p>
       <div class="cinfo">
         <div class="c-item"><div class="c-ico">📍</div><div class="c-txt"><strong data-fr="Adresse" data-en="Address">Adresse</strong><span>164a Rue Saint-Patrice, Saint-Rémi, QC J0L 2N0</span></div></div>
+        <div class="c-item"><div class="c-ico">💬</div><div class="c-txt"><strong>WhatsApp</strong><a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." target="_blank" rel="noopener">(438) 728-7513</a></div></div>
         <div class="c-item"><div class="c-ico">📞</div><div class="c-txt"><strong data-fr="Téléphone" data-en="Phone">Téléphone</strong><a href="tel:+14387287513">(438) 728-7513</a></div></div>
         <div class="c-item"><div class="c-ico">✉️</div><div class="c-txt"><strong>Email</strong><a href="mailto:info@vertmex.ca">info@vertmex.ca</a></div></div>
         <div class="c-item"><div class="c-ico">🕐</div><div class="c-txt"><strong data-fr="Heures" data-en="Hours">Heures</strong><span data-fr="Lun–Sam : 7h – 18h" data-en="Mon–Sat: 7am – 6pm">Lun–Sam : 7h – 18h</span></div></div>
         <div class="c-item"><div class="c-ico">🗺️</div><div class="c-txt"><strong data-fr="Zones" data-en="Coverage">Zones</strong><span data-fr="Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal" data-en="Saint-Rémi, Montérégie, South Shore &amp; Greater Montréal">Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal</span></div></div>
+      </div>
+      <div class="contact-actions">
+        <a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." class="btn-primary btn-whatsapp" target="_blank" rel="noopener" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</a>
+        <a href="tel:+14387287513" class="btn-ghost" data-fr="Appeler" data-en="Call">Appeler</a>
       </div>
       <div class="guar-box"><div class="g-ico">🧾</div><p data-fr="<strong>Soumission claire.</strong> Les détails comme assurance, RBQ ou garanties doivent être confirmés avant d’être affichés publiquement." data-en="<strong>Clear quote.</strong> Details such as insurance, RBQ or warranties should be confirmed before being displayed publicly."><strong>Soumission claire.</strong> Les détails comme assurance, RBQ ou garanties doivent être confirmés avant d’être affichés publiquement.</p></div>
     </div>
@@ -556,11 +602,16 @@
         </div>
         <div class="ff"><label data-fr="Courte description" data-en="Short description">Courte description</label><textarea name="description" data-fr-placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..." data-en-placeholder="Describe the property, desired work and important constraints..." placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..."></textarea></div>
         <button class="form-submit" type="submit" data-fr="Envoyer ma demande →" data-en="Send my request →">Envoyer ma demande →</button>
-        <p class="form-note" data-fr="Appel direct recommandé pour les demandes urgentes • Soumission claire • Détails à confirmer" data-en="Direct call recommended for urgent requests • Clear quote • Details to confirm">Appel direct recommandé pour les demandes urgentes • Soumission claire • Détails à confirmer</p>
+        <p class="form-note" data-fr="WhatsApp recommandé pour envoyer des photos • Appel direct pour les demandes urgentes" data-en="WhatsApp recommended for sending photos • Direct call for urgent requests">WhatsApp recommandé pour envoyer des photos • Appel direct pour les demandes urgentes</p>
       </form>
     </div>
   </div>
 </section>
+
+<div class="mobile-contact-bar" aria-label="Contact rapide">
+  <a class="mobile-call" href="tel:+14387287513" data-fr="Appeler" data-en="Call">Appeler</a>
+  <a class="mobile-whatsapp" href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." target="_blank" rel="noopener" data-fr="WhatsApp" data-en="WhatsApp">WhatsApp</a>
+</div>
 
 <!-- FOOTER -->
 <footer>
