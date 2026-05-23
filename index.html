@@ -254,1066 +254,202 @@
   </div>
 </section>
 
-<!-- ═════════════════════════════════════════════ AI DESIGN TOOL -->
-
-<style>) and JavaScript
-  (inside <script>) needed — no extra files required.
-  ============================================================
--->
-
-<!-- ░░ STYLES — paste inside <head> OR keep here, both work ░░ -->
+<!-- AI DESIGN TOOL -->
 <style>
-/* All classes use vtx- prefix to avoid conflicts with existing styles */
-
-.vtx-ai-section {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #f0faf0 0%, #e8f5e9 100%);
-}
-
-.vtx-container {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-/* Section header */
-.vtx-badge {
-  display: inline-block;
-  background: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #a5d6a7;
-  border-radius: 20px;
-  padding: 6px 16px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-bottom: 16px;
-}
-
-.vtx-title {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  color: #1b5e20;
-  margin: 0 0 12px;
-  line-height: 1.2;
-}
-
-.vtx-subtitle {
-  font-size: 1.05rem;
-  color: #4a7c4e;
-  margin: 0 0 36px;
-  max-width: 640px;
-  line-height: 1.6;
-}
-
-/* Mode toggle tabs */
-.vtx-tabs {
-  display: flex;
-  background: #fff;
-  border-radius: 14px;
-  padding: 5px;
-  gap: 4px;
-  margin-bottom: 28px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  max-width: 460px;
-}
-
-.vtx-tab {
-  flex: 1;
-  padding: 11px 20px;
-  border: none;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: transparent;
-  color: #666;
-}
-
-.vtx-tab.active {
-  background: #2e7d32;
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(46,125,50,0.35);
-}
-
-.vtx-tab:not(.active):hover {
-  background: #f1f8f1;
-  color: #2e7d32;
-}
-
-/* Main card */
-.vtx-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 32px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  margin-bottom: 24px;
-}
-
-/* Mode panels */
-.vtx-panel { display: none; }
-.vtx-panel.active { display: block; }
-
-/* Photo upload area */
-.vtx-upload-zone {
-  border: 2px dashed #a5d6a7;
-  border-radius: 14px;
-  padding: 40px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: #fafffe;
-  margin-bottom: 24px;
-  position: relative;
-  overflow: hidden;
-  min-height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vtx-upload-zone:hover,
-.vtx-upload-zone.drag-over {
-  border-color: #2e7d32;
-  background: #f1f8f1;
-}
-
-.vtx-upload-zone.has-photo {
-  border-style: solid;
-  border-color: #2e7d32;
-  padding: 0;
-}
-
-.vtx-upload-placeholder { pointer-events: none; }
-
-.vtx-upload-icon {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
-.vtx-upload-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #2e7d32;
-  margin: 0 0 6px;
-}
-
-.vtx-upload-hint {
-  font-size: 0.85rem;
-  color: #888;
-  margin: 0;
-}
-
-.vtx-photo-preview {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 12px;
-  display: none;
-}
-
-.vtx-change-photo {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  display: none;
-}
-
-.vtx-upload-zone.has-photo .vtx-change-photo { display: block; }
-
-/* Form elements */
-.vtx-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 560px) {
-  .vtx-form-row { grid-template-columns: 1fr; }
-  .vtx-tabs { max-width: 100%; }
-}
-
-.vtx-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 560px) {
-  .vtx-form-grid { grid-template-columns: 1fr; }
-}
-
-.vtx-form-group { display: flex; flex-direction: column; gap: 6px; }
-
-.vtx-label {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #2e7d32;
-}
-
-.vtx-select,
-.vtx-input,
-.vtx-textarea {
-  width: 100%;
-  padding: 11px 14px;
-  border: 1.5px solid #c8e6c9;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  color: #333;
-  background: #fff;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
-  font-family: inherit;
-}
-
-.vtx-select:focus,
-.vtx-input:focus,
-.vtx-textarea:focus {
-  outline: none;
-  border-color: #2e7d32;
-  box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
-}
-
-.vtx-textarea { resize: vertical; min-height: 90px; }
-
-.vtx-full-width { grid-column: 1 / -1; }
-
-/* Generate button */
-.vtx-generate-btn {
-  width: 100%;
-  margin-top: 24px;
-  padding: 16px 24px;
-  background: linear-gradient(135deg, #2e7d32, #43a047);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  letter-spacing: 0.3px;
-}
-
-.vtx-generate-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #1b5e20, #2e7d32);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(46,125,50,0.35);
-}
-
-.vtx-generate-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.vtx-btn-star {
-  font-size: 1.1rem;
-  animation: vtx-spin 3s linear infinite;
-}
-
-@keyframes vtx-spin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Loading state */
-.vtx-loading {
-  text-align: center;
-  padding: 50px 20px;
-  display: none;
-}
-
-.vtx-spinner {
-  width: 56px;
-  height: 56px;
-  border: 4px solid #c8e6c9;
-  border-top-color: #2e7d32;
-  border-radius: 50%;
-  animation: vtx-rotate 0.9s linear infinite;
-  margin: 0 auto 20px;
-}
-
-@keyframes vtx-rotate {
-  to { transform: rotate(360deg); }
-}
-
-.vtx-loading-msg {
-  font-size: 1rem;
-  color: #2e7d32;
-  font-weight: 500;
-  margin: 0 0 8px;
-}
-
-.vtx-loading-hint {
-  font-size: 0.85rem;
-  color: #888;
-  margin: 0;
-}
-
-/* Result area */
-.vtx-result {
-  background: #fff;
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  display: none;
-}
-
-.vtx-result-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.vtx-result-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1b5e20;
-  margin: 0;
-}
-
-.vtx-download-btn {
-  background: #f1f8f1;
-  color: #2e7d32;
-  border: 1.5px solid #a5d6a7;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-}
-
-.vtx-download-btn:hover {
-  background: #2e7d32;
-  color: #fff;
-  border-color: #2e7d32;
-}
-
-/* Before / After slider */
-.vtx-ba-wrapper {
-  display: none;
-  margin-bottom: 20px;
-}
-
-.vtx-ba-container {
-  position: relative;
-  border-radius: 14px;
-  overflow: hidden;
-  user-select: none;
-  cursor: ew-resize;
-  line-height: 0;
-}
-
-.vtx-ba-before,
-.vtx-ba-after {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 480px;
-  object-fit: cover;
-}
-
-.vtx-ba-after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  clip-path: inset(0 50% 0 0);
-}
-
-.vtx-ba-line {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 3px;
-  height: 100%;
-  background: #fff;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
-.vtx-ba-handle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  color: #2e7d32;
-  font-weight: 700;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-  pointer-events: none;
-  letter-spacing: -1px;
-}
-
-.vtx-ba-labels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
-  font-size: 0.8rem;
-  color: #888;
-  font-weight: 500;
-}
-
-/* Single result image (text mode) */
-.vtx-result-img {
-  width: 100%;
-  border-radius: 14px;
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* CTA below result */
-.vtx-result-cta {
-  background: linear-gradient(135deg, #f1f8f1, #e8f5e9);
-  border-radius: 12px;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.vtx-result-cta p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #2e7d32;
-  font-weight: 600;
-}
-
-.vtx-cta-btn {
-  background: #2e7d32;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 12px 22px;
-  font-size: 0.92rem;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.vtx-cta-btn:hover {
-  background: #1b5e20;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(46,125,50,0.3);
-}
-
-/* Error state */
-.vtx-error {
-  background: #fff5f5;
-  border: 1.5px solid #ffcdd2;
-  border-radius: 14px;
-  padding: 24px;
-  text-align: center;
-  display: none;
-}
-
-.vtx-error p {
-  color: #c62828;
-  margin: 0 0 16px;
-  font-size: 0.95rem;
-}
-
-.vtx-retry-btn {
-  background: #fff;
-  color: #c62828;
-  border: 1.5px solid #ef9a9a;
-  border-radius: 8px;
-  padding: 9px 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.vtx-retry-btn:hover {
-  background: #c62828;
-  color: #fff;
-  border-color: #c62828;
-}
-
-/* Try again button (below result) */
-.vtx-try-again-btn {
-  display: block;
-  width: 100%;
-  margin-top: 12px;
-  padding: 11px;
-  background: transparent;
-  color: #666;
-  border: 1.5px solid #e0e0e0;
-  border-radius: 10px;
-  font-size: 0.88rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.vtx-try-again-btn:hover {
-  border-color: #2e7d32;
-  color: #2e7d32;
-}
+  .vtx-ai-section { padding: 4.5rem 2.5rem; background: linear-gradient(135deg, #f0faf0 0%, #e8f5e9 100%); }
+  .vtx-container { max-width: 920px; margin: 0 auto; }
+  .vtx-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; border-radius: 999px; padding: 0.42rem 0.9rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1rem; }
+  .vtx-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.45rem); font-weight: 700; color: var(--green-deep); margin: 0 0 0.75rem; line-height: 1.15; }
+  .vtx-subtitle { font-size: 0.95rem; color: #4a7c4e; margin: 0 0 2rem; max-width: 660px; line-height: 1.7; }
+  .vtx-tabs { display: flex; background: #fff; border: 1px solid rgba(46,125,50,0.12); border-radius: 10px; padding: 0.3rem; gap: 0.25rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); max-width: 470px; }
+  .vtx-tab { flex: 1; padding: 0.7rem 1rem; border: none; border-radius: 7px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; background: transparent; color: #666; font-family: 'DM Sans', sans-serif; }
+  .vtx-tab.active { background: #2e7d32; color: #fff; box-shadow: 0 2px 6px rgba(46,125,50,0.25); }
+  .vtx-card, .vtx-result, .vtx-error { background: #fff; border: 1px solid rgba(46,125,50,0.1); border-radius: 12px; padding: 1.8rem; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+  .vtx-card { margin-bottom: 1.5rem; }
+  .vtx-panel { display: none; }
+  .vtx-panel.active { display: block; }
+  .vtx-upload-zone { border: 2px dashed #a5d6a7; border-radius: 10px; padding: 2.3rem 1.25rem; text-align: center; cursor: pointer; transition: all 0.2s ease; background: #fafffe; margin-bottom: 1.35rem; position: relative; overflow: hidden; min-height: 180px; display: flex; align-items: center; justify-content: center; }
+  .vtx-upload-zone:hover, .vtx-upload-zone.drag-over { border-color: #2e7d32; background: #f1f8f1; }
+  .vtx-upload-zone.has-photo { border-style: solid; border-color: #2e7d32; padding: 0; }
+  .vtx-upload-placeholder { pointer-events: none; }
+  .vtx-upload-icon { font-size: 2.4rem; margin-bottom: 0.6rem; }
+  .vtx-upload-title { font-size: 1rem; font-weight: 600; color: #2e7d32; margin: 0 0 0.35rem; }
+  .vtx-upload-hint { font-size: 0.82rem; color: #777; margin: 0; }
+  .vtx-photo-preview { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: none; }
+  .vtx-change-photo { position: absolute; bottom: 0.75rem; right: 0.75rem; background: rgba(0,0,0,0.62); color: #fff; border: none; border-radius: 7px; padding: 0.45rem 0.85rem; font-size: 0.78rem; cursor: pointer; display: none; }
+  .vtx-upload-zone.has-photo .vtx-change-photo { display: block; }
+  .vtx-form-row, .vtx-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .vtx-form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .vtx-label { font-size: 0.82rem; font-weight: 600; color: #2e7d32; }
+  .vtx-select, .vtx-input, .vtx-textarea { width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid #c8e6c9; border-radius: 8px; font-size: 0.92rem; color: #333; background: #fff; transition: border-color 0.2s, box-shadow 0.2s; font-family: 'DM Sans', sans-serif; }
+  .vtx-select:focus, .vtx-input:focus, .vtx-textarea:focus { outline: none; border-color: #2e7d32; box-shadow: 0 0 0 3px rgba(46,125,50,0.1); }
+  .vtx-textarea { resize: vertical; min-height: 96px; line-height: 1.58; }
+  .vtx-full-width { grid-column: 1 / -1; }
+  .vtx-generate-btn { width: 100%; margin-top: 1.35rem; padding: 0.95rem 1.3rem; background: linear-gradient(135deg, #2e7d32, #43a047); color: #fff; border: none; border-radius: 9px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-family: 'DM Sans', sans-serif; }
+  .vtx-generate-btn:hover:not(:disabled) { background: linear-gradient(135deg, #1b5e20, #2e7d32); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(46,125,50,0.28); }
+  .vtx-generate-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+  .vtx-btn-star { font-size: 1.05rem; animation: vtx-spin 3s linear infinite; }
+  @keyframes vtx-spin { to { transform: rotate(360deg); } }
+  .vtx-loading { text-align: center; padding: 3rem 1.25rem; display: none; }
+  .vtx-spinner { width: 56px; height: 56px; border: 4px solid #c8e6c9; border-top-color: #2e7d32; border-radius: 50%; animation: vtx-rotate 0.9s linear infinite; margin: 0 auto 1.2rem; }
+  @keyframes vtx-rotate { to { transform: rotate(360deg); } }
+  .vtx-loading-msg { font-size: 1rem; color: #2e7d32; font-weight: 600; margin: 0 0 0.45rem; }
+  .vtx-loading-hint { font-size: 0.84rem; color: #777; margin: 0; }
+  .vtx-result { display: none; }
+  .vtx-result-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 0.75rem; }
+  .vtx-result-title { font-size: 1.15rem; font-weight: 700; color: #1b5e20; margin: 0; }
+  .vtx-download-btn, .vtx-cta-btn { background: #2e7d32; color: #fff; border: 1.5px solid #2e7d32; border-radius: 8px; padding: 0.7rem 1rem; font-size: 0.88rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; }
+  .vtx-download-btn { background: #f1f8f1; color: #2e7d32; }
+  .vtx-download-btn:hover, .vtx-cta-btn:hover { background: #1b5e20; border-color: #1b5e20; color: #fff; transform: translateY(-1px); }
+  .vtx-ba-wrapper { display: none; margin-bottom: 1.2rem; }
+  .vtx-ba-container { position: relative; border-radius: 10px; overflow: hidden; user-select: none; cursor: ew-resize; line-height: 0; background: #e8f5e9; }
+  .vtx-ba-before, .vtx-ba-after { display: block; width: 100%; height: auto; max-height: 480px; object-fit: cover; }
+  .vtx-ba-after { position: absolute; top: 0; left: 0; height: 100%; clip-path: inset(0 50% 0 0); }
+  .vtx-ba-line { position: absolute; top: 0; left: 50%; width: 3px; height: 100%; background: #fff; transform: translateX(-50%); pointer-events: none; }
+  .vtx-ba-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; color: #2e7d32; font-weight: 700; box-shadow: 0 2px 10px rgba(0,0,0,0.25); pointer-events: none; }
+  .vtx-ba-labels { display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.8rem; color: #777; font-weight: 600; }
+  .vtx-result-img { width: 100%; border-radius: 10px; display: block; margin-bottom: 1.2rem; }
+  .vtx-result-cta { background: linear-gradient(135deg, #f1f8f1, #e8f5e9); border-radius: 10px; padding: 1.1rem 1.3rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
+  .vtx-result-cta p { margin: 0; font-size: 0.92rem; color: #2e7d32; font-weight: 600; }
+  .vtx-error { border-color: #ffcdd2; background: #fff5f5; text-align: center; display: none; }
+  .vtx-error p { color: #c62828; margin: 0 0 1rem; font-size: 0.95rem; }
+  .vtx-retry-btn, .vtx-try-again-btn { background: #fff; color: #2e7d32; border: 1.5px solid #a5d6a7; border-radius: 8px; padding: 0.65rem 1.1rem; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
+  .vtx-retry-btn:hover, .vtx-try-again-btn:hover { background: #2e7d32; color: #fff; border-color: #2e7d32; }
+  .vtx-try-again-btn { display: block; width: 100%; margin-top: 0.75rem; background: transparent; color: #666; border-color: #e0e0e0; }
+  @media (max-width: 768px) { .vtx-ai-section { padding: 3rem 1.25rem; } .vtx-card, .vtx-result, .vtx-error { padding: 1.25rem; } }
+  @media (max-width: 560px) { .vtx-form-row, .vtx-form-grid { grid-template-columns: 1fr; } .vtx-tabs { max-width: 100%; } .vtx-tab { padding: 0.7rem 0.55rem; } }
 </style>
 
-<section id="ai-design"> block in your
-    main HTML file and replace it entirely with this section.
-
-  This includes all the CSS (inside <style>) and JavaScript
-  (inside <script>) needed — no extra files required.
-  ============================================================
--->
-
-<!-- ░░ STYLES — paste inside <head> OR keep here, both work ░░ -->
-<style>
-/* All classes use vtx- prefix to avoid conflicts with existing styles */
-
-.vtx-ai-section {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #f0faf0 0%, #e8f5e9 100%);
-}
-
-.vtx-container {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-/* Section header */
-.vtx-badge {
-  display: inline-block;
-  background: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #a5d6a7;
-  border-radius: 20px;
-  padding: 6px 16px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-bottom: 16px;
-}
-
-.vtx-title {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  color: #1b5e20;
-  margin: 0 0 12px;
-  line-height: 1.2;
-}
-
-.vtx-subtitle {
-  font-size: 1.05rem;
-  color: #4a7c4e;
-  margin: 0 0 36px;
-  max-width: 640px;
-  line-height: 1.6;
-}
-
-/* Mode toggle tabs */
-.vtx-tabs {
-  display: flex;
-  background: #fff;
-  border-radius: 14px;
-  padding: 5px;
-  gap: 4px;
-  margin-bottom: 28px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  max-width: 460px;
-}
-
-.vtx-tab {
-  flex: 1;
-  padding: 11px 20px;
-  border: none;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: transparent;
-  color: #666;
-}
-
-.vtx-tab.active {
-  background: #2e7d32;
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(46,125,50,0.35);
-}
-
-.vtx-tab:not(.active):hover {
-  background: #f1f8f1;
-  color: #2e7d32;
-}
-
-/* Main card */
-.vtx-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 32px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  margin-bottom: 24px;
-}
-
-/* Mode panels */
-.vtx-panel { display: none; }
-.vtx-panel.active { display: block; }
-
-/* Photo upload area */
-.vtx-upload-zone {
-  border: 2px dashed #a5d6a7;
-  border-radius: 14px;
-  padding: 40px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: #fafffe;
-  margin-bottom: 24px;
-  position: relative;
-  overflow: hidden;
-  min-height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vtx-upload-zone:hover,
-.vtx-upload-zone.drag-over {
-  border-color: #2e7d32;
-  background: #f1f8f1;
-}
-
-.vtx-upload-zone.has-photo {
-  border-style: solid;
-  border-color: #2e7d32;
-  padding: 0;
-}
-
-.vtx-upload-placeholder { pointer-events: none; }
-
-.vtx-upload-icon {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
-.vtx-upload-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #2e7d32;
-  margin: 0 0 6px;
-}
-
-.vtx-upload-hint {
-  font-size: 0.85rem;
-  color: #888;
-  margin: 0;
-}
-
-.vtx-photo-preview {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 12px;
-  display: none;
-}
-
-.vtx-change-photo {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  display: none;
-}
-
-.vtx-upload-zone.has-photo .vtx-change-photo { display: block; }
-
-/* Form elements */
-.vtx-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 560px) {
-  .vtx-form-row { grid-template-columns: 1fr; }
-  .vtx-tabs { max-width: 100%; }
-}
-
-.vtx-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 560px) {
-  .vtx-form-grid { grid-template-columns: 1fr; }
-}
-
-.vtx-form-group { display: flex; flex-direction: column; gap: 6px; }
-
-.vtx-label {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #2e7d32;
-}
-
-.vtx-select,
-.vtx-input,
-.vtx-textarea {
-  width: 100%;
-  padding: 11px 14px;
-  border: 1.5px solid #c8e6c9;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  color: #333;
-  background: #fff;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
-  font-family: inherit;
-}
-
-.vtx-select:focus,
-.vtx-input:focus,
-.vtx-textarea:focus {
-  outline: none;
-  border-color: #2e7d32;
-  box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
-}
-
-.vtx-textarea { resize: vertical; min-height: 90px; }
-
-.vtx-full-width { grid-column: 1 / -1; }
-
-/* Generate button */
-.vtx-generate-btn {
-  width: 100%;
-  margin-top: 24px;
-  padding: 16px 24px;
-  background: linear-gradient(135deg, #2e7d32, #43a047);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  letter-spacing: 0.3px;
-}
-
-.vtx-generate-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #1b5e20, #2e7d32);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(46,125,50,0.35);
-}
-
-.vtx-generate-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.vtx-btn-star {
-  font-size: 1.1rem;
-  animation: vtx-spin 3s linear infinite;
-}
-
-@keyframes vtx-spin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Loading state */
-.vtx-loading {
-  text-align: center;
-  padding: 50px 20px;
-  display: none;
-}
-
-.vtx-spinner {
-  width: 56px;
-  height: 56px;
-  border: 4px solid #c8e6c9;
-  border-top-color: #2e7d32;
-  border-radius: 50%;
-  animation: vtx-rotate 0.9s linear infinite;
-  margin: 0 auto 20px;
-}
-
-@keyframes vtx-rotate {
-  to { transform: rotate(360deg); }
-}
-
-.vtx-loading-msg {
-  font-size: 1rem;
-  color: #2e7d32;
-  font-weight: 500;
-  margin: 0 0 8px;
-}
-
-.vtx-loading-hint {
-  font-size: 0.85rem;
-  color: #888;
-  margin: 0;
-}
-
-/* Result area */
-.vtx-result {
-  background: #fff;
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  display: none;
-}
-
-.vtx-result-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.vtx-result-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1b5e20;
-  margin: 0;
-}
-
-.vtx-download-btn {
-  background: #f1f8f1;
-  color: #2e7d32;
-  border: 1.5px solid #a5d6a7;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-}
-
-.vtx-download-btn:hover {
-  background: #2e7d32;
-  color: #fff;
-  border-color: #2e7d32;
-}
-
-/* Before / After slider */
-.vtx-ba-wrapper {
-  display: none;
-  margin-bottom: 20px;
-}
-
-.vtx-ba-container {
-  position: relative;
-  border-radius: 14px;
-  overflow: hidden;
-  user-select: none;
-  cursor: ew-resize;
-  line-height: 0;
-}
-
-.vtx-ba-before,
-.vtx-ba-after {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 480px;
-  object-fit: cover;
-}
-
-.vtx-ba-after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  clip-path: inset(0 50% 0 0);
-}
-
-.vtx-ba-line {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 3px;
-  height: 100%;
-  background: #fff;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
-.vtx-ba-handle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  color: #2e7d32;
-  font-weight: 700;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-  pointer-events: none;
-  letter-spacing: -1px;
-}
-
-.vtx-ba-labels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
-  font-size: 0.8rem;
-  color: #888;
-  font-weight: 500;
-}
-
-/* Single result image (text mode) */
-.vtx-result-img {
-  width: 100%;
-  border-radius: 14px;
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* CTA below result */
-.vtx-result-cta {
-  background: linear-gradient(135deg, #f1f8f1, #e8f5e9);
-  border-radius: 12px;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.vtx-result-cta p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #2e7d32;
-  font-weight: 600;
-}
-
-.vtx-cta-btn {
-  background: #2e7d32;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 12px 22px;
-  font-size: 0.92rem;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.vtx-cta-btn:hover {
-  background: #1b5e20;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(46,125,50,0.3);
-}
-
-/* Error state */
-.vtx-error {
-  background: #fff5f5;
-  border: 1.5px solid #ffcdd2;
-  border-radius: 14px;
-  padding: 24px;
-  text-align: center;
-  display: none;
-}
-
-.vtx-error p {
-  color: #c62828;
-  margin: 0 0 16px;
-  font-size: 0.95rem;
-}
-
-.vtx-retry-btn {
-  background: #fff;
-  color: #c62828;
-  border: 1.5px solid #ef9a9a;
-  border-radius: 8px;
-  padding: 9px 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.vtx-retry-btn:hover {
-  background: #c62828;
-  color: #fff;
-  border-color: #c62828;
-}
-
-/* Try again button (below result) */
-.vtx-try-again-btn {
-  display: block;
-  width: 100%;
-  margin-top: 12px;
-  padding: 11px;
-  background: transparent;
-  color: #666;
-  border: 1.5px solid #e0e0e0;
-  border-radius: 10px;
-  font-size: 0.88rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.vtx-try-again-btn:hover {
-  border-color: #2e7d32;
-  color: #2e7d32;
-}
-</style>
-<!-- ░░ END STYLES ░░ -->
-
-
-<!-- ░░ SECTION — replace the existing <section id="ai-design">...</section>
+<section class="vtx-ai-section" id="ai-design">
+  <div class="vtx-container">
+    <div class="vtx-badge" data-fr="Conception IA" data-en="AI Design">Conception IA</div>
+    <h2 class="vtx-title" data-fr="Visualisez votre nouvel aménagement avant les travaux" data-en="Visualize your new landscape before the work begins">Visualisez votre nouvel aménagement avant les travaux</h2>
+    <p class="vtx-subtitle" data-fr="Téléversez une photo de votre cour ou décrivez votre projet. Notre outil génère une inspiration visuelle que l’équipe Vertmex peut ensuite transformer en soumission claire." data-en="Upload a photo of your yard or describe your project. Our tool creates a visual concept that the Vertmex team can turn into a clear quote.">Téléversez une photo de votre cour ou décrivez votre projet. Notre outil génère une inspiration visuelle que l’équipe Vertmex peut ensuite transformer en soumission claire.</p>
+
+    <div class="vtx-tabs" role="tablist" aria-label="AI design mode">
+      <button class="vtx-tab active" id="vtx-tab-photo" type="button" role="tab" onclick="vtxSetMode('photo')" data-fr="Avec photo" data-en="With photo">Avec photo</button>
+      <button class="vtx-tab" id="vtx-tab-text" type="button" role="tab" onclick="vtxSetMode('text')" data-fr="Description seulement" data-en="Description only">Description seulement</button>
+    </div>
+
+    <div class="vtx-card" id="vtx-card">
+      <div class="vtx-panel active" id="vtx-panel-photo" role="tabpanel" aria-labelledby="vtx-tab-photo">
+        <input id="vtx-file-input" type="file" accept="image/png,image/jpeg,image/webp" hidden onchange="vtxHandleFile(event)">
+        <div class="vtx-upload-zone" id="vtx-upload-zone" onclick="vtxTriggerUpload()" ondragover="vtxDragOver(event)" ondragleave="vtxDragLeave(event)" ondrop="vtxDrop(event)">
+          <div class="vtx-upload-placeholder" id="vtx-upload-placeholder">
+            <div class="vtx-upload-icon">📷</div>
+            <p class="vtx-upload-title" data-fr="Ajoutez une photo de votre espace" data-en="Add a photo of your space">Ajoutez une photo de votre espace</p>
+            <p class="vtx-upload-hint" data-fr="JPG, PNG ou WebP. Idéalement une photo claire de jour." data-en="JPG, PNG or WebP. A clear daytime photo works best.">JPG, PNG ou WebP. Idéalement une photo claire de jour.</p>
+          </div>
+          <img class="vtx-photo-preview" id="vtx-photo-preview" alt="Aperçu de la photo téléversée">
+          <button class="vtx-change-photo" type="button" data-fr="Changer" data-en="Change">Changer</button>
+        </div>
+        <div class="vtx-form-row">
+          <div class="vtx-form-group">
+            <label class="vtx-label" for="vtx-photo-style" data-fr="Style souhaité" data-en="Preferred style">Style souhaité</label>
+            <select class="vtx-select" id="vtx-photo-style">
+              <option value="" data-fr="Choisir un style" data-en="Choose a style">Choisir un style</option>
+              <option>Moderne minimaliste</option>
+              <option>Traditionnel / classique</option>
+              <option>Champêtre / naturel</option>
+              <option>Zen / japonais</option>
+              <option>Méditerranéen</option>
+              <option>Plantes indigènes / écologique</option>
+            </select>
+          </div>
+          <div class="vtx-form-group">
+            <label class="vtx-label" for="vtx-photo-details" data-fr="Détails importants" data-en="Important details">Détails importants</label>
+            <input class="vtx-input" id="vtx-photo-details" type="text" data-fr-placeholder="ex. pavé-uni, coin détente, vivaces" data-en-placeholder="e.g. pavers, lounge area, perennials" placeholder="ex. pavé-uni, coin détente, vivaces">
+          </div>
+        </div>
+      </div>
+
+      <div class="vtx-panel" id="vtx-panel-text" role="tabpanel" aria-labelledby="vtx-tab-text">
+        <div class="vtx-form-grid">
+          <div class="vtx-form-group">
+            <label class="vtx-label" for="vtx-text-style" data-fr="Style souhaité" data-en="Preferred style">Style souhaité</label>
+            <select class="vtx-select" id="vtx-text-style">
+              <option value="" data-fr="Choisir un style" data-en="Choose a style">Choisir un style</option>
+              <option>Moderne minimaliste</option>
+              <option>Traditionnel / classique</option>
+              <option>Champêtre / naturel</option>
+              <option>Zen / japonais</option>
+              <option>Méditerranéen</option>
+              <option>Plantes indigènes / écologique</option>
+            </select>
+          </div>
+          <div class="vtx-form-group">
+            <label class="vtx-label" for="vtx-text-type" data-fr="Type d’espace" data-en="Space type">Type d’espace</label>
+            <select class="vtx-select" id="vtx-text-type">
+              <option value="" data-fr="Choisir" data-en="Choose">Choisir</option>
+              <option value="front yard">Cour avant</option>
+              <option value="backyard">Cour arrière</option>
+              <option value="pool area">Autour de piscine</option>
+              <option value="driveway and entrance">Entrée et stationnement</option>
+              <option value="commercial frontage">Façade commerciale</option>
+            </select>
+          </div>
+          <div class="vtx-form-group">
+            <label class="vtx-label" for="vtx-text-size" data-fr="Taille approximative" data-en="Approximate size">Taille approximative</label>
+            <select class="vtx-select" id="vtx-text-size">
+              <option value="" data-fr="Choisir" data-en="Choose">Choisir</option>
+              <option value="small urban space">Petit espace urbain</option>
+              <option value="medium residential yard">Cour résidentielle moyenne</option>
+              <option value="large property">Grande propriété</option>
+            </select>
+          </div>
+          <div class="vtx-form-group">
+            <label class="vtx-label" for="vtx-text-budget" data-fr="Ambiance budget" data-en="Budget feel">Ambiance budget</label>
+            <select class="vtx-select" id="vtx-text-budget">
+              <option value="" data-fr="Choisir" data-en="Choose">Choisir</option>
+              <option value="simple affordable landscaping">Simple et abordable</option>
+              <option value="balanced premium residential landscaping">Équilibré et durable</option>
+              <option value="high-end luxury landscaping">Haut de gamme</option>
+            </select>
+          </div>
+          <div class="vtx-form-group vtx-full-width">
+            <label class="vtx-label" for="vtx-text-desc" data-fr="Décrivez votre vision" data-en="Describe your vision">Décrivez votre vision</label>
+            <textarea class="vtx-textarea" id="vtx-text-desc" data-fr-placeholder="ex. Je veux une terrasse en pavé-uni, des haies pour l’intimité et des plates-bandes faciles d’entretien." data-en-placeholder="e.g. I want a paver patio, privacy hedges and low-maintenance garden beds." placeholder="ex. Je veux une terrasse en pavé-uni, des haies pour l’intimité et des plates-bandes faciles d’entretien."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button class="vtx-generate-btn" id="vtx-generate-btn" type="button" onclick="vtxGenerate()"><span class="vtx-btn-star">✦</span><span id="vtx-btn-label" data-fr="Générer mon concept paysager" data-en="Generate my landscape concept">Générer mon concept paysager</span></button>
+    </div>
+
+    <div class="vtx-loading" id="vtx-loading" aria-live="polite">
+      <div class="vtx-spinner"></div>
+      <p class="vtx-loading-msg" id="vtx-loading-msg">Préparation de votre concept...</p>
+      <p class="vtx-loading-hint" data-fr="La génération peut prendre quelques secondes." data-en="Generation can take a few seconds.">La génération peut prendre quelques secondes.</p>
+    </div>
+
+    <div class="vtx-error" id="vtx-error">
+      <p id="vtx-error-msg">La génération a échoué. Veuillez réessayer.</p>
+      <button class="vtx-retry-btn" type="button" onclick="vtxReset()" data-fr="Réessayer" data-en="Try again">Réessayer</button>
+    </div>
+
+    <div class="vtx-result" id="vtx-result">
+      <div class="vtx-result-header">
+        <h3 class="vtx-result-title" data-fr="Votre concept paysager" data-en="Your landscape concept">Votre concept paysager</h3>
+        <a class="vtx-download-btn" id="vtx-download-btn" href="#" target="_blank" rel="noopener" download data-fr="Ouvrir l’image" data-en="Open image">Ouvrir l’image</a>
+      </div>
+      <div class="vtx-ba-wrapper" id="vtx-ba-wrapper">
+        <div class="vtx-ba-container" id="vtx-ba-container" onmousedown="vtxBAStart(event)" ontouchstart="vtxBAStart(event)">
+          <img class="vtx-ba-before" id="vtx-ba-before" alt="Avant">
+          <img class="vtx-ba-after" id="vtx-ba-after" alt="Après">
+          <div class="vtx-ba-line" id="vtx-ba-line"></div>
+          <div class="vtx-ba-handle">AV/AP</div>
+        </div>
+        <div class="vtx-ba-labels"><span data-fr="Avant" data-en="Before">Avant</span><span data-fr="Après" data-en="After">Après</span></div>
+      </div>
+      <img class="vtx-result-img" id="vtx-result-img" alt="Concept paysager généré par IA">
+      <div class="vtx-result-cta">
+        <p data-fr="Vous aimez cette direction? Envoyez-nous votre demande pour une soumission détaillée." data-en="Like this direction? Send us your request for a detailed quote.">Vous aimez cette direction? Envoyez-nous votre demande pour une soumission détaillée.</p>
+        <a class="vtx-cta-btn" href="#contact" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
+      </div>
+      <button class="vtx-try-again-btn" type="button" onclick="vtxReset()" data-fr="Essayer un autre concept" data-en="Try another concept">Essayer un autre concept</button>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section class="sec" id="about" style="background:#fff;">
