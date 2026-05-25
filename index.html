@@ -25,6 +25,9 @@
   "image": "https://www.vertmex.ca/assets/vertmex-logo.jpg",
   "telephone": "+1-438-728-7513",
   "email": "info@vertmex.ca",
+  "sameAs": [
+    "https://www.instagram.com/vertmex.inc/"
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "164a Rue Saint-Patrice",
@@ -201,19 +204,27 @@
   .project-photo img { width: 100%; height: 100%; min-height: inherit; object-fit: cover; object-position: center; display: block; }
   .project-photo strong { color: var(--green-deep); font-size: 0.88rem; }
   .project-photo span { font-size: 0.72rem; }
+  .owner-project-grid[hidden] { display: none; }
+  .before-after { display: grid; grid-template-columns: 1fr 1fr; min-height: 280px; background: #e7e3da; border-bottom: 1px solid rgba(45,90,45,0.12); }
+  .before-after figure { position: relative; min-width: 0; overflow: hidden; }
+  .before-after img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; }
+  .before-after span { position: absolute; left: 0.75rem; bottom: 0.75rem; background: rgba(14,30,14,0.78); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 0.28rem 0.65rem; font-size: 0.68rem; font-weight: 800; }
   .project-body { padding: 1.15rem; }
   .project-meta { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.75rem; }
   .project-tag { background: var(--green-pale); color: var(--green-dark); border: 1px solid rgba(61,122,61,0.18); border-radius: 100px; padding: 0.22rem 0.58rem; font-size: 0.68rem; }
   .project-card h3 { color: var(--green-deep); font-size: 1rem; margin-bottom: 0.35rem; }
   .project-card p { color: var(--text-light); font-size: 0.8rem; line-height: 1.58; }
-  .review-grid, .proof-grid, .service-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
-  .review-card, .proof-item, .service-detail { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.2rem; }
+  .review-grid, .service-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .review-card, .service-detail { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.2rem; }
+  .review-card.real-review { max-width: 620px; border-color: rgba(61,122,61,0.24); box-shadow: 0 16px 34px rgba(18,58,28,0.08); }
   .review-card .stars-line { color: #d69e2e; font-size: 0.85rem; letter-spacing: 0.08em; margin-bottom: 0.65rem; }
   .review-card blockquote { color: var(--text-mid); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.8rem; }
-  .review-card .review-author, .proof-item span { color: var(--text-light); font-size: 0.76rem; }
+  .review-card .review-author { color: var(--text-light); font-size: 0.76rem; }
+  .review-link { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; margin-top: 1rem; padding: 0.48rem 0.85rem; border-radius: 100px; border: 1px solid rgba(61,122,61,0.24); color: var(--green-dark); font-size: 0.78rem; font-weight: 800; text-decoration: none; }
+  .review-link:hover { background: var(--green-pale); color: var(--green-deep); }
   .review-note { margin-top: 1rem; color: var(--text-light); font-size: 0.82rem; line-height: 1.6; }
-  .proof-item strong, .service-detail h3 { display: block; color: var(--green-deep); font-size: 1rem; margin-bottom: 0.35rem; }
-  .proof-item p, .service-detail p { color: var(--text-light); font-size: 0.8rem; line-height: 1.58; }
+  .service-detail h3 { display: block; color: var(--green-deep); font-size: 1rem; margin-bottom: 0.35rem; }
+  .service-detail p { color: var(--text-light); font-size: 0.8rem; line-height: 1.58; }
   .service-detail ul { list-style: none; display: grid; gap: 0.45rem; margin: 0.9rem 0 1rem; }
   .service-detail li { color: var(--text-mid); font-size: 0.8rem; line-height: 1.45; display: flex; gap: 0.45rem; }
   .service-detail li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
@@ -352,12 +363,12 @@
 
 <!-- REVIEWS -->
 <div class="reviews-strip"><div class="reviews-inner">
-  <div class="review-score"><div class="score-num">À venir</div><div class="stars">★★★★★</div><div class="rev-count" data-fr="Preuves réelles" data-en="Real proof">Preuves réelles</div></div>
+  <div class="review-score"><div class="score-num">Local</div><div class="stars">★★★★★</div><div class="rev-count" data-fr="Saint-Rémi" data-en="Saint-Rémi">Saint-Rémi</div></div>
   <div class="rev-div"></div>
   <div class="reviews-scroll">
-    <div class="rev-card"><div class="r-stars">Photos</div><div class="r-text" data-fr="Ajouter ici des photos avant / après de vrais chantiers VertMex." data-en="Add real before / after photos from VertMex jobs here.">Ajouter ici des photos avant / après de vrais chantiers VertMex.</div><div class="r-author" data-fr="À confirmer" data-en="To confirm">À confirmer</div></div>
-    <div class="rev-card"><div class="r-stars">Avis</div><div class="r-text" data-fr="Ajouter 2 ou 3 avis clients réels quand ils sont disponibles." data-en="Add 2 or 3 real customer reviews when available.">Ajouter 2 ou 3 avis clients réels quand ils sont disponibles.</div><div class="r-author" data-fr="Information à confirmer" data-en="Information to confirm">Information à confirmer</div></div>
-    <div class="rev-card"><div class="r-stars">Assurance / RBQ</div><div class="r-text" data-fr="Ajouter les détails d’assurance, de licence ou de garantie seulement après validation." data-en="Add insurance, license or warranty details only after validation.">Ajouter les détails d’assurance, de licence ou de garantie seulement après validation.</div><div class="r-author" data-fr="Information à confirmer" data-en="Information to confirm">Information à confirmer</div></div>
+    <div class="rev-card"><div class="r-stars" data-fr="Photos réelles" data-en="Real photos">Photos réelles</div><div class="r-text" data-fr="Portfolio avec des photos de chantiers et d’entretien réalisés par VertMex." data-en="Portfolio with real project and maintenance photos from VertMex.">Portfolio avec des photos de chantiers et d’entretien réalisés par VertMex.</div><div class="r-author" data-fr="Projets résidentiels" data-en="Residential projects">Projets résidentiels</div></div>
+    <div class="rev-card"><div class="r-stars">Google</div><div class="r-text" data-fr="Great landscaping services! Thank you for your professionalism." data-en="Great landscaping services! Thank you for your professionalism.">Great landscaping services! Thank you for your professionalism.</div><div class="r-author" data-fr="Avis public" data-en="Public review">Avis public</div></div>
+    <div class="rev-card"><div class="r-stars">WhatsApp</div><div class="r-text" data-fr="Envoyez des photos du terrain pour une réponse plus rapide." data-en="Send property photos for a faster response.">Envoyez des photos du terrain pour une réponse plus rapide.</div><div class="r-author" data-fr="Soumission simple" data-en="Simple quote">Soumission simple</div></div>
   </div>
 </div></div>
 
@@ -691,9 +702,8 @@
       <h2 data-fr="Experts paysagistes de la Montérégie" data-en="Montérégie's Landscaping Experts">Experts paysagistes de la Montérégie</h2>
       <p data-fr="Basée à Saint-Rémi, VertMex travaille avec les propriétaires et commerces de la Montérégie, de la Rive-Sud et du Grand Montréal. L’objectif est simple : expliquer clairement les travaux, respecter le terrain et livrer un résultat durable." data-en="Based in Saint-Rémi, VertMex works with homeowners and businesses across Montérégie, the South Shore and Greater Montréal. The goal is simple: explain the work clearly, respect the property and deliver a durable result.">Basée à Saint-Rémi, VertMex travaille avec les propriétaires et commerces de la Montérégie, de la Rive-Sud et du Grand Montréal. L’objectif est simple : expliquer clairement les travaux, respecter le terrain et livrer un résultat durable.</p>
       <p data-fr="L’équipe varie selon la saison et les projets, avec environ 5 à 13 personnes sur le terrain. VertMex couvre les travaux pratiques : excavation, pavé-uni, tourbe, murets, clôtures, entretien, pergolas et aménagements complets." data-en="The crew changes with the season and project load, with about 5 to 13 people in the field. VertMex handles practical work: excavation, pavers, sod, retaining walls, fencing, maintenance, pergolas and full landscaping.">L’équipe varie selon la saison et les projets, avec environ 5 à 13 personnes sur le terrain. VertMex couvre les travaux pratiques : excavation, pavé-uni, tourbe, murets, clôtures, entretien, pergolas et aménagements complets.</p>
-      <p data-fr="Les détails comme assurance, licence, garanties et photos de projets seront ajoutés après confirmation avec l’entreprise." data-en="Details such as insurance, license, warranties and project photos will be added after confirmation with the business.">Les détails comme assurance, licence, garanties et photos de projets seront ajoutés après confirmation avec l’entreprise.</p>
       <div class="badges">
-        <span class="badge">✅ <span data-fr="Information à confirmer" data-en="Information to confirm">Information à confirmer</span></span>
+        <span class="badge">✅ <span data-fr="Soumission claire" data-en="Clear quote">Soumission claire</span></span>
         <span class="badge">📍 <span>Saint-Rémi, QC J0L 2N0</span></span>
         <span class="badge">🌿 <span data-fr="5 à 13 personnes" data-en="5 to 13 people">5 à 13 personnes</span></span>
         <span class="badge">🔧 <span data-fr="Services groupés" data-en="Grouped services">Services groupés</span></span>
@@ -710,6 +720,7 @@
     <h2 data-fr="Photos réelles de travaux et d’entretien" data-en="Real photos of landscaping and maintenance work">Photos réelles de travaux et d’entretien</h2>
     <p class="sec-sub" data-fr="Quelques exemples récents fournis par l’équipe VertMex. Les photos servent à montrer le type de chantier, l’entretien de haies, les plates-bandes et le soin apporté au terrain." data-en="A few recent examples provided by the VertMex team. The photos show job-site style, hedge maintenance, garden beds and care for the property.">Quelques exemples récents fournis par l’équipe VertMex. Les photos servent à montrer le type de chantier, l’entretien de haies, les plates-bandes et le soin apporté au terrain.</p>
   </div>
+  <div class="project-grid owner-project-grid" id="ownerProjectsGrid" hidden></div>
   <div class="project-grid">
     <article class="project-card featured">
       <div class="project-photo"><img src="assets/projects/vertmex-project-garden-bed.jpg" alt="Plate-bande entretenue avec arbustes, paillis, camion et remorque VertMex"></div>
@@ -750,30 +761,18 @@
 <section class="sec" id="reviews" style="background:#fff;">
   <div class="svc-hdr">
     <div class="sl" data-fr="Avis clients" data-en="Client reviews">Avis clients</div>
-    <h2 data-fr="Prêt pour les avis Google réels" data-en="Ready for real Google reviews">Prêt pour les avis Google réels</h2>
-    <p class="sec-sub" data-fr="Cette section prépare le site pour afficher de vrais avis quand le profil Google et les témoignages seront confirmés." data-en="This section prepares the site to show real reviews once the Google profile and testimonials are confirmed.">Cette section prépare le site pour afficher de vrais avis quand le profil Google et les témoignages seront confirmés.</p>
+    <h2 data-fr="Un vrai avis Google" data-en="A real Google review">Un vrai avis Google</h2>
+    <p class="sec-sub" data-fr="Un premier avis public reçu sur le profil Google de VertMex. D’autres avis pourront être ajoutés lorsque le propriétaire les confirmera." data-en="A first public review received on VertMex’s Google profile. More reviews can be added once the owner confirms them.">Un premier avis public reçu sur le profil Google de VertMex. D’autres avis pourront être ajoutés lorsque le propriétaire les confirmera.</p>
   </div>
   <div class="review-grid">
-    <article class="review-card"><div class="stars-line">★★★★★</div><blockquote data-fr="Avis Google à ajouter après confirmation." data-en="Google review to add after confirmation.">Avis Google à ajouter après confirmation.</blockquote><div class="review-author" data-fr="Nom du client à confirmer · Ville à confirmer" data-en="Client name to confirm · City to confirm">Nom du client à confirmer · Ville à confirmer</div></article>
-    <article class="review-card"><div class="stars-line">★★★★★</div><blockquote data-fr="Témoignage réel à insérer ici, idéalement avec le type de projet." data-en="Real testimonial to insert here, ideally with the project type.">Témoignage réel à insérer ici, idéalement avec le type de projet.</blockquote><div class="review-author" data-fr="Projet à confirmer · Lien Google à ajouter" data-en="Project to confirm · Google link to add">Projet à confirmer · Lien Google à ajouter</div></article>
-    <article class="review-card"><div class="stars-line">★★★★★</div><blockquote data-fr="Court avis client orienté sur la propreté, la communication ou le respect du devis." data-en="Short customer review focused on cleanliness, communication or quote clarity.">Court avis client orienté sur la propreté, la communication ou le respect du devis.</blockquote><div class="review-author" data-fr="Information à confirmer" data-en="Information to confirm">Information à confirmer</div></article>
+    <article class="review-card real-review">
+      <div class="stars-line" aria-label="5 stars">★★★★★</div>
+      <blockquote data-fr="Great landscaping services! Thank you for your professionalism." data-en="Great landscaping services! Thank you for your professionalism.">Great landscaping services! Thank you for your professionalism.</blockquote>
+      <div class="review-author" data-fr="LO · Avis Google · VERTMEX" data-en="LO · Google review · VERTMEX">LO · Avis Google · VERTMEX</div>
+      <a class="review-link" href="https://maps.app.goo.gl/mh8z3Sd4YvdbPimg9" target="_blank" rel="noopener" data-fr="Voir sur Google" data-en="View on Google">Voir sur Google</a>
+    </article>
   </div>
-  <p class="review-note" data-fr="À remplacer seulement par des avis réels. Ne pas afficher de note moyenne, de nombre d’avis ou de certification sans preuve confirmée." data-en="Replace only with real reviews. Do not show an average rating, review count or certification without confirmed proof.">À remplacer seulement par des avis réels. Ne pas afficher de note moyenne, de nombre d’avis ou de certification sans preuve confirmée.</p>
-</section>
-
-<!-- PROOF PLACEHOLDERS -->
-<section class="sec" id="proof" style="background:var(--cream);">
-  <div class="svc-hdr">
-    <div class="sl" data-fr="Informations à confirmer" data-en="Information to confirm">Informations à confirmer</div>
-    <h2 data-fr="Preuves importantes à valider avec le propriétaire" data-en="Important proof points to confirm with the owner">Preuves importantes à valider avec le propriétaire</h2>
-    <p class="sec-sub" data-fr="Ces éléments renforcent la confiance, mais ils doivent rester neutres tant que les détails officiels ne sont pas validés." data-en="These elements build trust, but they should stay neutral until official details are validated.">Ces éléments renforcent la confiance, mais ils doivent rester neutres tant que les détails officiels ne sont pas validés.</p>
-  </div>
-  <div class="proof-grid">
-    <div class="proof-item"><strong>RBQ</strong><p data-fr="Numéro et statut à confirmer avant publication." data-en="Number and status to confirm before publishing.">Numéro et statut à confirmer avant publication.</p><span data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
-    <div class="proof-item"><strong data-fr="Assurance responsabilité" data-en="Liability insurance">Assurance responsabilité</strong><p data-fr="Ajouter les détails seulement après validation avec l’entreprise." data-en="Add details only after validation with the business.">Ajouter les détails seulement après validation avec l’entreprise.</p><span data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
-    <div class="proof-item"><strong data-fr="Garantie sur les travaux" data-en="Work warranty">Garantie sur les travaux</strong><p data-fr="Décrire les garanties réelles selon le type de service." data-en="Describe real warranties based on the service type.">Décrire les garanties réelles selon le type de service.</p><span data-fr="À confirmer" data-en="To confirm">À confirmer</span></div>
-    <div class="proof-item"><strong data-fr="Photos de projets" data-en="Project photos">Photos de projets</strong><p data-fr="Remplacer les espaces réservés par des photos VertMex prises sur chantier." data-en="Replace placeholders with VertMex photos taken on real job sites.">Remplacer les espaces réservés par des photos VertMex prises sur chantier.</p><span data-fr="À ajouter" data-en="To add">À ajouter</span></div>
-  </div>
+  <p class="review-note" data-fr="Avis publié publiquement sur Google. Aucune note moyenne ni nombre d’avis n’est affiché tant que les détails ne sont pas confirmés." data-en="Review publicly posted on Google. No average rating or review count is shown until the details are confirmed.">Avis publié publiquement sur Google. Aucune note moyenne ni nombre d’avis n’est affiché tant que les détails ne sont pas confirmés.</p>
 </section>
 
 <!-- SERVICE DETAILS -->
@@ -844,6 +843,7 @@
         <div class="c-item"><div class="c-ico">💬</div><div class="c-txt"><strong>WhatsApp</strong><a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." target="_blank" rel="noopener">(438) 728-7513</a></div></div>
         <div class="c-item"><div class="c-ico">📞</div><div class="c-txt"><strong data-fr="Téléphone" data-en="Phone">Téléphone</strong><a href="tel:+14387287513">(438) 728-7513</a></div></div>
         <div class="c-item"><div class="c-ico">✉️</div><div class="c-txt"><strong>Email</strong><a href="mailto:info@vertmex.ca">info@vertmex.ca</a></div></div>
+        <div class="c-item"><div class="c-ico">◎</div><div class="c-txt"><strong>Instagram</strong><a href="https://www.instagram.com/vertmex.inc/" target="_blank" rel="noopener">@vertmex.inc</a></div></div>
         <div class="c-item"><div class="c-ico">🕐</div><div class="c-txt"><strong data-fr="Heures" data-en="Hours">Heures</strong><span data-fr="Lun–Sam : 7h – 18h" data-en="Mon–Sat: 7am – 6pm">Lun–Sam : 7h – 18h</span></div></div>
         <div class="c-item"><div class="c-ico">🗺️</div><div class="c-txt"><strong data-fr="Zones" data-en="Coverage">Zones</strong><span data-fr="Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal" data-en="Saint-Rémi, Montérégie, South Shore &amp; Greater Montréal">Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal</span></div></div>
       </div>
@@ -851,7 +851,7 @@
         <a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." class="btn-primary btn-whatsapp" target="_blank" rel="noopener" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</a>
         <a href="tel:+14387287513" class="btn-ghost" data-fr="Appeler" data-en="Call">Appeler</a>
       </div>
-      <div class="guar-box"><div class="g-ico">🧾</div><p data-fr="<strong>Soumission claire.</strong> Les détails comme assurance, RBQ ou garanties doivent être confirmés avant d’être affichés publiquement." data-en="<strong>Clear quote.</strong> Details such as insurance, RBQ or warranties should be confirmed before being displayed publicly."><strong>Soumission claire.</strong> Les détails comme assurance, RBQ ou garanties doivent être confirmés avant d’être affichés publiquement.</p></div>
+      <div class="guar-box"><div class="g-ico">🧾</div><p data-fr="<strong>Soumission claire.</strong> Envoyez quelques photos, la ville et le type de travaux pour aider l’équipe à répondre plus vite." data-en="<strong>Clear quote.</strong> Send a few photos, the city and the type of work to help the team respond faster."><strong>Soumission claire.</strong> Envoyez quelques photos, la ville et le type de travaux pour aider l’équipe à répondre plus vite.</p></div>
     </div>
     <div>
       <form class="cform" id="quoteForm" action="https://formspree.io/f/xvzyqgnp" method="POST">
@@ -916,12 +916,64 @@
     <a href="#services" data-fr="Services" data-en="Services">Services</a>
     <a href="#about" data-fr="À Propos" data-en="About">À Propos</a>
     <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+    <a href="https://www.instagram.com/vertmex.inc/" target="_blank" rel="noopener">Instagram</a>
   </div>
   <p data-fr="© 2025 VertMex. Tous droits réservés. Saint-Rémi, QC." data-en="© 2025 VertMex. All rights reserved. Saint-Rémi, QC.">© 2025 VertMex. Tous droits réservés. Saint-Rémi, QC.</p>
 </footer>
 
 <!-- LANG SCRIPT -->
 <script>
+  async function loadOwnerProjects() {
+    const grid = document.getElementById('ownerProjectsGrid');
+    if (!grid) return;
+
+    try {
+      const response = await fetch('projects.json', { cache: 'no-store' });
+      if (!response.ok) return;
+      const projects = await response.json();
+      if (!Array.isArray(projects) || projects.length === 0) return;
+
+      const escapeHtml = (value = '') => String(value).replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;',
+      }[char]));
+
+      grid.innerHTML = projects.map((project) => {
+        const title = escapeHtml(project.title || 'Projet VertMex');
+        const city = escapeHtml(project.city || 'Montérégie');
+        const category = escapeHtml(project.category || 'Projet récent');
+        const description = escapeHtml(project.description || 'Photos avant / après fournies par VertMex.');
+        const before = escapeHtml(project.beforeImage || '');
+        const after = escapeHtml(project.afterImage || '');
+
+        return `
+          <article class="project-card featured">
+            <div class="before-after">
+              <figure><img src="${before}" alt="Avant - ${title}" loading="lazy"><span data-fr="Avant" data-en="Before">Avant</span></figure>
+              <figure><img src="${after}" alt="Après - ${title}" loading="lazy"><span data-fr="Après" data-en="After">Après</span></figure>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-tag">${category}</span>
+                <span class="project-tag">${city}</span>
+              </div>
+              <h3>${title}</h3>
+              <p>${description}</p>
+            </div>
+          </article>
+        `;
+      }).join('');
+      grid.hidden = false;
+    } catch (error) {
+      console.warn('Owner projects could not be loaded.', error);
+    }
+  }
+
+  loadOwnerProjects();
+
   let lang = 'fr';
   function toggleLang() {
     lang = lang === 'fr' ? 'en' : 'fr';
