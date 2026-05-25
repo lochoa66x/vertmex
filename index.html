@@ -243,10 +243,13 @@
   .c-txt a:hover { color: #fff; }
   .contact-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
   .contact-actions a { text-decoration: none; }
-  .guar-box { margin-top: 1.85rem; background: rgba(90,170,90,0.1); border: 1px solid rgba(90,170,90,0.2); border-radius: 9px; padding: 0.95rem 1.15rem; display: flex; align-items: center; gap: 0.7rem; }
+  .guar-box { margin-top: 1.85rem; background: rgba(90,170,90,0.1); border: 1px solid rgba(90,170,90,0.2); border-radius: 9px; padding: 0.95rem 1.15rem; display: flex; align-items: flex-start; gap: 0.7rem; }
   .guar-box .g-ico { font-size: 1.35rem; flex-shrink: 0; }
   .guar-box p { font-size: 0.8rem; color: rgba(255,255,255,0.68); line-height: 1.52; }
   .guar-box strong { color: var(--green-bright); }
+  .contact-help-list { list-style: none; margin-top: 0.65rem; display: grid; gap: 0.35rem; }
+  .contact-help-list li { color: rgba(255,255,255,0.58); font-size: 0.76rem; line-height: 1.45; }
+  .contact-help-list li::before { content: '✓'; color: var(--green-bright); font-weight: 800; margin-right: 0.38rem; }
   .cform { display: flex; flex-direction: column; gap: 0.8rem; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
   .ff { display: flex; flex-direction: column; gap: 0.32rem; }
@@ -837,21 +840,30 @@
     <div>
       <div class="sl" data-fr="Contactez-nous" data-en="Get in touch">Contactez-nous</div>
       <h2 data-fr="Parlez-nous de votre projet extérieur" data-en="Tell us about your outdoor project">Parlez-nous de votre projet extérieur</h2>
-      <p class="sec-sub" data-fr="WhatsApp est le plus rapide pour envoyer des photos. Vous pouvez aussi appeler directement ou envoyer les détails de base par formulaire." data-en="WhatsApp is the fastest way to send photos. You can also call directly or send the basic details through the form.">WhatsApp est le plus rapide pour envoyer des photos. Vous pouvez aussi appeler directement ou envoyer les détails de base par formulaire.</p>
+      <p class="sec-sub" data-fr="Pour une réponse rapide, envoyez quelques photos sur WhatsApp avec votre ville, le type de travaux et le moment souhaité. Le formulaire reste disponible pour les demandes moins urgentes." data-en="For a faster response, send a few photos on WhatsApp with your city, the type of work and preferred timing. The form is still available for less urgent requests.">Pour une réponse rapide, envoyez quelques photos sur WhatsApp avec votre ville, le type de travaux et le moment souhaité. Le formulaire reste disponible pour les demandes moins urgentes.</p>
       <div class="cinfo">
-        <div class="c-item"><div class="c-ico">📍</div><div class="c-txt"><strong data-fr="Adresse" data-en="Address">Adresse</strong><span>164a Rue Saint-Patrice, Saint-Rémi, QC J0L 2N0</span></div></div>
+        <div class="c-item"><div class="c-ico">📍</div><div class="c-txt"><strong data-fr="Adresse" data-en="Address">Adresse</strong><a href="https://maps.app.goo.gl/mh8z3Sd4YvdbPimg9" target="_blank" rel="noopener">164a Rue Saint-Patrice, Saint-Rémi, QC J0L 2N0</a></div></div>
         <div class="c-item"><div class="c-ico">💬</div><div class="c-txt"><strong>WhatsApp</strong><a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." target="_blank" rel="noopener">(438) 728-7513</a></div></div>
         <div class="c-item"><div class="c-ico">📞</div><div class="c-txt"><strong data-fr="Téléphone" data-en="Phone">Téléphone</strong><a href="tel:+14387287513">(438) 728-7513</a></div></div>
         <div class="c-item"><div class="c-ico">✉️</div><div class="c-txt"><strong>Email</strong><a href="mailto:info@vertmex.ca">info@vertmex.ca</a></div></div>
         <div class="c-item"><div class="c-ico">◎</div><div class="c-txt"><strong>Instagram</strong><a href="https://www.instagram.com/vertmex.inc/" target="_blank" rel="noopener">@vertmex.inc</a></div></div>
-        <div class="c-item"><div class="c-ico">🕐</div><div class="c-txt"><strong data-fr="Heures" data-en="Hours">Heures</strong><span data-fr="Lun–Sam : 7h – 18h" data-en="Mon–Sat: 7am – 6pm">Lun–Sam : 7h – 18h</span></div></div>
         <div class="c-item"><div class="c-ico">🗺️</div><div class="c-txt"><strong data-fr="Zones" data-en="Coverage">Zones</strong><span data-fr="Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal" data-en="Saint-Rémi, Montérégie, South Shore &amp; Greater Montréal">Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal</span></div></div>
       </div>
       <div class="contact-actions">
-        <a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." class="btn-primary btn-whatsapp" target="_blank" rel="noopener" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</a>
-        <a href="tel:+14387287513" class="btn-ghost" data-fr="Appeler" data-en="Call">Appeler</a>
+        <a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." class="btn-primary btn-whatsapp" target="_blank" rel="noopener" data-fr="Envoyer des photos" data-en="Send photos">Envoyer des photos</a>
+        <a href="tel:+14387287513" class="btn-ghost" data-fr="Appeler maintenant" data-en="Call now">Appeler maintenant</a>
       </div>
-      <div class="guar-box"><div class="g-ico">🧾</div><p data-fr="<strong>Soumission claire.</strong> Envoyez quelques photos, la ville et le type de travaux pour aider l’équipe à répondre plus vite." data-en="<strong>Clear quote.</strong> Send a few photos, the city and the type of work to help the team respond faster."><strong>Soumission claire.</strong> Envoyez quelques photos, la ville et le type de travaux pour aider l’équipe à répondre plus vite.</p></div>
+      <div class="guar-box">
+        <div class="g-ico">🧾</div>
+        <div>
+          <p data-fr="<strong>Pour une meilleure soumission :</strong>" data-en="<strong>For a better quote:</strong>"><strong>Pour une meilleure soumission :</strong></p>
+          <ul class="contact-help-list">
+            <li data-fr="Une photo large de la zone à travailler" data-en="A wide photo of the work area">Une photo large de la zone à travailler</li>
+            <li data-fr="Votre ville et le service souhaité" data-en="Your city and the service needed">Votre ville et le service souhaité</li>
+            <li data-fr="Le moment idéal pour les travaux" data-en="Your preferred timing for the work">Le moment idéal pour les travaux</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div>
       <form class="cform" id="quoteForm" action="https://formspree.io/f/xvzyqgnp" method="POST">
@@ -862,11 +874,17 @@
           <div class="ff"><label data-fr="Prénom" data-en="First name">Prénom</label><input name="prenom" type="text" autocomplete="given-name" required data-fr-placeholder="Jean" data-en-placeholder="John" placeholder="Jean"></div>
           <div class="ff"><label data-fr="Nom" data-en="Last name">Nom</label><input name="nom" type="text" autocomplete="family-name" required data-fr-placeholder="Tremblay" data-en-placeholder="Smith" placeholder="Tremblay"></div>
         </div>
-        <div class="ff"><label>Email</label><input name="email" type="email" autocomplete="email" required placeholder="jean@exemple.com"></div>
-        <div class="ff"><label data-fr="Téléphone" data-en="Phone">Téléphone</label><input name="telephone" type="tel" autocomplete="tel" required placeholder="514-XXX-XXXX"></div>
+        <div class="form-row">
+          <div class="ff"><label data-fr="Téléphone" data-en="Phone">Téléphone</label><input name="telephone" type="tel" autocomplete="tel" required placeholder="514-XXX-XXXX"></div>
+          <div class="ff"><label data-fr="Email optionnel" data-en="Email optional">Email optionnel</label><input name="email" type="email" autocomplete="email" placeholder="jean@exemple.com"></div>
+        </div>
         <div class="form-row">
           <div class="ff"><label data-fr="Ville" data-en="City">Ville</label><input name="ville" type="text" autocomplete="address-level2" required data-fr-placeholder="Saint-Rémi, Longueuil..." data-en-placeholder="Saint-Rémi, Longueuil..." placeholder="Saint-Rémi, Longueuil..."></div>
           <div class="ff"><label data-fr="Calendrier" data-en="Timeline">Calendrier</label><select name="calendrier" required><option value="" data-fr="Choisir..." data-en="Select...">Choisir...</option><option data-fr="Dès que possible" data-en="As soon as possible">Dès que possible</option><option data-fr="Ce mois-ci" data-en="This month">Ce mois-ci</option><option data-fr="Cette saison" data-en="This season">Cette saison</option><option data-fr="Je planifie d’avance" data-en="Planning ahead">Je planifie d’avance</option></select></div>
+        </div>
+        <div class="form-row">
+          <div class="ff"><label data-fr="Type de client" data-en="Customer type">Type de client</label><select name="type_client"><option data-fr="Résidentiel" data-en="Residential">Résidentiel</option><option data-fr="Commercial" data-en="Commercial">Commercial</option></select></div>
+          <div class="ff"><label data-fr="Contact préféré" data-en="Preferred contact">Contact préféré</label><select name="contact_prefere"><option>WhatsApp</option><option data-fr="Téléphone" data-en="Phone">Téléphone</option><option>Email</option></select></div>
         </div>
         <div class="ff">
           <label data-fr="Service souhaité" data-en="Service needed">Service souhaité</label>
@@ -887,7 +905,7 @@
             <option data-fr="Autre / Projet complet" data-en="Other / Full project">Autre / Projet complet</option>
           </select>
         </div>
-        <div class="ff"><label data-fr="Courte description" data-en="Short description">Courte description</label><textarea name="description" required data-fr-placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..." data-en-placeholder="Describe the property, desired work and important constraints..." placeholder="Décrivez le terrain, les travaux souhaités et les contraintes importantes..."></textarea></div>
+        <div class="ff"><label data-fr="Courte description" data-en="Short description">Courte description</label><textarea name="description" required data-fr-placeholder="Décrivez le terrain, les mesures approximatives, les photos disponibles ou les contraintes d’accès..." data-en-placeholder="Describe the property, approximate measurements, available photos or access constraints..." placeholder="Décrivez le terrain, les mesures approximatives, les photos disponibles ou les contraintes d’accès..."></textarea></div>
         <div class="form-status" id="formStatus" aria-live="polite"></div>
         <button class="form-submit" type="submit" data-fr="Envoyer ma demande →" data-en="Send my request →">Envoyer ma demande →</button>
         <p class="form-note" data-fr="WhatsApp recommandé pour envoyer des photos • Appel direct pour les demandes urgentes" data-en="WhatsApp recommended for sending photos • Direct call for urgent requests">WhatsApp recommandé pour envoyer des photos • Appel direct pour les demandes urgentes</p>
