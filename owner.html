@@ -33,7 +33,6 @@
   .status { min-height: 24px; color: var(--muted); font-weight: 700; }
   .status.ok { color: var(--green); }
   .status.err { color: #a83232; }
-  .setup { margin-top: 1rem; color: var(--muted); font-size: 0.82rem; line-height: 1.65; }
   code { background: #edf4ed; border-radius: 5px; padding: 0.1rem 0.28rem; color: var(--green-deep); }
   @media (max-width: 720px) {
     body { padding: 1rem; }
@@ -99,8 +98,6 @@
       <div class="status" id="status" aria-live="polite"></div>
       <button id="submitBtn" type="submit">Publier ce projet</button>
     </form>
-
-    <p class="setup">Configuration requise dans Vercel : <code>OWNER_UPLOAD_PASSWORD</code>, <code>GITHUB_TOKEN</code>, et optionnellement <code>GITHUB_REPO</code> / <code>GITHUB_BRANCH</code>.</p>
   </section>
 </main>
 

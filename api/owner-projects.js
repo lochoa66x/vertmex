@@ -110,7 +110,8 @@ export default async function handler(req, res) {
   const repo = process.env.GITHUB_REPO || DEFAULT_REPO;
   const branch = process.env.GITHUB_BRANCH || DEFAULT_BRANCH;
   const timestamp = new Date().toISOString();
-  const slug = `${timestamp.slice(0, 10)}-${slugify(title)}`;
+  const timeSlug = timestamp.replace(/[-:.TZ]/g, '').slice(0, 14);
+  const slug = `${timeSlug}-${slugify(title)}`;
 
   try {
     const before = imageFromDataUrl(beforeImage, 'Before image');
