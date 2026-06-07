@@ -60,6 +60,8 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--cream); overflow-x: hidden; }
+  .icon { width: 1em; height: 1em; display: inline-block; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .icon-solid { fill: currentColor; stroke: none; }
   .season-banner {
     position: fixed; top: 0; left: 0; right: 0; z-index: 120;
     display: flex; align-items: center; justify-content: center; gap: 0.8rem; flex-wrap: wrap;
@@ -107,13 +109,14 @@
   .btn-ghost { background: transparent; color: rgba(255,255,255,0.75); padding: 0.78rem 1.65rem; border-radius: 100px; font-size: 0.88rem; cursor: pointer; border: 1px solid rgba(255,255,255,0.22); text-decoration: none; transition: all 0.2s; display: inline-block; }
   .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
   .hero-guarantee { display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; color: rgba(255,255,255,0.42); }
-  .hero-guarantee .chk { color: var(--green-bright); }
+  .hero-guarantee .chk { color: var(--green-bright); width: 0.95rem; height: 0.95rem; }
   .hero-stats { display: flex; gap: 2.2rem; position: absolute; bottom: 2.5rem; left: 2.5rem; z-index: 2; }
   .stat strong { display: block; font-size: 1.75rem; font-weight: 300; font-family: 'Playfair Display', serif; color: #fff; line-height: 1; }
   .stat span { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
   .trust-bar { background: #fff; padding: 1.1rem 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
   .trust-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.9rem; }
   .trust-item { display: flex; align-items: center; gap: 0.55rem; font-size: 0.8rem; color: var(--text-mid); }
+  .trust-item .icon { color: var(--green-mid); width: 1rem; height: 1rem; }
   .trust-item strong { color: var(--green-deep); font-weight: 500; }
   .trust-div { width: 1px; height: 1.3rem; background: rgba(0,0,0,0.1); }
   .zones { background: var(--green-pale); padding: 0.85rem 2.5rem; border-bottom: 1px solid rgba(61,122,61,0.15); }
@@ -141,7 +144,8 @@
   .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1.1rem; }
   .svc-card { background: var(--cream); border: 1px solid rgba(0,0,0,0.07); border-radius: 11px; padding: 1.6rem; transition: all 0.22s; }
   .svc-card:hover { border-color: var(--green-mid); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(45,90,45,0.09); }
-  .s-ico { width: 42px; height: 42px; background: var(--green-pale); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.9rem; }
+  .s-ico { width: 42px; height: 42px; background: var(--green-pale); border: 1px solid rgba(61,122,61,0.16); color: var(--green-dark); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.9rem; }
+  .s-ico .icon { width: 1.25rem; height: 1.25rem; }
   .svc-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--green-deep); }
   .svc-card p { font-size: 0.8rem; color: var(--text-light); line-height: 1.58; }
   .svc-category h3 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--green-deep); }
@@ -207,6 +211,7 @@
   .about-content p { color: var(--text-mid); line-height: 1.78; margin-bottom: 0.9rem; font-size: 0.9rem; }
   .badges { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1.1rem; }
   .badge { display: inline-flex; align-items: center; gap: 0.38rem; background: var(--green-pale); border: 1px solid rgba(61,122,61,0.2); color: var(--green-dark); padding: 0.35rem 0.8rem; border-radius: 100px; font-size: 0.76rem; }
+  .badge .icon { width: 0.86rem; height: 0.86rem; }
   .gal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 2.25rem; }
   .g-item { border-radius: 8px; border: 1px dashed rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.42rem; color: var(--text-light); font-size: 0.7rem; background: #ede9e1; min-height: 160px; }
   .g-item .ico { font-size: 1.5rem; opacity: 0.26; }
@@ -263,14 +268,16 @@
   .contact-sec .sec-sub { color: rgba(255,255,255,0.52); }
   .cinfo { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.6rem; }
   .c-item { display: flex; align-items: flex-start; gap: 0.8rem; }
-  .c-ico { width: 32px; height: 32px; flex-shrink: 0; background: rgba(90,170,90,0.1); border: 1px solid rgba(90,170,90,0.2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+  .c-ico { width: 32px; height: 32px; flex-shrink: 0; background: rgba(90,170,90,0.1); border: 1px solid rgba(90,170,90,0.2); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--green-bright); }
+  .c-ico .icon { width: 1rem; height: 1rem; }
   .c-txt strong { display: block; font-size: 0.7rem; color: var(--green-bright); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.12rem; }
   .c-txt span, .c-txt a { font-size: 0.85rem; color: rgba(255,255,255,0.72); text-decoration: none; }
   .c-txt a:hover { color: #fff; }
   .contact-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
   .contact-actions a { text-decoration: none; }
   .guar-box { margin-top: 1.85rem; background: rgba(90,170,90,0.1); border: 1px solid rgba(90,170,90,0.2); border-radius: 9px; padding: 0.95rem 1.15rem; display: flex; align-items: flex-start; gap: 0.7rem; }
-  .guar-box .g-ico { font-size: 1.35rem; flex-shrink: 0; }
+  .guar-box .g-ico { width: 34px; height: 34px; flex-shrink: 0; border-radius: 7px; display: flex; align-items: center; justify-content: center; background: rgba(90,170,90,0.1); color: var(--green-bright); }
+  .guar-box .g-ico .icon { width: 1.15rem; height: 1.15rem; }
   .guar-box p { font-size: 0.8rem; color: rgba(255,255,255,0.68); line-height: 1.52; }
   .guar-box strong { color: var(--green-bright); }
   .contact-help-list { list-style: none; margin-top: 0.65rem; display: grid; gap: 0.35rem; }
@@ -338,6 +345,25 @@
 </head>
 <body>
 
+<svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute; overflow:hidden;">
+  <symbol id="icon-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="icon-crew" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-8 0v2"/><circle cx="12" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M2 21v-2a4 4 0 0 1 3-3.87"/><path d="M8 3.13a4 4 0 0 0 0 7.75"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="icon-receipt" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></symbol>
+  <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+  <symbol id="icon-message" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></symbol>
+  <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M5 21c.5-6 4-10 10-12"/><path d="M19 3c-7 1-12 5-14 12 7 1 13-3 14-12Z"/></symbol>
+  <symbol id="icon-blocks" viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="6" rx="1"/><rect x="13" y="4" width="8" height="6" rx="1"/><rect x="8" y="14" width="8" height="6" rx="1"/></symbol>
+  <symbol id="icon-tree" viewBox="0 0 24 24"><path d="M12 22v-7"/><path d="M7 15h10"/><path d="M5 12c0-4 3-8 7-10 4 2 7 6 7 10a7 7 0 0 1-14 0Z"/></symbol>
+  <symbol id="icon-fence" viewBox="0 0 24 24"><path d="M4 20V8l2-2 2 2v12"/><path d="M10 20V8l2-2 2 2v12"/><path d="M16 20V8l2-2 2 2v12"/><path d="M3 12h18"/><path d="M3 17h18"/></symbol>
+  <symbol id="icon-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L3 18l3 3 5.3-5.3a5 5 0 0 0 6.4-6.4l-3 3-3-3Z"/></symbol>
+  <symbol id="icon-map" viewBox="0 0 24 24"><path d="M9 18 3 21V6l6-3 6 3 6-3v15l-6 3Z"/><path d="M9 3v15"/><path d="M15 6v15"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="icon-solid" cx="17.5" cy="6.5" r="1.2"/></symbol>
+  <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M4 8h4l2-3h4l2 3h4v11H4Z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+</svg>
+
 <div class="season-banner">
   <span data-fr="Réservez votre place pour la saison 2026 — disponibilités limitées" data-en="Reserve your spot for the 2026 season — limited availability">Réservez votre place pour la saison 2026 — disponibilités limitées</span>
   <a href="#contact" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
@@ -367,7 +393,7 @@
       <a href="tel:+14387287513" class="btn-ghost" data-fr="Appeler (438) 728-7513" data-en="Call (438) 728-7513">Appeler (438) 728-7513</a>
       <a href="#contact" class="btn-ghost" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
     </div>
-    <div class="hero-guarantee"><span class="chk">✓</span><span data-fr="Soumission claire — Chantier propre — Équipe locale et flexible" data-en="Clear quote — Clean job site — Local, flexible crew">Soumission claire — Chantier propre — Équipe locale et flexible</span></div>
+    <div class="hero-guarantee"><svg class="icon chk"><use href="#icon-check"></use></svg><span data-fr="Soumission claire — Chantier propre — Équipe locale et flexible" data-en="Clear quote — Clean job site — Local, flexible crew">Soumission claire — Chantier propre — Équipe locale et flexible</span></div>
     <div class="hero-mobile-brand"><img src="assets/vertmex-logo.jpg" alt="VertMex paysagiste"></div>
   </div>
   <div class="hero-img-area"><div class="hero-brand-card"><img src="assets/vertmex-logo.jpg" alt="VertMex paysagiste"></div></div>
@@ -380,15 +406,15 @@
 
 <!-- TRUST BAR -->
 <div class="trust-bar"><div class="trust-inner">
-  <div class="trust-item">👷 <strong data-fr="Équipe locale de 5 à 13 personnes" data-en="Local crew of 5 to 13 people">Équipe locale de 5 à 13 personnes</strong></div>
+  <div class="trust-item"><svg class="icon"><use href="#icon-crew"></use></svg> <strong data-fr="Équipe locale de 5 à 13 personnes" data-en="Local crew of 5 to 13 people">Équipe locale de 5 à 13 personnes</strong></div>
   <div class="trust-div"></div>
-  <div class="trust-item">📍 <span data-fr="Basés à Sherrington" data-en="Based in Sherrington">Basés à Sherrington</span></div>
+  <div class="trust-item"><svg class="icon"><use href="#icon-pin"></use></svg> <span data-fr="Basés à Sherrington" data-en="Based in Sherrington">Basés à Sherrington</span></div>
   <div class="trust-div"></div>
-  <div class="trust-item">🧾 <span data-fr="Soumission claire avant les travaux" data-en="Clear quote before work begins">Soumission claire avant les travaux</span></div>
+  <div class="trust-item"><svg class="icon"><use href="#icon-receipt"></use></svg> <span data-fr="Soumission claire avant les travaux" data-en="Clear quote before work begins">Soumission claire avant les travaux</span></div>
   <div class="trust-div"></div>
-  <div class="trust-item">🏠 <span data-fr="Résidentiel et commercial" data-en="Residential and commercial">Résidentiel et commercial</span></div>
+  <div class="trust-item"><svg class="icon"><use href="#icon-home"></use></svg> <span data-fr="Résidentiel et commercial" data-en="Residential and commercial">Résidentiel et commercial</span></div>
   <div class="trust-div"></div>
-  <div class="trust-item">💬 <span data-fr="Service en français et en anglais" data-en="Service in French and English">Service en français et en anglais</span></div>
+  <div class="trust-item"><svg class="icon"><use href="#icon-message"></use></svg> <span data-fr="Service en français et en anglais" data-en="Service in French and English">Service en français et en anglais</span></div>
 </div></div>
 
 <!-- ZONES -->
@@ -416,10 +442,10 @@
     <p class="sec-sub" data-fr="Une seule équipe locale pour les projets résidentiels et commerciaux : préparation du terrain, installation, entretien et réparation." data-en="One local crew for residential and commercial projects: site preparation, installation, maintenance and repair.">Une seule équipe locale pour les projets résidentiels et commerciaux : préparation du terrain, installation, entretien et réparation.</p>
   </div>
   <div class="svc-grid">
-    <div class="svc-card svc-category"><div class="s-ico">🌱</div><h3 data-fr="Aménagement &amp; installation" data-en="Landscaping &amp; installation">Aménagement &amp; installation</h3><ul class="svc-list"><li data-fr="Aménagement complet" data-en="Full landscaping">Aménagement complet</li><li data-fr="Tourbe et ensemencement" data-en="Sod and seeding">Tourbe et ensemencement</li><li data-fr="Plantation et plates-bandes" data-en="Planting and garden beds">Plantation et plates-bandes</li><li data-fr="Aménagement autour de piscine" data-en="Pool-area landscaping">Aménagement autour de piscine</li></ul></div>
-    <div class="svc-card svc-category"><div class="s-ico">🧱</div><h3 data-fr="Pavé, murets &amp; excavation" data-en="Pavers, walls &amp; excavation">Pavé, murets &amp; excavation</h3><ul class="svc-list"><li data-fr="Pavé-uni, allées et terrasses" data-en="Pavers, walkways and patios">Pavé-uni, allées et terrasses</li><li data-fr="Murets de soutènement" data-en="Retaining walls">Murets de soutènement</li><li data-fr="Excavation et nivellement" data-en="Excavation and grading">Excavation et nivellement</li><li data-fr="Scellant et entretien d’entrée" data-en="Driveway sealing and care">Scellant et entretien d’entrée</li></ul></div>
-    <div class="svc-card svc-category"><div class="s-ico">🌳</div><h3 data-fr="Entretien &amp; végétation" data-en="Maintenance &amp; vegetation">Entretien &amp; végétation</h3><ul class="svc-list"><li data-fr="Taille de haies" data-en="Hedge trimming">Taille de haies</li><li data-fr="Émondage et entretien d’arbres" data-en="Tree trimming and care">Émondage et entretien d’arbres</li><li data-fr="Horticulture et jardinage" data-en="Horticulture and gardening">Horticulture et jardinage</li><li data-fr="Entretien saisonnier" data-en="Seasonal maintenance">Entretien saisonnier</li></ul></div>
-    <div class="svc-card svc-category"><div class="s-ico">🚧</div><h3 data-fr="Structures &amp; espaces extérieurs" data-en="Structures &amp; outdoor spaces">Structures &amp; espaces extérieurs</h3><ul class="svc-list"><li data-fr="Clôtures" data-en="Fencing">Clôtures</li><li data-fr="Pergolas et zones d’ombre" data-en="Pergolas and shade areas">Pergolas et zones d’ombre</li><li data-fr="Irrigation" data-en="Irrigation">Irrigation</li><li data-fr="Petits travaux commerciaux" data-en="Small commercial jobs">Petits travaux commerciaux</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico"><svg class="icon"><use href="#icon-leaf"></use></svg></div><h3 data-fr="Aménagement &amp; installation" data-en="Landscaping &amp; installation">Aménagement &amp; installation</h3><ul class="svc-list"><li data-fr="Aménagement complet" data-en="Full landscaping">Aménagement complet</li><li data-fr="Tourbe et ensemencement" data-en="Sod and seeding">Tourbe et ensemencement</li><li data-fr="Plantation et plates-bandes" data-en="Planting and garden beds">Plantation et plates-bandes</li><li data-fr="Aménagement autour de piscine" data-en="Pool-area landscaping">Aménagement autour de piscine</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico"><svg class="icon"><use href="#icon-blocks"></use></svg></div><h3 data-fr="Pavé, murets &amp; excavation" data-en="Pavers, walls &amp; excavation">Pavé, murets &amp; excavation</h3><ul class="svc-list"><li data-fr="Pavé-uni, allées et terrasses" data-en="Pavers, walkways and patios">Pavé-uni, allées et terrasses</li><li data-fr="Murets de soutènement" data-en="Retaining walls">Murets de soutènement</li><li data-fr="Excavation et nivellement" data-en="Excavation and grading">Excavation et nivellement</li><li data-fr="Scellant et entretien d’entrée" data-en="Driveway sealing and care">Scellant et entretien d’entrée</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico"><svg class="icon"><use href="#icon-tree"></use></svg></div><h3 data-fr="Entretien &amp; végétation" data-en="Maintenance &amp; vegetation">Entretien &amp; végétation</h3><ul class="svc-list"><li data-fr="Taille de haies" data-en="Hedge trimming">Taille de haies</li><li data-fr="Émondage et entretien d’arbres" data-en="Tree trimming and care">Émondage et entretien d’arbres</li><li data-fr="Horticulture et jardinage" data-en="Horticulture and gardening">Horticulture et jardinage</li><li data-fr="Entretien saisonnier" data-en="Seasonal maintenance">Entretien saisonnier</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico"><svg class="icon"><use href="#icon-fence"></use></svg></div><h3 data-fr="Structures &amp; espaces extérieurs" data-en="Structures &amp; outdoor spaces">Structures &amp; espaces extérieurs</h3><ul class="svc-list"><li data-fr="Clôtures" data-en="Fencing">Clôtures</li><li data-fr="Pergolas et zones d’ombre" data-en="Pergolas and shade areas">Pergolas et zones d’ombre</li><li data-fr="Irrigation" data-en="Irrigation">Irrigation</li><li data-fr="Petits travaux commerciaux" data-en="Small commercial jobs">Petits travaux commerciaux</li></ul></div>
   </div>
 </section>
 
@@ -551,7 +577,8 @@
   .vtx-upload-zone:hover, .vtx-upload-zone.drag-over { border-color: #2e7d32; background: #f1f8f1; }
   .vtx-upload-zone.has-photo { border-style: solid; border-color: #2e7d32; padding: 0; }
   .vtx-upload-placeholder { pointer-events: none; }
-  .vtx-upload-icon { font-size: 2.4rem; margin-bottom: 0.6rem; }
+  .vtx-upload-icon { color: #2e7d32; margin-bottom: 0.6rem; }
+  .vtx-upload-icon .icon { width: 2.3rem; height: 2.3rem; }
   .vtx-upload-title { font-size: 1rem; font-weight: 600; color: #2e7d32; margin: 0 0 0.35rem; }
   .vtx-upload-hint { font-size: 0.82rem; color: #777; margin: 0; }
   .vtx-photo-preview { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: none; }
@@ -615,7 +642,7 @@
         <input id="vtx-file-input" type="file" accept="image/png,image/jpeg,image/webp" hidden onchange="vtxHandleFile(event)">
         <div class="vtx-upload-zone" id="vtx-upload-zone" onclick="vtxTriggerUpload()" ondragover="vtxDragOver(event)" ondragleave="vtxDragLeave(event)" ondrop="vtxDrop(event)">
           <div class="vtx-upload-placeholder" id="vtx-upload-placeholder">
-            <div class="vtx-upload-icon">📷</div>
+            <div class="vtx-upload-icon"><svg class="icon"><use href="#icon-camera"></use></svg></div>
             <p class="vtx-upload-title" data-fr="Ajoutez une photo de votre espace" data-en="Add a photo of your space">Ajoutez une photo de votre espace</p>
             <p class="vtx-upload-hint" data-fr="JPG, PNG ou WebP. Idéalement une photo claire de jour." data-en="JPG, PNG or WebP. A clear daytime photo works best.">JPG, PNG ou WebP. Idéalement une photo claire de jour.</p>
           </div>
@@ -748,11 +775,11 @@
       <p data-fr="Basée à Sherrington, VertMex travaille avec les propriétaires et commerces de la Montérégie, de la Rive-Sud et du Grand Montréal. L’objectif est simple : expliquer clairement les travaux, respecter le terrain et livrer un résultat durable." data-en="Based in Sherrington, VertMex works with homeowners and businesses across Montérégie, the South Shore and Greater Montréal. The goal is simple: explain the work clearly, respect the property and deliver a durable result.">Basée à Sherrington, VertMex travaille avec les propriétaires et commerces de la Montérégie, de la Rive-Sud et du Grand Montréal. L’objectif est simple : expliquer clairement les travaux, respecter le terrain et livrer un résultat durable.</p>
       <p data-fr="L’équipe varie selon la saison et les projets, avec environ 5 à 13 personnes sur le terrain. VertMex couvre les travaux pratiques : excavation, pavé-uni, tourbe, murets, clôtures, entretien, pergolas et aménagements complets." data-en="The crew changes with the season and project load, with about 5 to 13 people in the field. VertMex handles practical work: excavation, pavers, sod, retaining walls, fencing, maintenance, pergolas and full landscaping.">L’équipe varie selon la saison et les projets, avec environ 5 à 13 personnes sur le terrain. VertMex couvre les travaux pratiques : excavation, pavé-uni, tourbe, murets, clôtures, entretien, pergolas et aménagements complets.</p>
       <div class="badges">
-        <span class="badge">✅ <span data-fr="Soumission claire" data-en="Clear quote">Soumission claire</span></span>
-        <span class="badge">📍 <span>Sherrington, QC J0L 2N0</span></span>
-        <span class="badge">🌿 <span data-fr="5 à 13 personnes" data-en="5 to 13 people">5 à 13 personnes</span></span>
-        <span class="badge">🔧 <span data-fr="Services groupés" data-en="Grouped services">Services groupés</span></span>
-        <span class="badge">🗺️ <span data-fr="Montérégie &amp; Rive-Sud" data-en="Montérégie &amp; South Shore">Montérégie &amp; Rive-Sud</span></span>
+        <span class="badge"><svg class="icon"><use href="#icon-check"></use></svg> <span data-fr="Soumission claire" data-en="Clear quote">Soumission claire</span></span>
+        <span class="badge"><svg class="icon"><use href="#icon-pin"></use></svg> <span>Sherrington, QC J0L 2N0</span></span>
+        <span class="badge"><svg class="icon"><use href="#icon-crew"></use></svg> <span data-fr="5 à 13 personnes" data-en="5 to 13 people">5 à 13 personnes</span></span>
+        <span class="badge"><svg class="icon"><use href="#icon-wrench"></use></svg> <span data-fr="Services groupés" data-en="Grouped services">Services groupés</span></span>
+        <span class="badge"><svg class="icon"><use href="#icon-map"></use></svg> <span data-fr="Montérégie &amp; Rive-Sud" data-en="Montérégie &amp; South Shore">Montérégie &amp; Rive-Sud</span></span>
       </div>
     </div>
   </div>
@@ -889,12 +916,12 @@
       <h2 data-fr="Parlez-nous de votre projet extérieur" data-en="Tell us about your outdoor project">Parlez-nous de votre projet extérieur</h2>
       <p class="sec-sub" data-fr="Envoyez votre demande avec le formulaire. Elle arrive par courriel à l’équipe VertMex avec votre ville, le type de travaux et le moment souhaité. WhatsApp reste disponible si vous voulez ajouter des photos rapidement." data-en="Send your request with the form. It arrives by email to the VertMex team with your city, work type and preferred timing. WhatsApp is still available if you want to add photos quickly.">Envoyez votre demande avec le formulaire. Elle arrive par courriel à l’équipe VertMex avec votre ville, le type de travaux et le moment souhaité. WhatsApp reste disponible si vous voulez ajouter des photos rapidement.</p>
       <div class="cinfo">
-        <div class="c-item"><div class="c-ico">📍</div><div class="c-txt"><strong data-fr="Adresse" data-en="Address">Adresse</strong><a href="https://maps.app.goo.gl/mh8z3Sd4YvdbPimg9" target="_blank" rel="noopener">164a Rue Saint-Patrice, Sherrington, QC J0L 2N0</a></div></div>
-        <div class="c-item"><div class="c-ico">💬</div><div class="c-txt"><strong>WhatsApp</strong><a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." target="_blank" rel="noopener">(438) 728-7513</a></div></div>
-        <div class="c-item"><div class="c-ico">📞</div><div class="c-txt"><strong data-fr="Téléphone" data-en="Phone">Téléphone</strong><a href="tel:+14387287513">(438) 728-7513</a></div></div>
-        <div class="c-item"><div class="c-ico">✉️</div><div class="c-txt"><strong>Email</strong><a href="mailto:vertmex_sherrington@outlook.com">vertmex_sherrington@outlook.com</a></div></div>
-        <div class="c-item"><div class="c-ico">◎</div><div class="c-txt"><strong>Instagram</strong><a href="https://www.instagram.com/vertmex.inc/" target="_blank" rel="noopener">@vertmex.inc</a></div></div>
-        <div class="c-item"><div class="c-ico">🗺️</div><div class="c-txt"><strong data-fr="Zones" data-en="Coverage">Zones</strong><span data-fr="Sherrington, Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal" data-en="Sherrington, Saint-Rémi, Montérégie, South Shore &amp; Greater Montréal">Sherrington, Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal</span></div></div>
+        <div class="c-item"><div class="c-ico"><svg class="icon"><use href="#icon-pin"></use></svg></div><div class="c-txt"><strong data-fr="Adresse" data-en="Address">Adresse</strong><a href="https://maps.app.goo.gl/mh8z3Sd4YvdbPimg9" target="_blank" rel="noopener">164a Rue Saint-Patrice, Sherrington, QC J0L 2N0</a></div></div>
+        <div class="c-item"><div class="c-ico"><svg class="icon"><use href="#icon-message"></use></svg></div><div class="c-txt"><strong>WhatsApp</strong><a href="https://wa.me/14387287513?text=Bonjour%20VertMex%2C%20j%E2%80%99aimerais%20une%20soumission%20pour%20un%20projet%20d%E2%80%99am%C3%A9nagement%20paysager.%20Ma%20ville%20est%20___%20et%20j%E2%80%99ai%20des%20photos%20%C3%A0%20envoyer." target="_blank" rel="noopener">(438) 728-7513</a></div></div>
+        <div class="c-item"><div class="c-ico"><svg class="icon"><use href="#icon-phone"></use></svg></div><div class="c-txt"><strong data-fr="Téléphone" data-en="Phone">Téléphone</strong><a href="tel:+14387287513">(438) 728-7513</a></div></div>
+        <div class="c-item"><div class="c-ico"><svg class="icon"><use href="#icon-mail"></use></svg></div><div class="c-txt"><strong>Email</strong><a href="mailto:vertmex_sherrington@outlook.com">vertmex_sherrington@outlook.com</a></div></div>
+        <div class="c-item"><div class="c-ico"><svg class="icon"><use href="#icon-instagram"></use></svg></div><div class="c-txt"><strong>Instagram</strong><a href="https://www.instagram.com/vertmex.inc/" target="_blank" rel="noopener">@vertmex.inc</a></div></div>
+        <div class="c-item"><div class="c-ico"><svg class="icon"><use href="#icon-map"></use></svg></div><div class="c-txt"><strong data-fr="Zones" data-en="Coverage">Zones</strong><span data-fr="Sherrington, Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal" data-en="Sherrington, Saint-Rémi, Montérégie, South Shore &amp; Greater Montréal">Sherrington, Saint-Rémi, Montérégie, Rive-Sud &amp; Grand Montréal</span></div></div>
       </div>
       <div class="contact-actions">
         <a href="mailto:vertmex_sherrington@outlook.com?subject=Demande%20de%20soumission%20VertMex" class="btn-primary" data-fr="Envoyer un courriel" data-en="Send an email">Envoyer un courriel</a>
@@ -902,7 +929,7 @@
         <a href="tel:+14387287513" class="btn-ghost" data-fr="Appeler maintenant" data-en="Call now">Appeler maintenant</a>
       </div>
       <div class="guar-box">
-        <div class="g-ico">🧾</div>
+        <div class="g-ico"><svg class="icon"><use href="#icon-receipt"></use></svg></div>
         <div>
           <p data-fr="<strong>Pour une meilleure soumission :</strong>" data-en="<strong>For a better quote:</strong>"><strong>Pour une meilleure soumission :</strong></p>
           <ul class="contact-help-list">
