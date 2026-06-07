@@ -59,8 +59,16 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--cream); overflow-x: hidden; }
+  .season-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 120;
+    display: flex; align-items: center; justify-content: center; gap: 0.8rem; flex-wrap: wrap;
+    min-height: 42px; padding: 0.55rem 1rem;
+    background: #f3d37a; color: #16361a; border-bottom: 1px solid rgba(22,54,26,0.18);
+    font-size: 0.82rem; font-weight: 800; text-align: center;
+  }
+  .season-banner a { color: #16361a; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 42px; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1rem 2.5rem; background: rgba(26,58,26,0.97);
     backdrop-filter: blur(8px); border-bottom: 1px solid rgba(90,170,90,0.15);
@@ -75,7 +83,7 @@
   .nav-phone { color: #fff !important; font-weight: 500; white-space: nowrap; }
   .lang-toggle { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 0.28rem 0.7rem; border-radius: 100px; font-size: 0.73rem; font-weight: 500; cursor: pointer; letter-spacing: 0.05em; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
   .lang-toggle:hover { background: rgba(255,255,255,0.2); }
-  .hero { min-height: 100vh; background: var(--green-deep); display: flex; flex-direction: column; justify-content: center; padding: 8rem 2.5rem 5rem; position: relative; overflow: hidden; }
+  .hero { min-height: 100vh; background: var(--green-deep); display: flex; flex-direction: column; justify-content: center; padding: 10.6rem 2.5rem 5rem; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 52%; background: linear-gradient(135deg, #2d5a2d 0%, #1a3a1a 50%, #0f2410 100%); clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%); }
   .hero-img-area { position: absolute; right: 0; top: 0; bottom: 0; width: 52%; display: flex; align-items: center; justify-content: center; z-index: 1; }
   .img-ph { width: 82%; height: 68%; border: 1px dashed rgba(90,170,90,0.3); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; color: rgba(255,255,255,0.25); font-size: 0.75rem; text-align: center; padding: 1rem; }
@@ -189,6 +197,12 @@
   .about-img-ph { aspect-ratio: 4/5; border-radius: 10px; border: 1px solid rgba(45,90,45,0.12); background: #e5e0d8; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.55rem; color: var(--text-light); font-size: 0.76rem; overflow: hidden; }
   .about-img-ph img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
   .about-img-ph .ico { font-size: 2rem; opacity: 0.28; }
+  .about-proof-card { align-items: flex-start; justify-content: center; padding: 2rem; background: var(--green-pale); }
+  .about-proof-card strong { font-family: 'Playfair Display', serif; color: var(--green-deep); font-size: 2rem; line-height: 1; }
+  .about-proof-card p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.65; }
+  .about-proof-list { list-style: none; display: grid; gap: 0.7rem; margin-top: 1rem; }
+  .about-proof-list li { color: var(--green-dark); font-size: 0.86rem; font-weight: 700; }
+  .about-proof-list li::before { content: '✓'; color: var(--green-mid); margin-right: 0.45rem; }
   .about-content p { color: var(--text-mid); line-height: 1.78; margin-bottom: 0.9rem; font-size: 0.9rem; }
   .badges { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1.1rem; }
   .badge { display: inline-flex; align-items: center; gap: 0.38rem; background: var(--green-pale); border: 1px solid rgba(61,122,61,0.2); color: var(--green-dark); padding: 0.35rem 0.8rem; border-radius: 100px; font-size: 0.76rem; }
@@ -205,6 +219,10 @@
   .project-photo strong { color: var(--green-deep); font-size: 0.88rem; }
   .project-photo span { font-size: 0.72rem; }
   .owner-project-grid[hidden] { display: none; }
+  .portfolio-empty { margin-top: 2.2rem; border: 1px dashed rgba(45,90,45,0.22); border-radius: 8px; background: #fff; padding: 1.25rem; display: grid; gap: 0.7rem; max-width: 760px; }
+  .portfolio-empty strong { color: var(--green-deep); font-size: 1rem; }
+  .portfolio-empty p { color: var(--text-light); font-size: 0.84rem; line-height: 1.6; }
+  .portfolio-empty-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
   .before-after { display: grid; grid-template-columns: 1fr 1fr; min-height: 280px; background: #e7e3da; border-bottom: 1px solid rgba(45,90,45,0.12); }
   .before-after figure { position: relative; min-width: 0; overflow: hidden; }
   .before-after img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; }
@@ -278,7 +296,8 @@
   .mobile-contact-bar { display: none; }
   @media (max-width: 768px) {
     body { padding-bottom: 74px; }
-    nav { padding: 0.85rem 1.25rem; }
+    .season-banner { min-height: 54px; font-size: 0.76rem; line-height: 1.35; }
+    nav { top: 54px; padding: 0.85rem 1.25rem; }
     .nav-logo { font-size: 1.35rem; }
     .nav-links { gap: 1rem; }
     .nav-links li:nth-child(2), .nav-links li:nth-child(3), .nav-links li:nth-child(4), .nav-phone { display: none; }
@@ -309,6 +328,11 @@
 </style>
 </head>
 <body>
+
+<div class="season-banner">
+  <span data-fr="Réservez votre place pour la saison 2026 — disponibilités limitées" data-en="Reserve your spot for the 2026 season — limited availability">Réservez votre place pour la saison 2026 — disponibilités limitées</span>
+  <a href="#contact" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -699,7 +723,15 @@
 <!-- ABOUT -->
 <section class="sec" id="about" style="background:#fff;">
   <div class="about-grid">
-    <div class="about-img-ph"><img src="assets/projects/vertmex-project-crew-hedge.jpg" alt="Membre de l’équipe VertMex pendant l’entretien d’une haie"></div>
+    <div class="about-img-ph about-proof-card">
+      <strong>VertMex</strong>
+      <p data-fr="Une petite équipe locale qui garde une capacité limitée pour bien suivre chaque chantier." data-en="A small local crew with limited capacity so each job can be followed properly.">Une petite équipe locale qui garde une capacité limitée pour bien suivre chaque chantier.</p>
+      <ul class="about-proof-list">
+        <li data-fr="Basés à Saint-Rémi" data-en="Based in Saint-Rémi">Basés à Saint-Rémi</li>
+        <li data-fr="5 à 13 personnes selon la saison" data-en="5 to 13 people depending on season">5 à 13 personnes selon la saison</li>
+        <li data-fr="Résidentiel et commercial" data-en="Residential and commercial">Résidentiel et commercial</li>
+      </ul>
+    </div>
     <div class="about-content">
       <div class="sl" data-fr="À propos de VertMex" data-en="About VertMex">À propos de VertMex</div>
       <h2 data-fr="Experts paysagistes de la Montérégie" data-en="Montérégie's Landscaping Experts">Experts paysagistes de la Montérégie</h2>
@@ -720,43 +752,18 @@
 <section class="sec" id="portfolio">
   <div>
     <div class="sl" data-fr="Projets récents" data-en="Recent projects">Projets récents</div>
-    <h2 data-fr="Photos réelles de travaux et d’entretien" data-en="Real photos of landscaping and maintenance work">Photos réelles de travaux et d’entretien</h2>
-    <p class="sec-sub" data-fr="Quelques exemples récents fournis par l’équipe VertMex. Les photos servent à montrer le type de chantier, l’entretien de haies, les plates-bandes et le soin apporté au terrain." data-en="A few recent examples provided by the VertMex team. The photos show job-site style, hedge maintenance, garden beds and care for the property.">Quelques exemples récents fournis par l’équipe VertMex. Les photos servent à montrer le type de chantier, l’entretien de haies, les plates-bandes et le soin apporté au terrain.</p>
+    <h2 data-fr="Avant / après à venir" data-en="Before / after projects coming soon">Avant / après à venir</h2>
+    <p class="sec-sub" data-fr="VertMex prépare un portfolio avec des photos prises au même angle avant et après les travaux. Les prochains projets publiés ici montreront clairement l’état du terrain, le travail réalisé et la finition." data-en="VertMex is preparing a portfolio with before-and-after photos taken from the same angle. Upcoming projects here will clearly show the property condition, the work completed and the final finish.">VertMex prépare un portfolio avec des photos prises au même angle avant et après les travaux. Les prochains projets publiés ici montreront clairement l’état du terrain, le travail réalisé et la finition.</p>
   </div>
   <div class="project-grid owner-project-grid" id="ownerProjectsGrid" hidden></div>
-  <div class="project-grid">
-    <article class="project-card featured">
-      <div class="project-photo"><img src="assets/projects/vertmex-project-garden-bed.jpg" alt="Plate-bande entretenue avec arbustes, paillis, camion et remorque VertMex"></div>
-      <div class="project-body">
-        <div class="project-meta"><span class="project-tag" data-fr="Plate-bande" data-en="Garden bed">Plate-bande</span><span class="project-tag" data-fr="Paillis" data-en="Mulch">Paillis</span><span class="project-tag" data-fr="Résidentiel" data-en="Residential">Résidentiel</span></div>
-        <h3 data-fr="Entretien de plate-bande et finition propre" data-en="Garden-bed maintenance and clean finishing">Entretien de plate-bande et finition propre</h3>
-        <p data-fr="Un exemple concret du type de chantier à montrer : arbustes taillés, paillis propre, équipement sur place et terrain résidentiel entretenu." data-en="A concrete example of the work style: trimmed shrubs, clean mulch, equipment on site and a maintained residential property.">Un exemple concret du type de chantier à montrer : arbustes taillés, paillis propre, équipement sur place et terrain résidentiel entretenu.</p>
-      </div>
-    </article>
-    <article class="project-card">
-      <div class="project-photo"><img src="assets/projects/vertmex-project-front-yard.jpg" alt="Cour avant résidentielle avec plate-bande, fontaine et camion VertMex"></div>
-      <div class="project-body">
-        <div class="project-meta"><span class="project-tag" data-fr="Cour avant" data-en="Front yard">Cour avant</span><span class="project-tag" data-fr="Entretien" data-en="Maintenance">Entretien</span><span class="project-tag" data-fr="Résidentiel" data-en="Residential">Résidentiel</span></div>
-        <h3 data-fr="Cour avant entretenue" data-en="Maintained front yard">Cour avant entretenue</h3>
-        <p data-fr="Photo utile pour présenter les travaux d’entretien, la propreté du chantier et le type de propriété desservie par l’équipe." data-en="Useful photo to show maintenance work, clean job-site habits and the type of property served by the crew.">Photo utile pour présenter les travaux d’entretien, la propreté du chantier et le type de propriété desservie par l’équipe.</p>
-      </div>
-    </article>
-    <article class="project-card">
-      <div class="project-photo"><img src="assets/projects/vertmex-project-planting.jpg" alt="Aménagement végétal avec arbustes, vivaces et pavé"></div>
-      <div class="project-body">
-        <div class="project-meta"><span class="project-tag" data-fr="Végétation" data-en="Planting">Végétation</span><span class="project-tag" data-fr="Pavé" data-en="Pavers">Pavé</span><span class="project-tag" data-fr="Finition" data-en="Finishing">Finition</span></div>
-        <h3 data-fr="Aménagement végétal autour du pavé" data-en="Planting around paved areas">Aménagement végétal autour du pavé</h3>
-        <p data-fr="Une bonne image pour montrer les plantations, les bordures vivantes et l’intégration avec les surfaces en pavé existantes." data-en="A good image for showing planting, living borders and integration with existing paved surfaces.">Une bonne image pour montrer les plantations, les bordures vivantes et l’intégration avec les surfaces en pavé existantes.</p>
-      </div>
-    </article>
-    <article class="project-card">
-      <div class="project-photo"><img src="assets/projects/vertmex-project-backyard-hedge.jpg" alt="Cour arrière avec haie entretenue et pelouse"></div>
-      <div class="project-body">
-        <div class="project-meta"><span class="project-tag" data-fr="Haies" data-en="Hedges">Haies</span><span class="project-tag" data-fr="Pelouse" data-en="Lawn">Pelouse</span><span class="project-tag" data-fr="Cour arrière" data-en="Backyard">Cour arrière</span></div>
-        <h3 data-fr="Entretien de haies et de cour arrière" data-en="Hedge and backyard maintenance">Entretien de haies et de cour arrière</h3>
-        <p data-fr="Image simple et claire pour les services de taille de haies, tonte et entretien régulier des espaces verts." data-en="A simple, clear image for hedge trimming, mowing and regular green-space maintenance services.">Image simple et claire pour les services de taille de haies, tonte et entretien régulier des espaces verts.</p>
-      </div>
-    </article>
+  <div class="portfolio-empty" id="portfolioEmpty">
+    <strong data-fr="Photos avant / après seulement" data-en="Before / after photos only">Photos avant / après seulement</strong>
+    <p data-fr="Cette section restera sobre jusqu’à ce que l’équipe ajoute de vrais projets documentés. L’objectif est d’éviter les photos isolées et de montrer des résultats comparables, du début à la fin." data-en="This section will stay simple until the team adds documented projects. The goal is to avoid isolated photos and show comparable results from start to finish.">Cette section restera sobre jusqu’à ce que l’équipe ajoute de vrais projets documentés. L’objectif est d’éviter les photos isolées et de montrer des résultats comparables, du début à la fin.</p>
+    <div class="portfolio-empty-tags">
+      <span class="project-tag" data-fr="Même angle" data-en="Same angle">Même angle</span>
+      <span class="project-tag" data-fr="Avant / après" data-en="Before / after">Avant / après</span>
+      <span class="project-tag" data-fr="Travaux réels" data-en="Real work">Travaux réels</span>
+    </div>
   </div>
 </section>
 
@@ -943,6 +950,7 @@
 <script>
   async function loadOwnerProjects() {
     const grid = document.getElementById('ownerProjectsGrid');
+    const empty = document.getElementById('portfolioEmpty');
     if (!grid) return;
 
     try {
@@ -985,6 +993,7 @@
         `;
       }).join('');
       grid.hidden = false;
+      if (empty) empty.hidden = true;
     } catch (error) {
       console.warn('Owner projects could not be loaded.', error);
     }
