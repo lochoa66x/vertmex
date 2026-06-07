@@ -233,6 +233,13 @@
   .project-tag { background: var(--green-pale); color: var(--green-dark); border: 1px solid rgba(61,122,61,0.18); border-radius: 100px; padding: 0.22rem 0.58rem; font-size: 0.68rem; }
   .project-card h3 { color: var(--green-deep); font-size: 1rem; margin-bottom: 0.35rem; }
   .project-card p { color: var(--text-light); font-size: 0.8rem; line-height: 1.58; }
+  .snapshot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .snapshot-card { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; overflow: hidden; box-shadow: 0 18px 42px rgba(18,58,28,0.06); }
+  .snapshot-photo { aspect-ratio: 4/3; max-height: 280px; background: #e7e3da; overflow: hidden; }
+  .snapshot-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .snapshot-body { padding: 1rem; }
+  .snapshot-body h3 { color: var(--green-deep); font-size: 1rem; margin-bottom: 0.35rem; }
+  .snapshot-body p { color: var(--text-light); font-size: 0.8rem; line-height: 1.58; }
   .review-grid, .service-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
   .review-card, .service-detail { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.2rem; }
   .review-card.real-review { max-width: 620px; border-color: rgba(61,122,61,0.24); box-shadow: 0 16px 34px rgba(18,58,28,0.08); }
@@ -314,7 +321,8 @@
     .calc-grid-2 { grid-template-columns: 1fr; }
     .photo-steps { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
-    .project-grid { grid-template-columns: 1fr; }
+    .project-grid, .snapshot-grid { grid-template-columns: 1fr; }
+    .snapshot-photo { max-height: 260px; }
     .project-card.featured { grid-column: auto; }
     .gal-grid { grid-template-columns: 1fr 1fr; }
     .g-item.feat { grid-column: span 2; grid-row: span 1; }
@@ -746,6 +754,35 @@
         <span class="badge">🗺️ <span data-fr="Montérégie &amp; Rive-Sud" data-en="Montérégie &amp; South Shore">Montérégie &amp; Rive-Sud</span></span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- WORK SNAPSHOTS -->
+<section class="sec" style="background:var(--cream);">
+  <div>
+    <div class="sl" data-fr="Aperçus de travaux" data-en="Work snapshots">Aperçus de travaux</div>
+    <h2 data-fr="Des exemples simples du terrain" data-en="Simple examples from the field">Des exemples simples du terrain</h2>
+    <p class="sec-sub" data-fr="Quelques photos réelles pour montrer le type de travail réalisé. Les projets avant / après complets seront ajoutés séparément quand ils seront documentés avec le même angle." data-en="A few real photos to show the type of work VertMex handles. Full before / after projects will be added separately once they are documented from the same angle.">Quelques photos réelles pour montrer le type de travail réalisé. Les projets avant / après complets seront ajoutés séparément quand ils seront documentés avec le même angle.</p>
+  </div>
+  <div class="snapshot-grid">
+    <article class="snapshot-card">
+      <div class="snapshot-photo">
+        <img src="assets/projects/vertmex-snapshot-garden-bed.jpg" alt="Plate-bande entretenue avec paillis, vivaces et fontaine" loading="lazy">
+      </div>
+      <div class="snapshot-body">
+        <h3 data-fr="Plate-bandes et finition propre" data-en="Garden beds and clean finishing">Plate-bandes et finition propre</h3>
+        <p data-fr="Paillis, bordures, végétaux et entretien visuel pour garder une cour nette et facile à présenter." data-en="Mulch, edges, plants and visual upkeep to keep a yard clean and easy to present.">Paillis, bordures, végétaux et entretien visuel pour garder une cour nette et facile à présenter.</p>
+      </div>
+    </article>
+    <article class="snapshot-card">
+      <div class="snapshot-photo">
+        <img src="assets/projects/vertmex-snapshot-hedge.jpg" alt="Haie mature entretenue dans une cour résidentielle" loading="lazy">
+      </div>
+      <div class="snapshot-body">
+        <h3 data-fr="Entretien de haies" data-en="Hedge maintenance">Entretien de haies</h3>
+        <p data-fr="Taille, nettoyage et entretien saisonnier pour les haies résidentielles et les terrains commerciaux." data-en="Trimming, cleanup and seasonal maintenance for residential hedges and commercial properties.">Taille, nettoyage et entretien saisonnier pour les haies résidentielles et les terrains commerciaux.</p>
+      </div>
+    </article>
   </div>
 </section>
 
