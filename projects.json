@@ -9,5 +9,16 @@
     "descriptionEn": "Cleanup and trimming of a mature roadside hedge to clear the line, even out the height and give the property a cleaner finish.",
     "beforeImage": "assets/projects/vertmex-before-hedge-street.jpg",
     "afterImage": "assets/projects/vertmex-after-hedge-street.jpg"
+  },
+  {
+    "titleFr": "Remise en forme d’une haie de cèdres",
+    "titleEn": "Cedar Hedge Reshaping",
+    "city": "Montérégie",
+    "categoryFr": "Avant / après",
+    "categoryEn": "Before / after",
+    "descriptionFr": "Taille d’une haie dense pour retrouver une ligne plus propre, réduire le volume et améliorer l’apparence générale de la cour.",
+    "descriptionEn": "Trimming of a dense hedge to restore a cleaner line, reduce bulk and improve the overall look of the yard.",
+    "beforeImage": "assets/projects/vertmex-before-cedar-hedge-yard.jpg",
+    "afterImage": "assets/projects/vertmex-after-cedar-hedge-yard.jpg"
   }
 ]
