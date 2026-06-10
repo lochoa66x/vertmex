@@ -293,7 +293,7 @@
   .project-tag { background: var(--green-pale); color: var(--green-dark); border: 1px solid rgba(61,122,61,0.18); border-radius: 100px; padding: 0.22rem 0.58rem; font-size: 0.68rem; }
   .project-card h3 { color: var(--green-deep); font-size: 1rem; margin-bottom: 0.35rem; }
   .project-card p { color: var(--text-light); font-size: 0.8rem; line-height: 1.58; }
-  .snapshot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 2rem; }
   .snapshot-card { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; overflow: hidden; box-shadow: 0 18px 42px rgba(18,58,28,0.06); }
   .snapshot-photo { aspect-ratio: 4/3; max-height: 280px; background: #e7e3da; overflow: hidden; }
   .snapshot-photo img, .snapshot-photo video { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
@@ -943,6 +943,15 @@
       <div class="snapshot-body">
         <h3 data-fr="Travail en action" data-en="Work in action">Travail en action</h3>
         <p data-fr="Un court aperçu vidéo du travail sur le terrain pour montrer l’équipe, l’équipement et la finition réelle." data-en="A short field video showing the crew, equipment and real finishing work.">Un court aperçu vidéo du travail sur le terrain pour montrer l’équipe, l’équipement et la finition réelle.</p>
+      </div>
+    </article>
+    <article class="snapshot-card">
+      <div class="snapshot-photo">
+        <video src="assets/projects/vertmex-yard-work-video.mp4" controls preload="metadata" playsinline aria-label="Vidéo de travaux extérieurs VertMex"></video>
+      </div>
+      <div class="snapshot-body">
+        <h3 data-fr="Entretien sur place" data-en="On-site maintenance">Entretien sur place</h3>
+        <p data-fr="Un autre aperçu court du travail extérieur pour montrer le type de chantiers réalisés par VertMex." data-en="Another short outdoor work clip showing the type of jobs VertMex handles.">Un autre aperçu court du travail extérieur pour montrer le type de chantiers réalisés par VertMex.</p>
       </div>
     </article>
   </div>
