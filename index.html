@@ -943,8 +943,8 @@
 <section class="sec" id="portfolio">
   <div>
     <div class="sl" data-fr="Projets récents" data-en="Recent projects">Projets récents</div>
-    <h2 data-fr="Avant / après à venir" data-en="Before / after projects coming soon">Avant / après à venir</h2>
-    <p class="sec-sub" data-fr="VertMex prépare un portfolio avec des photos prises au même angle avant et après les travaux. Les prochains projets publiés ici montreront clairement l’état du terrain, le travail réalisé et la finition." data-en="VertMex is preparing a portfolio with before-and-after photos taken from the same angle. Upcoming projects here will clearly show the property condition, the work completed and the final finish.">VertMex prépare un portfolio avec des photos prises au même angle avant et après les travaux. Les prochains projets publiés ici montreront clairement l’état du terrain, le travail réalisé et la finition.</p>
+    <h2 data-fr="Projets avant / après" data-en="Before / after projects">Projets avant / après</h2>
+    <p class="sec-sub" data-fr="Quelques projets documentés pour montrer l’état du terrain, le travail réalisé et la finition. Les prochains avant / après seront ajoutés ici au fur et à mesure." data-en="A few documented projects showing the property condition, completed work and final finish. More before / after projects will be added here over time.">Quelques projets documentés pour montrer l’état du terrain, le travail réalisé et la finition. Les prochains avant / après seront ajoutés ici au fur et à mesure.</p>
   </div>
   <div class="project-grid owner-project-grid" id="ownerProjectsGrid" hidden></div>
   <div class="portfolio-empty" id="portfolioEmpty">
@@ -1161,32 +1161,36 @@
       }[char]));
 
       grid.innerHTML = projects.map((project) => {
-        const title = escapeHtml(project.title || 'Projet VertMex');
+        const titleFr = escapeHtml(project.titleFr || project.title || 'Projet VertMex');
+        const titleEn = escapeHtml(project.titleEn || project.title || 'VertMex project');
         const city = escapeHtml(project.city || 'Montérégie');
-        const category = escapeHtml(project.category || 'Projet récent');
-        const description = escapeHtml(project.description || 'Photos avant / après fournies par VertMex.');
+        const categoryFr = escapeHtml(project.categoryFr || project.category || 'Projet récent');
+        const categoryEn = escapeHtml(project.categoryEn || project.category || 'Recent project');
+        const descriptionFr = escapeHtml(project.descriptionFr || project.description || 'Photos avant / après fournies par VertMex.');
+        const descriptionEn = escapeHtml(project.descriptionEn || project.description || 'Before / after photos provided by VertMex.');
         const before = escapeHtml(project.beforeImage || '');
         const after = escapeHtml(project.afterImage || '');
 
         return `
           <article class="project-card featured">
             <div class="before-after">
-              <figure><img src="${before}" alt="Avant - ${title}" loading="lazy"><span data-fr="Avant" data-en="Before">Avant</span></figure>
-              <figure><img src="${after}" alt="Après - ${title}" loading="lazy"><span data-fr="Après" data-en="After">Après</span></figure>
+              <figure><img src="${before}" alt="Avant - ${titleFr}" loading="lazy"><span data-fr="Avant" data-en="Before">Avant</span></figure>
+              <figure><img src="${after}" alt="Après - ${titleFr}" loading="lazy"><span data-fr="Après" data-en="After">Après</span></figure>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <span class="project-tag">${category}</span>
+                <span class="project-tag" data-fr="${categoryFr}" data-en="${categoryEn}">${lang === 'fr' ? categoryFr : categoryEn}</span>
                 <span class="project-tag">${city}</span>
               </div>
-              <h3>${title}</h3>
-              <p>${description}</p>
+              <h3 data-fr="${titleFr}" data-en="${titleEn}">${lang === 'fr' ? titleFr : titleEn}</h3>
+              <p data-fr="${descriptionFr}" data-en="${descriptionEn}">${lang === 'fr' ? descriptionFr : descriptionEn}</p>
             </div>
           </article>
         `;
       }).join('');
       grid.hidden = false;
       if (empty) empty.hidden = true;
+      applyLang();
     } catch (error) {
       console.warn('Owner projects could not be loaded.', error);
     }

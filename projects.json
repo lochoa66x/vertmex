@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "titleFr": "Taille de haie résidentielle",
+    "titleEn": "Residential Hedge Trimming",
+    "city": "Montérégie",
+    "categoryFr": "Avant / après",
+    "categoryEn": "Before / after",
+    "descriptionFr": "Nettoyage et taille d’une haie mature en bordure de rue pour dégager la ligne, uniformiser la hauteur et donner une finition plus propre au terrain.",
+    "descriptionEn": "Cleanup and trimming of a mature roadside hedge to clear the line, even out the height and give the property a cleaner finish.",
+    "beforeImage": "assets/projects/vertmex-before-hedge-street.jpg",
+    "afterImage": "assets/projects/vertmex-after-hedge-street.jpg"
+  }
+]
