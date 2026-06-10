@@ -183,6 +183,58 @@
   .calc-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1rem; }
   .calc-actions a { text-decoration: none; }
   .calc-disclaimer { margin-top: 1rem; color: var(--text-light); font-size: 0.76rem; line-height: 1.55; }
+  .plant-id-sec { background: #fff; }
+  .plant-tool-wrap { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 1.25rem; align-items: start; margin-top: 2rem; }
+  .plant-tool-card, .plant-result-card { background: var(--cream); border: 1px solid rgba(45,90,45,0.12); border-radius: 10px; padding: 1.25rem; }
+  .plant-photo-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-bottom: 1rem; }
+  .plant-file-btn { min-height: 46px; border: 1px solid rgba(61,122,61,0.22); border-radius: 8px; background: #fff; color: var(--green-deep); display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.86rem; font-weight: 800; cursor: pointer; transition: all 0.2s; text-align: center; }
+  .plant-file-btn:hover { border-color: var(--green-mid); background: var(--green-pale); }
+  .plant-file-btn .icon { width: 1rem; height: 1rem; color: var(--green-mid); }
+  .plant-preview-zone { min-height: 230px; border: 1.5px dashed rgba(61,122,61,0.28); border-radius: 10px; background: rgba(232,245,232,0.48); display: flex; align-items: center; justify-content: center; text-align: center; color: var(--text-light); overflow: hidden; margin-bottom: 1rem; }
+  .plant-preview-zone.has-image { border-style: solid; background: #e7e3da; }
+  .plant-preview-placeholder { padding: 1.5rem; }
+  .plant-preview-placeholder .icon { width: 2rem; height: 2rem; color: var(--green-mid); margin-bottom: 0.6rem; }
+  .plant-preview-placeholder strong { display: block; color: var(--green-deep); font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .plant-preview-placeholder span { display: block; font-size: 0.8rem; line-height: 1.55; }
+  .plant-preview-zone img { width: 100%; height: 100%; max-height: 330px; object-fit: cover; display: none; }
+  .plant-preview-zone.has-image img { display: block; }
+  .plant-form { display: grid; gap: 0.85rem; }
+  .plant-field { display: flex; flex-direction: column; gap: 0.35rem; }
+  .plant-field label { font-size: 0.68rem; color: var(--green-dark); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+  .plant-field input, .plant-field textarea { width: 100%; border: 1px solid rgba(45,90,45,0.18); border-radius: 7px; padding: 0.72rem 0.85rem; color: var(--text-dark); background: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; }
+  .plant-field textarea { resize: vertical; min-height: 92px; line-height: 1.55; }
+  .plant-field input:focus, .plant-field textarea:focus { border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(61,122,61,0.08); }
+  .plant-help { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; margin-top: 1rem; }
+  .plant-help-item { background: #fff; border: 1px solid rgba(45,90,45,0.1); border-radius: 8px; padding: 0.85rem; }
+  .plant-help-item strong { display: block; color: var(--green-deep); font-size: 0.84rem; margin-bottom: 0.25rem; }
+  .plant-help-item p { color: var(--text-light); font-size: 0.76rem; line-height: 1.5; }
+  .plant-status { display: none; margin-top: 0.85rem; border-radius: 7px; padding: 0.75rem 0.85rem; font-size: 0.8rem; line-height: 1.45; }
+  .plant-status.show { display: block; }
+  .plant-status.info { color: var(--green-deep); background: var(--green-pale); border: 1px solid rgba(61,122,61,0.18); }
+  .plant-status.err { color: #8a2d2d; background: #fff1f1; border: 1px solid #f1caca; }
+  .plant-submit { width: 100%; margin-top: 0.85rem; border: none; border-radius: 8px; min-height: 48px; background: var(--green-mid); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.94rem; font-weight: 800; cursor: pointer; transition: all 0.2s; }
+  .plant-submit:hover:not(:disabled) { background: var(--green-deep); transform: translateY(-1px); }
+  .plant-submit:disabled { opacity: 0.65; cursor: wait; transform: none; }
+  .plant-result-empty { min-height: 310px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 0.75rem; color: var(--text-light); }
+  .plant-result-empty .icon { width: 2.2rem; height: 2.2rem; color: var(--green-mid); }
+  .plant-result-empty strong { color: var(--green-deep); font-size: 1rem; }
+  .plant-result-empty p { font-size: 0.84rem; line-height: 1.6; max-width: 420px; }
+  .plant-results { display: none; }
+  .plant-results.show { display: block; }
+  .plant-result-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+  .plant-result-head h3 { color: var(--green-deep); font-size: 1.08rem; line-height: 1.25; margin: 0; }
+  .plant-risk-pill { flex-shrink: 0; border-radius: 100px; padding: 0.28rem 0.65rem; background: var(--green-pale); color: var(--green-dark); border: 1px solid rgba(61,122,61,0.18); font-size: 0.68rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; }
+  .plant-risk-pill.warn { background: #fff7da; color: #805b00; border-color: #edd17a; }
+  .plant-risk-pill.danger { background: #fff1f1; color: #9c1c1c; border-color: #efb7b7; }
+  .plant-result-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .plant-result-item { background: #fff; border: 1px solid rgba(45,90,45,0.1); border-radius: 8px; padding: 0.85rem; }
+  .plant-result-item span { display: block; color: var(--text-light); font-size: 0.66rem; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 0.35rem; font-weight: 800; }
+  .plant-result-item strong, .plant-result-item p { display: block; color: var(--green-deep); font-size: 0.88rem; line-height: 1.5; }
+  .plant-result-item p { color: var(--text-mid); }
+  .plant-result-item.full { grid-column: 1 / -1; }
+  .plant-safety { margin-top: 0.9rem; color: #775b13; background: #fff8e6; border: 1px solid #ecd58f; border-radius: 8px; padding: 0.8rem 0.9rem; font-size: 0.78rem; line-height: 1.55; }
+  .plant-contact-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1rem; }
+  .plant-contact-actions a { text-decoration: none; }
   .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.75rem; }
   .p-step { text-align: center; padding: 1.25rem 0.75rem; }
   .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); border: 2px solid var(--green-mid); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.9rem; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--green-deep); }
@@ -327,9 +379,10 @@
     section.sec, .contact-sec { padding: 3rem 1.25rem; }
     .trust-bar, .zones, .reviews-strip { padding: 1rem 1.25rem; }
     .trust-div { display: none; }
-    .about-grid, .contact-grid, .photo-guide-inner, .calc-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .about-grid, .contact-grid, .photo-guide-inner, .calc-wrap, .plant-tool-wrap { grid-template-columns: 1fr; gap: 2rem; }
     .calc-steps, .calc-result-grid { grid-template-columns: 1fr; }
     .calc-grid-2 { grid-template-columns: 1fr; }
+    .plant-photo-actions, .plant-help, .plant-result-grid { grid-template-columns: 1fr; }
     .photo-steps { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .project-grid, .snapshot-grid { grid-template-columns: 1fr; }
@@ -531,6 +584,69 @@
         <a href="#contact" class="btn-ghost" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
       </div>
       <p class="calc-disclaimer" data-fr="Estimation seulement. Les quantités finales peuvent varier selon compaction, pertes, drainage, accès au terrain et préparation du sol." data-en="Estimate only. Final quantities can vary based on compaction, waste, drainage, site access and soil preparation.">Estimation seulement. Les quantités finales peuvent varier selon compaction, pertes, drainage, accès au terrain et préparation du sol.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANT IDENTIFIER -->
+<section class="sec plant-id-sec" id="plant-identifier">
+  <div class="svc-hdr">
+    <div class="sl" data-fr="Assistant végétal" data-en="Plant assistant">Assistant végétal</div>
+    <h2 data-fr="Identifier une plante, une haie ou une mauvaise herbe" data-en="Identify a plant, hedge or weed">Identifier une plante, une haie ou une mauvaise herbe</h2>
+    <p class="sec-sub" data-fr="Prenez une photo ou choisissez une image pour obtenir une analyse indicative : type de plante, risques possibles, état visible et prochaine étape pratique." data-en="Take a photo or choose an image for an indicative analysis: plant type, possible risks, visible condition and practical next step.">Prenez une photo ou choisissez une image pour obtenir une analyse indicative : type de plante, risques possibles, état visible et prochaine étape pratique.</p>
+  </div>
+  <div class="plant-tool-wrap">
+    <div class="plant-tool-card">
+      <input id="plantCameraInput" type="file" accept="image/*" capture="environment" hidden>
+      <input id="plantGalleryInput" type="file" accept="image/*" hidden>
+      <div class="plant-photo-actions">
+        <label class="plant-file-btn" for="plantCameraInput"><svg class="icon"><use href="#icon-camera"></use></svg><span data-fr="Prendre une photo" data-en="Take a photo">Prendre une photo</span></label>
+        <label class="plant-file-btn" for="plantGalleryInput"><svg class="icon"><use href="#icon-leaf"></use></svg><span data-fr="Choisir une photo" data-en="Choose a photo">Choisir une photo</span></label>
+      </div>
+      <div class="plant-preview-zone" id="plantPreviewZone">
+        <div class="plant-preview-placeholder" id="plantPreviewPlaceholder">
+          <svg class="icon"><use href="#icon-camera"></use></svg>
+          <strong data-fr="Photo claire de la plante" data-en="Clear plant photo">Photo claire de la plante</strong>
+          <span data-fr="Idéalement : feuilles visibles, tige, base de la plante et contexte autour." data-en="Ideally: visible leaves, stem, plant base and surrounding context.">Idéalement : feuilles visibles, tige, base de la plante et contexte autour.</span>
+        </div>
+        <img id="plantPreview" alt="Aperçu de la plante">
+      </div>
+      <div class="plant-form">
+        <div class="plant-field">
+          <label for="plantQuestion" data-fr="Que voulez-vous savoir?" data-en="What do you want to know?">Que voulez-vous savoir?</label>
+          <textarea id="plantQuestion" data-fr-placeholder="ex. Est-ce de l’herbe à puce? Est-ce une mauvaise herbe? Pourquoi les feuilles jaunissent?" data-en-placeholder="e.g. Is this poison ivy? Is it a weed? Why are the leaves turning yellow?" placeholder="ex. Est-ce de l’herbe à puce? Est-ce une mauvaise herbe? Pourquoi les feuilles jaunissent?"></textarea>
+        </div>
+        <div class="plant-field">
+          <label for="plantCity" data-fr="Ville (optionnel)" data-en="City (optional)">Ville (optionnel)</label>
+          <input id="plantCity" type="text" data-fr-placeholder="Sherrington, Saint-Rémi..." data-en-placeholder="Sherrington, Saint-Rémi..." placeholder="Sherrington, Saint-Rémi...">
+        </div>
+      </div>
+      <button class="plant-submit" id="plantAnalyzeBtn" type="button" data-fr="Analyser la plante" data-en="Analyze plant">Analyser la plante</button>
+      <div class="plant-status" id="plantStatus" aria-live="polite"></div>
+    </div>
+
+    <div class="plant-result-card">
+      <div class="plant-result-empty" id="plantResultEmpty">
+        <svg class="icon"><use href="#icon-leaf"></use></svg>
+        <strong data-fr="Résultat de l’analyse" data-en="Analysis result">Résultat de l’analyse</strong>
+        <p data-fr="L’outil aide à reconnaître une plante, une haie, une mauvaise herbe ou un problème visible. Il ne remplace pas une vérification sur place." data-en="The tool helps recognize a plant, hedge, weed or visible issue. It does not replace an on-site confirmation.">L’outil aide à reconnaître une plante, une haie, une mauvaise herbe ou un problème visible. Il ne remplace pas une vérification sur place.</p>
+      </div>
+      <div class="plant-results" id="plantResults">
+        <div class="plant-result-head">
+          <h3 id="plantResultTitle">-</h3>
+          <span class="plant-risk-pill" id="plantRiskPill">-</span>
+        </div>
+        <div class="plant-result-grid" id="plantResultGrid"></div>
+        <div class="plant-safety" id="plantSafety"></div>
+        <div class="plant-contact-actions">
+          <a href="mailto:vertmex_sherrington@outlook.com" class="btn-primary" id="plantEmailLink" data-fr="Envoyer cette analyse à VertMex" data-en="Send this analysis to VertMex">Envoyer cette analyse à VertMex</a>
+          <a href="https://wa.me/14387287513" class="btn-ghost" id="plantWhatsappLink" target="_blank" rel="noopener" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</a>
+        </div>
+      </div>
+      <div class="plant-help">
+        <div class="plant-help-item"><strong data-fr="Photo recommandée" data-en="Recommended photo">Photo recommandée</strong><p data-fr="Une image de jour, pas trop proche, avec plusieurs feuilles visibles." data-en="A daytime image, not too close, with several visible leaves.">Une image de jour, pas trop proche, avec plusieurs feuilles visibles.</p></div>
+        <div class="plant-help-item"><strong data-fr="Attention sécurité" data-en="Safety first">Attention sécurité</strong><p data-fr="Ne touchez pas une plante suspecte, surtout si vous pensez à l’herbe à puce." data-en="Do not touch a suspicious plant, especially if poison ivy is possible.">Ne touchez pas une plante suspecte, surtout si vous pensez à l’herbe à puce.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1081,6 +1197,7 @@
     document.documentElement.lang = lang;
     applyLang();
     updateMaterialCalculator();
+    updatePlantIdentifierLang();
   }
   function applyLang() {
     document.querySelectorAll('[data-fr]').forEach(el => {
@@ -1289,6 +1406,219 @@
     calcEls.whatsapp.href = `https://wa.me/14387287513?text=${encodeURIComponent(message)}`;
   }
   initMaterialCalculator();
+
+  const plantEls = {};
+  let plantImageData = '';
+  let plantLastResult = null;
+  let plantLastQuestion = '';
+  const plantSafetyText = {
+    fr: 'Analyse indicative seulement. Ne touchez pas une plante suspecte. Pour les plantes toxiques, allergies, champignons ou risques de santé, confirmez avec un professionnel local.',
+    en: 'Indicative analysis only. Do not touch a suspicious plant. For toxic plants, allergies, mushrooms, or health risks, confirm with a local professional.',
+  };
+
+  function initPlantIdentifier() {
+    const section = document.getElementById('plant-identifier');
+    if (!section) return;
+    Object.assign(plantEls, {
+      camera: document.getElementById('plantCameraInput'),
+      gallery: document.getElementById('plantGalleryInput'),
+      previewZone: document.getElementById('plantPreviewZone'),
+      previewPlaceholder: document.getElementById('plantPreviewPlaceholder'),
+      preview: document.getElementById('plantPreview'),
+      question: document.getElementById('plantQuestion'),
+      city: document.getElementById('plantCity'),
+      analyzeBtn: document.getElementById('plantAnalyzeBtn'),
+      status: document.getElementById('plantStatus'),
+      empty: document.getElementById('plantResultEmpty'),
+      results: document.getElementById('plantResults'),
+      title: document.getElementById('plantResultTitle'),
+      riskPill: document.getElementById('plantRiskPill'),
+      grid: document.getElementById('plantResultGrid'),
+      safety: document.getElementById('plantSafety'),
+      email: document.getElementById('plantEmailLink'),
+      whatsapp: document.getElementById('plantWhatsappLink'),
+    });
+    [plantEls.camera, plantEls.gallery].forEach((input) => {
+      input.addEventListener('change', (event) => {
+        const file = event.target.files && event.target.files[0];
+        if (file) processPlantFile(file);
+      });
+    });
+    plantEls.analyzeBtn.addEventListener('click', analyzePlant);
+  }
+
+  function setPlantStatus(type, fr, en) {
+    if (!plantEls.status) return;
+    plantEls.status.className = `plant-status ${type} show`;
+    plantEls.status.textContent = calcText(fr, en);
+  }
+
+  function clearPlantStatus() {
+    if (!plantEls.status) return;
+    plantEls.status.className = 'plant-status';
+    plantEls.status.textContent = '';
+  }
+
+  function setPlantLoading(isLoading) {
+    if (!plantEls.analyzeBtn) return;
+    plantEls.analyzeBtn.disabled = isLoading;
+    plantEls.analyzeBtn.textContent = isLoading
+      ? calcText('Analyse en cours...', 'Analyzing...')
+      : calcText('Analyser la plante', 'Analyze plant');
+  }
+
+  function processPlantFile(file) {
+    clearPlantStatus();
+    if (!file.type || !file.type.startsWith('image/')) {
+      setPlantStatus('err', 'Choisissez une image valide.', 'Choose a valid image.');
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      setPlantStatus('err', 'La photo est trop grande. Choisissez une image de moins de 10 Mo.', 'The photo is too large. Choose an image under 10 MB.');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const img = new Image();
+      img.onload = () => {
+        const maxSide = 1280;
+        let width = img.width;
+        let height = img.height;
+        if (width > height && width > maxSide) {
+          height = Math.round((height * maxSide) / width);
+          width = maxSide;
+        } else if (height > maxSide) {
+          width = Math.round((width * maxSide) / height);
+          height = maxSide;
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        plantImageData = canvas.toDataURL('image/jpeg', 0.82);
+        plantEls.preview.src = plantImageData;
+        plantEls.previewZone.classList.add('has-image');
+        plantEls.previewPlaceholder.style.display = 'none';
+        plantLastResult = null;
+        plantEls.results.classList.remove('show');
+        plantEls.empty.style.display = 'flex';
+        setPlantStatus('info', 'Photo prête. Ajoutez une question si nécessaire, puis lancez l’analyse.', 'Photo ready. Add a question if needed, then start the analysis.');
+      };
+      img.onerror = () => setPlantStatus('err', 'La photo ne peut pas être lue. Essayez une autre image.', 'The photo could not be read. Try another image.');
+      img.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  async function analyzePlant() {
+    if (!plantImageData) {
+      setPlantStatus('err', 'Ajoutez d’abord une photo de la plante.', 'Add a plant photo first.');
+      return;
+    }
+    plantLastQuestion = plantEls.question.value.trim();
+    clearPlantStatus();
+    setPlantLoading(true);
+    setPlantStatus('info', 'Analyse de la photo en cours...', 'Analyzing the photo...');
+
+    try {
+      const response = await fetch('/api/analyze-plant', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          image: plantImageData,
+          question: plantLastQuestion,
+          language: lang,
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Plant analysis failed.');
+      plantLastResult = data;
+      renderPlantResult();
+      clearPlantStatus();
+    } catch (error) {
+      const fallback = lang === 'fr'
+        ? 'L’analyse n’a pas fonctionné. Vérifiez la configuration OpenAI ou réessayez avec une autre photo.'
+        : 'The analysis did not work. Check the OpenAI setup or try another photo.';
+      setPlantStatus('err', error.message || fallback, fallback);
+    } finally {
+      setPlantLoading(false);
+    }
+  }
+
+  function plantValue(value) {
+    if (!value) return calcText('À confirmer', 'To confirm');
+    if (typeof value === 'string') return value;
+    if (value[lang]) return value[lang];
+    return value.fr || value.en || calcText('À confirmer', 'To confirm');
+  }
+
+  function plantCard(labelFr, labelEn, value, full = false) {
+    return `<div class="plant-result-item${full ? ' full' : ''}"><span>${calcText(labelFr, labelEn)}</span><p>${escapePlantHtml(plantValue(value))}</p></div>`;
+  }
+
+  function escapePlantHtml(value = '') {
+    return String(value).replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;',
+    }[char]));
+  }
+
+  function riskClass(risk = '') {
+    const normalized = String(risk).toLowerCase();
+    if (normalized.includes('toxic') || normalized.includes('toxique') || normalized.includes('poison') || normalized.includes('danger')) return 'danger';
+    if (normalized.includes('risk') || normalized.includes('risque') || normalized.includes('watch') || normalized.includes('surveiller') || normalized.includes('invasive') || normalized.includes('envah')) return 'warn';
+    return '';
+  }
+
+  function renderPlantResult() {
+    if (!plantLastResult || !plantEls.results) return;
+    const result = plantLastResult;
+    const identification = plantValue(result.identification);
+    const risk = plantValue(result.riskLevel || result.overallAssessment);
+    plantEls.title.textContent = identification;
+    plantEls.riskPill.textContent = risk;
+    plantEls.riskPill.className = `plant-risk-pill ${riskClass(risk)}`;
+    plantEls.grid.innerHTML = [
+      plantCard('Confiance', 'Confidence', result.confidence),
+      plantCard('Catégorie', 'Category', result.category),
+      plantCard('Évaluation', 'Assessment', result.overallAssessment),
+      plantCard('Herbe à puce / toxique', 'Poison ivy / toxic', result.toxicWarning),
+      plantCard('Problèmes visibles', 'Visible issues', result.visibleIssues, true),
+      plantCard('Recommandation', 'Recommendation', result.recommendation, true),
+    ].join('');
+    plantEls.safety.textContent = plantValue(result.disclaimer) || plantSafetyText[lang];
+    plantEls.empty.style.display = 'none';
+    plantEls.results.classList.add('show');
+    updatePlantContactLinks();
+  }
+
+  function updatePlantContactLinks() {
+    if (!plantLastResult || !plantEls.email || !plantEls.whatsapp) return;
+    const city = plantEls.city.value.trim() || '___';
+    const message = lang === 'fr'
+      ? `Bonjour VertMex,\nJ’ai utilisé l’assistant végétal sur le site.\nVille: ${city}\nQuestion: ${plantLastQuestion || '___'}\nIdentification probable: ${plantValue(plantLastResult.identification)}\nConfiance: ${plantValue(plantLastResult.confidence)}\nRisque / évaluation: ${plantValue(plantLastResult.overallAssessment)}\nAvertissement: ${plantValue(plantLastResult.toxicWarning)}\nRecommandation: ${plantValue(plantLastResult.recommendation)}\n\nJ’aimerais savoir quoi faire avec cette plante. Merci!`
+      : `Hello VertMex,\nI used the plant assistant on the website.\nCity: ${city}\nQuestion: ${plantLastQuestion || '___'}\nProbable identification: ${plantValue(plantLastResult.identification)}\nConfidence: ${plantValue(plantLastResult.confidence)}\nRisk / assessment: ${plantValue(plantLastResult.overallAssessment)}\nWarning: ${plantValue(plantLastResult.toxicWarning)}\nRecommendation: ${plantValue(plantLastResult.recommendation)}\n\nI would like to know what to do with this plant. Thank you!`;
+    const subject = lang === 'fr'
+      ? `Analyse végétale VertMex - ${plantValue(plantLastResult.identification)}`
+      : `VertMex plant analysis - ${plantValue(plantLastResult.identification)}`;
+    plantEls.email.href = `mailto:vertmex_sherrington@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    plantEls.whatsapp.href = `https://wa.me/14387287513?text=${encodeURIComponent(message)}`;
+  }
+
+  function updatePlantIdentifierLang() {
+    if (!plantEls.analyzeBtn) return;
+    if (!plantEls.analyzeBtn.disabled) {
+      plantEls.analyzeBtn.textContent = calcText('Analyser la plante', 'Analyze plant');
+    }
+    if (plantLastResult) renderPlantResult();
+  }
+
+  initPlantIdentifier();
 
   const quoteForm = document.getElementById('quoteForm');
   const formStatus = document.getElementById('formStatus');
