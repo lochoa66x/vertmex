@@ -233,6 +233,8 @@
   .plant-result-item p { color: var(--text-mid); }
   .plant-result-item.full { grid-column: 1 / -1; }
   .plant-safety { margin-top: 0.9rem; color: #775b13; background: #fff8e6; border: 1px solid #ecd58f; border-radius: 8px; padding: 0.8rem 0.9rem; font-size: 0.78rem; line-height: 1.55; }
+  .plant-attach-note { margin-top: 0.75rem; color: var(--text-light); font-size: 0.76rem; line-height: 1.55; }
+  .plant-attach-note strong { color: var(--green-deep); }
   .plant-contact-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1rem; }
   .plant-contact-actions a { text-decoration: none; }
   .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.75rem; }
@@ -432,6 +434,7 @@
   <a class="nav-logo notranslate" href="#" aria-label="VertMex accueil" translate="no">Vert<span>Mex</span></a>
   <ul class="nav-links">
     <li><a href="#services"  data-fr="Services"       data-en="Services">Services</a></li>
+    <li><a href="#plant-identifier" data-fr="Assistant végétal" data-en="Plant assistant">Assistant végétal</a></li>
     <li><a href="#about"     data-fr="À Propos"  data-en="About">À Propos</a></li>
     <li><a href="#portfolio" data-fr="Portfolio"      data-en="Portfolio">Portfolio</a></li>
     <li><a href="tel:+14387287513" class="nav-phone" data-fr="(438) 728-7513" data-en="(438) 728-7513">(438) 728-7513</a></li>
@@ -607,7 +610,7 @@
         <div class="plant-preview-placeholder" id="plantPreviewPlaceholder">
           <svg class="icon"><use href="#icon-camera"></use></svg>
           <strong data-fr="Photo claire de la plante" data-en="Clear plant photo">Photo claire de la plante</strong>
-          <span data-fr="Idéalement : feuilles visibles, tige, base de la plante et contexte autour." data-en="Ideally: visible leaves, stem, plant base and surrounding context.">Idéalement : feuilles visibles, tige, base de la plante et contexte autour.</span>
+          <span data-fr="Idéalement : feuilles nettes, tige visible, base de la plante et un peu de contexte autour." data-en="Ideally: clear leaves, visible stem, plant base and a bit of surrounding context.">Idéalement : feuilles nettes, tige visible, base de la plante et un peu de contexte autour.</span>
         </div>
         <img id="plantPreview" alt="Aperçu de la plante">
       </div>
@@ -638,13 +641,14 @@
         </div>
         <div class="plant-result-grid" id="plantResultGrid"></div>
         <div class="plant-safety" id="plantSafety"></div>
+        <p class="plant-attach-note" data-fr="<strong>À noter :</strong> le courriel ou WhatsApp prépare le texte de l’analyse. Ajoutez la photo manuellement avant d’envoyer votre demande." data-en="<strong>Note:</strong> email or WhatsApp prepares the analysis text. Attach the photo manually before sending your request."><strong>À noter :</strong> le courriel ou WhatsApp prépare le texte de l’analyse. Ajoutez la photo manuellement avant d’envoyer votre demande.</p>
         <div class="plant-contact-actions">
           <a href="mailto:vertmex_sherrington@outlook.com" class="btn-primary" id="plantEmailLink" data-fr="Envoyer cette analyse à VertMex" data-en="Send this analysis to VertMex">Envoyer cette analyse à VertMex</a>
           <a href="https://wa.me/14387287513" class="btn-ghost" id="plantWhatsappLink" target="_blank" rel="noopener" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</a>
         </div>
       </div>
       <div class="plant-help">
-        <div class="plant-help-item"><strong data-fr="Photo recommandée" data-en="Recommended photo">Photo recommandée</strong><p data-fr="Une image de jour, pas trop proche, avec plusieurs feuilles visibles." data-en="A daytime image, not too close, with several visible leaves.">Une image de jour, pas trop proche, avec plusieurs feuilles visibles.</p></div>
+        <div class="plant-help-item"><strong data-fr="Photo recommandée" data-en="Recommended photo">Photo recommandée</strong><p data-fr="Montrez feuilles + tige dans une photo claire de jour. Ajoutez une deuxième photo plus large si possible." data-en="Show leaves + stem in a clear daytime photo. Add a second wider photo if possible.">Montrez feuilles + tige dans une photo claire de jour. Ajoutez une deuxième photo plus large si possible.</p></div>
         <div class="plant-help-item"><strong data-fr="Attention sécurité" data-en="Safety first">Attention sécurité</strong><p data-fr="Ne touchez pas une plante suspecte, surtout si vous pensez à l’herbe à puce." data-en="Do not touch a suspicious plant, especially if poison ivy is possible.">Ne touchez pas une plante suspecte, surtout si vous pensez à l’herbe à puce.</p></div>
       </div>
     </div>
@@ -1601,8 +1605,8 @@
     if (!plantLastResult || !plantEls.email || !plantEls.whatsapp) return;
     const city = plantEls.city.value.trim() || '___';
     const message = lang === 'fr'
-      ? `Bonjour VertMex,\nJ’ai utilisé l’assistant végétal sur le site.\nVille: ${city}\nQuestion: ${plantLastQuestion || '___'}\nIdentification probable: ${plantValue(plantLastResult.identification)}\nConfiance: ${plantValue(plantLastResult.confidence)}\nRisque / évaluation: ${plantValue(plantLastResult.overallAssessment)}\nAvertissement: ${plantValue(plantLastResult.toxicWarning)}\nRecommandation: ${plantValue(plantLastResult.recommendation)}\n\nJ’aimerais savoir quoi faire avec cette plante. Merci!`
-      : `Hello VertMex,\nI used the plant assistant on the website.\nCity: ${city}\nQuestion: ${plantLastQuestion || '___'}\nProbable identification: ${plantValue(plantLastResult.identification)}\nConfidence: ${plantValue(plantLastResult.confidence)}\nRisk / assessment: ${plantValue(plantLastResult.overallAssessment)}\nWarning: ${plantValue(plantLastResult.toxicWarning)}\nRecommendation: ${plantValue(plantLastResult.recommendation)}\n\nI would like to know what to do with this plant. Thank you!`;
+      ? `Bonjour VertMex,\nJ’ai utilisé l’assistant végétal sur le site.\nVille: ${city}\nQuestion: ${plantLastQuestion || '___'}\nIdentification probable: ${plantValue(plantLastResult.identification)}\nConfiance: ${plantValue(plantLastResult.confidence)}\nRisque / évaluation: ${plantValue(plantLastResult.overallAssessment)}\nAvertissement: ${plantValue(plantLastResult.toxicWarning)}\nRecommandation: ${plantValue(plantLastResult.recommendation)}\nPhoto: à joindre manuellement avant l’envoi.\n\nJ’aimerais savoir quoi faire avec cette plante. Merci!`
+      : `Hello VertMex,\nI used the plant assistant on the website.\nCity: ${city}\nQuestion: ${plantLastQuestion || '___'}\nProbable identification: ${plantValue(plantLastResult.identification)}\nConfidence: ${plantValue(plantLastResult.confidence)}\nRisk / assessment: ${plantValue(plantLastResult.overallAssessment)}\nWarning: ${plantValue(plantLastResult.toxicWarning)}\nRecommendation: ${plantValue(plantLastResult.recommendation)}\nPhoto: attach manually before sending.\n\nI would like to know what to do with this plant. Thank you!`;
     const subject = lang === 'fr'
       ? `Analyse végétale VertMex - ${plantValue(plantLastResult.identification)}`
       : `VertMex plant analysis - ${plantValue(plantLastResult.identification)}`;
