@@ -31,5 +31,16 @@
     "descriptionEn": "Reshaping of a dense front-yard shrub near the street to open the view, reduce bulk and give the property a cleaner look.",
     "beforeImage": "assets/projects/vertmex-before-front-shrub-trim.jpg",
     "afterImage": "assets/projects/vertmex-after-front-shrub-trim.jpg"
+  },
+  {
+    "titleFr": "Taille d’arbre et nettoyage de plate-bande",
+    "titleEn": "Tree Pruning and Garden Bed Cleanup",
+    "city": "Montérégie",
+    "categoryFr": "Avant / après",
+    "categoryEn": "Before / after",
+    "descriptionFr": "Taille d’un arbre retombant et nettoyage de la plate-bande pour dégager le tronc, ouvrir l’espace et rendre l’aménagement plus propre.",
+    "descriptionEn": "Pruning of a weeping tree and garden bed cleanup to reveal the trunk, open the space and give the landscape a cleaner finish.",
+    "beforeImage": "assets/projects/vertmex-before-weeping-tree-bed.jpg",
+    "afterImage": "assets/projects/vertmex-after-weeping-tree-bed.jpg"
   }
 ]
