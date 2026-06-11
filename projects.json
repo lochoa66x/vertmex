@@ -64,5 +64,16 @@
     "descriptionEn": "Refresh of a front garden bed with cleanup, light trimming and a fuller finish around the existing plants.",
     "beforeImage": "assets/projects/vertmex-before-front-garden-bed-refresh.jpg",
     "afterImage": "assets/projects/vertmex-after-front-garden-bed-refresh.jpg"
+  },
+  {
+    "titleFr": "Plantation et finition en façade commerciale",
+    "titleEn": "Commercial Frontage Planting and Finishing",
+    "city": "Montérégie",
+    "categoryFr": "Avant / après",
+    "categoryEn": "Before / after",
+    "descriptionFr": "Plantation de cèdres, préparation du terrain et finition de la zone avant pour donner une bordure plus propre et plus verte.",
+    "descriptionEn": "Cedar planting, site preparation and front-area finishing to create a cleaner, greener border.",
+    "beforeImage": "assets/projects/vertmex-before-commercial-yard-planting.jpg",
+    "afterImage": "assets/projects/vertmex-after-commercial-yard-planting.jpg"
   }
 ]
