@@ -42,5 +42,16 @@
     "descriptionEn": "Pruning of a weeping tree and garden bed cleanup to reveal the trunk, open the space and give the landscape a cleaner finish.",
     "beforeImage": "assets/projects/vertmex-before-weeping-tree-bed.jpg",
     "afterImage": "assets/projects/vertmex-after-weeping-tree-bed.jpg"
+  },
+  {
+    "titleFr": "Nettoyage de plate-bande latérale",
+    "titleEn": "Side Garden Bed Cleanup",
+    "city": "Montérégie",
+    "categoryFr": "Avant / après",
+    "categoryEn": "Before / after",
+    "descriptionFr": "Nettoyage et remise en valeur d’une plate-bande le long du bâtiment pour dégager les végétaux, structurer l’espace et améliorer la présentation du terrain.",
+    "descriptionEn": "Cleanup and refresh of a side garden bed along the building to clear the plants, structure the space and improve the property’s presentation.",
+    "beforeImage": "assets/projects/vertmex-before-side-garden-bed.jpg",
+    "afterImage": "assets/projects/vertmex-after-side-garden-bed.jpg"
   }
 ]
