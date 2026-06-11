@@ -20,5 +20,16 @@
     "descriptionEn": "Trimming of a dense hedge to restore a cleaner line, reduce bulk and improve the overall look of the yard.",
     "beforeImage": "assets/projects/vertmex-before-cedar-hedge-yard.jpg",
     "afterImage": "assets/projects/vertmex-after-cedar-hedge-yard.jpg"
+  },
+  {
+    "titleFr": "Taille d’arbuste en façade",
+    "titleEn": "Front Yard Shrub Trimming",
+    "city": "Montérégie",
+    "categoryFr": "Avant / après",
+    "categoryEn": "Before / after",
+    "descriptionFr": "Remise en forme d’un arbuste dense près de la rue pour dégager la vue, réduire le volume et donner une apparence plus nette au terrain.",
+    "descriptionEn": "Reshaping of a dense front-yard shrub near the street to open the view, reduce bulk and give the property a cleaner look.",
+    "beforeImage": "assets/projects/vertmex-before-front-shrub-trim.jpg",
+    "afterImage": "assets/projects/vertmex-after-front-shrub-trim.jpg"
   }
 ]
