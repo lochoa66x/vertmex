@@ -53,5 +53,16 @@
     "descriptionEn": "Cleanup and refresh of a side garden bed along the building to clear the plants, structure the space and improve the property’s presentation.",
     "beforeImage": "assets/projects/vertmex-before-side-garden-bed.jpg",
     "afterImage": "assets/projects/vertmex-after-side-garden-bed.jpg"
+  },
+  {
+    "titleFr": "Rafraîchissement de plate-bande en façade",
+    "titleEn": "Front Garden Bed Refresh",
+    "city": "Montérégie",
+    "categoryFr": "Avant / après",
+    "categoryEn": "Before / after",
+    "descriptionFr": "Remise en valeur d’une plate-bande en façade avec nettoyage, taille légère et finition plus fournie autour des végétaux existants.",
+    "descriptionEn": "Refresh of a front garden bed with cleanup, light trimming and a fuller finish around the existing plants.",
+    "beforeImage": "assets/projects/vertmex-before-front-garden-bed-refresh.jpg",
+    "afterImage": "assets/projects/vertmex-after-front-garden-bed-refresh.jpg"
   }
 ]
