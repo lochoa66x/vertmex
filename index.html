@@ -143,10 +143,26 @@
   .sec-sub { font-size: 0.92rem; color: var(--text-light); line-height: 1.7; max-width: 490px; }
   .svc-hdr { max-width: 540px; margin-bottom: 2.75rem; }
   .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1.1rem; }
-  .svc-card { background: var(--cream); border: 1px solid rgba(0,0,0,0.07); border-radius: 11px; padding: 1.6rem; transition: all 0.22s; }
-  .svc-card:hover { border-color: var(--green-mid); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(45,90,45,0.09); }
-  .s-ico { width: 42px; height: 42px; background: var(--green-pale); border: 1px solid rgba(61,122,61,0.16); color: var(--green-dark); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.9rem; }
-  .s-ico .icon { width: 1.25rem; height: 1.25rem; }
+  .svc-card { position: relative; overflow: hidden; background: #fff; border: 1px solid rgba(45,90,45,0.11); border-radius: 11px; padding: 1.6rem; transition: all 0.22s; box-shadow: 0 10px 26px rgba(18,58,28,0.045); }
+  .svc-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green-mid), rgba(90,170,90,0.25)); opacity: 0.85; }
+  .svc-card:hover { border-color: rgba(61,122,61,0.32); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(45,90,45,0.1); }
+  .s-ico { width: 54px; height: 54px; position: relative; overflow: hidden; background: linear-gradient(145deg, #eef7ee, #fff); border: 1px solid rgba(61,122,61,0.18); color: var(--green-dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; box-shadow: inset 0 -12px 22px rgba(90,170,90,0.1); }
+  .s-ico::before, .s-ico::after { content: ''; position: absolute; pointer-events: none; }
+  .s-ico::before { left: 8px; right: 8px; bottom: 9px; height: 10px; border-radius: 999px; background: rgba(61,122,61,0.18); }
+  .s-ico::after { width: 18px; height: 18px; border-radius: 50%; top: 8px; right: 8px; background: rgba(246,197,92,0.5); }
+  .s-ico .icon { position: relative; z-index: 1; width: 1.35rem; height: 1.35rem; stroke-width: 2.2; }
+  .s-ico-install { color: #246b35; background: linear-gradient(145deg, #edf8e8, #fff); }
+  .s-ico-install::before { background: linear-gradient(90deg, rgba(61,122,61,0.1), rgba(90,170,90,0.34)); }
+  .s-ico-install::after { width: 14px; height: 24px; border-radius: 14px 14px 3px 14px; background: rgba(90,170,90,0.26); transform: rotate(28deg); }
+  .s-ico-hardscape { color: #365f36; background: linear-gradient(145deg, #f5f0e6, #fff); }
+  .s-ico-hardscape::before { height: 18px; border-radius: 4px; background: repeating-linear-gradient(90deg, rgba(106,83,54,0.22) 0 12px, rgba(106,83,54,0.08) 12px 16px); }
+  .s-ico-hardscape::after { background: rgba(106,83,54,0.16); border-radius: 4px; width: 20px; height: 13px; }
+  .s-ico-care { color: #1d6b3a; background: linear-gradient(145deg, #eaf8ef, #fff); }
+  .s-ico-care::before { height: 16px; background: linear-gradient(90deg, rgba(61,122,61,0.1), rgba(61,122,61,0.32)); }
+  .s-ico-care::after { width: 2px; height: 28px; border-radius: 999px; background: rgba(45,90,45,0.28); transform: rotate(42deg); top: 11px; right: 17px; }
+  .s-ico-structures { color: #315b31; background: linear-gradient(145deg, #eef4ea, #fff); }
+  .s-ico-structures::before { height: 20px; border-radius: 2px; background: repeating-linear-gradient(90deg, rgba(45,90,45,0.24) 0 5px, transparent 5px 10px); }
+  .s-ico-structures::after { width: 28px; height: 2px; border-radius: 999px; top: 18px; right: 10px; background: rgba(45,90,45,0.22); box-shadow: 0 10px 0 rgba(45,90,45,0.16); }
   .svc-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--green-deep); }
   .svc-card p { font-size: 0.8rem; color: var(--text-light); line-height: 1.58; }
   .svc-category h3 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--green-deep); }
@@ -154,6 +170,12 @@
   .svc-list li { font-size: 0.82rem; color: var(--text-mid); line-height: 1.45; display: flex; gap: 0.45rem; }
   .svc-list li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
   .calc-sec { background: var(--cream); }
+  .tools-intro { background: #fff; padding-bottom: 2.5rem; }
+  .tool-link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; max-width: 820px; }
+  .tool-link-card { display: grid; gap: 0.35rem; padding: 1.05rem 1.1rem; border: 1px solid rgba(61,122,61,0.16); border-radius: 10px; background: var(--green-pale); text-decoration: none; transition: all 0.2s; }
+  .tool-link-card:hover { transform: translateY(-2px); border-color: rgba(61,122,61,0.34); box-shadow: 0 10px 22px rgba(45,90,45,0.08); }
+  .tool-link-card strong { color: var(--green-deep); font-size: 0.95rem; }
+  .tool-link-card span { color: var(--text-light); font-size: 0.8rem; line-height: 1.5; }
   .calc-wrap { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 1.3rem; align-items: start; margin-top: 2rem; }
   .calc-panel, .calc-results { background: #fff; border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.25rem; }
   .calc-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.1rem; }
@@ -434,7 +456,7 @@
   <a class="nav-logo notranslate" href="#" aria-label="VertMex accueil" translate="no">Vert<span>Mex</span></a>
   <ul class="nav-links">
     <li><a href="#services"  data-fr="Services"       data-en="Services">Services</a></li>
-    <li><a href="#plant-identifier" data-fr="Assistant végétal" data-en="Plant assistant">Assistant végétal</a></li>
+    <li><a href="#tools" data-fr="Outils" data-en="Tools">Outils</a></li>
     <li><a href="#about"     data-fr="À Propos"  data-en="About">À Propos</a></li>
     <li><a href="#portfolio" data-fr="Portfolio"      data-en="Portfolio">Portfolio</a></li>
     <li><a href="tel:+14387287513" class="nav-phone" data-fr="(438) 728-7513" data-en="(438) 728-7513">(438) 728-7513</a></li>
@@ -503,155 +525,10 @@
     <p class="sec-sub" data-fr="Une seule équipe locale pour les projets résidentiels et commerciaux : préparation du terrain, installation, entretien et réparation." data-en="One local crew for residential and commercial projects: site preparation, installation, maintenance and repair.">Une seule équipe locale pour les projets résidentiels et commerciaux : préparation du terrain, installation, entretien et réparation.</p>
   </div>
   <div class="svc-grid">
-    <div class="svc-card svc-category"><div class="s-ico"><svg class="icon"><use href="#icon-leaf"></use></svg></div><h3 data-fr="Aménagement &amp; installation" data-en="Landscaping &amp; installation">Aménagement &amp; installation</h3><ul class="svc-list"><li data-fr="Aménagement complet" data-en="Full landscaping">Aménagement complet</li><li data-fr="Tourbe et ensemencement" data-en="Sod and seeding">Tourbe et ensemencement</li><li data-fr="Plantation et plates-bandes" data-en="Planting and garden beds">Plantation et plates-bandes</li><li data-fr="Aménagement autour de piscine" data-en="Pool-area landscaping">Aménagement autour de piscine</li></ul></div>
-    <div class="svc-card svc-category"><div class="s-ico"><svg class="icon"><use href="#icon-blocks"></use></svg></div><h3 data-fr="Pavé, murets &amp; excavation" data-en="Pavers, walls &amp; excavation">Pavé, murets &amp; excavation</h3><ul class="svc-list"><li data-fr="Pavé-uni, allées et terrasses" data-en="Pavers, walkways and patios">Pavé-uni, allées et terrasses</li><li data-fr="Murets de soutènement" data-en="Retaining walls">Murets de soutènement</li><li data-fr="Excavation et nivellement" data-en="Excavation and grading">Excavation et nivellement</li><li data-fr="Scellant et entretien d’entrée" data-en="Driveway sealing and care">Scellant et entretien d’entrée</li></ul></div>
-    <div class="svc-card svc-category"><div class="s-ico"><svg class="icon"><use href="#icon-tree"></use></svg></div><h3 data-fr="Entretien &amp; végétation" data-en="Maintenance &amp; vegetation">Entretien &amp; végétation</h3><ul class="svc-list"><li data-fr="Taille de haies" data-en="Hedge trimming">Taille de haies</li><li data-fr="Émondage et entretien d’arbres" data-en="Tree trimming and care">Émondage et entretien d’arbres</li><li data-fr="Horticulture et jardinage" data-en="Horticulture and gardening">Horticulture et jardinage</li><li data-fr="Entretien saisonnier" data-en="Seasonal maintenance">Entretien saisonnier</li></ul></div>
-    <div class="svc-card svc-category"><div class="s-ico"><svg class="icon"><use href="#icon-fence"></use></svg></div><h3 data-fr="Structures &amp; espaces extérieurs" data-en="Structures &amp; outdoor spaces">Structures &amp; espaces extérieurs</h3><ul class="svc-list"><li data-fr="Clôtures" data-en="Fencing">Clôtures</li><li data-fr="Pergolas et zones d’ombre" data-en="Pergolas and shade areas">Pergolas et zones d’ombre</li><li data-fr="Irrigation" data-en="Irrigation">Irrigation</li><li data-fr="Petits travaux commerciaux" data-en="Small commercial jobs">Petits travaux commerciaux</li></ul></div>
-  </div>
-</section>
-
-<!-- MATERIAL CALCULATOR -->
-<section class="sec calc-sec" id="calculator">
-  <div class="svc-hdr">
-    <div class="sl" data-fr="Calculateur de matériaux" data-en="Material calculator">Calculateur de matériaux</div>
-    <h2 data-fr="Estimez les quantités avant de demander une soumission" data-en="Estimate quantities before requesting a quote">Estimez les quantités avant de demander une soumission</h2>
-    <p class="sec-sub" data-fr="Entrez quelques mesures pour obtenir une estimation rapide, puis envoyez le calcul à VertMex sur WhatsApp avec votre ville." data-en="Enter a few measurements for a quick estimate, then send the calculation to VertMex on WhatsApp with your city.">Entrez quelques mesures pour obtenir une estimation rapide, puis envoyez le calcul à VertMex sur WhatsApp avec votre ville.</p>
-  </div>
-  <div class="calc-wrap">
-    <div class="calc-panel">
-      <div class="calc-steps">
-        <div class="calc-step"><strong data-fr="Étape 1" data-en="Step 1">Étape 1</strong><span data-fr="Choisir le type de projet" data-en="Choose project type">Choisir le type de projet</span></div>
-        <div class="calc-step"><strong data-fr="Étape 2" data-en="Step 2">Étape 2</strong><span data-fr="Entrer les mesures" data-en="Enter measurements">Entrer les mesures</span></div>
-        <div class="calc-step"><strong data-fr="Étape 3" data-en="Step 3">Étape 3</strong><span data-fr="Envoyer à VertMex" data-en="Send to VertMex">Envoyer à VertMex</span></div>
-      </div>
-      <div class="calc-form" id="materialCalc">
-        <div class="calc-field">
-          <label for="calcMaterial" data-fr="Type de projet" data-en="Project type">Type de projet</label>
-          <select id="calcMaterial">
-            <option value="sod" data-fr="Tourbe" data-en="Sod">Tourbe</option>
-            <option value="mulch" data-fr="Paillis" data-en="Mulch">Paillis</option>
-            <option value="soil" data-fr="Terre / compost" data-en="Soil / compost">Terre / compost</option>
-            <option value="decorativeStone" data-fr="Pierre décorative" data-en="Decorative stone">Pierre décorative</option>
-            <option value="stoneDust" data-fr="Poussière de pierre" data-en="Stone dust">Poussière de pierre</option>
-            <option value="threeQuarter" data-fr="0-3/4 compacté" data-en="Compacted 0-3/4">0-3/4 compacté</option>
-            <option value="paverBase" data-fr="Base pour pavé-uni" data-en="Paver base">Base pour pavé-uni</option>
-          </select>
-        </div>
-
-        <div>
-          <div class="calc-group-label" data-fr="Forme de la zone" data-en="Area shape">Forme de la zone</div>
-          <div class="shape-tabs" id="shapeTabs">
-            <label><input type="radio" name="calcShape" value="rectangle" checked><span data-fr="Rectangle" data-en="Rectangle">Rectangle</span></label>
-            <label><input type="radio" name="calcShape" value="circle"><span data-fr="Cercle" data-en="Circle">Cercle</span></label>
-            <label><input type="radio" name="calcShape" value="triangle"><span data-fr="Triangle" data-en="Triangle">Triangle</span></label>
-            <label><input type="radio" name="calcShape" value="known"><span data-fr="Superficie connue" data-en="Known area">Superficie connue</span></label>
-          </div>
-        </div>
-
-        <div class="calc-grid-2" id="rectFields">
-          <div class="calc-field"><label for="calcLength" data-fr="Longueur (pi)" data-en="Length (ft)">Longueur (pi)</label><input id="calcLength" type="number" min="0" step="0.1" inputmode="decimal" value="30"></div>
-          <div class="calc-field"><label for="calcWidth" data-fr="Largeur (pi)" data-en="Width (ft)">Largeur (pi)</label><input id="calcWidth" type="number" min="0" step="0.1" inputmode="decimal" value="20"></div>
-        </div>
-        <div class="calc-field" id="circleFields" style="display:none;"><label for="calcDiameter" data-fr="Diamètre (pi)" data-en="Diameter (ft)">Diamètre (pi)</label><input id="calcDiameter" type="number" min="0" step="0.1" inputmode="decimal"></div>
-        <div class="calc-grid-2" id="triangleFields" style="display:none;">
-          <div class="calc-field"><label for="calcBase" data-fr="Base (pi)" data-en="Base (ft)">Base (pi)</label><input id="calcBase" type="number" min="0" step="0.1" inputmode="decimal"></div>
-          <div class="calc-field"><label for="calcHeight" data-fr="Hauteur (pi)" data-en="Height (ft)">Hauteur (pi)</label><input id="calcHeight" type="number" min="0" step="0.1" inputmode="decimal"></div>
-        </div>
-        <div class="calc-field" id="knownFields" style="display:none;"><label for="calcKnownArea" data-fr="Superficie (pi²)" data-en="Area (sq ft)">Superficie (pi²)</label><input id="calcKnownArea" type="number" min="0" step="0.1" inputmode="decimal"></div>
-
-        <div id="depthBlock">
-          <div class="calc-group-label" data-fr="Épaisseur recommandée" data-en="Recommended thickness">Épaisseur recommandée</div>
-          <div class="depth-tabs" id="depthTabs"></div>
-        </div>
-
-        <label class="buffer-row">
-          <input id="calcBuffer" type="checkbox" checked>
-          <span data-fr="Ajouter 10% pour pertes, coupes ou compaction" data-en="Add 10% for waste, cuts or compaction">Ajouter 10% pour pertes, coupes ou compaction</span>
-        </label>
-
-        <div class="calc-field">
-          <label for="calcCity" data-fr="Ville (optionnel)" data-en="City (optional)">Ville (optionnel)</label>
-          <input id="calcCity" type="text" data-fr-placeholder="Sherrington, Saint-Rémi..." data-en-placeholder="Sherrington, Saint-Rémi..." placeholder="Sherrington, Saint-Rémi...">
-        </div>
-      </div>
-    </div>
-
-    <div class="calc-results">
-      <h3 data-fr="Estimation rapide" data-en="Quick estimate">Estimation rapide</h3>
-      <p class="calc-results-sub" data-fr="Les résultats se mettent à jour automatiquement pendant que vous ajustez les mesures." data-en="Results update automatically as you adjust the measurements.">Les résultats se mettent à jour automatiquement pendant que vous ajustez les mesures.</p>
-      <div class="calc-result-grid" id="calcResults"></div>
-      <div class="calc-error" id="calcError" data-fr="Ajoutez des mesures valides pour voir l’estimation." data-en="Add valid measurements to see the estimate.">Ajoutez des mesures valides pour voir l’estimation.</div>
-      <div class="calc-actions">
-        <a href="mailto:vertmex_sherrington@outlook.com?subject=Calcul%20de%20mat%C3%A9riaux%20VertMex" class="btn-primary" id="calcEmail" data-fr="Envoyer ce calcul par courriel" data-en="Send this estimate by email">Envoyer ce calcul par courriel</a>
-        <a href="https://wa.me/14387287513" class="btn-ghost" id="calcWhatsapp" target="_blank" rel="noopener" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</a>
-        <a href="#contact" class="btn-ghost" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
-      </div>
-      <p class="calc-disclaimer" data-fr="Estimation seulement. Les quantités finales peuvent varier selon compaction, pertes, drainage, accès au terrain et préparation du sol." data-en="Estimate only. Final quantities can vary based on compaction, waste, drainage, site access and soil preparation.">Estimation seulement. Les quantités finales peuvent varier selon compaction, pertes, drainage, accès au terrain et préparation du sol.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PLANT IDENTIFIER -->
-<section class="sec plant-id-sec" id="plant-identifier">
-  <div class="svc-hdr">
-    <div class="sl" data-fr="Assistant végétal" data-en="Plant assistant">Assistant végétal</div>
-    <h2 data-fr="Identifier une plante, une haie ou une mauvaise herbe" data-en="Identify a plant, hedge or weed">Identifier une plante, une haie ou une mauvaise herbe</h2>
-    <p class="sec-sub" data-fr="Prenez une photo ou choisissez une image pour obtenir une analyse indicative : type de plante, risques possibles, état visible et prochaine étape pratique." data-en="Take a photo or choose an image for an indicative analysis: plant type, possible risks, visible condition and practical next step.">Prenez une photo ou choisissez une image pour obtenir une analyse indicative : type de plante, risques possibles, état visible et prochaine étape pratique.</p>
-  </div>
-  <div class="plant-tool-wrap">
-    <div class="plant-tool-card">
-      <input id="plantCameraInput" type="file" accept="image/*" capture="environment" hidden>
-      <input id="plantGalleryInput" type="file" accept="image/*" hidden>
-      <div class="plant-photo-actions">
-        <label class="plant-file-btn" for="plantCameraInput"><svg class="icon"><use href="#icon-camera"></use></svg><span data-fr="Prendre une photo" data-en="Take a photo">Prendre une photo</span></label>
-        <label class="plant-file-btn" for="plantGalleryInput"><svg class="icon"><use href="#icon-leaf"></use></svg><span data-fr="Choisir une photo" data-en="Choose a photo">Choisir une photo</span></label>
-      </div>
-      <div class="plant-preview-zone" id="plantPreviewZone">
-        <div class="plant-preview-placeholder" id="plantPreviewPlaceholder">
-          <svg class="icon"><use href="#icon-camera"></use></svg>
-          <strong data-fr="Photo claire de la plante" data-en="Clear plant photo">Photo claire de la plante</strong>
-          <span data-fr="Idéalement : feuilles nettes, tige visible, base de la plante et un peu de contexte autour." data-en="Ideally: clear leaves, visible stem, plant base and a bit of surrounding context.">Idéalement : feuilles nettes, tige visible, base de la plante et un peu de contexte autour.</span>
-        </div>
-        <img id="plantPreview" alt="Aperçu de la plante">
-      </div>
-      <div class="plant-form">
-        <div class="plant-field">
-          <label for="plantQuestion" data-fr="Que voulez-vous savoir?" data-en="What do you want to know?">Que voulez-vous savoir?</label>
-          <textarea id="plantQuestion" data-fr-placeholder="ex. Est-ce de l’herbe à puce? Est-ce une mauvaise herbe? Pourquoi les feuilles jaunissent?" data-en-placeholder="e.g. Is this poison ivy? Is it a weed? Why are the leaves turning yellow?" placeholder="ex. Est-ce de l’herbe à puce? Est-ce une mauvaise herbe? Pourquoi les feuilles jaunissent?"></textarea>
-        </div>
-        <div class="plant-field">
-          <label for="plantCity" data-fr="Ville (optionnel)" data-en="City (optional)">Ville (optionnel)</label>
-          <input id="plantCity" type="text" data-fr-placeholder="Sherrington, Saint-Rémi..." data-en-placeholder="Sherrington, Saint-Rémi..." placeholder="Sherrington, Saint-Rémi...">
-        </div>
-      </div>
-      <button class="plant-submit" id="plantAnalyzeBtn" type="button" data-fr="Analyser la plante" data-en="Analyze plant">Analyser la plante</button>
-      <div class="plant-status" id="plantStatus" aria-live="polite"></div>
-    </div>
-
-    <div class="plant-result-card">
-      <div class="plant-result-empty" id="plantResultEmpty">
-        <svg class="icon"><use href="#icon-leaf"></use></svg>
-        <strong data-fr="Résultat de l’analyse" data-en="Analysis result">Résultat de l’analyse</strong>
-        <p data-fr="L’outil aide à reconnaître une plante, une haie, une mauvaise herbe ou un problème visible. Il ne remplace pas une vérification sur place." data-en="The tool helps recognize a plant, hedge, weed or visible issue. It does not replace an on-site confirmation.">L’outil aide à reconnaître une plante, une haie, une mauvaise herbe ou un problème visible. Il ne remplace pas une vérification sur place.</p>
-      </div>
-      <div class="plant-results" id="plantResults">
-        <div class="plant-result-head">
-          <h3 id="plantResultTitle">-</h3>
-          <span class="plant-risk-pill" id="plantRiskPill">-</span>
-        </div>
-        <div class="plant-result-grid" id="plantResultGrid"></div>
-        <div class="plant-safety" id="plantSafety"></div>
-        <p class="plant-attach-note" data-fr="<strong>À noter :</strong> le courriel ou WhatsApp prépare le texte de l’analyse. Ajoutez la photo manuellement avant d’envoyer votre demande." data-en="<strong>Note:</strong> email or WhatsApp prepares the analysis text. Attach the photo manually before sending your request."><strong>À noter :</strong> le courriel ou WhatsApp prépare le texte de l’analyse. Ajoutez la photo manuellement avant d’envoyer votre demande.</p>
-        <div class="plant-contact-actions">
-          <a href="mailto:vertmex_sherrington@outlook.com" class="btn-primary" id="plantEmailLink" data-fr="Envoyer cette analyse à VertMex" data-en="Send this analysis to VertMex">Envoyer cette analyse à VertMex</a>
-          <a href="https://wa.me/14387287513" class="btn-ghost" id="plantWhatsappLink" target="_blank" rel="noopener" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</a>
-        </div>
-      </div>
-      <div class="plant-help">
-        <div class="plant-help-item"><strong data-fr="Photo recommandée" data-en="Recommended photo">Photo recommandée</strong><p data-fr="Montrez feuilles + tige dans une photo claire de jour. Ajoutez une deuxième photo plus large si possible." data-en="Show leaves + stem in a clear daytime photo. Add a second wider photo if possible.">Montrez feuilles + tige dans une photo claire de jour. Ajoutez une deuxième photo plus large si possible.</p></div>
-        <div class="plant-help-item"><strong data-fr="Attention sécurité" data-en="Safety first">Attention sécurité</strong><p data-fr="Ne touchez pas une plante suspecte, surtout si vous pensez à l’herbe à puce." data-en="Do not touch a suspicious plant, especially if poison ivy is possible.">Ne touchez pas une plante suspecte, surtout si vous pensez à l’herbe à puce.</p></div>
-      </div>
-    </div>
+    <div class="svc-card svc-category"><div class="s-ico s-ico-install"><svg class="icon"><use href="#icon-leaf"></use></svg></div><h3 data-fr="Aménagement &amp; installation" data-en="Landscaping &amp; installation">Aménagement &amp; installation</h3><ul class="svc-list"><li data-fr="Aménagement complet" data-en="Full landscaping">Aménagement complet</li><li data-fr="Tourbe et ensemencement" data-en="Sod and seeding">Tourbe et ensemencement</li><li data-fr="Plantation et plates-bandes" data-en="Planting and garden beds">Plantation et plates-bandes</li><li data-fr="Aménagement autour de piscine" data-en="Pool-area landscaping">Aménagement autour de piscine</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico s-ico-hardscape"><svg class="icon"><use href="#icon-blocks"></use></svg></div><h3 data-fr="Pavé, murets &amp; excavation" data-en="Pavers, walls &amp; excavation">Pavé, murets &amp; excavation</h3><ul class="svc-list"><li data-fr="Pavé-uni, allées et terrasses" data-en="Pavers, walkways and patios">Pavé-uni, allées et terrasses</li><li data-fr="Murets de soutènement" data-en="Retaining walls">Murets de soutènement</li><li data-fr="Excavation et nivellement" data-en="Excavation and grading">Excavation et nivellement</li><li data-fr="Scellant et entretien d’entrée" data-en="Driveway sealing and care">Scellant et entretien d’entrée</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico s-ico-care"><svg class="icon"><use href="#icon-tree"></use></svg></div><h3 data-fr="Entretien &amp; végétation" data-en="Maintenance &amp; vegetation">Entretien &amp; végétation</h3><ul class="svc-list"><li data-fr="Taille de haies" data-en="Hedge trimming">Taille de haies</li><li data-fr="Émondage et entretien d’arbres" data-en="Tree trimming and care">Émondage et entretien d’arbres</li><li data-fr="Horticulture et jardinage" data-en="Horticulture and gardening">Horticulture et jardinage</li><li data-fr="Entretien saisonnier" data-en="Seasonal maintenance">Entretien saisonnier</li></ul></div>
+    <div class="svc-card svc-category"><div class="s-ico s-ico-structures"><svg class="icon"><use href="#icon-fence"></use></svg></div><h3 data-fr="Structures &amp; espaces extérieurs" data-en="Structures &amp; outdoor spaces">Structures &amp; espaces extérieurs</h3><ul class="svc-list"><li data-fr="Clôtures" data-en="Fencing">Clôtures</li><li data-fr="Pergolas et zones d’ombre" data-en="Pergolas and shade areas">Pergolas et zones d’ombre</li><li data-fr="Irrigation" data-en="Irrigation">Irrigation</li><li data-fr="Petits travaux commerciaux" data-en="Small commercial jobs">Petits travaux commerciaux</li></ul></div>
   </div>
 </section>
 
@@ -1035,6 +912,164 @@
       <ul><li data-fr="Murets de soutènement ou décoratifs" data-en="Retaining or decorative walls">Murets de soutènement ou décoratifs</li><li data-fr="Bordures et transitions de niveaux" data-en="Borders and level transitions">Bordures et transitions de niveaux</li><li data-fr="Validation sur place recommandée" data-en="On-site validation recommended">Validation sur place recommandée</li></ul>
       <a href="#contact" data-fr="Parler d’un projet de muret" data-en="Discuss a wall project">Parler d’un projet de muret</a>
     </article>
+  </div>
+</section>
+
+<!-- PRACTICAL TOOLS -->
+<section class="sec tools-intro" id="tools">
+  <div class="svc-hdr">
+    <div class="sl" data-fr="Outils pratiques" data-en="Practical tools">Outils pratiques</div>
+    <h2 data-fr="Des outils simples avant la soumission" data-en="Simple tools before the quote">Des outils simples avant la soumission</h2>
+    <p class="sec-sub" data-fr="Utilisez le calculateur ou l’assistant végétal pour préparer votre demande. Les résultats restent indicatifs et servent à mieux expliquer le projet à VertMex." data-en="Use the calculator or plant assistant to prepare your request. Results are indicative and help explain the project to VertMex.">Utilisez le calculateur ou l’assistant végétal pour préparer votre demande. Les résultats restent indicatifs et servent à mieux expliquer le projet à VertMex.</p>
+  </div>
+  <div class="tool-link-grid">
+    <a class="tool-link-card" href="#calculator"><strong data-fr="Calculateur de matériaux" data-en="Material calculator">Calculateur de matériaux</strong><span data-fr="Estimer tourbe, paillis, terre, pierre et bases compactées." data-en="Estimate sod, mulch, soil, stone and compacted bases.">Estimer tourbe, paillis, terre, pierre et bases compactées.</span></a>
+    <a class="tool-link-card" href="#plant-identifier"><strong data-fr="Assistant végétal" data-en="Plant assistant">Assistant végétal</strong><span data-fr="Identifier une plante, une haie ou une mauvaise herbe avec une photo." data-en="Identify a plant, hedge or weed from a photo.">Identifier une plante, une haie ou une mauvaise herbe avec une photo.</span></a>
+  </div>
+</section>
+
+<!-- MATERIAL CALCULATOR -->
+<section class="sec calc-sec" id="calculator">
+  <div class="svc-hdr">
+    <div class="sl" data-fr="Calculateur de matériaux" data-en="Material calculator">Calculateur de matériaux</div>
+    <h2 data-fr="Estimez les quantités avant de demander une soumission" data-en="Estimate quantities before requesting a quote">Estimez les quantités avant de demander une soumission</h2>
+    <p class="sec-sub" data-fr="Entrez quelques mesures pour obtenir une estimation rapide, puis envoyez le calcul à VertMex sur WhatsApp avec votre ville." data-en="Enter a few measurements for a quick estimate, then send the calculation to VertMex on WhatsApp with your city.">Entrez quelques mesures pour obtenir une estimation rapide, puis envoyez le calcul à VertMex sur WhatsApp avec votre ville.</p>
+  </div>
+  <div class="calc-wrap">
+    <div class="calc-panel">
+      <div class="calc-steps">
+        <div class="calc-step"><strong data-fr="Étape 1" data-en="Step 1">Étape 1</strong><span data-fr="Choisir le type de projet" data-en="Choose project type">Choisir le type de projet</span></div>
+        <div class="calc-step"><strong data-fr="Étape 2" data-en="Step 2">Étape 2</strong><span data-fr="Entrer les mesures" data-en="Enter measurements">Entrer les mesures</span></div>
+        <div class="calc-step"><strong data-fr="Étape 3" data-en="Step 3">Étape 3</strong><span data-fr="Envoyer à VertMex" data-en="Send to VertMex">Envoyer à VertMex</span></div>
+      </div>
+      <div class="calc-form" id="materialCalc">
+        <div class="calc-field">
+          <label for="calcMaterial" data-fr="Type de projet" data-en="Project type">Type de projet</label>
+          <select id="calcMaterial">
+            <option value="sod" data-fr="Tourbe" data-en="Sod">Tourbe</option>
+            <option value="mulch" data-fr="Paillis" data-en="Mulch">Paillis</option>
+            <option value="soil" data-fr="Terre / compost" data-en="Soil / compost">Terre / compost</option>
+            <option value="decorativeStone" data-fr="Pierre décorative" data-en="Decorative stone">Pierre décorative</option>
+            <option value="stoneDust" data-fr="Poussière de pierre" data-en="Stone dust">Poussière de pierre</option>
+            <option value="threeQuarter" data-fr="0-3/4 compacté" data-en="Compacted 0-3/4">0-3/4 compacté</option>
+            <option value="paverBase" data-fr="Base pour pavé-uni" data-en="Paver base">Base pour pavé-uni</option>
+          </select>
+        </div>
+
+        <div>
+          <div class="calc-group-label" data-fr="Forme de la zone" data-en="Area shape">Forme de la zone</div>
+          <div class="shape-tabs" id="shapeTabs">
+            <label><input type="radio" name="calcShape" value="rectangle" checked><span data-fr="Rectangle" data-en="Rectangle">Rectangle</span></label>
+            <label><input type="radio" name="calcShape" value="circle"><span data-fr="Cercle" data-en="Circle">Cercle</span></label>
+            <label><input type="radio" name="calcShape" value="triangle"><span data-fr="Triangle" data-en="Triangle">Triangle</span></label>
+            <label><input type="radio" name="calcShape" value="known"><span data-fr="Superficie connue" data-en="Known area">Superficie connue</span></label>
+          </div>
+        </div>
+
+        <div class="calc-grid-2" id="rectFields">
+          <div class="calc-field"><label for="calcLength" data-fr="Longueur (pi)" data-en="Length (ft)">Longueur (pi)</label><input id="calcLength" type="number" min="0" step="0.1" inputmode="decimal" value="30"></div>
+          <div class="calc-field"><label for="calcWidth" data-fr="Largeur (pi)" data-en="Width (ft)">Largeur (pi)</label><input id="calcWidth" type="number" min="0" step="0.1" inputmode="decimal" value="20"></div>
+        </div>
+        <div class="calc-field" id="circleFields" style="display:none;"><label for="calcDiameter" data-fr="Diamètre (pi)" data-en="Diameter (ft)">Diamètre (pi)</label><input id="calcDiameter" type="number" min="0" step="0.1" inputmode="decimal"></div>
+        <div class="calc-grid-2" id="triangleFields" style="display:none;">
+          <div class="calc-field"><label for="calcBase" data-fr="Base (pi)" data-en="Base (ft)">Base (pi)</label><input id="calcBase" type="number" min="0" step="0.1" inputmode="decimal"></div>
+          <div class="calc-field"><label for="calcHeight" data-fr="Hauteur (pi)" data-en="Height (ft)">Hauteur (pi)</label><input id="calcHeight" type="number" min="0" step="0.1" inputmode="decimal"></div>
+        </div>
+        <div class="calc-field" id="knownFields" style="display:none;"><label for="calcKnownArea" data-fr="Superficie (pi²)" data-en="Area (sq ft)">Superficie (pi²)</label><input id="calcKnownArea" type="number" min="0" step="0.1" inputmode="decimal"></div>
+
+        <div id="depthBlock">
+          <div class="calc-group-label" data-fr="Épaisseur recommandée" data-en="Recommended thickness">Épaisseur recommandée</div>
+          <div class="depth-tabs" id="depthTabs"></div>
+        </div>
+
+        <label class="buffer-row">
+          <input id="calcBuffer" type="checkbox" checked>
+          <span data-fr="Ajouter 10% pour pertes, coupes ou compaction" data-en="Add 10% for waste, cuts or compaction">Ajouter 10% pour pertes, coupes ou compaction</span>
+        </label>
+
+        <div class="calc-field">
+          <label for="calcCity" data-fr="Ville (optionnel)" data-en="City (optional)">Ville (optionnel)</label>
+          <input id="calcCity" type="text" data-fr-placeholder="Sherrington, Saint-Rémi..." data-en-placeholder="Sherrington, Saint-Rémi..." placeholder="Sherrington, Saint-Rémi...">
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-results">
+      <h3 data-fr="Estimation rapide" data-en="Quick estimate">Estimation rapide</h3>
+      <p class="calc-results-sub" data-fr="Les résultats se mettent à jour automatiquement pendant que vous ajustez les mesures." data-en="Results update automatically as you adjust the measurements.">Les résultats se mettent à jour automatiquement pendant que vous ajustez les mesures.</p>
+      <div class="calc-result-grid" id="calcResults"></div>
+      <div class="calc-error" id="calcError" data-fr="Ajoutez des mesures valides pour voir l’estimation." data-en="Add valid measurements to see the estimate.">Ajoutez des mesures valides pour voir l’estimation.</div>
+      <div class="calc-actions">
+        <a href="mailto:vertmex_sherrington@outlook.com?subject=Calcul%20de%20mat%C3%A9riaux%20VertMex" class="btn-primary" id="calcEmail" data-fr="Envoyer ce calcul par courriel" data-en="Send this estimate by email">Envoyer ce calcul par courriel</a>
+        <a href="https://wa.me/14387287513" class="btn-ghost" id="calcWhatsapp" target="_blank" rel="noopener" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</a>
+        <a href="#contact" class="btn-ghost" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Demander une soumission" data-en="Request a quote">Demander une soumission</a>
+      </div>
+      <p class="calc-disclaimer" data-fr="Estimation seulement. Les quantités finales peuvent varier selon compaction, pertes, drainage, accès au terrain et préparation du sol." data-en="Estimate only. Final quantities can vary based on compaction, waste, drainage, site access and soil preparation.">Estimation seulement. Les quantités finales peuvent varier selon compaction, pertes, drainage, accès au terrain et préparation du sol.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANT IDENTIFIER -->
+<section class="sec plant-id-sec" id="plant-identifier">
+  <div class="svc-hdr">
+    <div class="sl" data-fr="Assistant végétal" data-en="Plant assistant">Assistant végétal</div>
+    <h2 data-fr="Identifier une plante, une haie ou une mauvaise herbe" data-en="Identify a plant, hedge or weed">Identifier une plante, une haie ou une mauvaise herbe</h2>
+    <p class="sec-sub" data-fr="Prenez une photo ou choisissez une image pour obtenir une analyse indicative : type de plante, risques possibles, état visible et prochaine étape pratique." data-en="Take a photo or choose an image for an indicative analysis: plant type, possible risks, visible condition and practical next step.">Prenez une photo ou choisissez une image pour obtenir une analyse indicative : type de plante, risques possibles, état visible et prochaine étape pratique.</p>
+  </div>
+  <div class="plant-tool-wrap">
+    <div class="plant-tool-card">
+      <input id="plantCameraInput" type="file" accept="image/*" capture="environment" hidden>
+      <input id="plantGalleryInput" type="file" accept="image/*" hidden>
+      <div class="plant-photo-actions">
+        <label class="plant-file-btn" for="plantCameraInput"><svg class="icon"><use href="#icon-camera"></use></svg><span data-fr="Prendre une photo" data-en="Take a photo">Prendre une photo</span></label>
+        <label class="plant-file-btn" for="plantGalleryInput"><svg class="icon"><use href="#icon-leaf"></use></svg><span data-fr="Choisir une photo" data-en="Choose a photo">Choisir une photo</span></label>
+      </div>
+      <div class="plant-preview-zone" id="plantPreviewZone">
+        <div class="plant-preview-placeholder" id="plantPreviewPlaceholder">
+          <svg class="icon"><use href="#icon-camera"></use></svg>
+          <strong data-fr="Photo claire de la plante" data-en="Clear plant photo">Photo claire de la plante</strong>
+          <span data-fr="Idéalement : feuilles nettes, tige visible, base de la plante et un peu de contexte autour." data-en="Ideally: clear leaves, visible stem, plant base and a bit of surrounding context.">Idéalement : feuilles nettes, tige visible, base de la plante et un peu de contexte autour.</span>
+        </div>
+        <img id="plantPreview" alt="Aperçu de la plante">
+      </div>
+      <div class="plant-form">
+        <div class="plant-field">
+          <label for="plantQuestion" data-fr="Que voulez-vous savoir?" data-en="What do you want to know?">Que voulez-vous savoir?</label>
+          <textarea id="plantQuestion" data-fr-placeholder="ex. Est-ce de l’herbe à puce? Est-ce une mauvaise herbe? Pourquoi les feuilles jaunissent?" data-en-placeholder="e.g. Is this poison ivy? Is it a weed? Why are the leaves turning yellow?" placeholder="ex. Est-ce de l’herbe à puce? Est-ce une mauvaise herbe? Pourquoi les feuilles jaunissent?"></textarea>
+        </div>
+        <div class="plant-field">
+          <label for="plantCity" data-fr="Ville (optionnel)" data-en="City (optional)">Ville (optionnel)</label>
+          <input id="plantCity" type="text" data-fr-placeholder="Sherrington, Saint-Rémi..." data-en-placeholder="Sherrington, Saint-Rémi..." placeholder="Sherrington, Saint-Rémi...">
+        </div>
+      </div>
+      <button class="plant-submit" id="plantAnalyzeBtn" type="button" data-fr="Analyser la plante" data-en="Analyze plant">Analyser la plante</button>
+      <div class="plant-status" id="plantStatus" aria-live="polite"></div>
+    </div>
+
+    <div class="plant-result-card">
+      <div class="plant-result-empty" id="plantResultEmpty">
+        <svg class="icon"><use href="#icon-leaf"></use></svg>
+        <strong data-fr="Résultat de l’analyse" data-en="Analysis result">Résultat de l’analyse</strong>
+        <p data-fr="L’outil aide à reconnaître une plante, une haie, une mauvaise herbe ou un problème visible. Il ne remplace pas une vérification sur place." data-en="The tool helps recognize a plant, hedge, weed or visible issue. It does not replace an on-site confirmation.">L’outil aide à reconnaître une plante, une haie, une mauvaise herbe ou un problème visible. Il ne remplace pas une vérification sur place.</p>
+      </div>
+      <div class="plant-results" id="plantResults">
+        <div class="plant-result-head">
+          <h3 id="plantResultTitle">-</h3>
+          <span class="plant-risk-pill" id="plantRiskPill">-</span>
+        </div>
+        <div class="plant-result-grid" id="plantResultGrid"></div>
+        <div class="plant-safety" id="plantSafety"></div>
+        <p class="plant-attach-note" data-fr="<strong>À noter :</strong> le courriel ou WhatsApp prépare le texte de l’analyse. Ajoutez la photo manuellement avant d’envoyer votre demande." data-en="<strong>Note:</strong> email or WhatsApp prepares the analysis text. Attach the photo manually before sending your request."><strong>À noter :</strong> le courriel ou WhatsApp prépare le texte de l’analyse. Ajoutez la photo manuellement avant d’envoyer votre demande.</p>
+        <div class="plant-contact-actions">
+          <a href="mailto:vertmex_sherrington@outlook.com" class="btn-primary" id="plantEmailLink" data-fr="Envoyer cette analyse à VertMex" data-en="Send this analysis to VertMex">Envoyer cette analyse à VertMex</a>
+          <a href="https://wa.me/14387287513" class="btn-ghost" id="plantWhatsappLink" target="_blank" rel="noopener" style="color:var(--green-deep); border-color:rgba(45,90,45,0.25);" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</a>
+        </div>
+      </div>
+      <div class="plant-help">
+        <div class="plant-help-item"><strong data-fr="Photo recommandée" data-en="Recommended photo">Photo recommandée</strong><p data-fr="Montrez feuilles + tige dans une photo claire de jour. Ajoutez une deuxième photo plus large si possible." data-en="Show leaves + stem in a clear daytime photo. Add a second wider photo if possible.">Montrez feuilles + tige dans une photo claire de jour. Ajoutez une deuxième photo plus large si possible.</p></div>
+        <div class="plant-help-item"><strong data-fr="Attention sécurité" data-en="Safety first">Attention sécurité</strong><p data-fr="Ne touchez pas une plante suspecte, surtout si vous pensez à l’herbe à puce." data-en="Do not touch a suspicious plant, especially if poison ivy is possible.">Ne touchez pas une plante suspecte, surtout si vous pensez à l’herbe à puce.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
