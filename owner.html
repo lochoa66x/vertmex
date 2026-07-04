@@ -15,7 +15,9 @@
   .brand { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--green-deep); margin-bottom: 1.5rem; }
   .brand span { color: var(--green-bright); }
   .panel { background: #fff; border: 1px solid rgba(45,90,45,0.14); border-radius: 10px; padding: 1.5rem; box-shadow: 0 18px 44px rgba(18,58,28,0.08); }
+  .panel + .panel { margin-top: 1.25rem; }
   h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; color: var(--green-deep); margin-bottom: 0.85rem; }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.05; color: var(--green-deep); margin-bottom: 0.75rem; }
   .lead { color: var(--muted); line-height: 1.65; max-width: 720px; margin-bottom: 1.5rem; }
   form { display: grid; gap: 1rem; }
   .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
@@ -33,10 +35,23 @@
   .status { min-height: 24px; color: var(--muted); font-weight: 700; }
   .status.ok { color: var(--green); }
   .status.err { color: #a83232; }
+  .review-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.8rem; align-items: end; margin-bottom: 1rem; }
+  .review-list { display: grid; gap: 0.85rem; }
+  .pending-review { border: 1px solid rgba(45,90,45,0.14); border-radius: 8px; padding: 1rem; background: #f9fbf8; }
+  .pending-review-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.8rem; margin-bottom: 0.55rem; }
+  .pending-review strong { color: var(--green-deep); }
+  .pending-stars { color: #d69e2e; letter-spacing: 0.06em; white-space: nowrap; }
+  .pending-meta { color: var(--muted); font-size: 0.78rem; line-height: 1.5; margin-bottom: 0.55rem; }
+  .pending-text { color: var(--ink); line-height: 1.6; }
+  .review-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.85rem; }
+  .review-actions button { min-height: 40px; padding: 0 0.95rem; font-size: 0.86rem; }
+  .reject-btn { background: #8a2d2d; }
+  .empty-state { color: var(--muted); border: 1px dashed rgba(45,90,45,0.2); border-radius: 8px; padding: 1rem; background: #f9fbf8; line-height: 1.6; }
   code { background: #edf4ed; border-radius: 5px; padding: 0.1rem 0.28rem; color: var(--green-deep); }
   @media (max-width: 720px) {
     body { padding: 1rem; }
     .grid, .preview { grid-template-columns: 1fr; }
+    .review-toolbar { grid-template-columns: 1fr; }
     .panel { padding: 1.1rem; }
   }
 </style>
@@ -98,6 +113,21 @@
       <div class="status" id="status" aria-live="polite"></div>
       <button id="submitBtn" type="submit">Publier ce projet</button>
     </form>
+  </section>
+
+  <section class="panel">
+    <h2>Avis à approuver</h2>
+    <p class="lead">Les avis envoyés par les clients restent privés ici. Approuvez seulement ceux que vous voulez publier sur le site.</p>
+    <div class="review-toolbar">
+      <label>Mot de passe propriétaire
+        <input id="reviewPassword" type="password" autocomplete="current-password" placeholder="Même mot de passe">
+      </label>
+      <button id="loadReviewsBtn" type="button">Charger les avis</button>
+    </div>
+    <div class="status" id="reviewOwnerStatus" aria-live="polite"></div>
+    <div class="review-list" id="pendingReviewsList">
+      <div class="empty-state">Entrez le mot de passe et chargez les avis en attente.</div>
+    </div>
   </section>
 </main>
 
@@ -180,6 +210,86 @@
     } finally {
       submitBtn.disabled = false;
     }
+  });
+
+  const reviewPassword = document.getElementById('reviewPassword');
+  const loadReviewsBtn = document.getElementById('loadReviewsBtn');
+  const reviewOwnerStatus = document.getElementById('reviewOwnerStatus');
+  const pendingReviewsList = document.getElementById('pendingReviewsList');
+
+  function escapeHtml(value = '') {
+    return String(value).replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;',
+    }[char]));
+  }
+
+  function reviewStars(rating) {
+    const safeRating = Math.max(1, Math.min(5, Number.parseInt(rating, 10) || 5));
+    return '★★★★★'.slice(0, safeRating) + '☆☆☆☆☆'.slice(0, 5 - safeRating);
+  }
+
+  function renderPendingReviews(reviews = []) {
+    if (!reviews.length) {
+      pendingReviewsList.innerHTML = '<div class="empty-state">Aucun avis en attente pour le moment.</div>';
+      return;
+    }
+
+    pendingReviewsList.innerHTML = reviews.map((review) => `
+      <article class="pending-review">
+        <div class="pending-review-head">
+          <strong>${escapeHtml(review.name || 'Client')}</strong>
+          <span class="pending-stars">${reviewStars(review.rating)}</span>
+        </div>
+        <div class="pending-meta">${[review.city, review.service, review.createdAt ? new Date(review.createdAt).toLocaleDateString('fr-CA') : ''].filter(Boolean).map(escapeHtml).join(' · ')}</div>
+        <p class="pending-text">${escapeHtml(review.text || '')}</p>
+        <div class="review-actions">
+          <button type="button" data-action="approve" data-id="${escapeHtml(review.id)}">Approuver</button>
+          <button class="reject-btn" type="button" data-action="reject" data-id="${escapeHtml(review.id)}">Rejeter</button>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  async function reviewAction(action, id) {
+    reviewOwnerStatus.className = 'status';
+    reviewOwnerStatus.textContent = action === 'list' ? 'Chargement...' : 'Mise à jour...';
+    loadReviewsBtn.disabled = true;
+
+    try {
+      const response = await fetch('/api/owner-reviews', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          password: reviewPassword.value,
+          action,
+          id,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Impossible de gérer les avis.');
+
+      renderPendingReviews(result.pending || []);
+      reviewOwnerStatus.className = 'status ok';
+      reviewOwnerStatus.textContent = action === 'list'
+        ? `${(result.pending || []).length} avis en attente.`
+        : 'Avis mis à jour. Vercel va redéployer le site automatiquement.';
+    } catch (error) {
+      reviewOwnerStatus.className = 'status err';
+      reviewOwnerStatus.textContent = error.message;
+    } finally {
+      loadReviewsBtn.disabled = false;
+    }
+  }
+
+  loadReviewsBtn.addEventListener('click', () => reviewAction('list'));
+  pendingReviewsList.addEventListener('click', (event) => {
+    const button = event.target.closest('button[data-action]');
+    if (!button) return;
+    reviewAction(button.dataset.action, button.dataset.id);
   });
 </script>
 </body>

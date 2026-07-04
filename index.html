@@ -332,6 +332,25 @@
   .review-link { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; margin-top: 1rem; padding: 0.48rem 0.85rem; border-radius: 100px; border: 1px solid rgba(61,122,61,0.24); color: var(--green-dark); font-size: 0.78rem; font-weight: 800; text-decoration: none; }
   .review-link:hover { background: var(--green-pale); color: var(--green-deep); }
   .review-note { margin-top: 1rem; color: var(--text-light); font-size: 0.82rem; line-height: 1.6; }
+  .review-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr); gap: 1.25rem; align-items: start; margin-top: 2rem; }
+  .review-layout .review-grid { margin-top: 0; }
+  .review-form-card { background: var(--cream); border: 1px solid rgba(45,90,45,0.12); border-radius: 8px; padding: 1.2rem; }
+  .review-form-card h3 { color: var(--green-deep); font-size: 1rem; margin-bottom: 0.4rem; }
+  .review-form-card p { color: var(--text-light); font-size: 0.78rem; line-height: 1.55; margin-bottom: 0.9rem; }
+  .review-form { display: grid; gap: 0.7rem; }
+  .review-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .review-field { display: grid; gap: 0.32rem; }
+  .review-field label { font-size: 0.67rem; color: var(--green-dark); letter-spacing: 0.07em; text-transform: uppercase; font-weight: 800; }
+  .review-field input, .review-field select, .review-field textarea { width: 100%; border: 1px solid rgba(45,90,45,0.18); border-radius: 7px; padding: 0.68rem 0.78rem; color: var(--text-dark); background: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.86rem; outline: none; }
+  .review-field textarea { min-height: 110px; resize: vertical; line-height: 1.55; }
+  .review-field input:focus, .review-field select:focus, .review-field textarea:focus { border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(61,122,61,0.08); }
+  .review-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .review-submit { min-height: 44px; border: none; border-radius: 8px; background: var(--green-mid); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 800; cursor: pointer; transition: all 0.2s; }
+  .review-submit:hover:not(:disabled) { background: var(--green-deep); transform: translateY(-1px); }
+  .review-submit:disabled { opacity: 0.65; cursor: wait; transform: none; }
+  .review-status { display: none; border-radius: 7px; padding: 0.7rem 0.8rem; font-size: 0.78rem; line-height: 1.45; }
+  .review-status.ok { display: block; color: var(--green-deep); background: var(--green-pale); border: 1px solid rgba(61,122,61,0.2); }
+  .review-status.err { display: block; color: #8a2d2d; background: #fff1f1; border: 1px solid #f1caca; }
   .service-detail h3 { display: block; color: var(--green-deep); font-size: 1rem; margin-bottom: 0.35rem; }
   .service-detail p { color: var(--text-light); font-size: 0.8rem; line-height: 1.58; }
   .service-detail ul { list-style: none; display: grid; gap: 0.45rem; margin: 0.9rem 0 1rem; }
@@ -404,10 +423,11 @@
     section.sec, .contact-sec { padding: 3rem 1.25rem; }
     .trust-bar, .zones, .reviews-strip { padding: 1rem 1.25rem; }
     .trust-div { display: none; }
-    .about-grid, .contact-grid, .photo-guide-inner, .calc-wrap, .plant-tool-wrap { grid-template-columns: 1fr; gap: 1.4rem; }
+    .about-grid, .contact-grid, .photo-guide-inner, .calc-wrap, .plant-tool-wrap, .review-layout { grid-template-columns: 1fr; gap: 1.4rem; }
     .about-proof-card { padding: 1.15rem; }
     .calc-steps, .calc-result-grid { grid-template-columns: 1fr; }
     .calc-grid-2 { grid-template-columns: 1fr; }
+    .review-form-row { grid-template-columns: 1fr; }
     .plant-photo-actions, .plant-help, .plant-result-grid { grid-template-columns: 1fr; }
     .photo-steps { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
@@ -868,18 +888,38 @@
 <section class="sec" id="reviews" style="background:#fff;">
   <div class="svc-hdr">
     <div class="sl" data-fr="Avis clients" data-en="Client reviews">Avis clients</div>
-    <h2 data-fr="Un vrai avis Google" data-en="A real Google review">Un vrai avis Google</h2>
-    <p class="sec-sub" data-fr="Un premier avis public reçu sur le profil Google de VertMex. D’autres avis pourront être ajoutés lorsque le propriétaire les confirmera." data-en="A first public review received on VertMex’s Google profile. More reviews can be added once the owner confirms them.">Un premier avis public reçu sur le profil Google de VertMex. D’autres avis pourront être ajoutés lorsque le propriétaire les confirmera.</p>
+    <h2 data-fr="Avis approuvés par VertMex" data-en="Reviews approved by VertMex">Avis approuvés par VertMex</h2>
+    <p class="sec-sub" data-fr="Les clients peuvent laisser un avis. Il reste privé jusqu’à ce que le propriétaire le vérifie et l’approuve." data-en="Clients can leave a review. It stays private until the owner checks and approves it.">Les clients peuvent laisser un avis. Il reste privé jusqu’à ce que le propriétaire le vérifie et l’approuve.</p>
   </div>
-  <div class="review-grid">
-    <article class="review-card real-review">
-      <div class="stars-line" aria-label="5 stars">★★★★★</div>
-      <blockquote data-fr="Great landscaping services! Thank you for your professionalism." data-en="Great landscaping services! Thank you for your professionalism.">Great landscaping services! Thank you for your professionalism.</blockquote>
-      <div class="review-author" data-fr="LO · Avis Google · VERTMEX" data-en="LO · Google review · VERTMEX">LO · Avis Google · VERTMEX</div>
-      <a class="review-link" href="https://maps.app.goo.gl/mh8z3Sd4YvdbPimg9" target="_blank" rel="noopener" data-fr="Voir sur Google" data-en="View on Google">Voir sur Google</a>
-    </article>
+  <div class="review-layout">
+    <div class="review-grid" id="approvedReviewsGrid">
+      <article class="review-card real-review">
+        <div class="stars-line" aria-label="5 stars">★★★★★</div>
+        <blockquote data-fr="Great landscaping services! Thank you for your professionalism." data-en="Great landscaping services! Thank you for your professionalism.">Great landscaping services! Thank you for your professionalism.</blockquote>
+        <div class="review-author" data-fr="LO · Avis Google · VERTMEX" data-en="LO · Google review · VERTMEX">LO · Avis Google · VERTMEX</div>
+        <a class="review-link" href="https://maps.app.goo.gl/mh8z3Sd4YvdbPimg9" target="_blank" rel="noopener" data-fr="Voir sur Google" data-en="View on Google">Voir sur Google</a>
+      </article>
+    </div>
+    <aside class="review-form-card">
+      <h3 data-fr="Laisser un avis" data-en="Leave a review">Laisser un avis</h3>
+      <p data-fr="Votre avis sera envoyé à VertMex pour approbation avant publication." data-en="Your review will be sent to VertMex for approval before publishing.">Votre avis sera envoyé à VertMex pour approbation avant publication.</p>
+      <form class="review-form" id="customerReviewForm">
+        <input class="review-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="review-form-row">
+          <div class="review-field"><label data-fr="Nom" data-en="Name">Nom</label><input name="name" type="text" autocomplete="name" required></div>
+          <div class="review-field"><label data-fr="Note" data-en="Rating">Note</label><select name="rating"><option value="5">5 / 5</option><option value="4">4 / 5</option><option value="3">3 / 5</option><option value="2">2 / 5</option><option value="1">1 / 5</option></select></div>
+        </div>
+        <div class="review-form-row">
+          <div class="review-field"><label data-fr="Ville" data-en="City">Ville</label><input name="city" type="text" data-fr-placeholder="Ex. Sherrington" data-en-placeholder="Ex. Sherrington" placeholder="Ex. Sherrington"></div>
+          <div class="review-field"><label data-fr="Service" data-en="Service">Service</label><input name="service" type="text" data-fr-placeholder="Ex. haies, plate-bande" data-en-placeholder="Ex. hedges, garden bed" placeholder="Ex. haies, plate-bande"></div>
+        </div>
+        <div class="review-field"><label data-fr="Votre avis" data-en="Your review">Votre avis</label><textarea name="text" required data-fr-placeholder="Comment s’est passé le travail avec VertMex?" data-en-placeholder="How was the work with VertMex?" placeholder="Comment s’est passé le travail avec VertMex?"></textarea></div>
+        <div class="review-status" id="reviewStatus" aria-live="polite"></div>
+        <button class="review-submit" id="reviewSubmitBtn" type="submit" data-fr="Envoyer pour approbation" data-en="Send for approval">Envoyer pour approbation</button>
+      </form>
+    </aside>
   </div>
-  <p class="review-note" data-fr="Avis publié publiquement sur Google. Aucune note moyenne ni nombre d’avis n’est affiché tant que les détails ne sont pas confirmés." data-en="Review publicly posted on Google. No average rating or review count is shown until the details are confirmed.">Avis publié publiquement sur Google. Aucune note moyenne ni nombre d’avis n’est affiché tant que les détails ne sont pas confirmés.</p>
+  <p class="review-note" data-fr="Les avis affichés ici sont approuvés manuellement. Les avis Google restent liés à leur source lorsqu’un lien public est disponible." data-en="Reviews shown here are manually approved. Google reviews stay linked to their source when a public link is available.">Les avis affichés ici sont approuvés manuellement. Les avis Google restent liés à leur source lorsqu’un lien public est disponible.</p>
 </section>
 
 <!-- SERVICE DETAILS -->
@@ -1286,6 +1326,100 @@
       if (val) opt.textContent = val;
     });
   }
+
+  function escapeHtml(value = '') {
+    return String(value).replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;',
+    }[char]));
+  }
+
+  function starsFor(rating) {
+    const safeRating = Math.max(1, Math.min(5, Number.parseInt(rating, 10) || 5));
+    return '★★★★★'.slice(0, safeRating) + '☆☆☆☆☆'.slice(0, 5 - safeRating);
+  }
+
+  async function loadApprovedReviews() {
+    const grid = document.getElementById('approvedReviewsGrid');
+    if (!grid) return;
+
+    try {
+      const response = await fetch('reviews.json', { cache: 'no-store' });
+      if (!response.ok) return;
+      const reviews = await response.json();
+      if (!Array.isArray(reviews) || reviews.length === 0) return;
+
+      grid.innerHTML = reviews.map((review) => {
+        const name = escapeHtml(review.name || 'Client VertMex');
+        const city = escapeHtml(review.city || '');
+        const service = escapeHtml(review.service || review.source || '');
+        const text = escapeHtml(review.text || '');
+        const source = escapeHtml(review.source || 'Client');
+        const link = escapeHtml(review.link || '');
+        const author = [name, city, service || source].filter(Boolean).join(' · ');
+
+        return `
+          <article class="review-card real-review">
+            <div class="stars-line" aria-label="${review.rating || 5} stars">${starsFor(review.rating)}</div>
+            <blockquote>${text}</blockquote>
+            <div class="review-author">${author}</div>
+            ${link ? `<a class="review-link" href="${link}" target="_blank" rel="noopener" data-fr="Voir la source" data-en="View source">${lang === 'fr' ? 'Voir la source' : 'View source'}</a>` : ''}
+          </article>
+        `;
+      }).join('');
+    } catch (error) {
+      console.warn('Approved reviews could not be loaded.', error);
+    }
+  }
+
+  function initCustomerReviewForm() {
+    const form = document.getElementById('customerReviewForm');
+    if (!form) return;
+    const status = document.getElementById('reviewStatus');
+    const submit = document.getElementById('reviewSubmitBtn');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      status.className = 'review-status';
+      status.textContent = lang === 'fr' ? 'Envoi de votre avis...' : 'Sending your review...';
+      submit.disabled = true;
+
+      try {
+        const response = await fetch('/api/customer-reviews', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: data.get('name'),
+            city: data.get('city'),
+            service: data.get('service'),
+            rating: data.get('rating'),
+            text: data.get('text'),
+            website: data.get('website'),
+          }),
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || (lang === 'fr' ? 'Impossible d’envoyer l’avis.' : 'Could not send the review.'));
+
+        form.reset();
+        status.className = 'review-status ok';
+        status.textContent = lang === 'fr'
+          ? 'Merci! Votre avis a été envoyé et sera publié après approbation.'
+          : 'Thanks! Your review was sent and will be published after approval.';
+      } catch (error) {
+        status.className = 'review-status err';
+        status.textContent = error.message;
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  }
+
+  loadApprovedReviews();
+  initCustomerReviewForm();
 
   const materialAssumptions = {
     sod: { fr: 'Tourbe', en: 'Sod', areaOnly: true, depths: [], sod: true },
